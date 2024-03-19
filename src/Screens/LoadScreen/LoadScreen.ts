@@ -1,31 +1,35 @@
 import { Screen } from "../Screen";
+import { LoadAnim } from "../../LoadAnim/LoadAnim";
 import * as PIXI from "pixi.js";
-import { Graphics } from "pixi.js";
+import { set } from "husky";
 
 export class LoadScreen extends Screen{
 
-    private readonly graphics: PIXI.Graphics = new Graphics();
+    private loadAnim: LoadAnim | undefined;
 
     public start() {
-        this.graphics.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
-        this.graphics.beginFill("red");
-        this.graphics.drawRect(-150/2, -150/2, 150, 150);
-        this.addChild(this.graphics);
-
+        this.loadAnim = new LoadAnim("white", "pink");
+        this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.width, this.getScreenHeight() - this.loadAnim.height);
+        this.addChild(this.loadAnim);
     }
 
-    public draw(deltaTime: number) {
-        //console.log(this);
-        this.graphics.rotation += deltaTime * 0.05;
+    public draw(deltaTime: PIXI.Ticker) {
     }
 
     public onClose(): Promise<Screen> {
         return new Promise((resolve) => {
-            resolve(this);
+            if (this.loadAnim != null){
+                this.loadAnim.destroy();
+            }
+            setTimeout(() => {
+                resolve(this);
+            }, 200);
         });
     }
 
     public onResize() {
-        this.graphics.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
+        if (this.loadAnim != null) {
+            this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.getWidth(), this.getScreenHeight() - this.loadAnim.getHeight());
+        }
     }
 }

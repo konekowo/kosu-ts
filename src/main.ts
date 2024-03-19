@@ -6,14 +6,14 @@ export class Main {
     public static app: Application;
     private static currentScreen: Screen | null;
     private static allScreens: Screen[] = [];
-    public constructor(app: Application<HTMLCanvasElement>) {
+    public constructor(app: Application) {
         Main.app = app;
         // @ts-ignore
-        document.body.appendChild(Main.app.view);
+        document.body.appendChild(Main.app.canvas);
         Main.app.stage.eventMode = "dynamic";
         this.doResize();
         window.addEventListener("resize", this.doResize);
-        Main.showScreen(new LoadScreen());
+        Main.switchScreen(new LoadScreen());
 
     }
     public doResize(): void {
@@ -25,7 +25,7 @@ export class Main {
         })
     }
 
-    public static showScreen(screen: Screen){
+    public static switchScreen(screen: Screen){
         Main.app.stage.addChild(screen);
         if (this.currentScreen != null){
             this.currentScreen.onClose().then((lastScreen) => {

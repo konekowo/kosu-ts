@@ -5,12 +5,15 @@ import { Main } from "./main";
 const gameWidth = window.innerWidth;
 const gameHeight = window.innerHeight;
 
-const app = new Application<HTMLCanvasElement>({
-    backgroundColor: "black",
-    width: gameWidth,
-    height: gameHeight,
-});
+const app = new Application();
 
 window.onload = async (): Promise<void> => {
-    new Main(app);
+    app.init({
+        backgroundColor: "black",
+        width: gameWidth,
+        height: gameHeight,
+        antialias: true
+    }).then(() => {
+        new Main(app);
+    });
 };

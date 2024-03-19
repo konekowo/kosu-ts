@@ -1,10 +1,11 @@
 import * as PIXI from "pixi.js";
+import { Ticker } from "pixi.js";
 export abstract class Screen extends PIXI.Container{
     // Called once before any frame is drawn
     public abstract start(): void;
 
     // Called every frame
-    public abstract draw(deltaTime: number): void;
+    public abstract draw(deltaTime: PIXI.Ticker): void;
 
     // Called when screen will be closed, but has to return a promise to clean up after, for example, the screen's close animations are done.
     // Make sure you also pass in 'this' into the promise's resolve.
@@ -14,10 +15,10 @@ export abstract class Screen extends PIXI.Container{
     public abstract onResize(): void;
 
 
-    protected getScreenWidth() {
+    protected getScreenWidth(): number {
         return window.innerWidth;
     }
-    protected getScreenHeight() {
+    protected getScreenHeight(): number {
         return window.innerHeight;
     }
 }
