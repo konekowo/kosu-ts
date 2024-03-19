@@ -1,0 +1,3 @@
+[submodule "assets/osu-assets"]
+	path = assets/osu-assets
+	url = https://github.com/ppy/osu-resources.git
