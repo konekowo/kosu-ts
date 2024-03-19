@@ -8,12 +8,13 @@ export class LoadScreen extends Screen{
     private loadAnim: LoadAnim | undefined;
 
     public start() {
-        this.loadAnim = new LoadAnim("white", "pink");
+        this.loadAnim = new LoadAnim("white", "grey");
         this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.width, this.getScreenHeight() - this.loadAnim.height);
         this.addChild(this.loadAnim);
     }
 
     public draw(deltaTime: PIXI.Ticker) {
+        this.loadAnim?.draw(deltaTime);
     }
 
     public onClose(): Promise<Screen> {
