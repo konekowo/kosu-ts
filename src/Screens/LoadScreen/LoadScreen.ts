@@ -25,7 +25,7 @@ export class LoadScreen extends Screen{
             }
             setTimeout(() => {
                 resolve(this);
-            }, 200);
+            }, 400);
         });
     }
 

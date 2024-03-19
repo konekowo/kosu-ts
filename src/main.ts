@@ -1,19 +1,30 @@
 import { Application } from "pixi.js";
 import { Screen } from "./Screens/Screen";
 import { LoadScreen } from "./Screens/LoadScreen/LoadScreen";
+import {IntroScreen} from "./Screens/IntroScreen/IntroScreen";
+import {InteractScreen} from "./Screens/InteractScreen/InteractScreen";
+
 
 export class Main {
     public static app: Application;
     private static currentScreen: Screen | null;
     private static allScreens: Screen[] = [];
+    public static currentPlayingAudio: HTMLAudioElement;
     public constructor(app: Application) {
         Main.app = app;
         // @ts-ignore
         document.body.appendChild(Main.app.canvas);
-        Main.app.stage.eventMode = "dynamic";
         this.doResize();
         window.addEventListener("resize", this.doResize);
         Main.switchScreen(new LoadScreen());
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET","assets/osu-assets/osu.Game.Resources/Tracks/triangles.osz");
+        xhr.responseType = "blob";
+        xhr.send();
+        xhr.onload = () => {
+            Main.switchScreen(new InteractScreen(xhr.response));
+        }
+
 
     }
     public doResize(): void {

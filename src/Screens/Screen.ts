@@ -1,6 +1,12 @@
 import * as PIXI from "pixi.js";
 import { Ticker } from "pixi.js";
 export abstract class Screen extends PIXI.Container{
+
+    public constructor() {
+        super();
+    }
+
+
     // Called once before any frame is drawn
     public abstract start(): void;
 
