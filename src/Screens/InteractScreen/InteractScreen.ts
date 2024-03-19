@@ -7,20 +7,21 @@ import {ease} from 'pixi-ease';
 
 export class InteractScreen extends Screen {
 
-    private text: PIXI.Text = new PIXI.Text({
-        text: "Click here to play!",
-        style: {
-            fontFamily: 'Arial',
-            fontSize: 36,
-            fill: "white"
-        }
-    });
+    private text: PIXI.BitmapText;
 
     private readonly introTrack: Blob;
 
     public constructor(introTrack: Blob) {
         super();
         this.introTrack = introTrack;
+        this.text = new PIXI.BitmapText({
+            text: "Click here to play!",
+            style: {
+                fontFamily: 'TorusRegular',
+                fontSize: 36,
+                fill: "white"
+            }
+        });
     }
 
     public start() {
@@ -39,7 +40,7 @@ export class InteractScreen extends Screen {
 
     public onClose(): Promise<Screen> {
         return new Promise((resolve) => {
-            ease.add(this.text, {alpha: 0, scale: 0.5}, {duration: 300, ease: "easeInOutQuad"});
+            ease.add(this.text, {alpha: 0, scale: 0.5}, {duration: 300, ease: "easeOutQuad"});
             setTimeout(() => {
                 resolve(this);
             },300);

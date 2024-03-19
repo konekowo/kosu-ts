@@ -21,12 +21,16 @@ export class IntroScreen extends Screen {
                         let audioUrl = URL.createObjectURL(audioBlob);
                         Main.currentPlayingAudio = new Audio(audioUrl);
                         Main.currentPlayingAudio.play();
-                        console.log("start");
+                        this.afterAudioPlay();
 
                     });
                 }
             }
         }, 500);
+    }
+
+    public afterAudioPlay() {
+
     }
     public draw(deltaTime: Ticker) {
 

@@ -1,6 +1,7 @@
 import { Application } from "pixi.js";
 import { Screen } from "./Screens/Screen";
 import { LoadScreen } from "./Screens/LoadScreen/LoadScreen";
+import * as PIXI from "pixi.js";
 import {IntroScreen} from "./Screens/IntroScreen/IntroScreen";
 import {InteractScreen} from "./Screens/InteractScreen/InteractScreen";
 
@@ -17,13 +18,25 @@ export class Main {
         this.doResize();
         window.addEventListener("resize", this.doResize);
         Main.switchScreen(new LoadScreen());
-        let xhr = new XMLHttpRequest();
-        xhr.open("GET","assets/osu-assets/osu.Game.Resources/Tracks/triangles.osz");
-        xhr.responseType = "blob";
-        xhr.send();
-        xhr.onload = () => {
-            Main.switchScreen(new InteractScreen(xhr.response));
-        }
+        setTimeout(async() => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET","assets/osu-assets/osu.Game.Resources/Tracks/triangles.osz", true);
+            xhr.responseType = "blob";
+            xhr.send();
+            xhr.onload = async () => {
+                // Add font files to the bundle
+                PIXI.Assets.addBundle('fonts', [
+                    { alias: 'TorusRegular', src: 'assets/fonts/TorusRegular.otf' }
+                ]);
+
+                // Load the font bundle
+                PIXI.Assets.loadBundle('fonts').then(() => {
+                        Main.switchScreen(new InteractScreen(xhr.response));
+                });
+
+            }
+        })
+
 
 
     }
