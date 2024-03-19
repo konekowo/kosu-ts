@@ -6,14 +6,17 @@ export class LoadAnim extends PIXI.Container {
     private readonly arc: PIXI.Graphics;
     private readonly arcContainer: PIXI.Container;
     private readonly animInterval: NodeJS.Timeout;
+    private readonly container: PIXI.Container;
+    private bgRotation: number = 0;
     public constructor(bgColor: string, arcColor: string) {
         super();
-        this.alpha = 0;
+        this.pivot.set(0.5, 0.5);
+        this.container = new PIXI.Container();
+        this.container.alpha = 0;
         this.rotation = Math.PI*2.5
         this.bg = new PIXI.Graphics();
         this.bg.roundRect(-50, -50, 100, 100, 25);
         this.bg.fill(bgColor);
-        this.addChild(this.bg);
         this.arcContainer = new PIXI.Container();
         this.arc = new PIXI.Graphics();
         this.arc.arc(0, 0, 30, Math.PI + .26, 2.92 * Math.PI);
@@ -23,10 +26,12 @@ export class LoadAnim extends PIXI.Container {
             cap: "round"
         });
         this.arc.scale.set(-1, 1);
+        this.container.scale.set(0.5, 0.5);
+        this.container.addChild(this.bg);
         this.arcContainer.addChild(this.arc);
-        this.addChild(this.arcContainer);
-        ease.add(this, {alpha: 1}, {duration: 200, ease: 'easeInOutQuad'});
-
+        this.container.addChild(this.arcContainer);
+        this.addChild(this.container);
+        ease.add(this.container, {alpha: 1, scale: 1}, {duration: 400, ease: 'easeInOutQuad'});
         this.doAnims();
 
         this.animInterval = setInterval(() => {
@@ -35,7 +40,8 @@ export class LoadAnim extends PIXI.Container {
     }
 
     public doAnims() {
-        ease.add(this.bg, {angle: this.bg.angle + 90}, {duration: 600, ease: 'easeInOutQuad'});
+        this.bgRotation += 90;
+        ease.add(this.bg, {angle: this.bgRotation}, {duration: 600, ease: 'easeInOutQuad'});
         ease.add(this.arc, {rotation: this.arc.rotation + Math.PI}, {duration: 800, ease: 'easeInOutCubic'});
     }
 
@@ -48,15 +54,15 @@ export class LoadAnim extends PIXI.Container {
     }
 
     public draw(deltaTime: PIXI.Ticker){
-        this.arcContainer.angle += (deltaTime.deltaTime);
+        this.arcContainer.angle += (2 * deltaTime.deltaTime);
     }
 
     public destroy(_options?: PIXI.DestroyOptions | boolean) {
-        ease.add(this, {alpha: 0}, {duration: 200, ease: 'easeInOutQuad'});
+        ease.add(this.container, {alpha: 0, scale: 0.5}, {duration: 400, ease: 'easeInOutQuad'});
         setTimeout(() => {
             clearInterval(this.animInterval);
             super.destroy(_options);
-        }, 200);
+        }, 400);
     }
 
 }

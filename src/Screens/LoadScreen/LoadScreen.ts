@@ -9,7 +9,8 @@ export class LoadScreen extends Screen{
 
     public start() {
         this.loadAnim = new LoadAnim("white", "grey");
-        this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.width, this.getScreenHeight() - this.loadAnim.height);
+        this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.width - 20, this.getScreenHeight() - this.loadAnim.height - 20);
+        this.loadAnim.scale.set(0.7, 0.7);
         this.addChild(this.loadAnim);
     }
 
@@ -29,7 +30,7 @@ export class LoadScreen extends Screen{
     }
 
     public onResize() {
-        if (this.loadAnim != null) {
+        if (this.loadAnim?.position != null) {
             this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.getWidth(), this.getScreenHeight() - this.loadAnim.getHeight());
         }
     }
