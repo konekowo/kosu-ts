@@ -27,9 +27,9 @@ export class LoadAnim extends PIXI.Container {
         });
         this.arc.scale.set(-1, 1);
         this.container.scale.set(0.5, 0.5);
-        this.container.addChild(this.bg);
         this.arcContainer.addChild(this.arc);
-        this.container.addChild(this.arcContainer);
+        this.bg.addChild(this.arcContainer);
+        this.container.addChild(this.bg);
         this.addChild(this.container);
         ease.add(this.container, {alpha: 1, scale: 1}, {duration: 400, ease: 'easeInOutQuad'});
         this.doAnims();
@@ -42,7 +42,6 @@ export class LoadAnim extends PIXI.Container {
     public doAnims() {
         this.bgRotation += 90;
         ease.add(this.bg, {angle: this.bgRotation}, {duration: 600, ease: 'easeInOutQuad'});
-        ease.add(this.arc, {rotation: this.arc.rotation + Math.PI}, {duration: 800, ease: 'easeInOutCubic'});
     }
 
     public getWidth() {
@@ -54,7 +53,7 @@ export class LoadAnim extends PIXI.Container {
     }
 
     public draw(deltaTime: PIXI.Ticker){
-        this.arcContainer.angle += (2 * deltaTime.deltaTime);
+        this.arcContainer.angle += (3 * deltaTime.deltaTime);
     }
 
     public destroy(_options?: PIXI.DestroyOptions | boolean) {
