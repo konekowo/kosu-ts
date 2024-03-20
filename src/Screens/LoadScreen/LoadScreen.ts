@@ -2,6 +2,7 @@ import { Screen } from "../Screen";
 import { LoadAnim } from "../../Elements/LoadAnim/LoadAnim";
 import * as PIXI from "pixi.js";
 import { set } from "husky";
+import {Settings} from "../../Settings/Settings";
 
 export class LoadScreen extends Screen{
 
@@ -9,8 +10,9 @@ export class LoadScreen extends Screen{
 
     public start() {
         this.loadAnim = new LoadAnim("white", "grey");
-        this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.width - 20, this.getScreenHeight() - this.loadAnim.height - 20);
-        this.loadAnim.scale.set(0.7, 0.7);
+        let uiScale = Settings.getRangeSetting("UI scaling").getValue();
+        this.loadAnim.scale.set(0.7 * uiScale, 0.7 * uiScale);
+        this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.getWidth(), this.getScreenHeight() - this.loadAnim.getHeight());
         this.addChild(this.loadAnim);
     }
 

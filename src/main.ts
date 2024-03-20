@@ -4,6 +4,8 @@ import { LoadScreen } from "./Screens/LoadScreen/LoadScreen";
 import * as PIXI from "pixi.js";
 import {IntroScreen} from "./Screens/IntroScreen/IntroScreen";
 import {InteractScreen} from "./Screens/InteractScreen/InteractScreen";
+import {Setting} from "./Settings/Setting";
+import {Settings} from "./Settings/Settings";
 
 
 export class Main {
@@ -31,7 +33,7 @@ export class Main {
 
                 // Load the font bundle
                 PIXI.Assets.loadBundle('fonts').then(() => {
-                        Main.switchScreen(new InteractScreen(xhr.response));
+                    Main.switchScreen(new InteractScreen(xhr.response));
                 });
 
             }
