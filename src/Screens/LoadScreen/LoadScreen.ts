@@ -1,5 +1,5 @@
 import { Screen } from "../Screen";
-import { LoadAnim } from "../../LoadAnim/LoadAnim";
+import { LoadAnim } from "../../Elements/LoadAnim/LoadAnim";
 import * as PIXI from "pixi.js";
 import { set } from "husky";
 
