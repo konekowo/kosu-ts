@@ -7,13 +7,15 @@ export class LoadAnim extends PIXI.Container {
     private readonly arcContainer: PIXI.Container;
     private readonly animInterval: NodeJS.Timeout;
     private readonly container: PIXI.Container;
+    private readonly bgContainer: PIXI.Container;
     private bgRotation: number = 0;
     public constructor(bgColor: string, arcColor: string) {
         super();
         this.pivot.set(0.5, 0.5);
         this.container = new PIXI.Container();
         this.container.alpha = 0;
-        this.rotation = Math.PI*2.5
+        this.rotation = Math.PI*2.5;
+        this.bgContainer = new PIXI.Container();
         this.bg = new PIXI.Graphics();
         this.bg.roundRect(-50, -50, 100, 100, 25);
         this.bg.fill(bgColor);
@@ -27,9 +29,10 @@ export class LoadAnim extends PIXI.Container {
         });
         this.arc.scale.set(-1, 1);
         this.container.scale.set(0.5, 0.5);
+        this.bgContainer.addChild(this.bg);
         this.arcContainer.addChild(this.arc);
-        this.bg.addChild(this.arcContainer);
-        this.container.addChild(this.bg);
+        this.bgContainer.addChild(this.arcContainer);
+        this.container.addChild(this.bgContainer);
         this.addChild(this.container);
         ease.add(this.container, {alpha: 1, scale: 1}, {duration: 400, ease: 'easeInOutQuad'});
         this.doAnims();
@@ -41,7 +44,7 @@ export class LoadAnim extends PIXI.Container {
 
     public doAnims() {
         this.bgRotation += 90;
-        ease.add(this.bg, {angle: this.bgRotation}, {duration: 600, ease: 'easeInOutQuad'});
+        ease.add(this.bgContainer, {angle: this.bgRotation}, {duration: 600, ease: 'easeInOutQuad'});
     }
 
     public getWidth() {
