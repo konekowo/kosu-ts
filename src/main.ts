@@ -29,35 +29,33 @@ export class Main {
         navigator.mediaSession.setActionHandler('previoustrack', function() { /* Code excerpted. */ });
         navigator.mediaSession.setActionHandler('nexttrack', function() { /* Code excerpted. */ });
 
-        setTimeout(async() => {
-            let xhr = new XMLHttpRequest();
-            xhr.open("GET","assets/osu-assets/osu.Game.Resources/Tracks/triangles.osz", true);
-            xhr.responseType = "blob";
-            xhr.send();
-            xhr.onload = async () => {
-                // Add font files to the bundle
-                PIXI.Assets.addBundle('fonts', [
-                    { alias: 'TorusRegular', src: 'assets/fonts/TorusRegular.otf' },
-                    { alias: 'TorusLight', src: 'assets/fonts/TorusLight.otf' },
-                    { alias: 'TorusThin', src: 'assets/fonts/TorusThin.otf' }
-                ]);
-                PIXI.Assets.addBundle('textures', [
-                    { alias: 'icon_ruleset_std', src: 'assets/icons/ruleset-standard.png' },
-                    { alias: 'icon_ruleset_mania', src: 'assets/icons/ruleset-mania.png' },
-                    { alias: 'icon_ruleset_taiko', src: 'assets/icons/ruleset-taiko.png' },
-                    { alias: 'icon_ruleset_ctb', src: 'assets/icons/ruleset-ctb.png' }
-                ]);
+        fetch("assets/osu-assets/osu.Game.Resources/Tracks/triangles.osz").then(response => response.blob()).then((response) => {
+            // Add font files to the bundle
+            PIXI.Assets.addBundle('fonts', [
+                { alias: 'TorusRegular', src: 'assets/fonts/TorusRegular.otf' },
+                { alias: 'TorusLight', src: 'assets/fonts/TorusLight.otf' },
+                { alias: 'TorusThin', src: 'assets/fonts/TorusThin.otf' }
+            ]);
+            PIXI.Assets.addBundle('textures', [
+                { alias: 'icon_ruleset_std', src: 'assets/icons/ruleset-standard.png' },
+                { alias: 'icon_ruleset_mania', src: 'assets/icons/ruleset-mania.png' },
+                { alias: 'icon_ruleset_taiko', src: 'assets/icons/ruleset-taiko.png' },
+                { alias: 'icon_ruleset_ctb', src: 'assets/icons/ruleset-ctb.png' }
+            ]);
 
 
-                // Load the font bundle
-                PIXI.Assets.loadBundle('fonts').then(() => {
-                    PIXI.Assets.loadBundle('textures').then(() => {
-                        Main.switchScreen(new InteractScreen(xhr.response));
-                    })
-                });
+            // Load the font bundle
+            PIXI.Assets.loadBundle('fonts').then(() => {
+                PIXI.Assets.loadBundle('textures').then(() => {
+                    fetch("assets/osu-assets/osu.Game.Resources/Samples/UI/dialog-ok-select.wav")
+                        .then(clickSound => clickSound.blob())
+                        .then((clickSound) => {
+                            Main.switchScreen(new InteractScreen(response, clickSound));
+                        });
+                })
+            });
 
-            }
-        })
+        });
 
 
 

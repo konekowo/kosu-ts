@@ -10,12 +10,14 @@ export class InteractScreen extends Screen {
     private readonly text: PIXI.Text;
 
     private readonly introTrack: Blob;
+    private readonly clickSound: Blob;
 
     private readonly clickArea: PIXI.Graphics = new PIXI.Graphics();
 
-    public constructor(introTrack: Blob) {
+    public constructor(introTrack: Blob, clickSound: Blob) {
         super();
         this.introTrack = introTrack;
+        this.clickSound = clickSound;
         this.text = new PIXI.Text({
             text: "Click anywhere to play!",
             style: {
@@ -42,11 +44,20 @@ export class InteractScreen extends Screen {
 
         this.clickArea.eventMode = "static";
         this.clickArea.cursor = "pointer";
-        this.clickArea.onclick = () => {
+
+        const clicked = () => {
+            let clickSoundUrl = URL.createObjectURL(this.clickSound);
+            let clickSoundAudio = new Audio(clickSoundUrl);
+            clickSoundAudio.play();
             Main.switchScreen(new IntroScreen(this.introTrack));
         }
+
+        this.clickArea.onclick = () => {
+            clicked();
+
+        }
         this.clickArea.ontap = () => {
-            Main.switchScreen(new IntroScreen(this.introTrack));
+            clicked();
         }
         ease.add(this.text, {alpha: 1, scale: 1}, {duration: 300, ease: "easeInOutQuad"});
     }

@@ -44,8 +44,10 @@ export class IntroScreen extends Screen {
                     entry.blob().then((audioBlob) => {
                         let audioUrl = URL.createObjectURL(audioBlob);
                         Main.currentPlayingAudio = new Audio(audioUrl);
-                        Main.currentPlayingAudio.play();
-                        this.afterAudioPlay();
+                        Main.currentPlayingAudio.play().then(() => {
+                            this.afterAudioPlay();
+                        });
+
 
                     });
                 }
