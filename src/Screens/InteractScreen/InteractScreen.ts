@@ -53,7 +53,7 @@ export class InteractScreen extends Screen {
 
     public onClose(): Promise<Screen> {
         return new Promise((resolve) => {
-            ease.add(this.text, {alpha: 0, scale: 0.5}, {duration: 200, ease: "easeOutQuad"});
+            ease.add(this.text, {alpha: 0, scale: 0.5}, {duration: 200, ease: "easeInOutQuad"});
             setTimeout(() => {
                 resolve(this);
             },200);
