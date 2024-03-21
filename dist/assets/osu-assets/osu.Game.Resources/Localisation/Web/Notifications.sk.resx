@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="all_read" xml:space="preserve">
+    <value>Všetky upozornenia prečítané!</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Vymazať {0}</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Načítavanie neprečítaných notifikácií...</value>
+  </data>
+  <data name="mark_read" xml:space="preserve">
+    <value>Vyčistiť {0}</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>Žiadne upozornenia</value>
+  </data>
+  <data name="see_all" xml:space="preserve">
+    <value>zobraziť všetky upozornenia</value>
+  </data>
+  <data name="see_channel" xml:space="preserve">
+    <value>prejsť ku konverzáciám</value>
+  </data>
+  <data name="filters._" xml:space="preserve">
+    <value>všetko</value>
+  </data>
+  <data name="filters.user" xml:space="preserve">
+    <value>profil</value>
+  </data>
+  <data name="filters.beatmapset" xml:space="preserve">
+    <value>beatmapy</value>
+  </data>
+  <data name="filters.forum_topic" xml:space="preserve">
+    <value>fórum</value>
+  </data>
+  <data name="filters.news_post" xml:space="preserve">
+    <value>novinky</value>
+  </data>
+  <data name="filters.channel" xml:space="preserve">
+    <value>konverzácie</value>
+  </data>
+  <data name="item.beatmapset.beatmap_owner_change._" xml:space="preserve">
+    <value>Obtiažnosť hosťa</value>
+  </data>
+  <data name="item.beatmapset.beatmap_owner_change.beatmap_owner_change" xml:space="preserve">
+    <value>Stali ste sa majiteľom obtiažnosti "{0}" pre beatmapu "{1}"</value>
+  </data>
+  <data name="item.beatmapset.beatmap_owner_change.beatmap_owner_change_compact" xml:space="preserve">
+    <value>Stali ste sa majiteľom obtiažnosti "{0}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion._" xml:space="preserve">
+    <value>Diskusia o beatmape</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_lock" xml:space="preserve">
+    <value>Diskusia o "{0}" bola uzamknutá</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_lock_compact" xml:space="preserve">
+    <value>Diskusia bola uzamknutá</value>
+  </data>
+  <data name="item.channel._" xml:space="preserve">
+    <value>Konverzácia</value>
+  </data>
+  <data name="item.build.comment._" xml:space="preserve">
+    <value>Nový komentár</value>
+  </data>
+  <data name="item.news_post._" xml:space="preserve">
+    <value>Novinky</value>
+  </data>
+  <data name="item.news_post.comment._" xml:space="preserve">
+    <value>Nový komentár</value>
+  </data>
+  <data name="item.user_achievement._" xml:space="preserve">
+    <value>Medaile</value>
+  </data>
+  <data name="item.user_achievement.user_achievement_unlock._" xml:space="preserve">
+    <value>Nová medaila</value>
+  </data>
+</root>

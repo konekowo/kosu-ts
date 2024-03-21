@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="index.description" xml:space="preserve">
+    <value>مجموعه بیتمپ های از پیش بسته بندی شده در مورد یک سبک/ژانر محبوب.</value>
+  </data>
+  <data name="index.nav_title" xml:space="preserve">
+    <value>فهرست</value>
+  </data>
+  <data name="index.title" xml:space="preserve">
+    <value>بسته بیت مپ ها</value>
+  </data>
+  <data name="index.blurb.important" xml:space="preserve">
+    <value>***قبل از دانلود این را بخوانید***</value>
+  </data>
+  <data name="index.blurb.install_instruction" xml:space="preserve">
+    <value>نصب: هر گاه یک پک دانلود شد، محتویات آن را به پوشه songs در osu! بازگشایی کنید و بقیه کار را به osu! بسپارید.</value>
+  </data>
+  <data name="index.blurb.note._" xml:space="preserve">
+    <value>همچنین توجه کنید که توصیه میشود تا {0}. به این دلیل که مپ های قدیمی تر معمولا کیفیت خیلی پایین تری نسبت به مپ های جدید تر دارند.</value>
+  </data>
+  <data name="index.blurb.note.scary" xml:space="preserve">
+    <value>پک ها را از جدیدترین به قدیمی ترین دانلود کنید</value>
+  </data>
+  <data name="show.download" xml:space="preserve">
+    <value>دانلود</value>
+  </data>
+  <data name="show.item.cleared" xml:space="preserve">
+    <value>پاک شده</value>
+  </data>
+  <data name="show.item.not_cleared" xml:space="preserve">
+    <value>پاک نشده</value>
+  </data>
+  <data name="show.no_diff_reduction._" xml:space="preserve">
+    <value>ممکن است {0} برای پاکسازی این پک استفاده نشود.</value>
+  </data>
+  <data name="show.no_diff_reduction.link" xml:space="preserve">
+    <value>ماد های کاهش سختی</value>
+  </data>
+  <data name="mode.artist" xml:space="preserve">
+    <value>آلبوم/هنرمند</value>
+  </data>
+  <data name="mode.chart" xml:space="preserve">
+    <value>برجسته ها</value>
+  </data>
+  <data name="mode.standard" xml:space="preserve">
+    <value>استاندارد</value>
+  </data>
+  <data name="mode.theme" xml:space="preserve">
+    <value>تم</value>
+  </data>
+  <data name="require_login._" xml:space="preserve">
+    <value>شما باید {0} تا بتوانید دانلود کنید</value>
+  </data>
+  <data name="require_login.link_text" xml:space="preserve">
+    <value>وارد شده باشید</value>
+  </data>
+</root>

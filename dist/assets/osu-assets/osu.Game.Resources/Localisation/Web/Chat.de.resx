@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="loading_users" xml:space="preserve">
+    <value>lade User...</value>
+  </data>
+  <data name="talking_in" xml:space="preserve">
+    <value>in {0} reden</value>
+  </data>
+  <data name="talking_with" xml:space="preserve">
+    <value>im Gespräch mit {0}</value>
+  </data>
+  <data name="title_compact" xml:space="preserve">
+    <value>Chat</value>
+  </data>
+  <data name="unread_messages" xml:space="preserve">
+    <value>ungelesene Nachrichten</value>
+  </data>
+  <data name="cannot_send.channel" xml:space="preserve">
+    <value>Du kannst derzeit keine Nachrichten in diesem Channel senden. Dies kann folgende Gründe haben:</value>
+  </data>
+  <data name="cannot_send.user" xml:space="preserve">
+    <value>Du kannst derzeit keine Nachrichten an diesen User senden. Dies kann folgende Gründe haben:</value>
+  </data>
+  <data name="channels.confirm_part" xml:space="preserve">
+    <value>Möchtest du diesen Channel ausblenden? Du erhältst weiterhin Nachrichten aus diesem Channel.</value>
+  </data>
+  <data name="channels.create" xml:space="preserve">
+    <value>Ankündigung erstellen</value>
+  </data>
+  <data name="channels.list.title.announce" xml:space="preserve">
+    <value>Ankündigungen</value>
+  </data>
+  <data name="channels.list.title.group" xml:space="preserve">
+    <value>Gruppen</value>
+  </data>
+  <data name="channels.list.title.pm" xml:space="preserve">
+    <value>Direktnachrichten</value>
+  </data>
+  <data name="channels.list.title.public" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="form.title.announcement" xml:space="preserve">
+    <value>Erstelle neue Ankündigung</value>
+  </data>
+  <data name="form.labels.description" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="form.labels.message" xml:space="preserve">
+    <value>Nachricht</value>
+  </data>
+  <data name="form.labels.name" xml:space="preserve">
+    <value>Raumname</value>
+  </data>
+  <data name="form.labels.users" xml:space="preserve">
+    <value>Spieler hinzufügen</value>
+  </data>
+  <data name="not_found.message" xml:space="preserve">
+    <value>Hier gibt es nichts, vielleicht hast du den Channel verlassen oder er existiert nicht...</value>
+  </data>
+  <data name="not_found.title" xml:space="preserve">
+    <value>Channel nicht gefunden</value>
+  </data>
+  <data name="input.create" xml:space="preserve">
+    <value>Erstellen</value>
+  </data>
+  <data name="input.disabled" xml:space="preserve">
+    <value>Nachricht konnte nicht gesendet werden...</value>
+  </data>
+  <data name="input.disconnected" xml:space="preserve">
+    <value>Verbindung getrennt</value>
+  </data>
+  <data name="input.placeholder" xml:space="preserve">
+    <value>Nachricht verfassen...</value>
+  </data>
+  <data name="input.send" xml:space="preserve">
+    <value>Senden</value>
+  </data>
+  <data name="no-conversations.howto" xml:space="preserve">
+    <value>Starte eine Unterhaltung von einem User-Profil oder einem Usercard-Pop-up.</value>
+  </data>
+  <data name="no-conversations.lazer" xml:space="preserve">
+    <value>Öffentliche Channel, welche du mit &lt;a href="{0}"&gt;osu!lazer&lt;/a&gt; betrittst, werden hier auch sichtbar sein.</value>
+  </data>
+  <data name="no-conversations.title" xml:space="preserve">
+    <value>noch keine Unterhaltungen</value>
+  </data>
+</root>

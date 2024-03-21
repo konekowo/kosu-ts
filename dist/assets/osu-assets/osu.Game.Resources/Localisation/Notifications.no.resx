@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header_title" xml:space="preserve">
+    <value>varsler</value>
+  </data>
+  <data name="header_description" xml:space="preserve">
+    <value>venter på deg</value>
+  </data>
+  <data name="running_tasks" xml:space="preserve">
+    <value>Pågående Oppgaver</value>
+  </data>
+  <data name="clear_all" xml:space="preserve">
+    <value>Tøm alt</value>
+  </data>
+  <data name="battery_low" xml:space="preserve">
+    <value>Batterinivået ditt er lavt! Lad enheten din for å forhindre avbrudd når du spiller.</value>
+  </data>
+  <data name="game_volume_too_low" xml:space="preserve">
+    <value>Spillvolumet ditt er for lavt for å høre noe! Trykk her for å gjenopprette det.</value>
+  </data>
+  <data name="no_autoplay_mod" xml:space="preserve">
+    <value>Dette rulesettet har ikke en autoplay mod tilgjengelig!</value>
+  </data>
+  <data name="audio_playback_issue" xml:space="preserve">
+    <value>Det ser ut som at osu! ikke klarer å lage lyd. Vennligst prøv å endre lyd-enhet til en fungerende innstilling.</value>
+  </data>
+  <data name="score_overlay_disabled" xml:space="preserve">
+    <value>Rekord-overlayet er deaktivert. Du kan slå den på ved å trykke på {0}.</value>
+  </data>
+  <data name="unsupported_or_dangerous_url_protocol" xml:space="preserve">
+    <value>URL-adressen {0} har en ustøttet eller farlig protokoll og vil dermed ikke bli åpnet.</value>
+  </data>
+  <data name="subsequent_messages_logged" xml:space="preserve">
+    <value>Påfølgende meldinger har blitt logget. Klikk for å se loggfiler.</value>
+  </data>
+  <data name="tablet_support_disabled_due_to_error" xml:space="preserve">
+    <value>Deaktiverer støtte for tegnebrett på grunn av feil: "{0}"</value>
+  </data>
+  <data name="encountered_tablet_warning" xml:space="preserve">
+    <value>Advarsel om tegnebrett, tegnebrett ditt blir kanskje ikke å fungere som det skal. Klikk her for en liste over alle tegnebrett som støttes.</value>
+  </data>
+  <data name="unsupported_link_type" xml:space="preserve">
+    <value>Denne lenke-typen støttes ikke enda!</value>
+  </data>
+  <data name="private_message_received" xml:space="preserve">
+    <value>Du mottok en privat melding fra '{0}'. Trykk her for å lese den!</value>
+  </data>
+  <data name="your_name_was_mentioned" xml:space="preserve">
+    <value>Ditt navn be nevnt i chatten av '{0}'. Klikk her for å finne ut hvorfor!</value>
+  </data>
+  <data name="invited_you_to_the_multiplayer" xml:space="preserve">
+    <value>{0} inviterte deg til flerspillerkamp "{1}"! Klikk for å bli med.</value>
+  </data>
+  <data name="missing_beatmap_for_replay" xml:space="preserve">
+    <value>Du har ikke beatmappet for denne reprisen.</value>
+  </data>
+  <data name="downloading_beatmap_for_replay" xml:space="preserve">
+    <value>Laster ned manglende beatmap for denne reprisen...</value>
+  </data>
+  <data name="mismatching_beatmap_for_replay" xml:space="preserve">
+    <value>Din lokale kopi av beatmappet for denne reprisen ser ut til å være annerledes enn forventet. Du må kanskje oppdatere eller laste ned beatmappet på nytt.</value>
+  </data>
+  <data name="game_version_after_update" xml:space="preserve">
+    <value>Du kjører nå osu! {0}.
+Klikk for å se hva som er nytt!</value>
+  </data>
+  <data name="update_ready_to_install" xml:space="preserve">
+    <value>Oppdatering klar for installering. Klikk for å starte på nytt!</value>
+  </data>
+  <data name="downloading_update" xml:space="preserve">
+    <value>Laster ned oppdatering...</value>
+  </data>
+  <data name="installing_update" xml:space="preserve">
+    <value>Installerer oppdatering...</value>
+  </data>
+</root>

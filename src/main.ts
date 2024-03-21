@@ -2,10 +2,7 @@ import { Application } from "pixi.js";
 import { Screen } from "./Screens/Screen";
 import { LoadScreen } from "./Screens/LoadScreen/LoadScreen";
 import * as PIXI from "pixi.js";
-import {IntroScreen} from "./Screens/IntroScreen/IntroScreen";
 import {InteractScreen} from "./Screens/InteractScreen/InteractScreen";
-import {Setting} from "./Settings/Setting";
-import {Settings} from "./Settings/Settings";
 
 
 export class Main {
@@ -21,13 +18,13 @@ export class Main {
         window.addEventListener("resize", this.doResize);
         Main.switchScreen(new LoadScreen());
 
-        navigator.mediaSession.setActionHandler('play', function() { /* Code excerpted. */ });
-        navigator.mediaSession.setActionHandler('pause', function() { /* Code excerpted. */ });
-        navigator.mediaSession.setActionHandler('stop', function() { /* Code excerpted. */ });
-        navigator.mediaSession.setActionHandler('seekbackward', function() { /* Code excerpted. */ });
-        navigator.mediaSession.setActionHandler('seekforward', function() { /* Code excerpted. */ });
-        navigator.mediaSession.setActionHandler('previoustrack', function() { /* Code excerpted. */ });
-        navigator.mediaSession.setActionHandler('nexttrack', function() { /* Code excerpted. */ });
+        navigator.mediaSession.setActionHandler('play', function() {});
+        navigator.mediaSession.setActionHandler('pause', function() {});
+        navigator.mediaSession.setActionHandler('stop', function() {});
+        navigator.mediaSession.setActionHandler('seekbackward', function() {});
+        navigator.mediaSession.setActionHandler('seekforward', function() {});
+        navigator.mediaSession.setActionHandler('previoustrack', function() {});
+        navigator.mediaSession.setActionHandler('nexttrack', function() {});
 
         fetch("assets/osu-assets/osu.Game.Resources/Tracks/triangles.osz").then(response => response.blob()).then((response) => {
             // Add font files to the bundle

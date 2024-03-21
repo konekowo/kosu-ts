@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="availability.disabled" xml:space="preserve">
+    <value>Ova beatmapa trenutno nije dostupna za preuzimanje.</value>
+  </data>
+  <data name="availability.parts-removed" xml:space="preserve">
+    <value>Dijelovi ove beatmape su uklonjeni na zahtjev vlasnika ili noslitelja prava treće strane.</value>
+  </data>
+  <data name="availability.more-info" xml:space="preserve">
+    <value>Klikni ovdje za više informacija.</value>
+  </data>
+  <data name="availability.rule_violation" xml:space="preserve">
+    <value>Neka sredstva sadržana u ovoj mapi su uklonjena nakon što su ocijenjena kao neprikladna za korištenje u osu!.</value>
+  </data>
+  <data name="cover.deleted" xml:space="preserve">
+    <value>Izbrisana beatmapa,</value>
+  </data>
+  <data name="download.limit_exceeded" xml:space="preserve">
+    <value>Uspori, igraj više.</value>
+  </data>
+  <data name="featured_artist_badge.label" xml:space="preserve">
+    <value>Istaknut umjetnik</value>
+  </data>
+  <data name="index.title" xml:space="preserve">
+    <value>Popis beatmapa</value>
+  </data>
+  <data name="index.guest_title" xml:space="preserve">
+    <value>Beatmape</value>
+  </data>
+  <data name="panel.empty" xml:space="preserve">
+    <value>nema beatmapa</value>
+  </data>
+  <data name="panel.download.all" xml:space="preserve">
+    <value>preuzmi</value>
+  </data>
+  <data name="panel.download.video" xml:space="preserve">
+    <value>preuzmi uz video</value>
+  </data>
+  <data name="panel.download.no_video" xml:space="preserve">
+    <value>preuzmi bez videa</value>
+  </data>
+  <data name="panel.download.direct" xml:space="preserve">
+    <value>otvori u osu!direct</value>
+  </data>
+  <data name="nominate.hybrid_requires_modes" xml:space="preserve">
+    <value>Hibridne beatmape zahtijevaju da odabereš barem jedan način igranja za nominaciju.</value>
+  </data>
+  <data name="nominate.incorrect_mode" xml:space="preserve">
+    <value>Nemaš dopuštenje da nominiraš za mod: {0}</value>
+  </data>
+  <data name="nominate.full_bn_required" xml:space="preserve">
+    <value>Moraš biti puni nominator da izvršiš ovu kvalifikacijsku nominaciju.</value>
+  </data>
+  <data name="nominate.too_many" xml:space="preserve">
+    <value>Uvjet za nominaciju je već ispunjen.</value>
+  </data>
+  <data name="nominate.dialog.confirmation" xml:space="preserve">
+    <value>Jesi li siguran/na da želiš nominirati ovu beatmapu?</value>
+  </data>
+  <data name="nominate.dialog.header" xml:space="preserve">
+    <value>Nominiraj beatmapu</value>
+  </data>
+  <data name="nominate.dialog.hybrid_warning" xml:space="preserve">
+    <value>napomena: možetš nominirati samo jednom, stoga te molimo da budeš siguran/na da nominiraš za sve načine igre koje namjeravaš</value>
+  </data>
+  <data name="nominate.dialog.which_modes" xml:space="preserve">
+    <value>Nominiraj za koje modove?</value>
+  </data>
+  <data name="nsfw_badge.label" xml:space="preserve">
+    <value>Eksplicitno</value>
+  </data>
+  <data name="show.discussion" xml:space="preserve">
+    <value>Rasprava</value>
+  </data>
+  <data name="show.details.by_artist" xml:space="preserve">
+    <value>od {0}</value>
+  </data>
+  <data name="show.details.favourite" xml:space="preserve">
+    <value>Označi beatmapu kao omiljenu</value>
+  </data>
+  <data name="show.details.favourite_login" xml:space="preserve">
+    <value>Prijavi se kako bi označio/la ovu beatmapu kao omiljenu</value>
+  </data>
+  <data name="show.details.logged-out" xml:space="preserve">
+    <value>Moraš se prijaviti prije preuzimanja beatmapa!</value>
+  </data>
+  <data name="show.details.mapped_by" xml:space="preserve">
+    <value>mapirano od {0}</value>
+  </data>
+  <data name="show.details.unfavourite" xml:space="preserve">
+    <value>Ukloni beatmapu sa oznake omiljeno</value>
+  </data>
+  <data name="show.details.updated_timeago" xml:space="preserve">
+    <value>zadnje ažurirano {0}</value>
+  </data>
+  <data name="show.details.download._" xml:space="preserve">
+    <value>Preuzmi</value>
+  </data>
+  <data name="show.details.download.no-video" xml:space="preserve">
+    <value>bez videa</value>
+  </data>
+  <data name="show.details.download.video" xml:space="preserve">
+    <value>sa videom</value>
+  </data>
+  <data name="show.details.login_required.bottom" xml:space="preserve">
+    <value>za pristup više značajki</value>
+  </data>
+  <data name="show.details.login_required.top" xml:space="preserve">
+    <value>Prijavi se</value>
+  </data>
+  <data name="show.details_date.approved" xml:space="preserve">
+    <value>odobreno {0}</value>
+  </data>
+  <data name="show.details_date.loved" xml:space="preserve">
+    <value>voljeno {0}</value>
+  </data>
+  <data name="show.details_date.qualified" xml:space="preserve">
+    <value>kvalificirano {0}</value>
+  </data>
+  <data name="show.details_date.ranked" xml:space="preserve">
+    <value>rangirano {0}</value>
+  </data>
+  <data name="show.details_date.submitted" xml:space="preserve">
+    <value>podnešeno {0}</value>
+  </data>
+  <data name="show.details_date.updated" xml:space="preserve">
+    <value>zadnje ažurirano {0}</value>
+  </data>
+  <data name="show.favourites.limit_reached" xml:space="preserve">
+    <value>Imaš previše omiljenih beatmapa! Molimo ukloni neke od njih prije ponovnog pokušaja.</value>
+  </data>
+  <data name="show.hype.action" xml:space="preserve">
+    <value>Hypeaj ovu beatmapu ako is uživao/la igrajući je i da joj pomogneš da postane &lt;strong&gt;Rangirana&lt;/strong&gt;.</value>
+  </data>
+  <data name="show.hype.current._" xml:space="preserve">
+    <value>Ova mapa je trenutno {0}.</value>
+  </data>
+  <data name="show.hype.current.status.pending" xml:space="preserve">
+    <value>na čekanju</value>
+  </data>
+  <data name="show.hype.current.status.qualified" xml:space="preserve">
+    <value>kvalificiran/a</value>
+  </data>
+  <data name="show.hype.current.status.wip" xml:space="preserve">
+    <value>rad u tijeku</value>
+  </data>
+  <data name="show.hype.disqualify._" xml:space="preserve">
+    <value>Ako pronađeš problem s ovom beatmapom, diskvalificiraj je {0}.</value>
+  </data>
+  <data name="show.hype.report._" xml:space="preserve">
+    <value>Ako pronađeš problem s ovom beatmapom, prijavi ga {0} kako bi upozorio/la tim.</value>
+  </data>
+  <data name="show.hype.report.button" xml:space="preserve">
+    <value>Prijavi problem</value>
+  </data>
+  <data name="show.hype.report.link" xml:space="preserve">
+    <value>ovdje</value>
+  </data>
+  <data name="show.info.description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="show.info.genre" xml:space="preserve">
+    <value>Žanr</value>
+  </data>
+  <data name="show.info.language" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="show.info.no_scores" xml:space="preserve">
+    <value>Podaci se još kalkuliraju...</value>
+  </data>
+  <data name="show.info.nsfw" xml:space="preserve">
+    <value>Eksplicitni sadržaj</value>
+  </data>
+  <data name="show.info.offset" xml:space="preserve">
+    <value>Online razmak</value>
+  </data>
+  <data name="show.info.points-of-failure" xml:space="preserve">
+    <value>Točke neuspjeha</value>
+  </data>
+  <data name="show.info.source" xml:space="preserve">
+    <value>Izvor</value>
+  </data>
+  <data name="show.info.storyboard" xml:space="preserve">
+    <value>Ova beatmapa sadrži storyboard</value>
+  </data>
+  <data name="show.info.success-rate" xml:space="preserve">
+    <value>Stopa uspjeha</value>
+  </data>
+  <data name="show.info.tags" xml:space="preserve">
+    <value>Oznake</value>
+  </data>
+  <data name="show.info.video" xml:space="preserve">
+    <value>Ova beatmapa sadrži video</value>
+  </data>
+  <data name="show.nsfw_warning.details" xml:space="preserve">
+    <value>Ova beatmapa sadrži eksplicitan, uvredljiv ili uznemirujući sadržaj. Želiš li ga ipak pogledati?</value>
+  </data>
+  <data name="show.nsfw_warning.title" xml:space="preserve">
+    <value>Eksplicitni sadržaj</value>
+  </data>
+  <data name="show.nsfw_warning.buttons.disable" xml:space="preserve">
+    <value>Onemogući upozorenje</value>
+  </data>
+  <data name="show.nsfw_warning.buttons.listing" xml:space="preserve">
+    <value>Popis beatmapa</value>
+  </data>
+  <data name="show.nsfw_warning.buttons.show" xml:space="preserve">
+    <value>Prikaži</value>
+  </data>
+  <data name="show.scoreboard.achieved" xml:space="preserve">
+    <value>arhivirano {0}</value>
+  </data>
+  <data name="show.scoreboard.country" xml:space="preserve">
+    <value>Rang u državi</value>
+  </data>
+  <data name="show.scoreboard.error" xml:space="preserve">
+    <value>Neuspješno učitavanje poretka</value>
+  </data>
+  <data name="show.scoreboard.friend" xml:space="preserve">
+    <value>Rang prijatelja</value>
+  </data>
+  <data name="show.scoreboard.global" xml:space="preserve">
+    <value>Globalni rang</value>
+  </data>
+  <data name="show.scoreboard.supporter-link" xml:space="preserve">
+    <value>Klikni &lt;a href="{0}"&gt;ovdje&lt;/a&gt; da vidiš sve otmjene značajke koje dobivaš!</value>
+  </data>
+  <data name="show.scoreboard.supporter-only" xml:space="preserve">
+    <value>Moraš biti osu!supporter da bi pristupio/la ljestvicama specifičnim za prijatelje, državu ili mod!</value>
+  </data>
+  <data name="show.scoreboard.title" xml:space="preserve">
+    <value>Scoreboard</value>
+  </data>
+  <data name="show.scoreboard.headers.accuracy" xml:space="preserve">
+    <value>Preciznost</value>
+  </data>
+  <data name="show.scoreboard.headers.combo" xml:space="preserve">
+    <value>Najveći combo</value>
+  </data>
+  <data name="show.scoreboard.headers.miss" xml:space="preserve">
+    <value>Promašaj</value>
+  </data>
+  <data name="show.scoreboard.headers.mods" xml:space="preserve">
+    <value>Modovi</value>
+  </data>
+  <data name="show.scoreboard.headers.pin" xml:space="preserve">
+    <value>Prikvači</value>
+  </data>
+  <data name="show.scoreboard.headers.player" xml:space="preserve">
+    <value>Igrač</value>
+  </data>
+  <data name="show.scoreboard.headers.rank" xml:space="preserve">
+    <value>Rang</value>
+  </data>
+  <data name="show.scoreboard.headers.score" xml:space="preserve">
+    <value>Bodovi</value>
+  </data>
+  <data name="show.scoreboard.headers.score_total" xml:space="preserve">
+    <value>Ukupni Bodovi</value>
+  </data>
+  <data name="show.scoreboard.headers.time" xml:space="preserve">
+    <value>Vrijeme</value>
+  </data>
+  <data name="show.scoreboard.no_scores.country" xml:space="preserve">
+    <value>Nitko iz tvoje zemlje još nije postavio rezultat na ovoj mapi!</value>
+  </data>
+  <data name="show.scoreboard.no_scores.friend" xml:space="preserve">
+    <value>Nitko od tvojih prijatelja još nije postavio rezultat na ovoj mapi!</value>
+  </data>
+  <data name="show.scoreboard.no_scores.global" xml:space="preserve">
+    <value>Još nema rezultata. Možda bi trebao/la pokušati postaviti jednog?</value>
+  </data>
+  <data name="show.scoreboard.no_scores.loading" xml:space="preserve">
+    <value>Učitavanje rezultata...</value>
+  </data>
+  <data name="show.scoreboard.no_scores.unranked" xml:space="preserve">
+    <value>Nerangirane beatmape.</value>
+  </data>
+  <data name="show.scoreboard.score.first" xml:space="preserve">
+    <value>U vodstvu</value>
+  </data>
+  <data name="show.scoreboard.score.own" xml:space="preserve">
+    <value>Tvoj rekord</value>
+  </data>
+  <data name="show.scoreboard.supporter_link._" xml:space="preserve">
+    <value>Klikni {0} da vidiš sve otmjene značajke koje dobivaš!</value>
+  </data>
+  <data name="show.scoreboard.supporter_link.here" xml:space="preserve">
+    <value>ovdje</value>
+  </data>
+  <data name="show.stats.cs" xml:space="preserve">
+    <value>Veličina krugova</value>
+  </data>
+  <data name="show.stats.cs-mania" xml:space="preserve">
+    <value>Broj tipki</value>
+  </data>
+  <data name="show.stats.drain" xml:space="preserve">
+    <value>HP trošak</value>
+  </data>
+  <data name="show.stats.accuracy" xml:space="preserve">
+    <value>Preciznost</value>
+  </data>
+  <data name="show.stats.ar" xml:space="preserve">
+    <value>Stopa približavanja</value>
+  </data>
+  <data name="show.stats.stars" xml:space="preserve">
+    <value>Ocjena zvjezdicama</value>
+  </data>
+  <data name="show.stats.total_length" xml:space="preserve">
+    <value>Duljina (duljina troška: {0})</value>
+  </data>
+  <data name="show.stats.bpm" xml:space="preserve">
+    <value>BPM</value>
+  </data>
+  <data name="show.stats.count_circles" xml:space="preserve">
+    <value>Broj krugova</value>
+  </data>
+  <data name="show.stats.count_sliders" xml:space="preserve">
+    <value>Broj slidera</value>
+  </data>
+  <data name="show.stats.offset" xml:space="preserve">
+    <value>Online razmak {0}</value>
+  </data>
+  <data name="show.stats.user-rating" xml:space="preserve">
+    <value>Korisnička ocijena</value>
+  </data>
+  <data name="show.stats.rating-spread" xml:space="preserve">
+    <value>Širenje ocjena</value>
+  </data>
+  <data name="show.stats.nominations" xml:space="preserve">
+    <value>Nominacije </value>
+  </data>
+  <data name="show.stats.playcount" xml:space="preserve">
+    <value>Broj igranja</value>
+  </data>
+  <data name="show.status.ranked" xml:space="preserve">
+    <value>Rangirano</value>
+  </data>
+  <data name="show.status.approved" xml:space="preserve">
+    <value>Odobreno</value>
+  </data>
+  <data name="show.status.loved" xml:space="preserve">
+    <value>Voljeno</value>
+  </data>
+  <data name="show.status.qualified" xml:space="preserve">
+    <value>Kvalificiran/a</value>
+  </data>
+  <data name="show.status.wip" xml:space="preserve">
+    <value>Rad u tijeku</value>
+  </data>
+  <data name="show.status.pending" xml:space="preserve">
+    <value>Na čekanju</value>
+  </data>
+  <data name="show.status.graveyard" xml:space="preserve">
+    <value>Groblje</value>
+  </data>
+  <data name="spotlight_badge.label" xml:space="preserve">
+    <value>Istaknuto</value>
+  </data>
+</root>

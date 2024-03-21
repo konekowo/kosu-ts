@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="toggle_chat" xml:space="preserve">
+    <value>Buka/tutup layar chat</value>
+  </data>
+  <data name="toggle_social" xml:space="preserve">
+    <value>Buka/tutup layar sosial</value>
+  </data>
+  <data name="reset_input_settings" xml:space="preserve">
+    <value>Atur ulang seluruh tombol input</value>
+  </data>
+  <data name="toggle_toolbar" xml:space="preserve">
+    <value>Tampilkan/sembunyikan toolbar</value>
+  </data>
+  <data name="toggle_settings" xml:space="preserve">
+    <value>Buka/tutup menu pengaturan</value>
+  </data>
+  <data name="toggle_beatmap_listing" xml:space="preserve">
+    <value>Buka/tutup daftar beatmap</value>
+  </data>
+  <data name="increase_volume" xml:space="preserve">
+    <value>Perbesar volume</value>
+  </data>
+  <data name="decrease_volume" xml:space="preserve">
+    <value>Perkecil volume</value>
+  </data>
+  <data name="toggle_mute" xml:space="preserve">
+    <value>Bunyikan/senyapkan lagu</value>
+  </data>
+  <data name="skip_cutscene" xml:space="preserve">
+    <value>Lewati cutscene</value>
+  </data>
+  <data name="quick_retry" xml:space="preserve">
+    <value>Ulang permainan (tahan)</value>
+  </data>
+  <data name="take_screenshot" xml:space="preserve">
+    <value>Ambil tangkapan layar</value>
+  </data>
+  <data name="toggle_gameplay_mouse_buttons" xml:space="preserve">
+    <value>Aktifkan/nonaktifkan tombol mouse</value>
+  </data>
+  <data name="back" xml:space="preserve">
+    <value>Kembali</value>
+  </data>
+  <data name="increase_scroll_speed" xml:space="preserve">
+    <value>Tingkatkan kecepatan gulir not</value>
+  </data>
+  <data name="decrease_scroll_speed" xml:space="preserve">
+    <value>Turunkan kecepatan gulir not</value>
+  </data>
+  <data name="select" xml:space="preserve">
+    <value>Pilih</value>
+  </data>
+  <data name="quick_exit" xml:space="preserve">
+    <value>Keluar dari permainan (tahan)</value>
+  </data>
+  <data name="music_next" xml:space="preserve">
+    <value>Lagu berikutnya</value>
+  </data>
+  <data name="music_prev" xml:space="preserve">
+    <value>Lagu sebelumnya</value>
+  </data>
+  <data name="music_play" xml:space="preserve">
+    <value>Putar/hentikan lagu</value>
+  </data>
+  <data name="toggle_now_playing" xml:space="preserve">
+    <value>Tampilkan/sembunyikan pemutar lagu</value>
+  </data>
+  <data name="select_previous" xml:space="preserve">
+    <value>Pilihan sebelumnya</value>
+  </data>
+  <data name="select_next" xml:space="preserve">
+    <value>Pilihan berikutnya</value>
+  </data>
+  <data name="select_previous_group" xml:space="preserve">
+    <value>Pilih grup sebelumnya</value>
+  </data>
+  <data name="select_next_group" xml:space="preserve">
+    <value>Pilih grup selanjutnya</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>Menu utama</value>
+  </data>
+  <data name="toggle_notifications" xml:space="preserve">
+    <value>Tombol panel notifikasi</value>
+  </data>
+  <data name="toggle_profile" xml:space="preserve">
+    <value>Buka profil</value>
+  </data>
+  <data name="pause_gameplay" xml:space="preserve">
+    <value>Jeda / lanjutkan permainan</value>
+  </data>
+  <data name="editor_setup_mode" xml:space="preserve">
+    <value>Mode Setup</value>
+  </data>
+  <data name="editor_compose_mode" xml:space="preserve">
+    <value>Mode Compose</value>
+  </data>
+  <data name="editor_design_mode" xml:space="preserve">
+    <value>Mode Design</value>
+  </data>
+  <data name="editor_timing_mode" xml:space="preserve">
+    <value>Mode Timing</value>
+  </data>
+  <data name="editor_tap_for_bpm" xml:space="preserve">
+    <value>Ketuk untuk BPM</value>
+  </data>
+  <data name="editor_clone_selection" xml:space="preserve">
+    <value>Gandakan pilihan</value>
+  </data>
+  <data name="editor_cycle_grid_display_mode" xml:space="preserve">
+    <value>Mode tampilan cycle grid</value>
+  </data>
+  <data name="editor_test_gameplay" xml:space="preserve">
+    <value>Uji beatmap</value>
+  </data>
+  <data name="hold_for_hud" xml:space="preserve">
+    <value>Munculkan HUD (tahan)</value>
+  </data>
+  <data name="random_skin" xml:space="preserve">
+    <value>Skin acak</value>
+  </data>
+  <data name="toggle_pause_replay" xml:space="preserve">
+    <value>Jeda/lanjutkan pemutaran tayangan ulang</value>
+  </data>
+  <data name="toggle_in_game_interface" xml:space="preserve">
+    <value>Tampilkan/sembunyikan HUD</value>
+  </data>
+  <data name="toggle_in_game_leaderboard" xml:space="preserve">
+    <value>Tampilkan/sembunyikan papan peringkat</value>
+  </data>
+  <data name="toggle_mod_selection" xml:space="preserve">
+    <value>Buka/tutup layar pemilihan mod</value>
+  </data>
+  <data name="deselect_all_mods" xml:space="preserve">
+    <value>Hapus semua pilihan mod</value>
+  </data>
+  <data name="select_next_random" xml:space="preserve">
+    <value>Acak</value>
+  </data>
+  <data name="select_previous_random" xml:space="preserve">
+    <value>Putar balik</value>
+  </data>
+  <data name="toggle_beatmap_options" xml:space="preserve">
+    <value>Opsi Beatmap</value>
+  </data>
+  <data name="editor_verify_mode" xml:space="preserve">
+    <value>Mode Verify</value>
+  </data>
+  <data name="editor_nudge_left" xml:space="preserve">
+    <value>Geser pilihan ke kiri</value>
+  </data>
+  <data name="editor_nudge_right" xml:space="preserve">
+    <value>Geser pilihan ke kanan</value>
+  </data>
+  <data name="editor_flip_horizontally" xml:space="preserve">
+    <value>Cerminkan pilihan secara horizontal</value>
+  </data>
+  <data name="editor_flip_vertically" xml:space="preserve">
+    <value>Cerminkan pilihan secara vertikal</value>
+  </data>
+  <data name="editor_increase_distance_spacing" xml:space="preserve">
+    <value>Tingkatkan nilai distance spacing</value>
+  </data>
+  <data name="editor_decrease_distance_spacing" xml:space="preserve">
+    <value>Turunkan nilai distance spacing</value>
+  </data>
+  <data name="editor_cycle_previous_beat_snap_divisor" xml:space="preserve">
+    <value>Ubah beat snap divisor ke nilai sebelumnya</value>
+  </data>
+  <data name="editor_cycle_next_snap_divisor" xml:space="preserve">
+    <value>Ubah beat snap divisor ke nilai berikutnya</value>
+  </data>
+  <data name="toggle_skin_editor" xml:space="preserve">
+    <value>Tampilkan/sembunyikan editor skin</value>
+  </data>
+  <data name="toggle_fps_counter" xml:space="preserve">
+    <value>Tampilkan/sembunyikan FPS</value>
+  </data>
+  <data name="previous_volume_meter" xml:space="preserve">
+    <value>Pengatur volume sebelumnya</value>
+  </data>
+  <data name="next_volume_meter" xml:space="preserve">
+    <value>Pengatur volume berikutnya</value>
+  </data>
+  <data name="seek_replay_forward" xml:space="preserve">
+    <value>Mundurkan tayangan ulang</value>
+  </data>
+  <data name="seek_replay_backward" xml:space="preserve">
+    <value>Majukan tayangan ulang</value>
+  </data>
+  <data name="step_replay_forward" xml:space="preserve">
+    <value>Majukan tayangan ulang satu frame</value>
+  </data>
+  <data name="step_replay_backward" xml:space="preserve">
+    <value>Mundurkan tayangan ulang satu frame</value>
+  </data>
+  <data name="toggle_chat_focus" xml:space="preserve">
+    <value>Tombol buka percakapan multiplayer</value>
+  </data>
+  <data name="toggle_replay_settings" xml:space="preserve">
+    <value>Buka/tutup pengaturan tayangan ulang</value>
+  </data>
+  <data name="save_replay" xml:space="preserve">
+    <value>Simpan tayangan ulang</value>
+  </data>
+  <data name="export_replay" xml:space="preserve">
+    <value>Ekspor tayangan ulang</value>
+  </data>
+  <data name="increase_offset" xml:space="preserve">
+    <value>Tingkatkan offset</value>
+  </data>
+  <data name="decrease_offset" xml:space="preserve">
+    <value>Turunkan offset</value>
+  </data>
+  <data name="editor_toggle_rotate_control" xml:space="preserve">
+    <value>Aktifkan/nonaktifkan kontrol rotasi</value>
+  </data>
+</root>

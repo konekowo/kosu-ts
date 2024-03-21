@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header_title" xml:space="preserve">
+    <value>notifikasi</value>
+  </data>
+  <data name="header_description" xml:space="preserve">
+    <value>segala sesuatu yang menunggu tindak lanjut darimu</value>
+  </data>
+  <data name="running_tasks" xml:space="preserve">
+    <value>Proses Berlangsung</value>
+  </data>
+  <data name="clear_all" xml:space="preserve">
+    <value>Hapus Semua</value>
+  </data>
+  <data name="battery_low" xml:space="preserve">
+    <value>Bateraimu hampir habis! Isi ulang daya perangkatmu agar kamu tidak terganggu selagi bermain.</value>
+  </data>
+  <data name="game_volume_too_low" xml:space="preserve">
+    <value>Volume permainanmu terlalu rendah! Klik di sini untuk mengembalikan volume permainan ke nilai normal.</value>
+  </data>
+  <data name="no_autoplay_mod" xml:space="preserve">
+    <value>Ruleset yang saat ini dimainkan tidak memiliki mod autoplay!</value>
+  </data>
+  <data name="audio_playback_issue" xml:space="preserve">
+    <value>osu! sepertinya tidak dapat memutar audio yang ada sebagaimana mestinya.
+
+Mohon atur perangkat audiomu agar dapat dikenali dan digunakan oleh osu!.</value>
+  </data>
+  <data name="score_overlay_disabled" xml:space="preserve">
+    <value>Overlay skor sedang dinonaktifkan. Kamu dapat mengaktifkannya kembali dengan menekan {0}.</value>
+  </data>
+  <data name="unsupported_or_dangerous_url_protocol" xml:space="preserve">
+    <value>URL {0} mengandung protokol yang tidak didukung atau berbahaya dan tidak akan dibuka.</value>
+  </data>
+  <data name="subsequent_messages_logged" xml:space="preserve">
+    <value>Rangkaian pesan yang mengiringi kesalahan telah dicatat. Klik di sini untuk melihat berkas log.</value>
+  </data>
+  <data name="tablet_support_disabled_due_to_error" xml:space="preserve">
+    <value>Menonaktifkan dukungan tablet akibat kesalahan: "{0}"</value>
+  </data>
+  <data name="encountered_tablet_warning" xml:space="preserve">
+    <value>Peringatan tablet: Tabletmu mungkin tidak berfungsi sebagaimana mestinya. Klik di sini untuk menampilkan daftar seluruh tablet yang didukung.</value>
+  </data>
+  <data name="unsupported_link_type" xml:space="preserve">
+    <value>Tipe tautan ini belum didukung!</value>
+  </data>
+  <data name="private_message_received" xml:space="preserve">
+    <value>Kamu menerima pesan pribadi dari '{0}'. Klik di sini untuk membacanya!</value>
+  </data>
+  <data name="your_name_was_mentioned" xml:space="preserve">
+    <value>Namamu disebut dalam chat oleh '{0}'. Klik di sini untuk mengetahui alasannya!</value>
+  </data>
+  <data name="invited_you_to_the_multiplayer" xml:space="preserve">
+    <value>{0} mengundangmu ke pertandingan multiplayer "{1}"! Klik pop-up ini untuk bergabung.</value>
+  </data>
+  <data name="missing_beatmap_for_replay" xml:space="preserve">
+    <value>Kamu tidak memiliki beatmap untuk tayangan ulang ini.</value>
+  </data>
+  <data name="downloading_beatmap_for_replay" xml:space="preserve">
+    <value>Mengunduh beatmap untuk tayangan ulang ini...</value>
+  </data>
+  <data name="mismatching_beatmap_for_replay" xml:space="preserve">
+    <value>Salinan lokal beatmap yang kamu miliki sepertinya tidak sesuai untuk tayangan ulang ini. Kamu mungkin perlu untuk memperbarui atau mengunduh ulang beatmap yang bersangkutan.</value>
+  </data>
+  <data name="game_version_after_update" xml:space="preserve">
+    <value>Kamu sedang menjalankan osu! {0}.
+Klik untuk melihat apa saja yang baru!</value>
+  </data>
+  <data name="update_ready_to_install" xml:space="preserve">
+    <value>Pembaruan siap dipasang. Klik untuk memulai ulang aplikasi!</value>
+  </data>
+  <data name="downloading_update" xml:space="preserve">
+    <value>Mengunduh pembaruan...</value>
+  </data>
+  <data name="installing_update" xml:space="preserve">
+    <value>Memasang pembaruan...</value>
+  </data>
+</root>

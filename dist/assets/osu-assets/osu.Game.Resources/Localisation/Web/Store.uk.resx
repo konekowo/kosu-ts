@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cart.checkout" xml:space="preserve">
+    <value>Перевірка</value>
+  </data>
+  <data name="cart.empty_cart" xml:space="preserve">
+    <value>Видалити всі товари з кошику</value>
+  </data>
+  <data name="cart.info" xml:space="preserve">
+    <value>{0} товар в кошику (${1})|{0} товару в кошику (${1})|{0} товарів в кошику (${1})</value>
+  </data>
+  <data name="cart.more_goodies" xml:space="preserve">
+    <value>Я хочу подивитися на інші товари перед завершенням замовлення</value>
+  </data>
+  <data name="cart.shipping_fees" xml:space="preserve">
+    <value>вартість доставки</value>
+  </data>
+  <data name="cart.title" xml:space="preserve">
+    <value>Кошик</value>
+  </data>
+  <data name="cart.total" xml:space="preserve">
+    <value>всього</value>
+  </data>
+  <data name="cart.errors_no_checkout.line_1" xml:space="preserve">
+    <value>Ой йой, у вас проблеми з кошиком!</value>
+  </data>
+  <data name="cart.errors_no_checkout.line_2" xml:space="preserve">
+    <value>Видаліть або оновіть товари нижче для продовження.</value>
+  </data>
+  <data name="cart.empty.text" xml:space="preserve">
+    <value>Ваш кошик порожній.</value>
+  </data>
+  <data name="cart.empty.return_link._" xml:space="preserve">
+    <value>Поверніться в {0} щоб знайти інші товари!</value>
+  </data>
+  <data name="cart.empty.return_link.link_text" xml:space="preserve">
+    <value>магазин</value>
+  </data>
+  <data name="checkout.cart_problems" xml:space="preserve">
+    <value>Ой-йой, у нас проблеми з вашою карткою!</value>
+  </data>
+  <data name="checkout.cart_problems_edit" xml:space="preserve">
+    <value>Натисніть тут, щоб змінити.</value>
+  </data>
+  <data name="checkout.declined" xml:space="preserve">
+    <value>Ваш платіж було скасовано.</value>
+  </data>
+  <data name="checkout.delayed_shipping" xml:space="preserve">
+    <value>В даний час у нас багато замовлень. Ти можеш замовити товар, але будь ласка, пам'ятай, що його обробка замовлення може зайняти 1-2 тижні.</value>
+  </data>
+  <data name="checkout.hide_from_activity" xml:space="preserve">
+    <value>Приховати всі теги osu!прихильника в цьому замовленні з моєї активності</value>
+  </data>
+  <data name="checkout.old_cart" xml:space="preserve">
+    <value>Здається ваш кошик застарів, тому був перезавантажений, будь ласка спробуйте ще раз.</value>
+  </data>
+  <data name="checkout.pay" xml:space="preserve">
+    <value>Оплатити за допомогою PayPal</value>
+  </data>
+  <data name="checkout.title_compact" xml:space="preserve">
+    <value>перевірка</value>
+  </data>
+  <data name="checkout.has_pending._" xml:space="preserve">
+    <value>У вас є незавершені транзакції, натисніть {0} щоб завершити їх.</value>
+  </data>
+  <data name="checkout.has_pending.link_text" xml:space="preserve">
+    <value>сюди</value>
+  </data>
+  <data name="checkout.pending_checkout.line_1" xml:space="preserve">
+    <value>Ваш попередній платіж було розпочато, але не було завершено.</value>
+  </data>
+  <data name="checkout.pending_checkout.line_2" xml:space="preserve">
+    <value>Виберіть спосіб оплати щоб оформити замовлення.</value>
+  </data>
+  <data name="discount" xml:space="preserve">
+    <value>ви заощадите {0}%</value>
+  </data>
+  <data name="free" xml:space="preserve">
+    <value>безкоштовно!</value>
+  </data>
+  <data name="invoice.contact" xml:space="preserve">
+    <value>Контактна особа:</value>
+  </data>
+  <data name="invoice.date" xml:space="preserve">
+    <value>Дата:</value>
+  </data>
+  <data name="invoice.echeck_delay" xml:space="preserve">
+    <value>Оскільки оплата була через eCheck, очікування підтвердження оплати через Paypal може зайнятий до 10 днів!</value>
+  </data>
+  <data name="invoice.hide_from_activity" xml:space="preserve">
+    <value>тег osu!прихильника в цьому замовленні не буде показуватися в останніх активностях.</value>
+  </data>
+  <data name="invoice.sent_via" xml:space="preserve">
+    <value>Надіслати через:</value>
+  </data>
+  <data name="invoice.shipping_to" xml:space="preserve">
+    <value>Доставити за адресою:</value>
+  </data>
+  <data name="invoice.title" xml:space="preserve">
+    <value>До сплати</value>
+  </data>
+  <data name="invoice.title_compact" xml:space="preserve">
+    <value>рахунок</value>
+  </data>
+  <data name="invoice.status.cancelled.title" xml:space="preserve">
+    <value>Ваше замовлення було скасовано</value>
+  </data>
+  <data name="invoice.status.cancelled.line_1._" xml:space="preserve">
+    <value>Якщо ви не робили запит на скасовування замовлення, будь ласка, зв'яжіться з {0} вказуючи номер замовлення (#{1}).</value>
+  </data>
+  <data name="invoice.status.cancelled.line_1.link_text" xml:space="preserve">
+    <value>службою підтримки osu!store</value>
+  </data>
+  <data name="invoice.status.delivered.title" xml:space="preserve">
+    <value>Ваше замовлення було доставлено! Сподіваємось, що вам сподобається!</value>
+  </data>
+  <data name="invoice.status.delivered.line_1._" xml:space="preserve">
+    <value>Якщо у вас виникли проблеми при покупці, зв'яжіться з {0}.</value>
+  </data>
+  <data name="invoice.status.delivered.line_1.link_text" xml:space="preserve">
+    <value>службою підтримки osu!store</value>
+  </data>
+  <data name="invoice.status.prepared.title" xml:space="preserve">
+    <value>Ваше замовлення готується!</value>
+  </data>
+  <data name="invoice.status.prepared.line_1" xml:space="preserve">
+    <value>Зачекайте трохи більше часу на доставлення. Інформація про відслідковування замовлення з'явиться тут, як тільки воно буде оброблено й надіслано. Цей процес може зайняти до 5 днів (але зазвичай менше!) в залежності від того, наскільки ми зайняті.</value>
+  </data>
+  <data name="invoice.status.prepared.line_2" xml:space="preserve">
+    <value>Ми надсилаємо всі замовлення з Японії, використовуючи різні транспортні служби доставлення в залежності від ваги та вартості. Ця область оновиться зі специфікацією як тільки ми відправили замовлення.</value>
+  </data>
+  <data name="invoice.status.processing.title" xml:space="preserve">
+    <value>Ваш платіж ще не підтверджений!</value>
+  </data>
+  <data name="invoice.status.processing.line_1" xml:space="preserve">
+    <value>Якщо ви вже заплатили, ми все ще можемо очікувати підтвердження платежу. Будь ласка, оновіть цю сторінку через хвилину або дві!</value>
+  </data>
+  <data name="invoice.status.processing.line_2._" xml:space="preserve">
+    <value>Якщо під час оплати виникла проблема, {0}</value>
+  </data>
+  <data name="invoice.status.processing.line_2.link_text" xml:space="preserve">
+    <value>натисніть тут, щоб продовжити оплату</value>
+  </data>
+  <data name="invoice.status.shipped.title" xml:space="preserve">
+    <value>Ваше замовлення вже доставлено!</value>
+  </data>
+  <data name="invoice.status.shipped.tracking_details" xml:space="preserve">
+    <value>Деталі відстежування:</value>
+  </data>
+  <data name="invoice.status.shipped.no_tracking_details._" xml:space="preserve">
+    <value>У нас немає деталей про трек, коли ми відправляли ваш пакет через Air Mail, але ви можете очікувати на отримання його протягом 1-3 тижнів. Для Європи іноді митниці можуть затримувати замовлення без нашого відома. Якщо ви маєте будь-які занепокоєння, надішліть відповіть на електронний лист з підтвердженням замовлення, який ви отримали {0}.</value>
+  </data>
+  <data name="invoice.status.shipped.no_tracking_details.link_text" xml:space="preserve">
+    <value>надішліть нам email</value>
+  </data>
+  <data name="order.cancel" xml:space="preserve">
+    <value>Скасувати замовлення</value>
+  </data>
+  <data name="order.cancel_confirm" xml:space="preserve">
+    <value>Це замовлення буде скасовано і оплата не буде прийнята за цей товар. Постачальник оплати не може негайно випустити зарезервовані кошти. Ви впевнені?</value>
+  </data>
+  <data name="order.cancel_not_allowed" xml:space="preserve">
+    <value>Це замовлення не може бути скасоване в даний час.</value>
+  </data>
+  <data name="order.invoice" xml:space="preserve">
+    <value>Переглянути рахунок</value>
+  </data>
+  <data name="order.no_orders" xml:space="preserve">
+    <value>Ви нічого не замовляли.</value>
+  </data>
+  <data name="order.paid_on" xml:space="preserve">
+    <value>Замовлення розміщено {0}</value>
+  </data>
+  <data name="order.resume" xml:space="preserve">
+    <value>Продовжити покупку</value>
+  </data>
+  <data name="order.shipping_and_handling" xml:space="preserve">
+    <value>Доставка та оброблення</value>
+  </data>
+  <data name="order.shopify_expired" xml:space="preserve">
+    <value>Термін дії посилання для оформлення замовлення закінчився.</value>
+  </data>
+  <data name="order.subtotal" xml:space="preserve">
+    <value>Проміжна сума</value>
+  </data>
+  <data name="order.total" xml:space="preserve">
+    <value>Всього</value>
+  </data>
+  <data name="order.details.order_number" xml:space="preserve">
+    <value>Замовлення #</value>
+  </data>
+  <data name="order.details.payment_terms" xml:space="preserve">
+    <value>Умови оплати</value>
+  </data>
+  <data name="order.details.salesperson" xml:space="preserve">
+    <value>Продавець</value>
+  </data>
+  <data name="order.details.shipping_method" xml:space="preserve">
+    <value>Спосіб доставки</value>
+  </data>
+  <data name="order.details.shipping_terms" xml:space="preserve">
+    <value>Умови доставки</value>
+  </data>
+  <data name="order.details.title" xml:space="preserve">
+    <value>Деталі замовлення</value>
+  </data>
+  <data name="order.item.quantity" xml:space="preserve">
+    <value>Кількість</value>
+  </data>
+  <data name="order.item.display_name.supporter_tag" xml:space="preserve">
+    <value>{0} для {1} ({2})</value>
+  </data>
+  <data name="order.item.subtext.supporter_tag" xml:space="preserve">
+    <value>Повідомлення: {0}</value>
+  </data>
+  <data name="order.not_modifiable_exception.cancelled" xml:space="preserve">
+    <value>Ви не можете змінити своє замовлення тому, що його було скасовано.</value>
+  </data>
+  <data name="order.not_modifiable_exception.checkout" xml:space="preserve">
+    <value>Ви не можете змінити своє замовлення, поки воно обробляється.</value>
+  </data>
+  <data name="order.not_modifiable_exception.default" xml:space="preserve">
+    <value>Замовлення неможливо змінити</value>
+  </data>
+  <data name="order.not_modifiable_exception.delivered" xml:space="preserve">
+    <value>Ви не можете змінити своє замовлення тому, що воно вже доставлене.</value>
+  </data>
+  <data name="order.not_modifiable_exception.paid" xml:space="preserve">
+    <value>Ви не можете змінити своє замовлення тому, що його було оплачено.</value>
+  </data>
+  <data name="order.not_modifiable_exception.processing" xml:space="preserve">
+    <value>Ви не можете змінити своє замовлення, поки воно обробляється.</value>
+  </data>
+  <data name="order.not_modifiable_exception.shipped" xml:space="preserve">
+    <value>Ви не можете змінити своє замовлення тому, що його вже відправлено.</value>
+  </data>
+  <data name="order.status.cancelled" xml:space="preserve">
+    <value>Скасовано</value>
+  </data>
+  <data name="order.status.checkout" xml:space="preserve">
+    <value>Підготування</value>
+  </data>
+  <data name="order.status.delivered" xml:space="preserve">
+    <value>Доставлено</value>
+  </data>
+  <data name="order.status.paid" xml:space="preserve">
+    <value>Оплачено</value>
+  </data>
+  <data name="order.status.processing" xml:space="preserve">
+    <value>Очікування підтвердження</value>
+  </data>
+  <data name="order.status.shipped" xml:space="preserve">
+    <value>В дорозі</value>
+  </data>
+  <data name="order.status.title" xml:space="preserve">
+    <value>Статус замовлення</value>
+  </data>
+  <data name="order.thanks.title" xml:space="preserve">
+    <value>Дякуємо за замовлення!</value>
+  </data>
+  <data name="order.thanks.line_1._" xml:space="preserve">
+    <value>Ви отримаєте підтвердження електронною поштою вже найближчим часом. Якщо у вас є будь-які запитання, будь ласка, {0}!</value>
+  </data>
+  <data name="order.thanks.line_1.link_text" xml:space="preserve">
+    <value>зв'яжіться з нами</value>
+  </data>
+  <data name="product.name" xml:space="preserve">
+    <value>Назва</value>
+  </data>
+  <data name="product.stock.out" xml:space="preserve">
+    <value>В даний час товар немає в наявності. Зазирни сюди пізніше!</value>
+  </data>
+  <data name="product.stock.out_with_alternative" xml:space="preserve">
+    <value>Даний тип в даний час відсутній на складі :(. Зазирни сюди пізніше.</value>
+  </data>
+  <data name="product.add_to_cart" xml:space="preserve">
+    <value>До кошика</value>
+  </data>
+  <data name="product.notify" xml:space="preserve">
+    <value>Повідомити мене, коли буде в наявності!</value>
+  </data>
+  <data name="product.notification_success" xml:space="preserve">
+    <value>ви будете сповіщені коли товар буде в наявності. натисніть {0} для скасування</value>
+  </data>
+  <data name="product.notification_remove_text" xml:space="preserve">
+    <value>сюди</value>
+  </data>
+  <data name="product.notification_in_stock" xml:space="preserve">
+    <value>Цей продукт вже є в наявності!</value>
+  </data>
+  <data name="supporter_tag.gift" xml:space="preserve">
+    <value>подарунок для гравця</value>
+  </data>
+  <data name="supporter_tag.gift_message" xml:space="preserve">
+    <value>додайте додаткове повідомлення до вашого подарунка! (до {0} символів)</value>
+  </data>
+  <data name="supporter_tag.require_login._" xml:space="preserve">
+    <value>Ви маєте бути {0} для покупки тегу osu!прихильника!</value>
+  </data>
+  <data name="supporter_tag.require_login.link_text" xml:space="preserve">
+    <value>увійти</value>
+  </data>
+  <data name="username_change.check" xml:space="preserve">
+    <value>Введіть ім'я, щоб перевірити його доступність!</value>
+  </data>
+  <data name="username_change.checking" xml:space="preserve">
+    <value>Перевіряємо доступність імені {0}...</value>
+  </data>
+  <data name="username_change.placeholder" xml:space="preserve">
+    <value>Запитане ім'я користувача</value>
+  </data>
+  <data name="username_change.label" xml:space="preserve">
+    <value>Нове ім'я користувача</value>
+  </data>
+  <data name="username_change.current" xml:space="preserve">
+    <value>Ваше поточне ім'я користувача - "{0}".</value>
+  </data>
+  <data name="username_change.require_login._" xml:space="preserve">
+    <value>Ви повинні {0} для зміни ніку!</value>
+  </data>
+  <data name="username_change.require_login.link_text" xml:space="preserve">
+    <value>увійти</value>
+  </data>
+</root>

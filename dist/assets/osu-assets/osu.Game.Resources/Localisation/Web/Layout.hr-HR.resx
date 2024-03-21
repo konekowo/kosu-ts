@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="audio.autoplay" xml:space="preserve">
+    <value>Automatski reprodukciraj sljedeću pjesmu</value>
+  </data>
+  <data name="defaults.page_description" xml:space="preserve">
+    <value>osu! - Ritam je udaljen samo jedan *klik*! Sa Ouendan/EBA, Taiko i orginalnim modovima igre i  potpuno funkcionalnim level editorom. </value>
+  </data>
+  <data name="header.admin.beatmapset" xml:space="preserve">
+    <value>set beatmapa</value>
+  </data>
+  <data name="header.admin.beatmapset_covers" xml:space="preserve">
+    <value>naslovne slike setova beatmapova</value>
+  </data>
+  <data name="header.admin.contest" xml:space="preserve">
+    <value>natjecanje</value>
+  </data>
+  <data name="header.admin.contests" xml:space="preserve">
+    <value>natjecanja</value>
+  </data>
+  <data name="header.admin.root" xml:space="preserve">
+    <value>konzola</value>
+  </data>
+  <data name="header.artists.index" xml:space="preserve">
+    <value>popis</value>
+  </data>
+  <data name="header.beatmapsets.show" xml:space="preserve">
+    <value>informacije
+
+</value>
+  </data>
+  <data name="header.beatmapsets.discussions" xml:space="preserve">
+    <value>rasprava</value>
+  </data>
+  <data name="header.changelog.index" xml:space="preserve">
+    <value>popis</value>
+  </data>
+  <data name="header.help.index" xml:space="preserve">
+    <value>index</value>
+  </data>
+  <data name="header.help.sitemap" xml:space="preserve">
+    <value>Mapa stranice</value>
+  </data>
+  <data name="header.store.cart" xml:space="preserve">
+    <value>košarica</value>
+  </data>
+  <data name="header.store.orders" xml:space="preserve">
+    <value>povijest narudžbi</value>
+  </data>
+  <data name="header.store.products" xml:space="preserve">
+    <value>proizvodi</value>
+  </data>
+  <data name="header.tournaments.index" xml:space="preserve">
+    <value>popis</value>
+  </data>
+  <data name="header.users.modding" xml:space="preserve">
+    <value>modificiranje</value>
+  </data>
+  <data name="header.users.playlists" xml:space="preserve">
+    <value>popisi za reprodukciju</value>
+  </data>
+  <data name="header.users.realtime" xml:space="preserve">
+    <value>multiplayer</value>
+  </data>
+  <data name="header.users.show" xml:space="preserve">
+    <value>informacije
+
+</value>
+  </data>
+  <data name="gallery.close" xml:space="preserve">
+    <value>Zatvori (Esc)</value>
+  </data>
+  <data name="gallery.fullscreen" xml:space="preserve">
+    <value>Uključi/isključi cjeloekranski prikaz</value>
+  </data>
+  <data name="gallery.zoom" xml:space="preserve">
+    <value>Povećaj/smanji prikaz</value>
+  </data>
+  <data name="gallery.previous" xml:space="preserve">
+    <value>Prethodno (strelica lijevo)</value>
+  </data>
+  <data name="gallery.next" xml:space="preserve">
+    <value>Sljedeće (strelica desno)</value>
+  </data>
+  <data name="menu.beatmaps._" xml:space="preserve">
+    <value>beatmape</value>
+  </data>
+  <data name="menu.community._" xml:space="preserve">
+    <value>zajednica</value>
+  </data>
+  <data name="menu.community.dev" xml:space="preserve">
+    <value>razvoj</value>
+  </data>
+  <data name="menu.help._" xml:space="preserve">
+    <value>pomoć</value>
+  </data>
+  <data name="menu.help.getabuse" xml:space="preserve">
+    <value>prijavi zloupotrebu</value>
+  </data>
+  <data name="menu.help.getfaq" xml:space="preserve">
+    <value>faq</value>
+  </data>
+  <data name="menu.help.getrules" xml:space="preserve">
+    <value>pravila</value>
+  </data>
+  <data name="menu.help.getsupport" xml:space="preserve">
+    <value>ne, stvarno, treba mi pomoć!</value>
+  </data>
+  <data name="menu.home._" xml:space="preserve">
+    <value>početna</value>
+  </data>
+  <data name="menu.home.team" xml:space="preserve">
+    <value>ekipa</value>
+  </data>
+  <data name="menu.rankings._" xml:space="preserve">
+    <value>ljestvice</value>
+  </data>
+  <data name="menu.store._" xml:space="preserve">
+    <value>trgovina</value>
+  </data>
+  <data name="footer.general._" xml:space="preserve">
+    <value>Općenito</value>
+  </data>
+  <data name="footer.general.home" xml:space="preserve">
+    <value>Početna</value>
+  </data>
+  <data name="footer.general.changelog-index" xml:space="preserve">
+    <value>Popis promjena</value>
+  </data>
+  <data name="footer.general.beatmaps" xml:space="preserve">
+    <value>Popis beatmapa</value>
+  </data>
+  <data name="footer.general.download" xml:space="preserve">
+    <value>Preuzmi osu!</value>
+  </data>
+  <data name="footer.help._" xml:space="preserve">
+    <value>Pomoć i Zajednica</value>
+  </data>
+  <data name="footer.help.faq" xml:space="preserve">
+    <value>Često postavljana pitanja</value>
+  </data>
+  <data name="footer.help.forum" xml:space="preserve">
+    <value>Forum Zajednice</value>
+  </data>
+  <data name="footer.help.livestreams" xml:space="preserve">
+    <value>Strujanja Uživo</value>
+  </data>
+  <data name="footer.help.report" xml:space="preserve">
+    <value>Prijavi Problem</value>
+  </data>
+  <data name="footer.help.wiki" xml:space="preserve">
+    <value>Wiki</value>
+  </data>
+  <data name="footer.legal._" xml:space="preserve">
+    <value>Legalno i Status</value>
+  </data>
+  <data name="footer.legal.copyright" xml:space="preserve">
+    <value>Autorska prava (DMCA)</value>
+  </data>
+  <data name="footer.legal.privacy" xml:space="preserve">
+    <value>Privatnost</value>
+  </data>
+  <data name="footer.legal.server_status" xml:space="preserve">
+    <value>Status Servera</value>
+  </data>
+  <data name="footer.legal.source_code" xml:space="preserve">
+    <value>Izvorni kȏd</value>
+  </data>
+  <data name="footer.legal.terms" xml:space="preserve">
+    <value>Uvjeti</value>
+  </data>
+  <data name="errors.400.error" xml:space="preserve">
+    <value>Nevažeći parametar zahtjeva</value>
+  </data>
+  <data name="errors.404.error" xml:space="preserve">
+    <value>Stranica nedostaje</value>
+  </data>
+  <data name="errors.404.description" xml:space="preserve">
+    <value>Žao nam je, ali stranica koju si tražio/la nije ovdje!</value>
+  </data>
+  <data name="errors.403.error" xml:space="preserve">
+    <value>Ne bi trebao/la biti ovdje.</value>
+  </data>
+  <data name="errors.403.description" xml:space="preserve">
+    <value>Ipak, možeš se pokušati vratiti.</value>
+  </data>
+  <data name="errors.401.error" xml:space="preserve">
+    <value>Ne bi trebao/la biti ovdje.</value>
+  </data>
+  <data name="errors.401.description" xml:space="preserve">
+    <value>Ipak, možeš se pokušati vratiti. Ili možda prijaviti.</value>
+  </data>
+  <data name="errors.405.error" xml:space="preserve">
+    <value>Stranica nedostaje</value>
+  </data>
+  <data name="errors.405.description" xml:space="preserve">
+    <value>Žao nam je, ali stranica koju si tražio/la nije ovdje!</value>
+  </data>
+  <data name="errors.422.error" xml:space="preserve">
+    <value>Nevažeći parametar zahtjeva</value>
+  </data>
+  <data name="errors.429.error" xml:space="preserve">
+    <value>Ograničenje brzine premašeno</value>
+  </data>
+  <data name="errors.500.error" xml:space="preserve">
+    <value>O ne! Nešto se pokvarilo! ;_;</value>
+  </data>
+  <data name="errors.500.description" xml:space="preserve">
+    <value>Automatski smo obaviješteni o svakoj grešci.</value>
+  </data>
+  <data name="errors.fatal.error" xml:space="preserve">
+    <value>O ne! Nešto se (jako) pokvarilo! ;_;</value>
+  </data>
+  <data name="errors.fatal.description" xml:space="preserve">
+    <value>Automatski smo obaviješteni o svakoj grešci.</value>
+  </data>
+  <data name="errors.503.error" xml:space="preserve">
+    <value>Dolje zbog održavanja!</value>
+  </data>
+  <data name="errors.503.description" xml:space="preserve">
+    <value>Održavanje obično traje od 5 sekundi do 10 minuta. Ako traje dulje, pogledaj {0} za više informacija.</value>
+  </data>
+  <data name="errors.reference" xml:space="preserve">
+    <value>Za svaki slučaj, evo koda kojeg možeš dati podršci!</value>
+  </data>
+  <data name="popup_login.button" xml:space="preserve">
+    <value>prijava / registracija</value>
+  </data>
+  <data name="popup_login.login.forgot" xml:space="preserve">
+    <value>Zaboravio/la sam svoje podatke</value>
+  </data>
+  <data name="popup_login.login.password" xml:space="preserve">
+    <value>lozinka</value>
+  </data>
+  <data name="popup_login.login.title" xml:space="preserve">
+    <value>Prijavi se za nastavak</value>
+  </data>
+  <data name="popup_login.login.username" xml:space="preserve">
+    <value>korisničko ime</value>
+  </data>
+  <data name="popup_login.login.error.email" xml:space="preserve">
+    <value>Korisničko ime ili adresa e-pošte ne postoji</value>
+  </data>
+  <data name="popup_login.login.error.password" xml:space="preserve">
+    <value>Netočna lozinka</value>
+  </data>
+  <data name="popup_login.register.download" xml:space="preserve">
+    <value>Preuzmi</value>
+  </data>
+  <data name="popup_login.register.info" xml:space="preserve">
+    <value>Preuzmi osu! za izradu vlastitog računa!</value>
+  </data>
+  <data name="popup_login.register.title" xml:space="preserve">
+    <value>Nemaš račun?</value>
+  </data>
+  <data name="popup_user.links.account-edit" xml:space="preserve">
+    <value>Postavke</value>
+  </data>
+  <data name="popup_user.links.follows" xml:space="preserve">
+    <value>Liste gledanja</value>
+  </data>
+  <data name="popup_user.links.friends" xml:space="preserve">
+    <value>Prijatelji</value>
+  </data>
+  <data name="popup_user.links.logout" xml:space="preserve">
+    <value>Odjava</value>
+  </data>
+  <data name="popup_user.links.profile" xml:space="preserve">
+    <value>Moj profil</value>
+  </data>
+  <data name="popup_search.initial" xml:space="preserve">
+    <value>Unesite za pretraživanje!</value>
+  </data>
+  <data name="popup_search.retry" xml:space="preserve">
+    <value>Pretraga nije uspjela. Klikni za ponovni pokušaj.</value>
+  </data>
+</root>

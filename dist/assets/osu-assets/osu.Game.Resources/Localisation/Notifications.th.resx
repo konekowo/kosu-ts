@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header_title" xml:space="preserve">
+    <value>การแจ้งเตือน</value>
+  </data>
+  <data name="header_description" xml:space="preserve">
+    <value>รออยู่นะ</value>
+  </data>
+  <data name="running_tasks" xml:space="preserve">
+    <value>กำลังรันงาน</value>
+  </data>
+  <data name="clear_all" xml:space="preserve">
+    <value>ลบทั้ง​หมด</value>
+  </data>
+  <data name="battery_low" xml:space="preserve">
+    <value>แบตเตอรี่ของคุณต่ำแล้ว! โปรดชาร์จแบตเพื่อรักษาประสิทธิภาพระหว่างการเล่น</value>
+  </data>
+  <data name="game_volume_too_low" xml:space="preserve">
+    <value>เสียงเกมของคุณเบาเกินไป! กดที่นี่เพื่อคืนค่าเดิม</value>
+  </data>
+  <data name="no_autoplay_mod" xml:space="preserve">
+    <value>ชุดกฎปัจจุบันไม่มีม็อดเล่นอัตโนมัติ!</value>
+  </data>
+  <data name="audio_playback_issue" xml:space="preserve">
+    <value>osu! ดูเหมือนจะไม่สามารถเล่นเสียงได้อย่างถูกต้อง
+
+โปรดลองเปลี่ยนอุปกรณ์เสียงของคุณเป็นการตั้งค่าการทำงาน</value>
+  </data>
+  <data name="score_overlay_disabled" xml:space="preserve">
+    <value>การซ้อนทับคะแนนถูกปิดใช้งานอยู่ในขณะนี้ คุณสามารถสลับได้โดยกด {0}</value>
+  </data>
+  <data name="unsupported_or_dangerous_url_protocol" xml:space="preserve">
+    <value>URL {0} มีโปรโตคอลที่ไม่รองรับหรืออันตรายและจะไม่ถูกเปิดขึ้นมา</value>
+  </data>
+  <data name="subsequent_messages_logged" xml:space="preserve">
+    <value>ข้อความที่ตามมาได้รับการบันทึกแล้ว คลิกเพื่อดูไฟล์บันทึก</value>
+  </data>
+  <data name="tablet_support_disabled_due_to_error" xml:space="preserve">
+    <value>ปิดใช้งานการสนับสนุนแท็บเล็ตเนื่องจากข้อผิดพลาด: "{0}"</value>
+  </data>
+  <data name="encountered_tablet_warning" xml:space="preserve">
+    <value>พบการคำเตือนจากแท็บเล็ต แท็บเล็ตของคุณอาจทำงานไม่ถูกต้อง คลิกที่นี่เพื่อดูรายการแท็บเล็ตทั้งหมดที่รองรับ</value>
+  </data>
+  <data name="unsupported_link_type" xml:space="preserve">
+    <value>ยังไม่รองรับลิงค์ประเภทนี้!</value>
+  </data>
+  <data name="private_message_received" xml:space="preserve">
+    <value>คุณได้รับข้อความส่วนตัวจาก '{0}' คลิกอ่านเลย!</value>
+  </data>
+  <data name="your_name_was_mentioned" xml:space="preserve">
+    <value>ชื่อของคุณถูกกล่าวถึงในการแชทโดย '{0}' คลิกดูว่าทำไม!</value>
+  </data>
+  <data name="invited_you_to_the_multiplayer" xml:space="preserve">
+    <value>{0} เชิญคุณเข้าร่วมการแข่งขันแบบผู้เล่นหลายคน "{1}"! คลิกเพื่อเข้าร่วม</value>
+  </data>
+  <data name="missing_beatmap_for_replay" xml:space="preserve">
+    <value>คุณไม่มีบีทแมพสำหรับรีเพลย์นี้</value>
+  </data>
+  <data name="downloading_beatmap_for_replay" xml:space="preserve">
+    <value>กำลังดาวน์โหลดบีทแมพที่ไม่มีสำหรับรีเพลย์นี้...</value>
+  </data>
+  <data name="mismatching_beatmap_for_replay" xml:space="preserve">
+    <value>บีทแมพสำหรับรีเพลย์บนเครื่องของคุณต่างจากที่คาดไว้ อาจจำเป็นที่จะต้องอัพเดท หรือดาวน์โหลดใหม่</value>
+  </data>
+</root>

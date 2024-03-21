@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="deleted" xml:space="preserve">
+    <value>[видалений користувач]</value>
+  </data>
+  <data name="beatmapset_activities.title" xml:space="preserve">
+    <value>Історія редагування мап користувача {0}</value>
+  </data>
+  <data name="beatmapset_activities.title_compact" xml:space="preserve">
+    <value>Моддинг</value>
+  </data>
+  <data name="beatmapset_activities.discussions.title_recent" xml:space="preserve">
+    <value>Нещодавно розпочаті дискусії</value>
+  </data>
+  <data name="beatmapset_activities.events.title_recent" xml:space="preserve">
+    <value>Нещодавні події</value>
+  </data>
+  <data name="beatmapset_activities.posts.title_recent" xml:space="preserve">
+    <value>Недавні публікації</value>
+  </data>
+  <data name="beatmapset_activities.votes_received.title_most" xml:space="preserve">
+    <value>Найпопулярніші (за 3 місяці)</value>
+  </data>
+  <data name="beatmapset_activities.votes_made.title_most" xml:space="preserve">
+    <value>Найпопулярніші (за 3 місяці)</value>
+  </data>
+  <data name="blocks.banner_text" xml:space="preserve">
+    <value>Ви заблокували цього користувача.</value>
+  </data>
+  <data name="blocks.comment_text" xml:space="preserve">
+    <value>Цей коментар сховано.</value>
+  </data>
+  <data name="blocks.blocked_count" xml:space="preserve">
+    <value>заблоковані користувачі ({0})</value>
+  </data>
+  <data name="blocks.hide_profile" xml:space="preserve">
+    <value>Приховати профіль</value>
+  </data>
+  <data name="blocks.hide_comment" xml:space="preserve">
+    <value>сховати</value>
+  </data>
+  <data name="blocks.forum_post_text" xml:space="preserve">
+    <value>Цей пост приховано.</value>
+  </data>
+  <data name="blocks.not_blocked" xml:space="preserve">
+    <value>Користувач не заблокований.</value>
+  </data>
+  <data name="blocks.show_profile" xml:space="preserve">
+    <value>Показати профіль</value>
+  </data>
+  <data name="blocks.show_comment" xml:space="preserve">
+    <value>показати</value>
+  </data>
+  <data name="blocks.too_many" xml:space="preserve">
+    <value>Ліміт блокування досягнуто.</value>
+  </data>
+  <data name="blocks.button.block" xml:space="preserve">
+    <value>Заблокувати</value>
+  </data>
+  <data name="blocks.button.unblock" xml:space="preserve">
+    <value>Розблокувати</value>
+  </data>
+  <data name="card.gift_supporter" xml:space="preserve">
+    <value>Подарувати osu!прихильник</value>
+  </data>
+  <data name="card.loading" xml:space="preserve">
+    <value>Завантаження...</value>
+  </data>
+  <data name="card.send_message" xml:space="preserve">
+    <value>Надіслати повідомлення</value>
+  </data>
+  <data name="create.form.password" xml:space="preserve">
+    <value>пароль</value>
+  </data>
+  <data name="create.form.password_confirmation" xml:space="preserve">
+    <value>підтвердження паролю</value>
+  </data>
+  <data name="create.form.submit" xml:space="preserve">
+    <value>створити обліковий запис</value>
+  </data>
+  <data name="create.form.user_email" xml:space="preserve">
+    <value>ел. пошта</value>
+  </data>
+  <data name="create.form.user_email_confirmation" xml:space="preserve">
+    <value>підтвердження ел. пошти</value>
+  </data>
+  <data name="create.form.username" xml:space="preserve">
+    <value>ім'я користувача</value>
+  </data>
+  <data name="create.form.tos_notice._" xml:space="preserve">
+    <value>створючи обліковий запис, ви даєте згоду з нашими {0}</value>
+  </data>
+  <data name="create.form.tos_notice.link" xml:space="preserve">
+    <value>умовами використання</value>
+  </data>
+  <data name="disabled.title" xml:space="preserve">
+    <value>О-о! Схоже, що ваш обліковий запис було відключено.</value>
+  </data>
+  <data name="disabled.warning" xml:space="preserve">
+    <value>У випадку порушення правил, врахуйте те, що існує період "кулл-дауну" в один місяць й під час якого ми не прийматимемо будь-які запити на амністію вашого облікового запису. Після цього періоду, ви спокійно можете зв'язатися з нами якщо ви вважаете це за потрібне. &lt;strong&gt;Зверніть увагу що створення нових облікових записів після відключення одного з них - призведе до подовження періоду "кулл-дауну" й надалі&lt;/strong&gt;. Зверніть увагу також на те, &lt;strong&gt;що з кожним створеним обілковим записом який ви створите, ви все більше будете порушником правил, тому ми закликаємо вас - не йдіть цим шляхом!&lt;/strong&gt;</value>
+  </data>
+  <data name="disabled.if_mistake._" xml:space="preserve">
+    <value>Якщо вам здається, що це помилка, у ваших ж інтересах зв'язатися з нами (через {0} або після натискання  на "?" у правому нижньому кутку цієї сторінки). Також зверніть увагу, що ми повністю впевнені у своїх діях, тому що вони базуються на дуже надійних даних. Ми залишаємо за собою право у відмові ваших запитів, якщо ми відчуємо, що ви поводитесь навмисне безчесно.</value>
+  </data>
+  <data name="disabled.if_mistake.email" xml:space="preserve">
+    <value>ел. пошті</value>
+  </data>
+  <data name="disabled.reasons.compromised" xml:space="preserve">
+    <value>Ваш обліковий запис міг бути скомпрометований. Його може бути відключено тимчасово поки особистість власника підтверджується.</value>
+  </data>
+  <data name="disabled.reasons.opening" xml:space="preserve">
+    <value>Є ряд причин, які в результаті могли призвести до відключення вашого облікового запису:</value>
+  </data>
+  <data name="disabled.reasons.tos._" xml:space="preserve">
+    <value>Ви порушили один або кілька наших {0} або {1}.</value>
+  </data>
+  <data name="disabled.reasons.tos.community_rules" xml:space="preserve">
+    <value>правил спільноти</value>
+  </data>
+  <data name="disabled.reasons.tos.tos" xml:space="preserve">
+    <value>умов використання</value>
+  </data>
+  <data name="filtering.by_game_mode" xml:space="preserve">
+    <value>Учасники за ігровим режимом</value>
+  </data>
+  <data name="force_reactivation.reason.inactive_different_country" xml:space="preserve">
+    <value>Ваш обліковий запис вже давно не використовується.</value>
+  </data>
+  <data name="login._" xml:space="preserve">
+    <value>Вхід</value>
+  </data>
+  <data name="login.button" xml:space="preserve">
+    <value>Вхід</value>
+  </data>
+  <data name="login.button_posting" xml:space="preserve">
+    <value>Входимо...</value>
+  </data>
+  <data name="login.email_login_disabled" xml:space="preserve">
+    <value>На даний час вхід з допомогою електронної пошти відключено.  Будь ласка, використовуйте ім'я користувача.</value>
+  </data>
+  <data name="login.failed" xml:space="preserve">
+    <value>Не вдалося ввійти</value>
+  </data>
+  <data name="login.forgot" xml:space="preserve">
+    <value>Забули пароль?</value>
+  </data>
+  <data name="login.info" xml:space="preserve">
+    <value>Увійдіть, щоб продовжити</value>
+  </data>
+  <data name="login.invalid_captcha" xml:space="preserve">
+    <value>Занадто багато невдалих спроб входу, будь ласка, завершіть капчу й спробуйте ще раз. (Оновіть сторінку, якщо капчу не видно)</value>
+  </data>
+  <data name="login.locked_ip" xml:space="preserve">
+    <value>Вашу IP адресу заблоковано. Будь ласка, спробуйте пізніше.</value>
+  </data>
+  <data name="login.password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="login.register" xml:space="preserve">
+    <value>У вас все ще немає профілю в osu!? Створіть новий</value>
+  </data>
+  <data name="login.remember" xml:space="preserve">
+    <value>Запам'ятати цей браузер</value>
+  </data>
+  <data name="login.title" xml:space="preserve">
+    <value>Ввійдіть для продовження</value>
+  </data>
+  <data name="login.username" xml:space="preserve">
+    <value>Ім'я користувача</value>
+  </data>
+  <data name="login.beta.main" xml:space="preserve">
+    <value>На даний час доступ до бета-версії обмежена привілейованими користувачами.</value>
+  </data>
+  <data name="login.beta.small" xml:space="preserve">
+    <value>(гравці з osu!прихильником отримають доступ раніше)</value>
+  </data>
+  <data name="ogp.modding_description" xml:space="preserve">
+    <value>Мап: {0}</value>
+  </data>
+  <data name="ogp.modding_description_empty" xml:space="preserve">
+    <value>Користувач не має жодної мапи...</value>
+  </data>
+  <data name="ogp.description._" xml:space="preserve">
+    <value>Ранг ({0}): {1} | {2}</value>
+  </data>
+  <data name="ogp.description.country" xml:space="preserve">
+    <value>Країна {0}</value>
+  </data>
+  <data name="ogp.description.global" xml:space="preserve">
+    <value>Глобальний {0}</value>
+  </data>
+  <data name="posts.title" xml:space="preserve">
+    <value>Публікації {0}</value>
+  </data>
+  <data name="anonymous.login_link" xml:space="preserve">
+    <value>натисніть тут, щоб увійти</value>
+  </data>
+  <data name="anonymous.login_text" xml:space="preserve">
+    <value>увійти</value>
+  </data>
+  <data name="anonymous.username" xml:space="preserve">
+    <value>Гість</value>
+  </data>
+  <data name="anonymous.error" xml:space="preserve">
+    <value>Вам необхідно ввійти що б зробити це.</value>
+  </data>
+  <data name="logout_confirm" xml:space="preserve">
+    <value>Ви справді бажаєте вийти? :(</value>
+  </data>
+  <data name="report.button_text" xml:space="preserve">
+    <value>Поскаржитися</value>
+  </data>
+  <data name="report.comments" xml:space="preserve">
+    <value>Додаткові коментарі</value>
+  </data>
+  <data name="report.placeholder" xml:space="preserve">
+    <value>Будь ласка, надайте будь-яку інформацію, яка, на вашу думку, може бути корисною.</value>
+  </data>
+  <data name="report.reason" xml:space="preserve">
+    <value>Причина</value>
+  </data>
+  <data name="report.thanks" xml:space="preserve">
+    <value>Дякуємо за повідомлення!</value>
+  </data>
+  <data name="report.title" xml:space="preserve">
+    <value>Поскаржитись на {0}?</value>
+  </data>
+  <data name="report.actions.send" xml:space="preserve">
+    <value>Надіслати скаргу</value>
+  </data>
+  <data name="report.actions.cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="report.options.cheating" xml:space="preserve">
+    <value>Нечесна гра / чітерство</value>
+  </data>
+  <data name="report.options.multiple_accounts" xml:space="preserve">
+    <value>Використання кількох облікових записів</value>
+  </data>
+  <data name="report.options.insults" xml:space="preserve">
+    <value>Образа мене / інших</value>
+  </data>
+  <data name="report.options.spam" xml:space="preserve">
+    <value>Спам</value>
+  </data>
+  <data name="report.options.unwanted_content" xml:space="preserve">
+    <value>Посилання на неприйнятний контент</value>
+  </data>
+  <data name="report.options.nonsense" xml:space="preserve">
+    <value>Нісенітниця</value>
+  </data>
+  <data name="report.options.other" xml:space="preserve">
+    <value>Інше (вкажіть нижче)</value>
+  </data>
+  <data name="restricted_banner.title" xml:space="preserve">
+    <value>Ваш обліковий запис заблоковано!</value>
+  </data>
+  <data name="restricted_banner.message" xml:space="preserve">
+    <value>Під час блокування вашого облікового запису, ви не в змозі взаємодіяти з іншими гравцями, і ваші результати будуть показані лише вам. Зазвичай, це автоматизований процес і як правило, обмеження облікового запису можуть знятись протягом доби. {0}</value>
+  </data>
+  <data name="restricted_banner.message_link" xml:space="preserve">
+    <value>Щоб дізнатись подробиці, натисніть сюди.</value>
+  </data>
+  <data name="show.age" xml:space="preserve">
+    <value>{0} років</value>
+  </data>
+  <data name="show.change_avatar" xml:space="preserve">
+    <value>змінити аватар!</value>
+  </data>
+  <data name="show.first_members" xml:space="preserve">
+    <value>Тут з часів заснування</value>
+  </data>
+  <data name="show.is_developer" xml:space="preserve">
+    <value>osu!розробник</value>
+  </data>
+  <data name="show.is_supporter" xml:space="preserve">
+    <value>osu!прихильник</value>
+  </data>
+  <data name="show.joined_at" xml:space="preserve">
+    <value>Дата реєстрації: {0}</value>
+  </data>
+  <data name="show.lastvisit" xml:space="preserve">
+    <value>Останній візит {0}</value>
+  </data>
+  <data name="show.lastvisit_online" xml:space="preserve">
+    <value>Зараз в мережі</value>
+  </data>
+  <data name="show.missingtext" xml:space="preserve">
+    <value>Можливо, ви допустили помилку! (або гравця було заблоковано)</value>
+  </data>
+  <data name="show.origin_country" xml:space="preserve">
+    <value>Проживає в {0}</value>
+  </data>
+  <data name="show.previous_usernames" xml:space="preserve">
+    <value>раніше був відомий як</value>
+  </data>
+  <data name="show.plays_with" xml:space="preserve">
+    <value>Грає з {0}</value>
+  </data>
+  <data name="show.comments_count._" xml:space="preserve">
+    <value>Опубліковано {0}</value>
+  </data>
+  <data name="show.comments_count.count" xml:space="preserve">
+    <value>{0} коментар|{0} коментарі|{0} коментарів</value>
+  </data>
+  <data name="show.cover.to_0" xml:space="preserve">
+    <value>Згорнути обкладинку профілю</value>
+  </data>
+  <data name="show.cover.to_1" xml:space="preserve">
+    <value>Розгорнути обкладинку профілю</value>
+  </data>
+  <data name="show.edit.cover.button" xml:space="preserve">
+    <value>Змінити обкладинку профілю</value>
+  </data>
+  <data name="show.edit.cover.defaults_info" xml:space="preserve">
+    <value>Більше варіантів обкладинок буде доступно в майбутньому</value>
+  </data>
+  <data name="show.edit.cover.upload.broken_file" xml:space="preserve">
+    <value>Не вдалося обробити зображення. Спробуйте ще раз.</value>
+  </data>
+  <data name="show.edit.cover.upload.button" xml:space="preserve">
+    <value>Завантажити зображення</value>
+  </data>
+  <data name="show.edit.cover.upload.dropzone" xml:space="preserve">
+    <value>Для завантаження файлу перетягніть його сюди</value>
+  </data>
+  <data name="show.edit.cover.upload.dropzone_info" xml:space="preserve">
+    <value>Ви також можете перетягнути зображення сюди для завантаження</value>
+  </data>
+  <data name="show.edit.cover.upload.size_info" xml:space="preserve">
+    <value>Розмір обкладинки повинен бути 2400x640</value>
+  </data>
+  <data name="show.edit.cover.upload.too_large" xml:space="preserve">
+    <value>Завантажуваний файл завеликий.</value>
+  </data>
+  <data name="show.edit.cover.upload.unsupported_format" xml:space="preserve">
+    <value>Непідтримуваний формат.</value>
+  </data>
+  <data name="show.edit.cover.upload.restriction_info._" xml:space="preserve">
+    <value>Завантаження доступно лише для {0}</value>
+  </data>
+  <data name="show.edit.cover.upload.restriction_info.link" xml:space="preserve">
+    <value>власників osu!прихильника</value>
+  </data>
+  <data name="show.edit.default_playmode.is_default_tooltip" xml:space="preserve">
+    <value>основний ігровий режим</value>
+  </data>
+  <data name="show.edit.default_playmode.set" xml:space="preserve">
+    <value>вибрати {0} як основний ігровий режим</value>
+  </data>
+  <data name="show.extra.none" xml:space="preserve">
+    <value>нічого</value>
+  </data>
+  <data name="show.extra.unranked" xml:space="preserve">
+    <value>Немає недавніх ігор</value>
+  </data>
+  <data name="show.extra.achievements.achieved-on" xml:space="preserve">
+    <value>Отримано {0}</value>
+  </data>
+  <data name="show.extra.achievements.locked" xml:space="preserve">
+    <value>Не отримано</value>
+  </data>
+  <data name="show.extra.achievements.title" xml:space="preserve">
+    <value>Досягнення</value>
+  </data>
+  <data name="show.extra.beatmaps.by_artist" xml:space="preserve">
+    <value>від {0}</value>
+  </data>
+  <data name="show.extra.beatmaps.title" xml:space="preserve">
+    <value>Бітмапи</value>
+  </data>
+  <data name="show.extra.beatmaps.favourite.title" xml:space="preserve">
+    <value>Вподобані бітмапи</value>
+  </data>
+  <data name="show.extra.beatmaps.graveyard.title" xml:space="preserve">
+    <value>Закинуті бітмапи</value>
+  </data>
+  <data name="show.extra.beatmaps.guest.title" xml:space="preserve">
+    <value>Мапи з гостьовими складностями</value>
+  </data>
+  <data name="show.extra.beatmaps.loved.title" xml:space="preserve">
+    <value>Улюблені бітмапи</value>
+  </data>
+  <data name="show.extra.beatmaps.nominated.title" xml:space="preserve">
+    <value>Номіновні рейтингові бітмапи</value>
+  </data>
+  <data name="show.extra.beatmaps.pending.title" xml:space="preserve">
+    <value>На розгляді</value>
+  </data>
+  <data name="show.extra.beatmaps.ranked.title" xml:space="preserve">
+    <value>Рейтингові і схвалені бітмапи</value>
+  </data>
+  <data name="show.extra.discussions.title" xml:space="preserve">
+    <value>Обговорення</value>
+  </data>
+  <data name="show.extra.discussions.title_longer" xml:space="preserve">
+    <value>Недавні обговорення</value>
+  </data>
+  <data name="show.extra.discussions.show_more" xml:space="preserve">
+    <value>бачити більше обговорень</value>
+  </data>
+  <data name="show.extra.events.title" xml:space="preserve">
+    <value>Події</value>
+  </data>
+  <data name="show.extra.events.title_longer" xml:space="preserve">
+    <value>Недавні події</value>
+  </data>
+  <data name="show.extra.events.show_more" xml:space="preserve">
+    <value>бачити більше подій</value>
+  </data>
+  <data name="show.extra.historical.title" xml:space="preserve">
+    <value>Активність</value>
+  </data>
+  <data name="show.extra.historical.monthly_playcounts.title" xml:space="preserve">
+    <value>Активність по місяцях</value>
+  </data>
+  <data name="show.extra.historical.monthly_playcounts.count_label" xml:space="preserve">
+    <value>Ігор</value>
+  </data>
+  <data name="show.extra.historical.most_played.count" xml:space="preserve">
+    <value>разів зіграно</value>
+  </data>
+  <data name="show.extra.historical.most_played.title" xml:space="preserve">
+    <value>Найбільш зіграні мапи</value>
+  </data>
+  <data name="show.extra.historical.recent_plays.accuracy" xml:space="preserve">
+    <value>точність: {0}</value>
+  </data>
+  <data name="show.extra.historical.recent_plays.title" xml:space="preserve">
+    <value>Остання активність (24г)</value>
+  </data>
+  <data name="show.extra.historical.replays_watched_counts.title" xml:space="preserve">
+    <value>Історія переглянутих повторів</value>
+  </data>
+  <data name="show.extra.historical.replays_watched_counts.count_label" xml:space="preserve">
+    <value>Переглянутих повторів</value>
+  </data>
+  <data name="show.extra.kudosu.recent_entries" xml:space="preserve">
+    <value>Останні обміни</value>
+  </data>
+  <data name="show.extra.kudosu.title" xml:space="preserve">
+    <value>Кудосу!</value>
+  </data>
+  <data name="show.extra.kudosu.total" xml:space="preserve">
+    <value>Кудосу накопичено</value>
+  </data>
+  <data name="show.extra.kudosu.entry.amount" xml:space="preserve">
+    <value>{0} кудосу</value>
+  </data>
+  <data name="show.extra.kudosu.entry.empty" xml:space="preserve">
+    <value>Цей користувач ще не отримав жодного Кудосу!</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.allow_kudosu.give" xml:space="preserve">
+    <value>Отримано {0} за відповідь в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.deny_kudosu.reset" xml:space="preserve">
+    <value>Відібрано {0} за відповідь в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.delete.reset" xml:space="preserve">
+    <value>Втрачено {0} за видалення відповіді в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.restore.give" xml:space="preserve">
+    <value>Отримано {0} за відновлення відповіді в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.vote.give" xml:space="preserve">
+    <value>Отримано {0} за отримання голосів в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.vote.reset" xml:space="preserve">
+    <value>Втрачено {0} за втрату голосів у {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.recalculate.give" xml:space="preserve">
+    <value>Отримано {0} за перерахунок голосів в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.recalculate.reset" xml:space="preserve">
+    <value>Втрачено {0} за перерахунок голосів в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.forum_post.give" xml:space="preserve">
+    <value>{0} дав {1} за відповідь в {2}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.forum_post.reset" xml:space="preserve">
+    <value>{0} забрав кудосу за відповідь в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.forum_post.revoke" xml:space="preserve">
+    <value>{0} забрав кудосу за відповідь в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.total_info._" xml:space="preserve">
+    <value>Залежить від того, скільки вкладу користувач вніс у модерацію карт. Відвідайте {0} для додаткової інформації.</value>
+  </data>
+  <data name="show.extra.kudosu.total_info.link" xml:space="preserve">
+    <value>цю сторінку</value>
+  </data>
+  <data name="show.extra.me.title" xml:space="preserve">
+    <value>про мене!</value>
+  </data>
+  <data name="show.extra.medals.empty" xml:space="preserve">
+    <value>Цей користувач поки що нічого не отримав. ; _;</value>
+  </data>
+  <data name="show.extra.medals.recent" xml:space="preserve">
+    <value>Останні медалі</value>
+  </data>
+  <data name="show.extra.medals.title" xml:space="preserve">
+    <value>Медалі</value>
+  </data>
+  <data name="show.extra.playlists.title" xml:space="preserve">
+    <value>Ігрові плейлісти</value>
+  </data>
+  <data name="show.extra.posts.title" xml:space="preserve">
+    <value>Пости</value>
+  </data>
+  <data name="show.extra.posts.title_longer" xml:space="preserve">
+    <value>Недавні пости</value>
+  </data>
+  <data name="show.extra.posts.show_more" xml:space="preserve">
+    <value>бачити більше постiв</value>
+  </data>
+  <data name="show.extra.recent_activity.title" xml:space="preserve">
+    <value>Недавня активність</value>
+  </data>
+  <data name="show.extra.realtime.title" xml:space="preserve">
+    <value>Мультиплеєрні Ігри</value>
+  </data>
+  <data name="show.extra.top_ranks.download_replay" xml:space="preserve">
+    <value>Завантажити повтор</value>
+  </data>
+  <data name="show.extra.top_ranks.not_ranked" xml:space="preserve">
+    <value>Очки продуктивності видаються тільки за рейтингові карти</value>
+  </data>
+  <data name="show.extra.top_ranks.pp_weight" xml:space="preserve">
+    <value>зважено: {0}</value>
+  </data>
+  <data name="show.extra.top_ranks.view_details" xml:space="preserve">
+    <value>Детальніше</value>
+  </data>
+  <data name="show.extra.top_ranks.title" xml:space="preserve">
+    <value>Рейтинги</value>
+  </data>
+  <data name="show.extra.top_ranks.best.title" xml:space="preserve">
+    <value>Кращі результати</value>
+  </data>
+  <data name="show.extra.top_ranks.first.title" xml:space="preserve">
+    <value>Перші місця</value>
+  </data>
+  <data name="show.extra.top_ranks.pin.to_0" xml:space="preserve">
+    <value>Відкріпити</value>
+  </data>
+  <data name="show.extra.top_ranks.pin.to_0_done" xml:space="preserve">
+    <value>Результат відкріплений</value>
+  </data>
+  <data name="show.extra.top_ranks.pin.to_1" xml:space="preserve">
+    <value>Закріпити</value>
+  </data>
+  <data name="show.extra.top_ranks.pin.to_1_done" xml:space="preserve">
+    <value>Закріплений результат</value>
+  </data>
+  <data name="show.extra.top_ranks.pinned.title" xml:space="preserve">
+    <value>Закріплені результати</value>
+  </data>
+  <data name="show.extra.votes.given" xml:space="preserve">
+    <value>Голосів дано (за 3 місяці)</value>
+  </data>
+  <data name="show.extra.votes.received" xml:space="preserve">
+    <value>Голосів отримано (за 3 місяці)</value>
+  </data>
+  <data name="show.extra.votes.title" xml:space="preserve">
+    <value>Голоси</value>
+  </data>
+  <data name="show.extra.votes.title_longer" xml:space="preserve">
+    <value>Недавні голоси</value>
+  </data>
+  <data name="show.extra.votes.vote_count" xml:space="preserve">
+    <value>{0} голос|{0} голоси|{0} голосів</value>
+  </data>
+  <data name="show.extra.account_standing.title" xml:space="preserve">
+    <value>Статус акаунту</value>
+  </data>
+  <data name="show.extra.account_standing.bad_standing" xml:space="preserve">
+    <value>обліковий запис {0} знаходиться &lt;strong&gt;не в хорошому стані&lt;/strong&gt; :(</value>
+  </data>
+  <data name="show.extra.account_standing.remaining_silence" xml:space="preserve">
+    <value>{0} зможе знову спілкуватися лише через {1}.</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.title" xml:space="preserve">
+    <value>Недавні порушення</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.date" xml:space="preserve">
+    <value>дата</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.action" xml:space="preserve">
+    <value>покарання</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.length" xml:space="preserve">
+    <value>тривалість</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.length_indefinite" xml:space="preserve">
+    <value>Безстроковий</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.description" xml:space="preserve">
+    <value>опис</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.actor" xml:space="preserve">
+    <value>від {0}</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.actions.restriction" xml:space="preserve">
+    <value>Заблокувати</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.actions.silence" xml:space="preserve">
+    <value>Сайленс</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.actions.tournament_ban" xml:space="preserve">
+    <value>Турнірний бан</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.actions.note" xml:space="preserve">
+    <value>Замітка</value>
+  </data>
+  <data name="show.info.interests" xml:space="preserve">
+    <value>Інтереси</value>
+  </data>
+  <data name="show.info.location" xml:space="preserve">
+    <value>Поточне розташування</value>
+  </data>
+  <data name="show.info.occupation" xml:space="preserve">
+    <value>Рід занять</value>
+  </data>
+  <data name="show.info.website" xml:space="preserve">
+    <value>Сайт</value>
+  </data>
+  <data name="show.not_found.reason_1" xml:space="preserve">
+    <value>Він міг змінити своє ім'я користувача.</value>
+  </data>
+  <data name="show.not_found.reason_2" xml:space="preserve">
+    <value>Обліковий запис може бути тимчасово недоступним через проблеми з безпекою або скаргами на нього ж.</value>
+  </data>
+  <data name="show.not_found.reason_3" xml:space="preserve">
+    <value>Можливо, ви зробили помилку!</value>
+  </data>
+  <data name="show.not_found.reason_header" xml:space="preserve">
+    <value>Є декілька можливих причин, чому це сталось:</value>
+  </data>
+  <data name="show.not_found.title" xml:space="preserve">
+    <value>Користувача не знайдено або його не існує ;_;</value>
+  </data>
+  <data name="show.page.button" xml:space="preserve">
+    <value>Редагувати профіль</value>
+  </data>
+  <data name="show.page.description" xml:space="preserve">
+    <value>&lt;strong&gt;про мене!&lt;/strong&gt; є персонально змінюваним розділом вашого профілю.</value>
+  </data>
+  <data name="show.page.edit_big" xml:space="preserve">
+    <value>Редагуйте мене!</value>
+  </data>
+  <data name="show.page.placeholder" xml:space="preserve">
+    <value>Введіть вміст сторінки</value>
+  </data>
+  <data name="show.page.restriction_info._" xml:space="preserve">
+    <value>Щоб використовувати цю функцію, потрібен {0}.</value>
+  </data>
+  <data name="show.page.restriction_info.link" xml:space="preserve">
+    <value>osu!прихильник</value>
+  </data>
+  <data name="show.post_count._" xml:space="preserve">
+    <value>Написав {0}</value>
+  </data>
+  <data name="show.post_count.count" xml:space="preserve">
+    <value>{0} пост|{0} пости|{0} постів</value>
+  </data>
+  <data name="show.rank.country" xml:space="preserve">
+    <value>Рейтинг країни для {0}</value>
+  </data>
+  <data name="show.rank.country_simple" xml:space="preserve">
+    <value>Рейтинг країни</value>
+  </data>
+  <data name="show.rank.global" xml:space="preserve">
+    <value>Глобальний рейтинг для {0}</value>
+  </data>
+  <data name="show.rank.global_simple" xml:space="preserve">
+    <value>Рейтинг в світі</value>
+  </data>
+  <data name="show.rank.highest" xml:space="preserve">
+    <value>Найвищий ранг {0} було досягнуто {1} </value>
+  </data>
+  <data name="show.stats.hit_accuracy" xml:space="preserve">
+    <value>Точність</value>
+  </data>
+  <data name="show.stats.level" xml:space="preserve">
+    <value>Рівень {0}</value>
+  </data>
+  <data name="show.stats.level_progress" xml:space="preserve">
+    <value>Прогрес до наступного рівня</value>
+  </data>
+  <data name="show.stats.maximum_combo" xml:space="preserve">
+    <value>Максимальне комбо</value>
+  </data>
+  <data name="show.stats.medals" xml:space="preserve">
+    <value>Досягнення</value>
+  </data>
+  <data name="show.stats.play_count" xml:space="preserve">
+    <value>Кількість ігор</value>
+  </data>
+  <data name="show.stats.play_time" xml:space="preserve">
+    <value>Загальний час у грі</value>
+  </data>
+  <data name="show.stats.ranked_score" xml:space="preserve">
+    <value>Рейтингові очки</value>
+  </data>
+  <data name="show.stats.replays_watched_by_others" xml:space="preserve">
+    <value>Переглянутих повторів іншими</value>
+  </data>
+  <data name="show.stats.score_ranks" xml:space="preserve">
+    <value>Рейтинг по очках</value>
+  </data>
+  <data name="show.stats.total_hits" xml:space="preserve">
+    <value>Всього попадань</value>
+  </data>
+  <data name="show.stats.total_score" xml:space="preserve">
+    <value>Всього очків</value>
+  </data>
+  <data name="show.stats.graveyard_beatmapset_count" xml:space="preserve">
+    <value>Покинуті мапи</value>
+  </data>
+  <data name="show.stats.loved_beatmapset_count" xml:space="preserve">
+    <value>Улюблені мапи</value>
+  </data>
+  <data name="show.stats.pending_beatmapset_count" xml:space="preserve">
+    <value>Мапи на розгляді</value>
+  </data>
+  <data name="show.stats.ranked_beatmapset_count" xml:space="preserve">
+    <value>Рейтингові й схвалені мапи</value>
+  </data>
+  <data name="silenced_banner.title" xml:space="preserve">
+    <value>Ви тимчасово позбавлені можливості спілкуватися.</value>
+  </data>
+  <data name="silenced_banner.message" xml:space="preserve">
+    <value>Деякі дії можуть бути недоступними.</value>
+  </data>
+  <data name="status.all" xml:space="preserve">
+    <value>Всі</value>
+  </data>
+  <data name="status.online" xml:space="preserve">
+    <value>В мережі</value>
+  </data>
+  <data name="status.offline" xml:space="preserve">
+    <value>Не в мережі</value>
+  </data>
+  <data name="store.from_client" xml:space="preserve">
+    <value>будь ласка, зареєструйтесь через ігровий клієнт!</value>
+  </data>
+  <data name="store.from_web" xml:space="preserve">
+    <value>будь ласка, продовжить реєстрацію через сайт osu!</value>
+  </data>
+  <data name="store.saved" xml:space="preserve">
+    <value>Зареєстрований</value>
+  </data>
+  <data name="verify.title" xml:space="preserve">
+    <value>Підтвердження облікового запису</value>
+  </data>
+  <data name="view_mode.brick" xml:space="preserve">
+    <value>Показувати цеглою</value>
+  </data>
+  <data name="view_mode.card" xml:space="preserve">
+    <value>Показувати картками</value>
+  </data>
+  <data name="view_mode.list" xml:space="preserve">
+    <value>Показувати списком</value>
+  </data>
+</root>

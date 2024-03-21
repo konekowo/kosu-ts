@@ -46,6 +46,7 @@ export class InteractScreen extends Screen {
         this.clickArea.cursor = "pointer";
 
         const clicked = () => {
+            this.clickArea.eventMode = "none";
             let clickSoundUrl = URL.createObjectURL(this.clickSound);
             let clickSoundAudio = new Audio(clickSoundUrl);
             clickSoundAudio.play();
@@ -59,7 +60,7 @@ export class InteractScreen extends Screen {
         this.clickArea.ontap = () => {
             clicked();
         }
-        ease.add(this.text, {alpha: 1, scale: 1}, {duration: 300, ease: "easeInOutQuad"});
+        ease.add(this.text, {alpha: 1, scale: 1}, {duration: 400, ease: "easeOutQuad"});
     }
 
     public onClose(): Promise<Screen> {

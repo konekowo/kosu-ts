@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header_title" xml:space="preserve">
+    <value>oznámení</value>
+  </data>
+  <data name="header_description" xml:space="preserve">
+    <value>na tebe čekají</value>
+  </data>
+  <data name="running_tasks" xml:space="preserve">
+    <value>Spuštěné Úlohy</value>
+  </data>
+  <data name="clear_all" xml:space="preserve">
+    <value>Vyčistit Vše</value>
+  </data>
+  <data name="battery_low" xml:space="preserve">
+    <value>Vaše baterie je téměr vybitá! Nabijte své zařízení, aby se zábránilo přerušení během hry.</value>
+  </data>
+  <data name="game_volume_too_low" xml:space="preserve">
+    <value>Vaše hlasitost je moc nízká. Klikněte zde pro obnovení výchozí hodnoty.</value>
+  </data>
+  <data name="no_autoplay_mod" xml:space="preserve">
+    <value>V aktuálním rulesetu není dostupný autoplay mód!</value>
+  </data>
+  <data name="audio_playback_issue" xml:space="preserve">
+    <value>osu! má potíže s přehráváním zvuku.
+
+Zkuste prosím změnit nastavení svého zvukového zařízení.</value>
+  </data>
+  <data name="score_overlay_disabled" xml:space="preserve">
+    <value>Zobrazení skóre je aktuálně vypnuto. Toto můžete změnit stisknutím {0}.</value>
+  </data>
+  <data name="unsupported_or_dangerous_url_protocol" xml:space="preserve">
+    <value>Adresa URL {0} má nepodporovaný nebo nebezpečný protokol a nebude otevřena.</value>
+  </data>
+  <data name="subsequent_messages_logged" xml:space="preserve">
+    <value>Následné zprávy byly zaznamenány. Klikněte, aby jste zobrazili soubory protokolu.</value>
+  </data>
+  <data name="tablet_support_disabled_due_to_error" xml:space="preserve">
+    <value>Vypnuta podpora tabletu kvůli chybě: "{0}"</value>
+  </data>
+  <data name="encountered_tablet_warning" xml:space="preserve">
+    <value>Narazili jsme na varování tabletu, tvůj tablet nemusí fungovat správně. Klikni sem pro seznam všech podporovaných tabletů.</value>
+  </data>
+  <data name="unsupported_link_type" xml:space="preserve">
+    <value>Tento typ odkazu ještě není podporován!</value>
+  </data>
+  <data name="private_message_received" xml:space="preserve">
+    <value>Obdržel jsi soukromou zprávu od '{0}'. Klikni pro přečtení!</value>
+  </data>
+  <data name="your_name_was_mentioned" xml:space="preserve">
+    <value>Tvoje jméno bylo zmíněno v chatu uživatelem '{0}'. Kliknutím zjistíš proč!</value>
+  </data>
+  <data name="invited_you_to_the_multiplayer" xml:space="preserve">
+    <value>{0} tě pozval do multiplayerového zápasu "{1}"! Klikni pro připojení.</value>
+  </data>
+  <data name="missing_beatmap_for_replay" xml:space="preserve">
+    <value>Nemáš beatmapu pro tento záznam.</value>
+  </data>
+  <data name="downloading_beatmap_for_replay" xml:space="preserve">
+    <value>Stahování chybějící beatmapy pro tento záznam...</value>
+  </data>
+  <data name="mismatching_beatmap_for_replay" xml:space="preserve">
+    <value>Tvoje místní kopie beatmapy pro tento záznam se zdá býti jiná, než se očekávalo. Možná ji bude třeba aktualizovat nebo znovu stáhnout.</value>
+  </data>
+  <data name="game_version_after_update" xml:space="preserve">
+    <value>Nyní používáš osu! {0}.
+Kliknutím zobrazíš, co je nového!</value>
+  </data>
+  <data name="update_ready_to_install" xml:space="preserve">
+    <value>Aktualizace je připravena k instalaci. Klikni pro restartování!</value>
+  </data>
+  <data name="downloading_update" xml:space="preserve">
+    <value>Stahování aktualizace...</value>
+  </data>
+  <data name="installing_update" xml:space="preserve">
+    <value>Instalování aktualizace...</value>
+  </data>
+</root>

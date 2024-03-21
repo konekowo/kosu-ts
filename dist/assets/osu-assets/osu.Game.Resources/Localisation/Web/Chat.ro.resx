@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="loading_users" xml:space="preserve">
+    <value>se incarcă utilizatorii...</value>
+  </data>
+  <data name="talking_in" xml:space="preserve">
+    <value>vorbești în {0}</value>
+  </data>
+  <data name="talking_with" xml:space="preserve">
+    <value>vorbești cu {0}</value>
+  </data>
+  <data name="title_compact" xml:space="preserve">
+    <value>chat</value>
+  </data>
+  <data name="unread_messages" xml:space="preserve">
+    <value>mesaje necitite</value>
+  </data>
+  <data name="cannot_send.channel" xml:space="preserve">
+    <value>Nu poți trimite mesaje în acest canal momentan.</value>
+  </data>
+  <data name="cannot_send.user" xml:space="preserve">
+    <value>Nu poți trimite mesaje acestui utilizator momentan.</value>
+  </data>
+  <data name="channels.confirm_part" xml:space="preserve">
+    <value>Dorești să ascunzi acest canal? Vei primi în continuare mesaje de pe acest canal.</value>
+  </data>
+  <data name="channels.create" xml:space="preserve">
+    <value>creează anunţ</value>
+  </data>
+  <data name="channels.list.title.announce" xml:space="preserve">
+    <value>Anunțuri</value>
+  </data>
+  <data name="channels.list.title.group" xml:space="preserve">
+    <value>Grupuri</value>
+  </data>
+  <data name="channels.list.title.pm" xml:space="preserve">
+    <value>Mesaje directe </value>
+  </data>
+  <data name="channels.list.title.public" xml:space="preserve">
+    <value>Canale</value>
+  </data>
+  <data name="form.title.announcement" xml:space="preserve">
+    <value>Creați Anunț Nou</value>
+  </data>
+  <data name="form.labels.description" xml:space="preserve">
+    <value>descriere</value>
+  </data>
+  <data name="form.labels.message" xml:space="preserve">
+    <value>mesaj</value>
+  </data>
+  <data name="form.labels.name" xml:space="preserve">
+    <value>numele camerei</value>
+  </data>
+  <data name="form.labels.users" xml:space="preserve">
+    <value>jucători de adăugat</value>
+  </data>
+  <data name="not_found.message" xml:space="preserve">
+    <value>Nu este nimic aici. Poate ai părăsit canalul sau nu există...</value>
+  </data>
+  <data name="not_found.title" xml:space="preserve">
+    <value>canalul nu a fost găsit</value>
+  </data>
+  <data name="input.create" xml:space="preserve">
+    <value>Creează</value>
+  </data>
+  <data name="input.disabled" xml:space="preserve">
+    <value>mesajul nu a putut fi trimis...</value>
+  </data>
+  <data name="input.disconnected" xml:space="preserve">
+    <value>Deconectat</value>
+  </data>
+  <data name="input.placeholder" xml:space="preserve">
+    <value>scrie un mesaj...</value>
+  </data>
+  <data name="input.send" xml:space="preserve">
+    <value>Trimite</value>
+  </data>
+  <data name="no-conversations.howto" xml:space="preserve">
+    <value>Începe conversații din profilul unui utilizator sau din fereastra unui utilizator.</value>
+  </data>
+  <data name="no-conversations.lazer" xml:space="preserve">
+    <value>Canalele publice cărora li te alături prin &lt;a href="{0}"&gt;osu!lazer&lt;/a&gt; vor fi vizibile aici.</value>
+  </data>
+  <data name="no-conversations.title" xml:space="preserve">
+    <value>nu sunt conversații încă</value>
+  </data>
+</root>

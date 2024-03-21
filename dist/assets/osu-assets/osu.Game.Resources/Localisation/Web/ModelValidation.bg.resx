@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="invalid" xml:space="preserve">
+    <value>Зададен е невалиден {0}.</value>
+  </data>
+  <data name="not_negative" xml:space="preserve">
+    <value>{0} не може да бъде отрицателно.</value>
+  </data>
+  <data name="required" xml:space="preserve">
+    <value>{0} е задължително.</value>
+  </data>
+  <data name="too_long" xml:space="preserve">
+    <value>{0} превишена максимална дължина - може да бъде само до {1} символа.</value>
+  </data>
+  <data name="url" xml:space="preserve">
+    <value>Моля, въведете съществуващ адрес.</value>
+  </data>
+  <data name="wrong_confirmation" xml:space="preserve">
+    <value>Потвърждението не съвпада.</value>
+  </data>
+  <data name="beatmapset_discussion.beatmap_missing" xml:space="preserve">
+    <value>Времевата отметка е зададена, но бийтмапа липсва.</value>
+  </data>
+  <data name="beatmapset_discussion.beatmapset_no_hype" xml:space="preserve">
+    <value>Този бийтмап не може да бъде надъхан.</value>
+  </data>
+  <data name="beatmapset_discussion.hype_requires_null_beatmap" xml:space="preserve">
+    <value>Надъхването трябва да бъде извършено в Обща (всички трудности).</value>
+  </data>
+  <data name="beatmapset_discussion.invalid_beatmap_id" xml:space="preserve">
+    <value>Избрана е невалидна трудност.</value>
+  </data>
+  <data name="beatmapset_discussion.invalid_beatmapset_id" xml:space="preserve">
+    <value>Избран е невалиден бийтмап.</value>
+  </data>
+  <data name="beatmapset_discussion.locked" xml:space="preserve">
+    <value>Дискусията е заключена.</value>
+  </data>
+  <data name="beatmapset_discussion.attributes.message_type" xml:space="preserve">
+    <value>Вид на съобщението</value>
+  </data>
+  <data name="beatmapset_discussion.attributes.timestamp" xml:space="preserve">
+    <value>Времева отметка</value>
+  </data>
+  <data name="beatmapset_discussion.hype.discussion_locked" xml:space="preserve">
+    <value>Този бийтмап е заключен за дискусия и не може да бъде надъхан</value>
+  </data>
+  <data name="beatmapset_discussion.hype.guest" xml:space="preserve">
+    <value>Трябва да влезете в профила си за надъхване.</value>
+  </data>
+  <data name="beatmapset_discussion.hype.hyped" xml:space="preserve">
+    <value>Вече сте надъхали този бийтмап.</value>
+  </data>
+  <data name="beatmapset_discussion.hype.limit_exceeded" xml:space="preserve">
+    <value>Използвахте всичкото налично надъхване.</value>
+  </data>
+  <data name="beatmapset_discussion.hype.not_hypeable" xml:space="preserve">
+    <value>Този бийтмап не може да бъде надъхан</value>
+  </data>
+  <data name="beatmapset_discussion.hype.owner" xml:space="preserve">
+    <value>Не може да надъхате собствения си бийтмап.</value>
+  </data>
+  <data name="beatmapset_discussion.timestamp.exceeds_beatmapset_length" xml:space="preserve">
+    <value>Указаната времева отметка е извън дължината на бийтмапа.</value>
+  </data>
+  <data name="beatmapset_discussion.timestamp.negative" xml:space="preserve">
+    <value>Времевите отметки не могат да бъдат отрицателни.</value>
+  </data>
+  <data name="beatmapset_discussion_post.discussion_locked" xml:space="preserve">
+    <value>Дискусията е заключена.</value>
+  </data>
+  <data name="beatmapset_discussion_post.first_post" xml:space="preserve">
+    <value>Не можете да изтриете началната публикация.</value>
+  </data>
+  <data name="beatmapset_discussion_post.attributes.message" xml:space="preserve">
+    <value>Съобщението</value>
+  </data>
+  <data name="comment.deleted_parent" xml:space="preserve">
+    <value>Не е разрешено да се отговори в изтрит коментар.</value>
+  </data>
+  <data name="comment.top_only" xml:space="preserve">
+    <value>Не е разрешено закачването на отговор от коментар.</value>
+  </data>
+  <data name="comment.attributes.message" xml:space="preserve">
+    <value>Съобщението</value>
+  </data>
+  <data name="follow.invalid" xml:space="preserve">
+    <value>Зададен е невалиден {0}.</value>
+  </data>
+  <data name="forum.feature_vote.not_feature_topic" xml:space="preserve">
+    <value>Може да гласувате само заявки за нови функции.</value>
+  </data>
+  <data name="forum.feature_vote.not_enough_feature_votes" xml:space="preserve">
+    <value>Няма достатъчно гласове.</value>
+  </data>
+  <data name="forum.poll_vote.invalid" xml:space="preserve">
+    <value>Избрана е невалидна опция.</value>
+  </data>
+  <data name="forum.post.beatmapset_post_no_delete" xml:space="preserve">
+    <value>Изтриване на публикацията с метаданни не е разрешено.</value>
+  </data>
+  <data name="forum.post.beatmapset_post_no_edit" xml:space="preserve">
+    <value>Промяна на метаданните за този бийтмап не е разрешено.</value>
+  </data>
+  <data name="forum.post.first_post_no_delete" xml:space="preserve">
+    <value>Не може да изтриете началната публикация</value>
+  </data>
+  <data name="forum.post.missing_topic" xml:space="preserve">
+    <value>Публикацията е с липсваща тема</value>
+  </data>
+  <data name="forum.post.only_quote" xml:space="preserve">
+    <value>Вашият отговор съдържа само цитат.</value>
+  </data>
+  <data name="forum.post.attributes.post_text" xml:space="preserve">
+    <value>Съдържание в публикацията</value>
+  </data>
+  <data name="forum.topic.attributes.topic_title" xml:space="preserve">
+    <value>Заглавие на темата</value>
+  </data>
+  <data name="forum.topic_poll.duplicate_options" xml:space="preserve">
+    <value>Опцията за дублиране не е разрешена.</value>
+  </data>
+  <data name="forum.topic_poll.grace_period_expired" xml:space="preserve">
+    <value>Не може да редактирате анкета след повече от {0} часа</value>
+  </data>
+  <data name="forum.topic_poll.hiding_results_forever" xml:space="preserve">
+    <value>Скриване на резултата от безкрайна анкета е невъзможно.</value>
+  </data>
+  <data name="forum.topic_poll.invalid_max_options" xml:space="preserve">
+    <value>Броя отговори за потребител не може да надвишава наличните отговори.</value>
+  </data>
+  <data name="forum.topic_poll.minimum_one_selection" xml:space="preserve">
+    <value>Изисква се минимум един отговор от потребител.</value>
+  </data>
+  <data name="forum.topic_poll.minimum_two_options" xml:space="preserve">
+    <value>Необходими са поне два отговора.</value>
+  </data>
+  <data name="forum.topic_poll.too_many_options" xml:space="preserve">
+    <value>Достигнат е максималният брой разрешени отговори.</value>
+  </data>
+  <data name="forum.topic_poll.attributes.title" xml:space="preserve">
+    <value>Заглавие на анкета</value>
+  </data>
+  <data name="forum.topic_vote.required" xml:space="preserve">
+    <value>Изберете отговор, когато гласувате.</value>
+  </data>
+  <data name="forum.topic_vote.too_many" xml:space="preserve">
+    <value>Избрани са повече отговора от разрешените.</value>
+  </data>
+  <data name="legacy_api_key.exists" xml:space="preserve">
+    <value>Само един API ключ се предоставя на потребител за момента.</value>
+  </data>
+  <data name="legacy_api_key.attributes.api_key" xml:space="preserve">
+    <value>api ключ</value>
+  </data>
+  <data name="legacy_api_key.attributes.app_name" xml:space="preserve">
+    <value>име на приложение</value>
+  </data>
+  <data name="legacy_api_key.attributes.app_url" xml:space="preserve">
+    <value>адрес на приложение</value>
+  </data>
+  <data name="oauth.client.too_many" xml:space="preserve">
+    <value>Достигнат е максималният брой OAuth приложения.</value>
+  </data>
+  <data name="oauth.client.url" xml:space="preserve">
+    <value>Въведете валиден URL.</value>
+  </data>
+  <data name="oauth.client.attributes.name" xml:space="preserve">
+    <value>Име на приложението</value>
+  </data>
+  <data name="oauth.client.attributes.redirect" xml:space="preserve">
+    <value>Callback URL на приложението</value>
+  </data>
+  <data name="user.contains_username" xml:space="preserve">
+    <value>Паролата не може да съдържа в себе си потребителското име.</value>
+  </data>
+  <data name="user.email_already_used" xml:space="preserve">
+    <value>Този имейл адрес вече се използва.</value>
+  </data>
+  <data name="user.email_not_allowed" xml:space="preserve">
+    <value>Имейл адресът не е разрешен.</value>
+  </data>
+  <data name="user.invalid_country" xml:space="preserve">
+    <value>Държавата не е в базата данни.</value>
+  </data>
+  <data name="user.invalid_discord" xml:space="preserve">
+    <value>Потребителското име в Discord е невалидно.</value>
+  </data>
+  <data name="user.invalid_email" xml:space="preserve">
+    <value>Това не изглежда да е валиден имейл адрес.</value>
+  </data>
+  <data name="user.invalid_twitter" xml:space="preserve">
+    <value>Потребителското име в Twitter е невалидно.</value>
+  </data>
+  <data name="user.too_short" xml:space="preserve">
+    <value>Новата парола е твърде къса.</value>
+  </data>
+  <data name="user.unknown_duplicate" xml:space="preserve">
+    <value>Потребителското име или имейл адресът вече се използват.</value>
+  </data>
+  <data name="user.username_available_in" xml:space="preserve">
+    <value>Това потребителско име ще стане достъпно за употреба след {0}.</value>
+  </data>
+  <data name="user.username_available_soon" xml:space="preserve">
+    <value>Това потребителско име ще стане достъпно за употреба след няколко момента!</value>
+  </data>
+  <data name="user.username_invalid_characters" xml:space="preserve">
+    <value>Желаното име съдържа невалидни символи.</value>
+  </data>
+  <data name="user.username_in_use" xml:space="preserve">
+    <value>Потребителското име е заето!</value>
+  </data>
+  <data name="user.username_locked" xml:space="preserve">
+    <value>Потребителското име е заключено!</value>
+  </data>
+  <data name="user.username_no_space_userscore_mix" xml:space="preserve">
+    <value>Моля, използвайте долна черта или интервал, не и двете!</value>
+  </data>
+  <data name="user.username_no_spaces" xml:space="preserve">
+    <value>Потребителското име не може да започва или завършва с интервал!</value>
+  </data>
+  <data name="user.username_not_allowed" xml:space="preserve">
+    <value>Избраното потребителско име не е разрешено.</value>
+  </data>
+  <data name="user.username_too_short" xml:space="preserve">
+    <value>Потребителското име е твърде късо.</value>
+  </data>
+  <data name="user.username_too_long" xml:space="preserve">
+    <value>Потребителското име е трърде дълго.</value>
+  </data>
+  <data name="user.weak" xml:space="preserve">
+    <value>Паролата е слаба.</value>
+  </data>
+  <data name="user.wrong_current_password" xml:space="preserve">
+    <value>Текущата парола е неправилна.</value>
+  </data>
+  <data name="user.wrong_email_confirmation" xml:space="preserve">
+    <value>Имейлът за потвърждение не съответства.</value>
+  </data>
+  <data name="user.wrong_password_confirmation" xml:space="preserve">
+    <value>Потвърждението на паролата не съответства.</value>
+  </data>
+  <data name="user.too_long" xml:space="preserve">
+    <value>Превишена максимална дължина - може да бъде само до {0} символа.</value>
+  </data>
+  <data name="user.attributes.username" xml:space="preserve">
+    <value>Потребителско име</value>
+  </data>
+  <data name="user.attributes.user_email" xml:space="preserve">
+    <value>Имейл адрес</value>
+  </data>
+  <data name="user.attributes.password" xml:space="preserve">
+    <value>Парола</value>
+  </data>
+  <data name="user.change_username.restricted" xml:space="preserve">
+    <value>Смяната на потребителско име е невъзможна, докато сте ограничени.</value>
+  </data>
+  <data name="user.change_username.supporter_required._" xml:space="preserve">
+    <value>Трябва да сте {0} , за да промените името си!</value>
+  </data>
+  <data name="user.change_username.supporter_required.link_text" xml:space="preserve">
+    <value>подкрепили osu!</value>
+  </data>
+  <data name="user.change_username.username_is_same" xml:space="preserve">
+    <value>Вече използвате това име, глупаче!</value>
+  </data>
+  <data name="user_report.no_ranked_beatmapset" xml:space="preserve">
+    <value>Класирани бийтмапове не могат да бъдат докладвани</value>
+  </data>
+  <data name="user_report.not_in_channel" xml:space="preserve">
+    <value>Вие не сте в този канал.</value>
+  </data>
+  <data name="user_report.reason_not_valid" xml:space="preserve">
+    <value>{0} е невалидна причина за този вид доклад.</value>
+  </data>
+  <data name="user_report.self" xml:space="preserve">
+    <value>Не може да докладвате себе си!</value>
+  </data>
+  <data name="store.order_item.attributes.quantity" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="store.order_item.attributes.cost" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+</root>

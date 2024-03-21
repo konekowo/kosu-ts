@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="audio.autoplay" xml:space="preserve">
+    <value>Redă automat melodia următoare</value>
+  </data>
+  <data name="defaults.page_description" xml:space="preserve">
+    <value>osu! - Ritmul este doar la un *clic* distanță! Cu Ouendan/EBA, Taiko și moduri de joc originale,  precum și un editor de nivel complet funcțional.</value>
+  </data>
+  <data name="header.admin.beatmapset" xml:space="preserve">
+    <value>beatmapset</value>
+  </data>
+  <data name="header.admin.beatmapset_covers" xml:space="preserve">
+    <value>fundale beatmapset</value>
+  </data>
+  <data name="header.admin.contest" xml:space="preserve">
+    <value>concurs</value>
+  </data>
+  <data name="header.admin.contests" xml:space="preserve">
+    <value>concursuri</value>
+  </data>
+  <data name="header.admin.root" xml:space="preserve">
+    <value>consolă</value>
+  </data>
+  <data name="header.artists.index" xml:space="preserve">
+    <value>listă</value>
+  </data>
+  <data name="header.beatmapsets.show" xml:space="preserve">
+    <value>informații</value>
+  </data>
+  <data name="header.beatmapsets.discussions" xml:space="preserve">
+    <value>discuție</value>
+  </data>
+  <data name="header.changelog.index" xml:space="preserve">
+    <value>listă</value>
+  </data>
+  <data name="header.help.index" xml:space="preserve">
+    <value>index</value>
+  </data>
+  <data name="header.help.sitemap" xml:space="preserve">
+    <value>Harta site-ului</value>
+  </data>
+  <data name="header.store.cart" xml:space="preserve">
+    <value>coș</value>
+  </data>
+  <data name="header.store.orders" xml:space="preserve">
+    <value>istoric comenzi</value>
+  </data>
+  <data name="header.store.products" xml:space="preserve">
+    <value>produse</value>
+  </data>
+  <data name="header.tournaments.index" xml:space="preserve">
+    <value>listă</value>
+  </data>
+  <data name="header.users.modding" xml:space="preserve">
+    <value>modding</value>
+  </data>
+  <data name="header.users.playlists" xml:space="preserve">
+    <value>playlist-uri</value>
+  </data>
+  <data name="header.users.realtime" xml:space="preserve">
+    <value>multiplayer</value>
+  </data>
+  <data name="header.users.show" xml:space="preserve">
+    <value>info</value>
+  </data>
+  <data name="gallery.close" xml:space="preserve">
+    <value>Închide (Esc)</value>
+  </data>
+  <data name="gallery.fullscreen" xml:space="preserve">
+    <value>Comutare fullscreen</value>
+  </data>
+  <data name="gallery.zoom" xml:space="preserve">
+    <value>Mărire/Micșorare</value>
+  </data>
+  <data name="gallery.previous" xml:space="preserve">
+    <value>Precedent (săgeată stânga)</value>
+  </data>
+  <data name="gallery.next" xml:space="preserve">
+    <value>Următor (săgeată dreapta)</value>
+  </data>
+  <data name="menu.beatmaps._" xml:space="preserve">
+    <value>beatmap-uri</value>
+  </data>
+  <data name="menu.community._" xml:space="preserve">
+    <value>comunitate</value>
+  </data>
+  <data name="menu.community.dev" xml:space="preserve">
+    <value>dezvoltare</value>
+  </data>
+  <data name="menu.help._" xml:space="preserve">
+    <value>ajutor</value>
+  </data>
+  <data name="menu.help.getabuse" xml:space="preserve">
+    <value>raportează abuz</value>
+  </data>
+  <data name="menu.help.getfaq" xml:space="preserve">
+    <value>întrebări frecvente</value>
+  </data>
+  <data name="menu.help.getrules" xml:space="preserve">
+    <value>reguli</value>
+  </data>
+  <data name="menu.help.getsupport" xml:space="preserve">
+    <value>nu, chiar am nevoie de ajutor!</value>
+  </data>
+  <data name="menu.home._" xml:space="preserve">
+    <value>acasă</value>
+  </data>
+  <data name="menu.home.team" xml:space="preserve">
+    <value>echipă</value>
+  </data>
+  <data name="menu.rankings._" xml:space="preserve">
+    <value>clasamente</value>
+  </data>
+  <data name="menu.store._" xml:space="preserve">
+    <value>magazin</value>
+  </data>
+  <data name="footer.general._" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="footer.general.home" xml:space="preserve">
+    <value>Acasă</value>
+  </data>
+  <data name="footer.general.changelog-index" xml:space="preserve">
+    <value>Istoric modificări</value>
+  </data>
+  <data name="footer.general.beatmaps" xml:space="preserve">
+    <value>Lista Beatmap-uri</value>
+  </data>
+  <data name="footer.general.download" xml:space="preserve">
+    <value>Descarcă osu!</value>
+  </data>
+  <data name="footer.help._" xml:space="preserve">
+    <value>Ajutor &amp; Comunitate</value>
+  </data>
+  <data name="footer.help.faq" xml:space="preserve">
+    <value>Întrebări Frecvente</value>
+  </data>
+  <data name="footer.help.forum" xml:space="preserve">
+    <value>Forum-uri</value>
+  </data>
+  <data name="footer.help.livestreams" xml:space="preserve">
+    <value>Fluxuri Live</value>
+  </data>
+  <data name="footer.help.report" xml:space="preserve">
+    <value>Raportează o problemă</value>
+  </data>
+  <data name="footer.help.wiki" xml:space="preserve">
+    <value>Wiki</value>
+  </data>
+  <data name="footer.legal._" xml:space="preserve">
+    <value>Legalitate &amp; Statut</value>
+  </data>
+  <data name="footer.legal.copyright" xml:space="preserve">
+    <value>Drepturi de autor (DMCA)</value>
+  </data>
+  <data name="footer.legal.privacy" xml:space="preserve">
+    <value>Confidențialitate</value>
+  </data>
+  <data name="footer.legal.server_status" xml:space="preserve">
+    <value>Starea server-ului</value>
+  </data>
+  <data name="footer.legal.source_code" xml:space="preserve">
+    <value>Cod Sursă</value>
+  </data>
+  <data name="footer.legal.terms" xml:space="preserve">
+    <value>Termeni și Condiții</value>
+  </data>
+  <data name="errors.400.error" xml:space="preserve">
+    <value>Parametri cerere nevalizi</value>
+  </data>
+  <data name="errors.404.error" xml:space="preserve">
+    <value>Pagină Lipsă</value>
+  </data>
+  <data name="errors.404.description" xml:space="preserve">
+    <value>Ne pare rău, dar pagina solicitată nu este aici!</value>
+  </data>
+  <data name="errors.403.error" xml:space="preserve">
+    <value>Nu ar trebui să fii aici.</value>
+  </data>
+  <data name="errors.403.description" xml:space="preserve">
+    <value>Ai putea încerca să mergi înapoi, totuși.</value>
+  </data>
+  <data name="errors.401.error" xml:space="preserve">
+    <value>Nu ar trebui să fii aici.</value>
+  </data>
+  <data name="errors.401.description" xml:space="preserve">
+    <value>Ai putea să mergi înapoi, totuși. Sau poate să te conectezi.</value>
+  </data>
+  <data name="errors.405.error" xml:space="preserve">
+    <value>Pagina lipsește</value>
+  </data>
+  <data name="errors.405.description" xml:space="preserve">
+    <value>Ne pare rău, dar pagina solicitată nu este aici!</value>
+  </data>
+  <data name="errors.422.error" xml:space="preserve">
+    <value>Cerere în parametrii invalizi</value>
+  </data>
+  <data name="errors.429.error" xml:space="preserve">
+    <value>Limita de folosire a fost depăşită</value>
+  </data>
+  <data name="errors.500.error" xml:space="preserve">
+    <value>Oh nu! Ceva s-a stricat! ;_;</value>
+  </data>
+  <data name="errors.500.description" xml:space="preserve">
+    <value>Suntem informați automat de fiecare eroare.</value>
+  </data>
+  <data name="errors.fatal.error" xml:space="preserve">
+    <value>Oh, nu! Ceva s-a stricat (rău)! ;_;</value>
+  </data>
+  <data name="errors.fatal.description" xml:space="preserve">
+    <value>We're automatically notified of every error.</value>
+  </data>
+  <data name="errors.503.error" xml:space="preserve">
+    <value>Inchis pentru mentenanță!</value>
+  </data>
+  <data name="errors.503.description" xml:space="preserve">
+    <value>Mentenanța durează de obicei oriunde între 5 secunde și 10 minute. Dacă durează mai mult, vezi {0} pentru mai multe informații.</value>
+  </data>
+  <data name="errors.reference" xml:space="preserve">
+    <value>Pentru orice eventualitate, aici este un cod pe care îl poți oferi pentru asistență!</value>
+  </data>
+  <data name="popup_login.button" xml:space="preserve">
+    <value>autentifică-te / înregistrează-te</value>
+  </data>
+  <data name="popup_login.login.forgot" xml:space="preserve">
+    <value>Mi-am uitat detaliile de autentificare</value>
+  </data>
+  <data name="popup_login.login.password" xml:space="preserve">
+    <value>parolă</value>
+  </data>
+  <data name="popup_login.login.title" xml:space="preserve">
+    <value>Autentifică-te pentru a continua</value>
+  </data>
+  <data name="popup_login.login.username" xml:space="preserve">
+    <value>nume de utilizator</value>
+  </data>
+  <data name="popup_login.login.error.email" xml:space="preserve">
+    <value>Numele de utilizator sau adresa de e-mail nu există</value>
+  </data>
+  <data name="popup_login.login.error.password" xml:space="preserve">
+    <value>Parolă incorectă</value>
+  </data>
+  <data name="popup_login.register.download" xml:space="preserve">
+    <value>Descarcă</value>
+  </data>
+  <data name="popup_login.register.info" xml:space="preserve">
+    <value>Descarcă osu! pentru a-ți crea propriul cont!</value>
+  </data>
+  <data name="popup_login.register.title" xml:space="preserve">
+    <value>Nu ai un cont?</value>
+  </data>
+  <data name="popup_user.links.account-edit" xml:space="preserve">
+    <value>Setări</value>
+  </data>
+  <data name="popup_user.links.follows" xml:space="preserve">
+    <value>Pagini Abonate</value>
+  </data>
+  <data name="popup_user.links.friends" xml:space="preserve">
+    <value>Prieteni</value>
+  </data>
+  <data name="popup_user.links.legacy_score_only_toggle" xml:space="preserve">
+    <value>Mod lazer</value>
+  </data>
+  <data name="popup_user.links.legacy_score_only_toggle_tooltip" xml:space="preserve">
+    <value>Modul lazer afișează scoruri obținute din lazer folosind un algoritm nou de scor</value>
+  </data>
+  <data name="popup_user.links.logout" xml:space="preserve">
+    <value>Deconectare</value>
+  </data>
+  <data name="popup_user.links.profile" xml:space="preserve">
+    <value>Profilul Meu</value>
+  </data>
+  <data name="popup_search.initial" xml:space="preserve">
+    <value>Tastați pentru a căuta!</value>
+  </data>
+  <data name="popup_search.retry" xml:space="preserve">
+    <value>Căutarea nu a reușit. Faceți clic pentru a reîncerca.</value>
+  </data>
+</root>

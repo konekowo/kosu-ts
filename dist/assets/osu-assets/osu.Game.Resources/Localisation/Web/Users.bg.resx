@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="deleted" xml:space="preserve">
+    <value>[изтрит потребител]</value>
+  </data>
+  <data name="beatmapset_activities.title" xml:space="preserve">
+    <value>{0} Редакторска История</value>
+  </data>
+  <data name="beatmapset_activities.title_compact" xml:space="preserve">
+    <value>Редактиране</value>
+  </data>
+  <data name="beatmapset_activities.discussions.title_recent" xml:space="preserve">
+    <value>Наскоро започнати дискусии</value>
+  </data>
+  <data name="beatmapset_activities.events.title_recent" xml:space="preserve">
+    <value>Последни събития</value>
+  </data>
+  <data name="beatmapset_activities.posts.title_recent" xml:space="preserve">
+    <value>Скорошни публикации</value>
+  </data>
+  <data name="beatmapset_activities.votes_received.title_most" xml:space="preserve">
+    <value>Най-харесвани от (последните 3 месеца)</value>
+  </data>
+  <data name="beatmapset_activities.votes_made.title_most" xml:space="preserve">
+    <value>Най-харесвани (последните 3 месеца)</value>
+  </data>
+  <data name="blocks.banner_text" xml:space="preserve">
+    <value>Вие блокирахте този потребител.</value>
+  </data>
+  <data name="blocks.comment_text" xml:space="preserve">
+    <value>Този коментар е скрит.</value>
+  </data>
+  <data name="blocks.blocked_count" xml:space="preserve">
+    <value>блокирани потребители ({0})</value>
+  </data>
+  <data name="blocks.hide_profile" xml:space="preserve">
+    <value>Скрий профил</value>
+  </data>
+  <data name="blocks.hide_comment" xml:space="preserve">
+    <value>скрий</value>
+  </data>
+  <data name="blocks.forum_post_text" xml:space="preserve">
+    <value>Тази публикация е скрита.</value>
+  </data>
+  <data name="blocks.not_blocked" xml:space="preserve">
+    <value>Този потребител не е блокиран.</value>
+  </data>
+  <data name="blocks.show_profile" xml:space="preserve">
+    <value>Покажи профил</value>
+  </data>
+  <data name="blocks.show_comment" xml:space="preserve">
+    <value>покажи</value>
+  </data>
+  <data name="blocks.too_many" xml:space="preserve">
+    <value>Достигнат е лимита за блокиране.</value>
+  </data>
+  <data name="blocks.button.block" xml:space="preserve">
+    <value>Блокиране</value>
+  </data>
+  <data name="blocks.button.unblock" xml:space="preserve">
+    <value>Отблокиране</value>
+  </data>
+  <data name="card.gift_supporter" xml:space="preserve">
+    <value>Подари osu!supporter</value>
+  </data>
+  <data name="card.loading" xml:space="preserve">
+    <value>Зареждане...</value>
+  </data>
+  <data name="card.send_message" xml:space="preserve">
+    <value>изпрати съобщение</value>
+  </data>
+  <data name="create.form.password" xml:space="preserve">
+    <value>парола</value>
+  </data>
+  <data name="create.form.password_confirmation" xml:space="preserve">
+    <value>потвърди парола</value>
+  </data>
+  <data name="create.form.submit" xml:space="preserve">
+    <value>създаване на профил</value>
+  </data>
+  <data name="create.form.user_email" xml:space="preserve">
+    <value>имейл</value>
+  </data>
+  <data name="create.form.user_email_confirmation" xml:space="preserve">
+    <value>потвърди имейл</value>
+  </data>
+  <data name="create.form.username" xml:space="preserve">
+    <value>потребителско име</value>
+  </data>
+  <data name="create.form.tos_notice._" xml:space="preserve">
+    <value>чрез създаването на профил се съгласявате с {0}</value>
+  </data>
+  <data name="create.form.tos_notice.link" xml:space="preserve">
+    <value>условията за ползване</value>
+  </data>
+  <data name="disabled.title" xml:space="preserve">
+    <value>О, не! Изглежда, че вашият профил е деактивиран.</value>
+  </data>
+  <data name="disabled.warning" xml:space="preserve">
+    <value>В случай, че нарушите правило, имайте предвид, че съществува период на изчакване с продължителност един месец, през който няма да разгледаме вашата молба. След изтичане на този период, свободни сте да се свържите с нас в случай на необходимост. Създаване на нови акаунти след деактивиране на един, ще доведе до &lt;strong&gt;удължаване на този едномесечен период.&lt;/strong&gt;. Със създаването на &lt;strong&gt;всеки един нов акаунт, вие допълнително нарушавате правилата&lt;/strong&gt;. Силно се надяваме да се вслушате в думите ни!</value>
+  </data>
+  <data name="disabled.if_mistake._" xml:space="preserve">
+    <value>Ако мислите, че е станала грешка, свободни сте да се свържете с нас (чрез {0} или клик върху "?" в долната дясна част на страницата). Имайте предвид, че сме уверени в действията си, защото са базирани на солидна информация. Ние запазваме правото си да пренебрегнем молбата ви, ако усетим че умишлено ни лъжете.</value>
+  </data>
+  <data name="disabled.if_mistake.email" xml:space="preserve">
+    <value>имейл</value>
+  </data>
+  <data name="disabled.reasons.compromised" xml:space="preserve">
+    <value>Вашият профил беше счетен за компрометиран. Временно е деактивиран до изясняване на идентичността.</value>
+  </data>
+  <data name="disabled.reasons.opening" xml:space="preserve">
+    <value>Има редица причини, които могат да доведат до деактивиране на профила ви:</value>
+  </data>
+  <data name="disabled.reasons.tos._" xml:space="preserve">
+    <value>Нарушили сте едно или повече от нашите {0} или {1}.</value>
+  </data>
+  <data name="disabled.reasons.tos.community_rules" xml:space="preserve">
+    <value>обществени правила</value>
+  </data>
+  <data name="disabled.reasons.tos.tos" xml:space="preserve">
+    <value>условия за ползване</value>
+  </data>
+  <data name="filtering.by_game_mode" xml:space="preserve">
+    <value>Потребители по вид игра</value>
+  </data>
+  <data name="force_reactivation.reason.inactive_different_country" xml:space="preserve">
+    <value>Вашият акаунт не е ползван от дълго време.</value>
+  </data>
+  <data name="login._" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="login.button" xml:space="preserve">
+    <value>Влизане</value>
+  </data>
+  <data name="login.button_posting" xml:space="preserve">
+    <value>Влизане...</value>
+  </data>
+  <data name="login.email_login_disabled" xml:space="preserve">
+    <value>Влизането чрез имейл е в момента деактивирано. Вместо това, моля ползвайте потребителското си име.</value>
+  </data>
+  <data name="login.failed" xml:space="preserve">
+    <value>Неправилен опит за влизане</value>
+  </data>
+  <data name="login.forgot" xml:space="preserve">
+    <value>Забравихте си паролата?</value>
+  </data>
+  <data name="login.info" xml:space="preserve">
+    <value>Моля, влез в профила си, за да продължите</value>
+  </data>
+  <data name="login.invalid_captcha" xml:space="preserve">
+    <value>Прекалено много неуспешни опити за влизане! Докажете, че не сте робот и опитайте отново. (Обновете страницата, в случай че не се вижда задачата)</value>
+  </data>
+  <data name="login.locked_ip" xml:space="preserve">
+    <value>Вашият IP адрес е блокиран. Моля изчакайте няколко минути.</value>
+  </data>
+  <data name="login.password" xml:space="preserve">
+    <value>Парола</value>
+  </data>
+  <data name="login.register" xml:space="preserve">
+    <value>Нямате osu! акаунт? Направете си един</value>
+  </data>
+  <data name="login.remember" xml:space="preserve">
+    <value>Запомни ме на този компютър</value>
+  </data>
+  <data name="login.title" xml:space="preserve">
+    <value>Моля, влез в профила си, за да продължите</value>
+  </data>
+  <data name="login.username" xml:space="preserve">
+    <value>Потребителско име</value>
+  </data>
+  <data name="login.beta.main" xml:space="preserve">
+    <value>Ранният достъп е ограничен само за привилегировани потребители.</value>
+  </data>
+  <data name="login.beta.small" xml:space="preserve">
+    <value>(osu!supporter ще има достъп скоро)</value>
+  </data>
+  <data name="ogp.modding_description" xml:space="preserve">
+    <value>Бийтмапове: {0}</value>
+  </data>
+  <data name="ogp.modding_description_empty" xml:space="preserve">
+    <value>Потребителят няма бийтмапове...</value>
+  </data>
+  <data name="ogp.description._" xml:space="preserve">
+    <value>Ранг ({0}): {1} | {2}</value>
+  </data>
+  <data name="ogp.description.country" xml:space="preserve">
+    <value>Държава {0}</value>
+  </data>
+  <data name="ogp.description.global" xml:space="preserve">
+    <value>Световен {0}</value>
+  </data>
+  <data name="posts.title" xml:space="preserve">
+    <value>публикациите на {0}</value>
+  </data>
+  <data name="anonymous.login_link" xml:space="preserve">
+    <value>кликнете, за влизане</value>
+  </data>
+  <data name="anonymous.login_text" xml:space="preserve">
+    <value>вход</value>
+  </data>
+  <data name="anonymous.username" xml:space="preserve">
+    <value>Гост</value>
+  </data>
+  <data name="anonymous.error" xml:space="preserve">
+    <value>Моля, влез в профила си, преди да направите това.</value>
+  </data>
+  <data name="logout_confirm" xml:space="preserve">
+    <value>Сигурни ли сте, че искате да излезете от профила си? :(</value>
+  </data>
+  <data name="report.button_text" xml:space="preserve">
+    <value>Докладване</value>
+  </data>
+  <data name="report.comments" xml:space="preserve">
+    <value>Допълнителни коментари</value>
+  </data>
+  <data name="report.placeholder" xml:space="preserve">
+    <value>Моля, предоставете всякаква информация, която смятате че ще бъде полезна.</value>
+  </data>
+  <data name="report.reason" xml:space="preserve">
+    <value>Причина</value>
+  </data>
+  <data name="report.thanks" xml:space="preserve">
+    <value>Благодаря за доклада ви!</value>
+  </data>
+  <data name="report.title" xml:space="preserve">
+    <value>Искате да докладвате {0}?</value>
+  </data>
+  <data name="report.actions.send" xml:space="preserve">
+    <value>Изпращане на доклад</value>
+  </data>
+  <data name="report.actions.cancel" xml:space="preserve">
+    <value>Отмени</value>
+  </data>
+  <data name="report.options.cheating" xml:space="preserve">
+    <value>Нечестна игра / Измама</value>
+  </data>
+  <data name="report.options.multiple_accounts" xml:space="preserve">
+    <value>Използва няколко профила</value>
+  </data>
+  <data name="report.options.insults" xml:space="preserve">
+    <value>Обижда мен / друг</value>
+  </data>
+  <data name="report.options.spam" xml:space="preserve">
+    <value>Спам</value>
+  </data>
+  <data name="report.options.unwanted_content" xml:space="preserve">
+    <value>Изпраща неприлично съдържание</value>
+  </data>
+  <data name="report.options.nonsense" xml:space="preserve">
+    <value>Безсмислици</value>
+  </data>
+  <data name="report.options.other" xml:space="preserve">
+    <value>Друго (посочете по-долу)</value>
+  </data>
+  <data name="restricted_banner.title" xml:space="preserve">
+    <value>Вашият профил е ограничен!</value>
+  </data>
+  <data name="restricted_banner.message" xml:space="preserve">
+    <value>Докато имате ограничение, ще сте неспособни да общувате с други играчи и вашите резултати ще са видими само за вас. Това често е резултат от системата ни за автоматично засичане на измамници и статутът ще бъде премахнат до 24 часа. {0}</value>
+  </data>
+  <data name="restricted_banner.message_link" xml:space="preserve">
+    <value>Проверете тази страница за да научите повече.</value>
+  </data>
+  <data name="show.age" xml:space="preserve">
+    <value>на {0} години</value>
+  </data>
+  <data name="show.change_avatar" xml:space="preserve">
+    <value>променете аватара си!</value>
+  </data>
+  <data name="show.first_members" xml:space="preserve">
+    <value>Тук от началото</value>
+  </data>
+  <data name="show.is_developer" xml:space="preserve">
+    <value>osu!developer</value>
+  </data>
+  <data name="show.is_supporter" xml:space="preserve">
+    <value>osu!supporter</value>
+  </data>
+  <data name="show.joined_at" xml:space="preserve">
+    <value>Потребител от {0}</value>
+  </data>
+  <data name="show.lastvisit" xml:space="preserve">
+    <value>Последно видян {0}</value>
+  </data>
+  <data name="show.lastvisit_online" xml:space="preserve">
+    <value>В момента онлайн</value>
+  </data>
+  <data name="show.missingtext" xml:space="preserve">
+    <value>Вероятно сте допуснали правописна грешка! (или потребителят е бил баннат)</value>
+  </data>
+  <data name="show.origin_country" xml:space="preserve">
+    <value>От {0}</value>
+  </data>
+  <data name="show.previous_usernames" xml:space="preserve">
+    <value>някога известен като</value>
+  </data>
+  <data name="show.plays_with" xml:space="preserve">
+    <value>Играе с {0}</value>
+  </data>
+  <data name="show.comments_count._" xml:space="preserve">
+    <value>Публикувани {0}</value>
+  </data>
+  <data name="show.comments_count.count" xml:space="preserve">
+    <value>{0} коментар|{0} коментара</value>
+  </data>
+  <data name="show.cover.to_0" xml:space="preserve">
+    <value>скриване на корицата</value>
+  </data>
+  <data name="show.cover.to_1" xml:space="preserve">
+    <value>показване на корицата</value>
+  </data>
+  <data name="show.edit.cover.button" xml:space="preserve">
+    <value>Промяна на профилната корица</value>
+  </data>
+  <data name="show.edit.cover.defaults_info" xml:space="preserve">
+    <value>Повече опции за корици ще бъдат налични в бъдеще</value>
+  </data>
+  <data name="show.edit.cover.upload.broken_file" xml:space="preserve">
+    <value>Неуспешна обработка на изображението. Проверете каченото изображение и опитайте отново.</value>
+  </data>
+  <data name="show.edit.cover.upload.button" xml:space="preserve">
+    <value>Качи изображение</value>
+  </data>
+  <data name="show.edit.cover.upload.dropzone" xml:space="preserve">
+    <value>Пуснете файла тук, за да го качите</value>
+  </data>
+  <data name="show.edit.cover.upload.dropzone_info" xml:space="preserve">
+    <value>Може да влачите изображението до тук, за качване</value>
+  </data>
+  <data name="show.edit.cover.upload.size_info" xml:space="preserve">
+    <value>Корицата трябва да е с размер 2400x620</value>
+  </data>
+  <data name="show.edit.cover.upload.too_large" xml:space="preserve">
+    <value>Файлът е прекалено голям.</value>
+  </data>
+  <data name="show.edit.cover.upload.unsupported_format" xml:space="preserve">
+    <value>Неподдържан формат.</value>
+  </data>
+  <data name="show.edit.cover.upload.restriction_info._" xml:space="preserve">
+    <value>Качването е налично само за {0}</value>
+  </data>
+  <data name="show.edit.cover.upload.restriction_info.link" xml:space="preserve">
+    <value>osu!supporters</value>
+  </data>
+  <data name="show.edit.default_playmode.is_default_tooltip" xml:space="preserve">
+    <value>стандартен режим на игра</value>
+  </data>
+  <data name="show.edit.default_playmode.set" xml:space="preserve">
+    <value>задай {0} като стандартен режим на игра</value>
+  </data>
+  <data name="show.extra.none" xml:space="preserve">
+    <value>няма</value>
+  </data>
+  <data name="show.extra.unranked" xml:space="preserve">
+    <value>Няма скорошни данни</value>
+  </data>
+  <data name="show.extra.achievements.achieved-on" xml:space="preserve">
+    <value>Постигнато на {0}</value>
+  </data>
+  <data name="show.extra.achievements.locked" xml:space="preserve">
+    <value>Заключенo</value>
+  </data>
+  <data name="show.extra.achievements.title" xml:space="preserve">
+    <value>Постижения</value>
+  </data>
+  <data name="show.extra.beatmaps.by_artist" xml:space="preserve">
+    <value>- {0}</value>
+  </data>
+  <data name="show.extra.beatmaps.title" xml:space="preserve">
+    <value>Бийтмапове</value>
+  </data>
+  <data name="show.extra.beatmaps.favourite.title" xml:space="preserve">
+    <value>Любими бийтмапове</value>
+  </data>
+  <data name="show.extra.beatmaps.graveyard.title" xml:space="preserve">
+    <value>Изоставени бийтмапове</value>
+  </data>
+  <data name="show.extra.beatmaps.guest.title" xml:space="preserve">
+    <value>Предложени трудности към бийтмапове</value>
+  </data>
+  <data name="show.extra.beatmaps.loved.title" xml:space="preserve">
+    <value>Обичани бийтмапове</value>
+  </data>
+  <data name="show.extra.beatmaps.nominated.title" xml:space="preserve">
+    <value>Номинирани бийтмапове с класация</value>
+  </data>
+  <data name="show.extra.beatmaps.pending.title" xml:space="preserve">
+    <value>Чакащи класиране бийтмапове</value>
+  </data>
+  <data name="show.extra.beatmaps.ranked.title" xml:space="preserve">
+    <value>Класирани и одобрени бийтмапове</value>
+  </data>
+  <data name="show.extra.discussions.title" xml:space="preserve">
+    <value>Дискусии</value>
+  </data>
+  <data name="show.extra.discussions.title_longer" xml:space="preserve">
+    <value>Скорошни дискусии</value>
+  </data>
+  <data name="show.extra.discussions.show_more" xml:space="preserve">
+    <value>виж повече дискусии</value>
+  </data>
+  <data name="show.extra.events.title" xml:space="preserve">
+    <value>Събития</value>
+  </data>
+  <data name="show.extra.events.title_longer" xml:space="preserve">
+    <value>Скорошни събития</value>
+  </data>
+  <data name="show.extra.events.show_more" xml:space="preserve">
+    <value>виж повече събития</value>
+  </data>
+  <data name="show.extra.historical.title" xml:space="preserve">
+    <value>Хронология</value>
+  </data>
+  <data name="show.extra.historical.monthly_playcounts.title" xml:space="preserve">
+    <value>Историята на игра</value>
+  </data>
+  <data name="show.extra.historical.monthly_playcounts.count_label" xml:space="preserve">
+    <value>Игри</value>
+  </data>
+  <data name="show.extra.historical.most_played.count" xml:space="preserve">
+    <value>пъти изигран</value>
+  </data>
+  <data name="show.extra.historical.most_played.title" xml:space="preserve">
+    <value>Най-играните бийтмапове</value>
+  </data>
+  <data name="show.extra.historical.recent_plays.accuracy" xml:space="preserve">
+    <value>прецизност: {0}</value>
+  </data>
+  <data name="show.extra.historical.recent_plays.title" xml:space="preserve">
+    <value>Скорошна активност (24 часа)</value>
+  </data>
+  <data name="show.extra.historical.replays_watched_counts.title" xml:space="preserve">
+    <value>История на гледани повторения от останалите</value>
+  </data>
+  <data name="show.extra.historical.replays_watched_counts.count_label" xml:space="preserve">
+    <value>Гледани повторения</value>
+  </data>
+  <data name="show.extra.kudosu.recent_entries" xml:space="preserve">
+    <value>Скорошна Kudosu история</value>
+  </data>
+  <data name="show.extra.kudosu.title" xml:space="preserve">
+    <value>Kudosu!</value>
+  </data>
+  <data name="show.extra.kudosu.total" xml:space="preserve">
+    <value>Общо получено Kudosu</value>
+  </data>
+  <data name="show.extra.kudosu.entry.amount" xml:space="preserve">
+    <value>{0} kudosu</value>
+  </data>
+  <data name="show.extra.kudosu.entry.empty" xml:space="preserve">
+    <value>Този потребител все още няма kudosu!</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.allow_kudosu.give" xml:space="preserve">
+    <value>Получено {0} от молбата за забрана на kudosu в редакторска публикация {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.deny_kudosu.reset" xml:space="preserve">
+    <value>Отказано {0} от редакторска публикация {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.delete.reset" xml:space="preserve">
+    <value>Загубено {0} за изтриване на редакторска публикация в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.restore.give" xml:space="preserve">
+    <value>Получено {0} за възстановяване на редакторска публикация в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.vote.give" xml:space="preserve">
+    <value>Получено {0} за получен глас от редакторска публикация в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.vote.reset" xml:space="preserve">
+    <value>Загубено {0} за изгубен глас от редакторска публикация в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.recalculate.give" xml:space="preserve">
+    <value>Получено {0} за преизчисляване на гласове от редакторска публикация в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.beatmap_discussion.recalculate.reset" xml:space="preserve">
+    <value>Загубено {0} за преизчисляване на гласове от редакторска публикация в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.forum_post.give" xml:space="preserve">
+    <value>Получено {0} от {1} за публикацията в {2}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.forum_post.reset" xml:space="preserve">
+    <value>Kudosu е занулено от {0} за публикацията в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.entry.forum_post.revoke" xml:space="preserve">
+    <value>Kudosu е отказано от {0} за публикацията в {1}</value>
+  </data>
+  <data name="show.extra.kudosu.total_info._" xml:space="preserve">
+    <value>Основано на колко е допринесъл потребителят за редактиране на бийтмапове. Вижте {0} за повече информация.</value>
+  </data>
+  <data name="show.extra.kudosu.total_info.link" xml:space="preserve">
+    <value>тази страница</value>
+  </data>
+  <data name="show.extra.me.title" xml:space="preserve">
+    <value>за мен!</value>
+  </data>
+  <data name="show.extra.medals.empty" xml:space="preserve">
+    <value>Този потребител все още няма никакви! Т - Т</value>
+  </data>
+  <data name="show.extra.medals.recent" xml:space="preserve">
+    <value>Най-новите</value>
+  </data>
+  <data name="show.extra.medals.title" xml:space="preserve">
+    <value>Медали</value>
+  </data>
+  <data name="show.extra.playlists.title" xml:space="preserve">
+    <value>Плейлист игри</value>
+  </data>
+  <data name="show.extra.posts.title" xml:space="preserve">
+    <value>Публикации</value>
+  </data>
+  <data name="show.extra.posts.title_longer" xml:space="preserve">
+    <value>Скорошни публикации</value>
+  </data>
+  <data name="show.extra.posts.show_more" xml:space="preserve">
+    <value>виж повече публикации</value>
+  </data>
+  <data name="show.extra.recent_activity.title" xml:space="preserve">
+    <value>Скорошна активност</value>
+  </data>
+  <data name="show.extra.realtime.title" xml:space="preserve">
+    <value>Мултиплейър игри</value>
+  </data>
+  <data name="show.extra.top_ranks.download_replay" xml:space="preserve">
+    <value>Изтегли повторение</value>
+  </data>
+  <data name="show.extra.top_ranks.not_ranked" xml:space="preserve">
+    <value>Само класирани бийтмапове дават pp точки</value>
+  </data>
+  <data name="show.extra.top_ranks.pp_weight" xml:space="preserve">
+    <value>с тежест {0}</value>
+  </data>
+  <data name="show.extra.top_ranks.view_details" xml:space="preserve">
+    <value>Виж детайли</value>
+  </data>
+  <data name="show.extra.top_ranks.title" xml:space="preserve">
+    <value>Класации</value>
+  </data>
+  <data name="show.extra.top_ranks.best.title" xml:space="preserve">
+    <value>Най-добри резултати</value>
+  </data>
+  <data name="show.extra.top_ranks.first.title" xml:space="preserve">
+    <value>Класации на първо място</value>
+  </data>
+  <data name="show.extra.top_ranks.pin.to_0" xml:space="preserve">
+    <value>Откачане</value>
+  </data>
+  <data name="show.extra.top_ranks.pin.to_0_done" xml:space="preserve">
+    <value>Откачен резултат</value>
+  </data>
+  <data name="show.extra.top_ranks.pin.to_1" xml:space="preserve">
+    <value>Закачане</value>
+  </data>
+  <data name="show.extra.top_ranks.pin.to_1_done" xml:space="preserve">
+    <value>Закачен резултат</value>
+  </data>
+  <data name="show.extra.top_ranks.pinned.title" xml:space="preserve">
+    <value>Закачени резултати</value>
+  </data>
+  <data name="show.extra.votes.given" xml:space="preserve">
+    <value>Дадени гласове (за последните 3 месеца)</value>
+  </data>
+  <data name="show.extra.votes.received" xml:space="preserve">
+    <value>Получени гласове (за последните 3 месеца)</value>
+  </data>
+  <data name="show.extra.votes.title" xml:space="preserve">
+    <value>Гласове</value>
+  </data>
+  <data name="show.extra.votes.title_longer" xml:space="preserve">
+    <value>Скорошни гласове</value>
+  </data>
+  <data name="show.extra.votes.vote_count" xml:space="preserve">
+    <value>{0} глас|{0} гласа</value>
+  </data>
+  <data name="show.extra.account_standing.title" xml:space="preserve">
+    <value>Състояние на акаунта</value>
+  </data>
+  <data name="show.extra.account_standing.bad_standing" xml:space="preserve">
+    <value>Акаунта на &lt;strong&gt;{0}&lt;/strong&gt; не е в добро състояние :(</value>
+  </data>
+  <data name="show.extra.account_standing.remaining_silence" xml:space="preserve">
+    <value>&lt;strong&gt;{0}&lt;/strong&gt; ще бъде в състояние да говори отново след {1}.</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.title" xml:space="preserve">
+    <value>Скорошни нарушения</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.date" xml:space="preserve">
+    <value>дата</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.action" xml:space="preserve">
+    <value>действие</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.length" xml:space="preserve">
+    <value>продължителност</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.length_indefinite" xml:space="preserve">
+    <value>Неопределен</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.description" xml:space="preserve">
+    <value>описание</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.actor" xml:space="preserve">
+    <value>от {0}</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.actions.restriction" xml:space="preserve">
+    <value>Бан</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.actions.silence" xml:space="preserve">
+    <value>Заглушен</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.actions.tournament_ban" xml:space="preserve">
+    <value>Турнирна забрана</value>
+  </data>
+  <data name="show.extra.account_standing.recent_infringements.actions.note" xml:space="preserve">
+    <value>Бележка</value>
+  </data>
+  <data name="show.info.interests" xml:space="preserve">
+    <value>Интереси</value>
+  </data>
+  <data name="show.info.location" xml:space="preserve">
+    <value>Текущо местоположение</value>
+  </data>
+  <data name="show.info.occupation" xml:space="preserve">
+    <value>Занимание/Работа</value>
+  </data>
+  <data name="show.info.website" xml:space="preserve">
+    <value>Уебсайт</value>
+  </data>
+  <data name="show.not_found.reason_1" xml:space="preserve">
+    <value>Този потребител вероятно си е променил името.</value>
+  </data>
+  <data name="show.not_found.reason_2" xml:space="preserve">
+    <value>Акаунтът вероятно е недостъпен по причини за сигурност или злоупотреба.</value>
+  </data>
+  <data name="show.not_found.reason_3" xml:space="preserve">
+    <value>Вероятно сте допуснали правописна грешка!</value>
+  </data>
+  <data name="show.not_found.reason_header" xml:space="preserve">
+    <value>Има няколко вероятни причини за това:</value>
+  </data>
+  <data name="show.not_found.title" xml:space="preserve">
+    <value>Не бе открит такъв потребител! Т - Т</value>
+  </data>
+  <data name="show.page.button" xml:space="preserve">
+    <value>Редактиране на профил</value>
+  </data>
+  <data name="show.page.description" xml:space="preserve">
+    <value>&lt;strong&gt;за мен!&lt;/strong&gt; е една персонализирана част от профилната ви страница.</value>
+  </data>
+  <data name="show.page.edit_big" xml:space="preserve">
+    <value>Редактирай ме!</value>
+  </data>
+  <data name="show.page.placeholder" xml:space="preserve">
+    <value>Въведи съдържанието на страницата тук</value>
+  </data>
+  <data name="show.page.restriction_info._" xml:space="preserve">
+    <value>Трябва да сте {0}, за да отключите тази функционалност.</value>
+  </data>
+  <data name="show.page.restriction_info.link" xml:space="preserve">
+    <value>osu!supporter</value>
+  </data>
+  <data name="show.post_count._" xml:space="preserve">
+    <value>Приноси {0}</value>
+  </data>
+  <data name="show.post_count.count" xml:space="preserve">
+    <value>{0} публикация във форум|{0} публикации във форум</value>
+  </data>
+  <data name="show.rank.country" xml:space="preserve">
+    <value>Класация на държавата за {0}</value>
+  </data>
+  <data name="show.rank.country_simple" xml:space="preserve">
+    <value>Държавно класиране</value>
+  </data>
+  <data name="show.rank.global" xml:space="preserve">
+    <value>Световна класация за {0}</value>
+  </data>
+  <data name="show.rank.global_simple" xml:space="preserve">
+    <value>Глобално класиране</value>
+  </data>
+  <data name="show.rank.highest" xml:space="preserve">
+    <value>Най-висок ранг: {0} на {1}</value>
+  </data>
+  <data name="show.stats.hit_accuracy" xml:space="preserve">
+    <value>Прецизност на ударите</value>
+  </data>
+  <data name="show.stats.level" xml:space="preserve">
+    <value>Ниво {0}</value>
+  </data>
+  <data name="show.stats.level_progress" xml:space="preserve">
+    <value>Прогрес до следващо ниво</value>
+  </data>
+  <data name="show.stats.maximum_combo" xml:space="preserve">
+    <value>Максимално комбо</value>
+  </data>
+  <data name="show.stats.medals" xml:space="preserve">
+    <value>Медали</value>
+  </data>
+  <data name="show.stats.play_count" xml:space="preserve">
+    <value>Брой игри</value>
+  </data>
+  <data name="show.stats.play_time" xml:space="preserve">
+    <value>Общо играно време</value>
+  </data>
+  <data name="show.stats.ranked_score" xml:space="preserve">
+    <value>Общ класиран резултат</value>
+  </data>
+  <data name="show.stats.replays_watched_by_others" xml:space="preserve">
+    <value>Гледани повторения от останалите</value>
+  </data>
+  <data name="show.stats.score_ranks" xml:space="preserve">
+    <value>Класации по брой точки</value>
+  </data>
+  <data name="show.stats.total_hits" xml:space="preserve">
+    <value>Общ брой попадения</value>
+  </data>
+  <data name="show.stats.total_score" xml:space="preserve">
+    <value>Общ брой точки</value>
+  </data>
+  <data name="show.stats.graveyard_beatmapset_count" xml:space="preserve">
+    <value>Изоставени бийтмапове</value>
+  </data>
+  <data name="show.stats.loved_beatmapset_count" xml:space="preserve">
+    <value>Обичани бийтмапове</value>
+  </data>
+  <data name="show.stats.pending_beatmapset_count" xml:space="preserve">
+    <value>Чакащи класиране бийтмапове</value>
+  </data>
+  <data name="show.stats.ranked_beatmapset_count" xml:space="preserve">
+    <value>Класирани и одобрени бийтмапове</value>
+  </data>
+  <data name="silenced_banner.title" xml:space="preserve">
+    <value>В момента сте заглушени.</value>
+  </data>
+  <data name="silenced_banner.message" xml:space="preserve">
+    <value>Някои действия може да са недостъпни.</value>
+  </data>
+  <data name="status.all" xml:space="preserve">
+    <value>Всички</value>
+  </data>
+  <data name="status.online" xml:space="preserve">
+    <value>Онлайн</value>
+  </data>
+  <data name="status.offline" xml:space="preserve">
+    <value>Офлайн</value>
+  </data>
+  <data name="store.from_client" xml:space="preserve">
+    <value>Моля, регистрирайте се от клиента за игра!</value>
+  </data>
+  <data name="store.from_web" xml:space="preserve">
+    <value>моля, завършете регистрацията от уебсайта на osu!</value>
+  </data>
+  <data name="store.saved" xml:space="preserve">
+    <value>Потребител създаден</value>
+  </data>
+  <data name="verify.title" xml:space="preserve">
+    <value>Потвърждение на акаунт</value>
+  </data>
+  <data name="view_mode.brick" xml:space="preserve">
+    <value>Блоков изглед</value>
+  </data>
+  <data name="view_mode.card" xml:space="preserve">
+    <value>Картов изглед</value>
+  </data>
+  <data name="view_mode.list" xml:space="preserve">
+    <value>Списъчен изглед</value>
+  </data>
+</root>

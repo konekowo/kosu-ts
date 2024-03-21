@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header_title" xml:space="preserve">
+    <value>powiadomienia</value>
+  </data>
+  <data name="header_description" xml:space="preserve">
+    <value>bądź na bieżąco</value>
+  </data>
+  <data name="running_tasks" xml:space="preserve">
+    <value>Uruchomione zadania</value>
+  </data>
+  <data name="clear_all" xml:space="preserve">
+    <value>Wyczyść wszystko</value>
+  </data>
+  <data name="battery_low" xml:space="preserve">
+    <value>Niski poziom energii baterii! Podłącz urządzenie do ładowania, by zapobiec nieoczekiwanym zdarzeniom podczas rozgrywki.</value>
+  </data>
+  <data name="game_volume_too_low" xml:space="preserve">
+    <value>Głośność gry jest ustawiona zbyt nisko, by cokolwiek usłyszeć! Kliknij tutaj, by przywrócić dźwięk.</value>
+  </data>
+  <data name="no_autoplay_mod" xml:space="preserve">
+    <value>Automatyczne przejście nie jest dostępne dla bieżącego trybu gry!</value>
+  </data>
+  <data name="audio_playback_issue" xml:space="preserve">
+    <value>Wygląda na to, że osu! nie odtwarza dźwięku poprawnie.\n\nSpróbuj wybrać prawidłowe urządzenie wyjścia w ustawieniach.</value>
+  </data>
+  <data name="score_overlay_disabled" xml:space="preserve">
+    <value>Wyświetlanie HUD-u jest aktualnie wyłączone. Możesz to zmienić poprzez naciśnięcie {0}.</value>
+  </data>
+  <data name="unsupported_or_dangerous_url_protocol" xml:space="preserve">
+    <value>Adres URL {0} korzysta z niewspieranego lub niebezpiecznego protokołu i nie zostanie otwarty.</value>
+  </data>
+  <data name="subsequent_messages_logged" xml:space="preserve">
+    <value>Kolejne wiadomości zostały zarejestrowane. Kliknij, aby wyświetlić pliki dziennika.</value>
+  </data>
+  <data name="tablet_support_disabled_due_to_error" xml:space="preserve">
+    <value>Obsługiwanie tabletów zostało wyłączone z powodu wystąpienia następującego błędu: „{0}”</value>
+  </data>
+  <data name="encountered_tablet_warning" xml:space="preserve">
+    <value>Wykryto problem z tabletem. Twoje urządzenie może nie działać poprawnie. Kliknij tutaj, aby wyświetlić listę wszystkich obsługiwanych tabletów.</value>
+  </data>
+  <data name="unsupported_link_type" xml:space="preserve">
+    <value>Ten typ łącz nie jest jeszcze obsługiwany!</value>
+  </data>
+  <data name="private_message_received" xml:space="preserve">
+    <value>Otrzymujesz wiadomość prywatną od użytkownika {0}. Kliknij tutaj, aby ją odczytać!</value>
+  </data>
+  <data name="your_name_was_mentioned" xml:space="preserve">
+    <value>Użytkownik {0} wspomniał Cię na czacie. Kliknij, aby dowiedzieć się dlaczego!</value>
+  </data>
+  <data name="invited_you_to_the_multiplayer" xml:space="preserve">
+    <value>{0} zaprosił Cię do meczu wieloosobowego "{1}"! Kliknij, aby dołączyć.</value>
+  </data>
+  <data name="missing_beatmap_for_replay" xml:space="preserve">
+    <value>Nie posiadasz beatmapy do tej powtórki.</value>
+  </data>
+  <data name="downloading_beatmap_for_replay" xml:space="preserve">
+    <value>Pobieranie brakującej beatmapy dla tej powtórki...</value>
+  </data>
+  <data name="mismatching_beatmap_for_replay" xml:space="preserve">
+    <value>Twoja lokalna kopia beatmapy dla tej powtórki wydaje się inna niż oczekiwana. Być może będziesz musiał ją zaktualizować lub pobrać ponownie.</value>
+  </data>
+</root>

@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="toggle_chat" xml:space="preserve">
+    <value>Växla chattöverlägg</value>
+  </data>
+  <data name="toggle_social" xml:space="preserve">
+    <value>Stäng/öppna socialt lager</value>
+  </data>
+  <data name="reset_input_settings" xml:space="preserve">
+    <value>Återställ inmatningsinställningar</value>
+  </data>
+  <data name="toggle_toolbar" xml:space="preserve">
+    <value>Växla verktygsfält</value>
+  </data>
+  <data name="toggle_settings" xml:space="preserve">
+    <value>Öppna/stäng inställningar</value>
+  </data>
+  <data name="toggle_beatmap_listing" xml:space="preserve">
+    <value>Öppna/stäng beatmaplistning</value>
+  </data>
+  <data name="increase_volume" xml:space="preserve">
+    <value>Höj volym</value>
+  </data>
+  <data name="decrease_volume" xml:space="preserve">
+    <value>Sänk volym</value>
+  </data>
+  <data name="toggle_mute" xml:space="preserve">
+    <value>Ljud av/på</value>
+  </data>
+  <data name="skip_cutscene" xml:space="preserve">
+    <value>Hoppa över filmsekvens</value>
+  </data>
+  <data name="quick_retry" xml:space="preserve">
+    <value>Snabbåterförsök (håll)</value>
+  </data>
+  <data name="take_screenshot" xml:space="preserve">
+    <value>Ta skärmdump</value>
+  </data>
+  <data name="toggle_gameplay_mouse_buttons" xml:space="preserve">
+    <value>Slå på/av musknapparna i spelet</value>
+  </data>
+  <data name="back" xml:space="preserve">
+    <value>Tillbaka</value>
+  </data>
+  <data name="increase_scroll_speed" xml:space="preserve">
+    <value>Öka scroll-hastighet</value>
+  </data>
+  <data name="decrease_scroll_speed" xml:space="preserve">
+    <value>Minska scroll-hastighet</value>
+  </data>
+  <data name="select" xml:space="preserve">
+    <value>Välj</value>
+  </data>
+  <data name="quick_exit" xml:space="preserve">
+    <value>Snabbavslut (håll)</value>
+  </data>
+  <data name="music_next" xml:space="preserve">
+    <value>Nästa spår</value>
+  </data>
+  <data name="music_prev" xml:space="preserve">
+    <value>Föregående spår</value>
+  </data>
+  <data name="music_play" xml:space="preserve">
+    <value>Spela / pausa</value>
+  </data>
+  <data name="toggle_now_playing" xml:space="preserve">
+    <value>Öppna/stäng musikspelare</value>
+  </data>
+  <data name="select_previous" xml:space="preserve">
+    <value>Föregående val</value>
+  </data>
+  <data name="select_next" xml:space="preserve">
+    <value>Nästa val</value>
+  </data>
+  <data name="select_previous_group" xml:space="preserve">
+    <value>Välj föregående grupp</value>
+  </data>
+  <data name="select_next_group" xml:space="preserve">
+    <value>Välj nästa grupp</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>Hem</value>
+  </data>
+  <data name="toggle_notifications" xml:space="preserve">
+    <value>Öppna/stäng aviseringar</value>
+  </data>
+  <data name="toggle_profile" xml:space="preserve">
+    <value>Växla profil</value>
+  </data>
+  <data name="pause_gameplay" xml:space="preserve">
+    <value>Pausa spelet</value>
+  </data>
+  <data name="editor_setup_mode" xml:space="preserve">
+    <value>Konfigureringsläge</value>
+  </data>
+  <data name="editor_compose_mode" xml:space="preserve">
+    <value>Komponeringsläge</value>
+  </data>
+  <data name="editor_design_mode" xml:space="preserve">
+    <value>Designläge</value>
+  </data>
+  <data name="editor_timing_mode" xml:space="preserve">
+    <value>Timingläge</value>
+  </data>
+  <data name="editor_tap_for_bpm" xml:space="preserve">
+    <value>Tryck för BPM</value>
+  </data>
+  <data name="editor_clone_selection" xml:space="preserve">
+    <value>Klona markering</value>
+  </data>
+  <data name="editor_cycle_grid_display_mode" xml:space="preserve">
+    <value>Ändra rutnätsvisningsläge</value>
+  </data>
+  <data name="editor_test_gameplay" xml:space="preserve">
+    <value>Testa beatmap</value>
+  </data>
+  <data name="hold_for_hud" xml:space="preserve">
+    <value>Håll för gränssnitt</value>
+  </data>
+  <data name="random_skin" xml:space="preserve">
+    <value>Slumpat skin</value>
+  </data>
+  <data name="toggle_pause_replay" xml:space="preserve">
+    <value>Pausa / återuppta repris</value>
+  </data>
+  <data name="toggle_in_game_interface" xml:space="preserve">
+    <value>Visa/göm spelets gränssnitt</value>
+  </data>
+  
+  <data name="toggle_mod_selection" xml:space="preserve">
+    <value>Öppna/stäng modmeny</value>
+  </data>
+  <data name="deselect_all_mods" xml:space="preserve">
+    <value>Avmarkera alla mods</value>
+  </data>
+  <data name="select_next_random" xml:space="preserve">
+    <value>Slumpmässig</value>
+  </data>
+  <data name="select_previous_random" xml:space="preserve">
+    <value>Spola tillbaka</value>
+  </data>
+  <data name="toggle_beatmap_options" xml:space="preserve">
+    <value>Beatmapalternativ</value>
+  </data>
+  <data name="editor_verify_mode" xml:space="preserve">
+    <value>Verifieringsläge</value>
+  </data>
+  <data name="editor_nudge_left" xml:space="preserve">
+    <value>Knuffa markering till vänster</value>
+  </data>
+  <data name="editor_nudge_right" xml:space="preserve">
+    <value>Knuffa markering till höger</value>
+  </data>
+  <data name="editor_flip_horizontally" xml:space="preserve">
+    <value>Vänd markeringen vågrätt</value>
+  </data>
+  <data name="editor_flip_vertically" xml:space="preserve">
+    <value>Vänd markeringen lodrätt</value>
+  </data>
+  <data name="editor_increase_distance_spacing" xml:space="preserve">
+    <value>Öka avståndet</value>
+  </data>
+  <data name="editor_decrease_distance_spacing" xml:space="preserve">
+    <value>Minska avståndet</value>
+  </data>
+  <data name="editor_cycle_previous_beat_snap_divisor" xml:space="preserve">
+    <value>Gå till förra beat snäpp avdelare</value>
+  </data>
+  <data name="editor_cycle_next_snap_divisor" xml:space="preserve">
+    <value>Gå till nästa beat snäpp avdelare</value>
+  </data>
+  <data name="toggle_skin_editor" xml:space="preserve">
+    <value>Öppna/stäng skinredigeraren</value>
+  </data>
+  <data name="toggle_fps_counter" xml:space="preserve">
+    <value>Visa/dölj FPS-räknare</value>
+  </data>
+  <data name="previous_volume_meter" xml:space="preserve">
+    <value>Tidigare volymmätare</value>
+  </data>
+  <data name="next_volume_meter" xml:space="preserve">
+    <value>Nästa volymmätare</value>
+  </data>
+  <data name="seek_replay_forward" xml:space="preserve">
+    <value>Sök repris framåt</value>
+  </data>
+  <data name="seek_replay_backward" xml:space="preserve">
+    <value>Sök repris bakåt</value>
+  </data>
+  <data name="toggle_chat_focus" xml:space="preserve">
+    <value>Växla chattfokus</value>
+  </data>
+  <data name="toggle_replay_settings" xml:space="preserve">
+    <value>Växla reprisinställningar</value>
+  </data>
+  <data name="save_replay" xml:space="preserve">
+    <value>Spara repris</value>
+  </data>
+  <data name="export_replay" xml:space="preserve">
+    <value>Exportera repris</value>
+  </data>
+  
+</root>

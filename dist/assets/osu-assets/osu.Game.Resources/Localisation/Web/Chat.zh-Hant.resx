@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="loading_users" xml:space="preserve">
+    <value>正在載入使用者... </value>
+  </data>
+  <data name="talking_in" xml:space="preserve">
+    <value>在 {0} 聊天</value>
+  </data>
+  <data name="talking_with" xml:space="preserve">
+    <value>與 {0} 聊天</value>
+  </data>
+  <data name="title_compact" xml:space="preserve">
+    <value>聊天</value>
+  </data>
+  <data name="unread_messages" xml:space="preserve">
+    <value>未讀訊息</value>
+  </data>
+  <data name="cannot_send.channel" xml:space="preserve">
+    <value>您現在無法在頻道中發送訊息。可能是Bug或是以下原因:</value>
+  </data>
+  <data name="cannot_send.user" xml:space="preserve">
+    <value>您現在無法對這個玩家發送訊息。可能是Bug或是以下原因:</value>
+  </data>
+  <data name="channels.confirm_part" xml:space="preserve">
+    <value>您是否要隱藏本頻道？您仍然會收到這個頻道的訊息。</value>
+  </data>
+  <data name="channels.create" xml:space="preserve">
+    <value>建立公告</value>
+  </data>
+  <data name="channels.list.title.announce" xml:space="preserve">
+    <value>公告</value>
+  </data>
+  <data name="channels.list.title.group" xml:space="preserve">
+    <value>群組</value>
+  </data>
+  <data name="channels.list.title.pm" xml:space="preserve">
+    <value>私訊</value>
+  </data>
+  <data name="channels.list.title.public" xml:space="preserve">
+    <value>頻道</value>
+  </data>
+  <data name="form.title.announcement" xml:space="preserve">
+    <value>建立新公告</value>
+  </data>
+  <data name="form.labels.description" xml:space="preserve">
+    <value>詳情</value>
+  </data>
+  <data name="form.labels.message" xml:space="preserve">
+    <value>訊息</value>
+  </data>
+  <data name="form.labels.name" xml:space="preserve">
+    <value>房間名稱</value>
+  </data>
+  <data name="form.labels.users" xml:space="preserve">
+    <value>要新增的玩家</value>
+  </data>
+  <data name="not_found.message" xml:space="preserve">
+    <value>沒有東西耶。大概是你離開頻道，或者是這個頻道消失了⋯⋯</value>
+  </data>
+  <data name="not_found.title" xml:space="preserve">
+    <value>找不到頻道</value>
+  </data>
+  <data name="input.create" xml:space="preserve">
+    <value>建立</value>
+  </data>
+  <data name="input.disabled" xml:space="preserve">
+    <value>無法傳送訊息...</value>
+  </data>
+  <data name="input.disconnected" xml:space="preserve">
+    <value>連線已中斷</value>
+  </data>
+  <data name="input.placeholder" xml:space="preserve">
+    <value>輸入訊息...</value>
+  </data>
+  <data name="input.send" xml:space="preserve">
+    <value>發送</value>
+  </data>
+  <data name="no-conversations.howto" xml:space="preserve">
+    <value>在使用者個人資料或卡片的彈出方塊上點擊信封圖案以開始聊天。</value>
+  </data>
+  <data name="no-conversations.lazer" xml:space="preserve">
+    <value>您通過 &lt;a href="{0}"&gt;osu! lazer&lt;/a&gt; 加入的公開頻道也會顯示在這裡。</value>
+  </data>
+  <data name="no-conversations.title" xml:space="preserve">
+    <value>還沒有聊天過</value>
+  </data>
+</root>

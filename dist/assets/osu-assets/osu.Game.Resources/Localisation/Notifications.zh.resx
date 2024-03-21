@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header_title" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="header_description" xml:space="preserve">
+    <value>等待查看</value>
+  </data>
+  <data name="running_tasks" xml:space="preserve">
+    <value>运行中的任务</value>
+  </data>
+  <data name="clear_all" xml:space="preserve">
+    <value>全部清除</value>
+  </data>
+  <data name="battery_low" xml:space="preserve">
+    <value>电池电量过低！请为设备充电以避免游戏中断。</value>
+  </data>
+  <data name="game_volume_too_low" xml:space="preserve">
+    <value>游戏音量太低了，可能听不见。点击此处来恢复。</value>
+  </data>
+  <data name="no_autoplay_mod" xml:space="preserve">
+    <value>当前游戏模式没有可用的 Autoplay 模组！</value>
+  </data>
+  <data name="audio_playback_issue" xml:space="preserve">
+    <value>osu! 似乎无法正确播放音频。\n\n请尝试更改音频设备的相关设置，使之恢复正常。</value>
+  </data>
+  <data name="score_overlay_disabled" xml:space="preserve">
+    <value>分数显示层目前已禁用。按 {0} 来切换该设置。</value>
+  </data>
+  <data name="unsupported_or_dangerous_url_protocol" xml:space="preserve">
+    <value>URL {0} 的协议不受支持或有危险，将不会打开。</value>
+  </data>
+  <data name="subsequent_messages_logged" xml:space="preserve">
+    <value>已记录后续消息。点击此处查看日志文件。</value>
+  </data>
+  <data name="tablet_support_disabled_due_to_error" xml:space="preserve">
+    <value>出现错误：“{0}”，将禁用数位板支持。</value>
+  </data>
+  <data name="encountered_tablet_warning" xml:space="preserve">
+    <value>收到了数位板警告，你的数位板可能无法正常工作。点击此处查看所有支持的数位板列表。</value>
+  </data>
+  <data name="unsupported_link_type" xml:space="preserve">
+    <value>尚未支持此类链接！</value>
+  </data>
+  <data name="private_message_received" xml:space="preserve">
+    <value>你收到了来自“{0}”的私信。点这里阅读！</value>
+  </data>
+  <data name="your_name_was_mentioned" xml:space="preserve">
+    <value>“{0}”在聊天中提到了你的名字。点击这里查看详情！</value>
+  </data>
+  <data name="invited_you_to_the_multiplayer" xml:space="preserve">
+    <value>{0} 邀请你加入多人游戏 "{1}"！点击加入。</value>
+  </data>
+  <data name="missing_beatmap_for_replay" xml:space="preserve">
+    <value>你没有这个回放对应的谱面。</value>
+  </data>
+  <data name="downloading_beatmap_for_replay" xml:space="preserve">
+    <value>正在下载此回放所需的谱面......</value>
+  </data>
+  <data name="mismatching_beatmap_for_replay" xml:space="preserve">
+    <value>你拥有的本地谱面与回放所需的谱面不同，你可能需要更新或者重新下载。</value>
+  </data>
+  <data name="game_version_after_update" xml:space="preserve">
+    <value>你现在已更新到 osu! 版本 {0}。
+点击看看有什么新功能！</value>
+  </data>
+  <data name="update_ready_to_install" xml:space="preserve">
+    <value>更新已准备好安装。点击这里重启游戏！</value>
+  </data>
+  <data name="downloading_update" xml:space="preserve">
+    <value>正在下载更新...</value>
+  </data>
+  <data name="installing_update" xml:space="preserve">
+    <value>正在安装更新...</value>
+  </data>
+</root>

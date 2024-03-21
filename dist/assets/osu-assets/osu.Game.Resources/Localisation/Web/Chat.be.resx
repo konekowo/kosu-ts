@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="loading_users" xml:space="preserve">
+    <value>загрузка карыстальнікаў...</value>
+  </data>
+  <data name="talking_in" xml:space="preserve">
+    <value>размаўляе ў {0}</value>
+  </data>
+  <data name="talking_with" xml:space="preserve">
+    <value>размаўляе з {0}</value>
+  </data>
+  <data name="title_compact" xml:space="preserve">
+    <value>чат</value>
+  </data>
+  <data name="unread_messages" xml:space="preserve">
+    <value>непрачытаныя паведамленні</value>
+  </data>
+  <data name="cannot_send.channel" xml:space="preserve">
+    <value>Зараз вы не можаце адпраўляць паведамленні ў гэты канал. Магчыма гэта выклікана адной з наступных прычын:</value>
+  </data>
+  <data name="cannot_send.user" xml:space="preserve">
+    <value>Зараз вы не можаце адпраўляць паведамленні гэтаму карыстальніку. Магчыма гэта выклікана адной з наступных прычын:</value>
+  </data>
+  <data name="channels.confirm_part" xml:space="preserve">
+    <value>Вы сапраўды хочаце схаваць гэты канал? Вы ўсё яшчэ будзеце атрымліваць паведамленні з яго.</value>
+  </data>
+  <data name="channels.create" xml:space="preserve">
+    <value>стварыць аб'яву</value>
+  </data>
+  <data name="channels.list.title.announce" xml:space="preserve">
+    <value>Аб'явы</value>
+  </data>
+  <data name="channels.list.title.group" xml:space="preserve">
+    <value>Групы</value>
+  </data>
+  <data name="channels.list.title.pm" xml:space="preserve">
+    <value>Паведамлення</value>
+  </data>
+  <data name="channels.list.title.public" xml:space="preserve">
+    <value>Каналы</value>
+  </data>
+  <data name="form.title.announcement" xml:space="preserve">
+    <value>Стварыць новую аб'яву</value>
+  </data>
+  <data name="form.labels.description" xml:space="preserve">
+    <value>апісанне</value>
+  </data>
+  <data name="form.labels.message" xml:space="preserve">
+    <value>паведамленне</value>
+  </data>
+  <data name="form.labels.name" xml:space="preserve">
+    <value>назва пакоя</value>
+  </data>
+  <data name="form.labels.users" xml:space="preserve">
+    <value>дабаўляемых гульцоў</value>
+  </data>
+  <data name="not_found.message" xml:space="preserve">
+    <value>Тут нічога няма, мусіць вы выйшлі з канала або ён не існуе...</value>
+  </data>
+  <data name="not_found.title" xml:space="preserve">
+    <value>канал не знойдзены</value>
+  </data>
+  <data name="input.create" xml:space="preserve">
+    <value>Стварыць</value>
+  </data>
+  <data name="input.disabled" xml:space="preserve">
+    <value>не атрымалася адправіць паведамленне...</value>
+  </data>
+  <data name="input.disconnected" xml:space="preserve">
+    <value>Адключаны</value>
+  </data>
+  <data name="input.placeholder" xml:space="preserve">
+    <value>пішыце паведамленне...</value>
+  </data>
+  <data name="input.send" xml:space="preserve">
+    <value>Адправіць</value>
+  </data>
+  <data name="no-conversations.howto" xml:space="preserve">
+    <value>Пачаць размову з профілю або ўсплывальнай карткі карыстальніка.</value>
+  </data>
+  <data name="no-conversations.lazer" xml:space="preserve">
+    <value>Публічныя каналы, да якіх вы далучыліся праз &lt;a href="{0}"&gt;osu!lazer&lt;/a&gt; будуць бачныя тут.</value>
+  </data>
+  <data name="no-conversations.title" xml:space="preserve">
+    <value>яшчэ няма размоў</value>
+  </data>
+</root>

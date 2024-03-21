@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="all_read" xml:space="preserve">
+    <value>Kaikki ilmoitukset luettu!</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Poista {0}</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Ladataan lukemattomia ilmoituksia...</value>
+  </data>
+  <data name="mark_read" xml:space="preserve">
+    <value>Tyhjennä {0}</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>Ei ilmoituksia</value>
+  </data>
+  <data name="see_all" xml:space="preserve">
+    <value>näytä kaikki ilmoitukset</value>
+  </data>
+  <data name="see_channel" xml:space="preserve">
+    <value>siirry keskusteluun</value>
+  </data>
+  <data name="verifying" xml:space="preserve">
+    <value>Vahvista istuntosi nähdäksesi ilmoitukset</value>
+  </data>
+  <data name="action_type._" xml:space="preserve">
+    <value>kaikki</value>
+  </data>
+  <data name="action_type.beatmapset" xml:space="preserve">
+    <value>rytmikartat</value>
+  </data>
+  <data name="action_type.build" xml:space="preserve">
+    <value>rakennuskerrat</value>
+  </data>
+  <data name="action_type.channel" xml:space="preserve">
+    <value>chat</value>
+  </data>
+  <data name="action_type.forum_topic" xml:space="preserve">
+    <value>foorumit</value>
+  </data>
+  <data name="action_type.news_post" xml:space="preserve">
+    <value>uutiset</value>
+  </data>
+  <data name="action_type.user" xml:space="preserve">
+    <value>profiili</value>
+  </data>
+  <data name="filters._" xml:space="preserve">
+    <value>kaikki</value>
+  </data>
+  <data name="filters.user" xml:space="preserve">
+    <value>profiili</value>
+  </data>
+  <data name="filters.beatmapset" xml:space="preserve">
+    <value>rytmikartat</value>
+  </data>
+  <data name="filters.forum_topic" xml:space="preserve">
+    <value>foorumi</value>
+  </data>
+  <data name="filters.news_post" xml:space="preserve">
+    <value>uutiset</value>
+  </data>
+  <data name="filters.build" xml:space="preserve">
+    <value>rakennukset</value>
+  </data>
+  <data name="filters.channel" xml:space="preserve">
+    <value>chatti</value>
+  </data>
+  <data name="item.beatmapset._" xml:space="preserve">
+    <value>Rytmikartta</value>
+  </data>
+  <data name="item.beatmapset.beatmap_owner_change._" xml:space="preserve">
+    <value>Vieraan vaikeustaso</value>
+  </data>
+  <data name="item.beatmapset.beatmap_owner_change.beatmap_owner_change" xml:space="preserve">
+    <value>Omistat nyt vaikeustason "{0}" rytmikartassa "{1}"</value>
+  </data>
+  <data name="item.beatmapset.beatmap_owner_change.beatmap_owner_change_compact" xml:space="preserve">
+    <value>Omistat nyt vaikeustason "{0}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion._" xml:space="preserve">
+    <value>Rytmikartan keskustelu</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_lock" xml:space="preserve">
+    <value>Keskustelu kohteessa "{0}" on lukittu</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_lock_compact" xml:space="preserve">
+    <value>Keskustelu on lukittu</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_post_new" xml:space="preserve">
+    <value>Uusi viesti kohteessa "{0}" käyttäjältä {1}: "{2}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_post_new_empty" xml:space="preserve">
+    <value>Uusi viesti kohteessa "{0}" käyttäjältä {1}</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_post_new_compact" xml:space="preserve">
+    <value>Uusi viesti käyttäjältä {0}: "{1}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_post_new_compact_empty" xml:space="preserve">
+    <value>Uusi viesti käyttäjältä {0}</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_review_new" xml:space="preserve">
+    <value>Uusi arvostelu rytmikartassa "{0}" käyttäjältä {1} sisältäen ongelmia: {2}, ehdotuksia: {3}, kehuja: {4}</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_review_new_compact" xml:space="preserve">
+    <value>Uusi arvostelu käyttäjältä {0} sisältäen ongelmia: {1}, ehdotuksia: {2}, kehuja: {3}</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_unlock" xml:space="preserve">
+    <value>Keskustelun "{0}" lukitus on avattu</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.beatmapset_discussion_unlock_compact" xml:space="preserve">
+    <value>Keskustelu on avattu</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.review_count.praises" xml:space="preserve">
+    <value>{0} kehu|{0} kehua</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.review_count.problems" xml:space="preserve">
+    <value>{0} ongelma|{0} ongelmaa</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_discussion.review_count.suggestions" xml:space="preserve">
+    <value>{0} ehdotus|{0} ehdotusta</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_problem._" xml:space="preserve">
+    <value>Kelpuutetun rytmikartan ongelma</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_problem.beatmapset_discussion_qualified_problem" xml:space="preserve">
+    <value>{0} ilmiantoi kohteen "{1}": "{2}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_problem.beatmapset_discussion_qualified_problem_empty" xml:space="preserve">
+    <value>{0} ilmiantoi kohteen "{1}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_problem.beatmapset_discussion_qualified_problem_compact" xml:space="preserve">
+    <value>{0} ilmiantoi kohteen: "{1}"</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_problem.beatmapset_discussion_qualified_problem_compact_empty" xml:space="preserve">
+    <value>{0}'n Ilmiantama</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state._" xml:space="preserve">
+    <value>Rytmikartan tilanne muuttui</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_disqualify" xml:space="preserve">
+    <value>"{0}" on hylätty</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_disqualify_compact" xml:space="preserve">
+    <value>Rytmikartta epäkelpuutettiin</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_love" xml:space="preserve">
+    <value>"{0}" ylennettiin rakastetuksi</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_love_compact" xml:space="preserve">
+    <value>Rytmikartta ylennettiin rakastetuksi</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_nominate" xml:space="preserve">
+    <value>"{0}" on hyväksytty</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_nominate_compact" xml:space="preserve">
+    <value>Rytmikartta ehdollepantiin</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_qualify" xml:space="preserve">
+    <value>"{0}" sai riittävästi ehdollepanoja ja on siirtynyt rankkausjonoon</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_qualify_compact" xml:space="preserve">
+    <value>Rytmikartta on siirtynyt rankkausjonoon</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_rank" xml:space="preserve">
+    <value>"{0}" on hyväksytty</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_rank_compact" xml:space="preserve">
+    <value>Rytmikartta rankattiin</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_remove_from_loved" xml:space="preserve">
+    <value>"{0}" poistettiin rakastetuista</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_remove_from_loved_compact" xml:space="preserve">
+    <value>Rytmikartta poistettiin rakastetuista</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_reset_nominations" xml:space="preserve">
+    <value>"{0}"n ehdollepanot on nollattu</value>
+  </data>
+  <data name="item.beatmapset.beatmapset_state.beatmapset_reset_nominations_compact" xml:space="preserve">
+    <value>Ehdollepano nollattiin</value>
+  </data>
+  <data name="item.beatmapset.comment._" xml:space="preserve">
+    <value>Uusi kommentti</value>
+  </data>
+  <data name="item.beatmapset.comment.comment_new" xml:space="preserve">
+    <value>{0} kommentoi "{1}" "{2}"ssa</value>
+  </data>
+  <data name="item.beatmapset.comment.comment_new_compact" xml:space="preserve">
+    <value>{0} kommentoi "{1}"</value>
+  </data>
+  <data name="item.beatmapset.comment.comment_reply" xml:space="preserve">
+    <value>{0} vastasi "{1}" "{2}"ssa</value>
+  </data>
+  <data name="item.beatmapset.comment.comment_reply_compact" xml:space="preserve">
+    <value>{0} vastasi "{1}"</value>
+  </data>
+  <data name="item.channel._" xml:space="preserve">
+    <value>Chatti</value>
+  </data>
+  <data name="item.channel.announcement._" xml:space="preserve">
+    <value>Uusi ilmoitus</value>
+  </data>
+  <data name="item.channel.announcement.announce.channel_announcement" xml:space="preserve">
+    <value>{0} sanoo "{1}"</value>
+  </data>
+  <data name="item.channel.announcement.announce.channel_announcement_compact" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="item.channel.announcement.announce.channel_announcement_group" xml:space="preserve">
+    <value>Tiedote käyttäjältä {0}</value>
+  </data>
+  <data name="item.channel.channel._" xml:space="preserve">
+    <value>Uusi viesti</value>
+  </data>
+  <data name="item.channel.channel.pm.channel_message" xml:space="preserve">
+    <value>{0} sanoo "{1}"</value>
+  </data>
+  <data name="item.channel.channel.pm.channel_message_compact" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="item.channel.channel.pm.channel_message_group" xml:space="preserve">
+    <value>käyttäjältä {0}</value>
+  </data>
+  <data name="item.build._" xml:space="preserve">
+    <value>Muutosloki</value>
+  </data>
+  <data name="item.build.comment._" xml:space="preserve">
+    <value>Uusi kommentti</value>
+  </data>
+  <data name="item.build.comment.comment_new" xml:space="preserve">
+    <value>{0} kommentoi "{1}" "{2}"ssa</value>
+  </data>
+  <data name="item.build.comment.comment_new_compact" xml:space="preserve">
+    <value>{0} kommentoi "{1}"</value>
+  </data>
+  <data name="item.build.comment.comment_reply" xml:space="preserve">
+    <value>{0} vastasi "{1}" "{2}"ssa</value>
+  </data>
+  <data name="item.build.comment.comment_reply_compact" xml:space="preserve">
+    <value>{0} vastasi "{1}"</value>
+  </data>
+  <data name="item.news_post._" xml:space="preserve">
+    <value>Uutiset</value>
+  </data>
+  <data name="item.news_post.comment._" xml:space="preserve">
+    <value>Uusi kommentti</value>
+  </data>
+  <data name="item.news_post.comment.comment_new" xml:space="preserve">
+    <value>{0} kommentoi "{1}" "{2}"ssa</value>
+  </data>
+  <data name="item.news_post.comment.comment_new_compact" xml:space="preserve">
+    <value>{0} kommentoi"{1}"</value>
+  </data>
+  <data name="item.news_post.comment.comment_reply" xml:space="preserve">
+    <value>{0} vastasi "{1}" "{2}"ssa</value>
+  </data>
+  <data name="item.news_post.comment.comment_reply_compact" xml:space="preserve">
+    <value>{0} vastasi "{1}"</value>
+  </data>
+  <data name="item.forum_topic._" xml:space="preserve">
+    <value>Foorumin aihe</value>
+  </data>
+  <data name="item.forum_topic.forum_topic_reply._" xml:space="preserve">
+    <value>Uusi foorumivastaus</value>
+  </data>
+  <data name="item.forum_topic.forum_topic_reply.forum_topic_reply" xml:space="preserve">
+    <value>{0} vastasi foorumi aiheeseen "{1}".</value>
+  </data>
+  <data name="item.forum_topic.forum_topic_reply.forum_topic_reply_compact" xml:space="preserve">
+    <value>{0} vastasi</value>
+  </data>
+  <data name="item.user.user_beatmapset_new._" xml:space="preserve">
+    <value>Uusi rytmikartta</value>
+  </data>
+  <data name="item.user.user_beatmapset_new.user_beatmapset_new" xml:space="preserve">
+    <value>Uusi rytmikartta "{0}" kartoittajalta {1}</value>
+  </data>
+  <data name="item.user.user_beatmapset_new.user_beatmapset_new_compact" xml:space="preserve">
+    <value>Uusi rytmikartta "{0}"</value>
+  </data>
+  <data name="item.user.user_beatmapset_new.user_beatmapset_new_group" xml:space="preserve">
+    <value>Uusia rytmikarttoja kartoittajalta {0}</value>
+  </data>
+  <data name="item.user.user_beatmapset_new.user_beatmapset_revive" xml:space="preserve">
+    <value>{0} elvytti rytmikartan "{1}"</value>
+  </data>
+  <data name="item.user.user_beatmapset_new.user_beatmapset_revive_compact" xml:space="preserve">
+    <value>Rytmikartta "{0}" elvytetty</value>
+  </data>
+  <data name="item.user_achievement._" xml:space="preserve">
+    <value>Mitalit</value>
+  </data>
+  <data name="item.user_achievement.user_achievement_unlock._" xml:space="preserve">
+    <value>Uusi mitali</value>
+  </data>
+  <data name="item.user_achievement.user_achievement_unlock.user_achievement_unlock" xml:space="preserve">
+    <value>Ansaittu "{0}"!</value>
+  </data>
+  <data name="item.user_achievement.user_achievement_unlock.user_achievement_unlock_compact" xml:space="preserve">
+    <value>Ansaittu "{0}"!</value>
+  </data>
+  <data name="item.user_achievement.user_achievement_unlock.user_achievement_unlock_group" xml:space="preserve">
+    <value>Mitaleja saavutettu!</value>
+  </data>
+  <data name="mail.beatmapset.beatmap_owner_change.beatmap_owner_change" xml:space="preserve">
+    <value>Olet nyt vieraana rytmikartassa "{0}"</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_discussion.beatmapset_discussion_lock" xml:space="preserve">
+    <value>Keskustelu aiheesta "{0}" on lukittu</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_discussion.beatmapset_discussion_post_new" xml:space="preserve">
+    <value>Keskustelu aiheesta "{0}" on saanut uusia päivityksiä</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_discussion.beatmapset_discussion_unlock" xml:space="preserve">
+    <value>Aiheen "{0}" lukitus on avattu</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_problem.beatmapset_discussion_qualified_problem" xml:space="preserve">
+    <value>Uusi ongelma ilmoitettiin aiheessa "{0}"</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_disqualify" xml:space="preserve">
+    <value>"{0}" on hylätty</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_love" xml:space="preserve">
+    <value>"{0}" ylennettiin rakastetuksi</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_nominate" xml:space="preserve">
+    <value>"{0}" on hyväksytty</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_qualify" xml:space="preserve">
+    <value>"{0}" sai riittävästi ehdollepanoja ja on siirtynyt rankkausjonoon</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_rank" xml:space="preserve">
+    <value>"{0}" on hyväksytty</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_remove_from_loved" xml:space="preserve">
+    <value>"{0}" poistettiin rakastetuista</value>
+  </data>
+  <data name="mail.beatmapset.beatmapset_state.beatmapset_reset_nominations" xml:space="preserve">
+    <value>"{0}"n ehdollepanot on nollattu</value>
+  </data>
+  <data name="mail.beatmapset.comment.comment_new" xml:space="preserve">
+    <value>Rytmikartassa "{0}" on uusia kommentteja</value>
+  </data>
+  <data name="mail.channel.announcement.announce" xml:space="preserve">
+    <value>"{0}" on saanut uuden tiedotteen</value>
+  </data>
+  <data name="mail.channel.channel.pm" xml:space="preserve">
+    <value>Olet saanut uuden viestin käyttäjältä {0}</value>
+  </data>
+  <data name="mail.build.comment.comment_new" xml:space="preserve">
+    <value>Muutosloki "{0}" on saanut uusia kommentteja</value>
+  </data>
+  <data name="mail.news_post.comment.comment_new" xml:space="preserve">
+    <value>Uutinen "{0}" on saanut uusia kommentteja</value>
+  </data>
+  <data name="mail.forum_topic.forum_topic_reply.forum_topic_reply" xml:space="preserve">
+    <value>Aihe "{0}" on saanut uusia vastauksia</value>
+  </data>
+  <data name="mail.user.user_beatmapset_new.user_beatmapset_new" xml:space="preserve">
+    <value>{0} on luonut uusia rytmikarttoja</value>
+  </data>
+  <data name="mail.user.user_beatmapset_new.user_beatmapset_revive" xml:space="preserve">
+    <value>{0} on elvyttänyt rytmikarttoja</value>
+  </data>
+</root>

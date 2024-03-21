@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="maintenance_section_header" xml:space="preserve">
+    <value>维护</value>
+  </data>
+  <data name="select_directory" xml:space="preserve">
+    <value>选择文件夹</value>
+  </data>
+  <data name="migration_in_progress" xml:space="preserve">
+    <value>正在迁移中</value>
+  </data>
+  <data name="migration_description" xml:space="preserve">
+    <value>这可能需要几分钟，取决于您的硬盘速度。</value>
+  </data>
+  <data name="prohibited_interact_during_migration" xml:space="preserve">
+    <value>请避免操作游戏！</value>
+  </data>
+  <data name="failed_cleanup_notification" xml:space="preserve">
+    <value>迁移过程中有些文件无法被清理。点击此通知打开文件夹以手动清理。</value>
+  </data>
+  <data name="select_new_location" xml:space="preserve">
+    <value>请选择一个新位置</value>
+  </data>
+  <data name="target_directory_already_installed_osu" xml:space="preserve">
+    <value>目标目录似乎已安装了一份 osu!。要使用已安装的 osu! 数据吗？</value>
+  </data>
+  <data name="restart_and_re_open_required_for_completion" xml:space="preserve">
+    <value>为了使更改生效，osu! 即将关闭。游戏重启后，将会使用新的存储位置。</value>
+  </data>
+  <data name="delete_all_beatmaps" xml:space="preserve">
+    <value>删除所有谱面</value>
+  </data>
+  <data name="delete_all_beatmap_videos" xml:space="preserve">
+    <value>删除所有谱面视频</value>
+  </data>
+  <data name="delete_all_scores" xml:space="preserve">
+    <value>删除所有成绩</value>
+  </data>
+  <data name="delete_all_skins" xml:space="preserve">
+    <value>删除所有皮肤</value>
+  </data>
+  <data name="delete_all_collections" xml:space="preserve">
+    <value>删除全部收藏夹</value>
+  </data>
+  <data name="restore_all_hidden_difficulties" xml:space="preserve">
+    <value>恢复所有隐藏的难度</value>
+  </data>
+  <data name="restore_all_recently_deleted_beatmaps" xml:space="preserve">
+    <value>恢复所有最近删除的谱面</value>
+  </data>
+  <data name="delete_all_mod_presets" xml:space="preserve">
+    <value>删除所有模组预设</value>
+  </data>
+  <data name="restore_all_recently_deleted_mod_presets" xml:space="preserve">
+    <value>恢复所有最近删除的模组预设</value>
+  </data>
+  <data name="deleted_all_collections" xml:space="preserve">
+    <value>已删除所有收藏夹！</value>
+  </data>
+  <data name="deleted_all_mod_presets" xml:space="preserve">
+    <value>已删除所有模组预设！</value>
+  </data>
+  <data name="restored_all_deleted_mod_presets" xml:space="preserve">
+    <value>已恢复所有已删除的模组预设！</value>
+  </data>
+  <data name="stable_directory_select_header" xml:space="preserve">
+    <value>请选择 osu!stable 的安装位置</value>
+  </data>
+</root>

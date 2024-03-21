@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="mouse" xml:space="preserve">
+    <value>ماوس</value>
+  </data>
+  <data name="not_applicable_full_screen" xml:space="preserve">
+    <value>در حالت تمام صفحه قابل اجرا نیست</value>
+  </data>
+  <data name="high_precision_mouse" xml:space="preserve">
+    <value>ماوس دقت بالا</value>
+  </data>
+  <data name="high_precision_mouse_tooltip" xml:space="preserve">
+    <value>تلاش برای دور زدن هر شتاب ماوس سیستم عملکردی. در ویندوز، این معادل آنچه که به عنوان "ورودی خام" شناخته می شود، معادل است.</value>
+  </data>
+  <data name="confine_mouse_mode" xml:space="preserve">
+    <value>محدوده ماوس را به پنجره محدود کنید</value>
+  </data>
+  <data name="disable_mouse_wheel_volume_adjust" xml:space="preserve">
+    <value>حجم تنظیم چرخ ماوس را در طول گیم پلی غیرفعال کنید</value>
+  </data>
+  <data name="disable_mouse_wheel_volume_adjust_tooltip" xml:space="preserve">
+    <value>میزان صدا هنوز هم می تواند با استفاده از چرخ ماوس با نگه داشتن "Alt" تنظیم شود</value>
+  </data>
+  <data name="disable_clicks" xml:space="preserve">
+    <value>کلیک موس را خاموش کنید وقتی در حال بازی هستیت</value>
+  </data>
+  <data name="enable_high_precision_for_sensitivity_adjust" xml:space="preserve">
+    <value>ماوس دقت بالا را فعال کنید تا حساسیت را تنظیم کنید</value>
+  </data>
+  <data name="cursor_sensitivity" xml:space="preserve">
+    <value>حساسیت مکان نما</value>
+  </data>
+  <data name="high_precision_platform_warning" xml:space="preserve">
+    <value>این تنظیم مسائل مربوط به پلت فرم شما را شناخته است. اگر مشکلی دارید، توصیه می شود که حساسیت را به صورت خارجی تنظیم کنید و این را در حال حاضر غیرفعال کنید.</value>
+  </data>
+  <data name="always_confine" xml:space="preserve">
+    <value>همیشه</value>
+  </data>
+  <data name="confine_during_gameplay" xml:space="preserve">
+    <value>موقع گیم پلی</value>
+  </data>
+  <data name="never_confine" xml:space="preserve">
+    <value>هرگز</value>
+  </data>
+</root>

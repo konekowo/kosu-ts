@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header" xml:space="preserve">
+    <value>导入</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>如果已经安装了旧版本的 osu! ，您可以选择迁移现有的游戏数据。 注意，这丝毫不会影响已安装版本的文件。</value>
+  </data>
+  <data name="locate_directory_label" xml:space="preserve">
+    <value>旧版本 osu!</value>
+  </data>
+  <data name="locate_directory_placeholder" xml:space="preserve">
+    <value>点击定位旧版本 osu!</value>
+  </data>
+  <data name="import_button" xml:space="preserve">
+    <value>导入之前的游戏数据</value>
+  </data>
+  <data name="import_in_progress" xml:space="preserve">
+    <value>导入工作会在后台进行，您可以在侧边栏中查看导入进度！</value>
+  </data>
+  <data name="calculating" xml:space="preserve">
+    <value>计算中...</value>
+  </data>
+  <data name="items" xml:space="preserve">
+    <value>{0} 个项目</value>
+  </data>
+  <data name="data_migration_no_extra_space" xml:space="preserve">
+    <value>数据迁移将使用硬链接。这不会占用额外磁盘空间，你可以在任何时候删掉其中一个安装版本，其他版本将不受影响。</value>
+  </data>
+  <data name="learn_about_hard_links" xml:space="preserve">
+    <value>了解“硬链接”的原理</value>
+  </data>
+  <data name="lightweight_linking_not_supported" xml:space="preserve">
+    <value>您的操作系统不支持轻量文件链接，因此，导入时会生成一份所有文件的副本。</value>
+  </data>
+  <data name="second_copy_will_be_made_windows" xml:space="preserve">
+    <value>在导入时会复制并生成第二份文件。如果不想这样，请确保 lazer 数据文件夹和先前安装的 osu! 在同一驱动器下（且使用 NTFS 文件系统）。</value>
+  </data>
+  <data name="second_copy_will_be_made_other_platforms" xml:space="preserve">
+    <value>在导入时会复制并生成第二份文件。如果不想这样，请确保 lazer 数据文件夹和先前安装的 osu! 在同一驱动器下（且文件系统支持硬链接）。</value>
+  </data>
+</root>

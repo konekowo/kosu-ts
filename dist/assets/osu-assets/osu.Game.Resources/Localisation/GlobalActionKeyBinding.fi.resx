@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="toggle_chat" xml:space="preserve">
+    <value>Näytä / piilota viestien peitetaso</value>
+  </data>
+  <data name="toggle_social" xml:space="preserve">
+    <value>Näytä / piilota yleiskatsauksen peitetaso</value>
+  </data>
+  <data name="reset_input_settings" xml:space="preserve">
+    <value>Palauta syöteasetukset</value>
+  </data>
+  <data name="toggle_toolbar" xml:space="preserve">
+    <value>Näytä / piilota työkalupalkki</value>
+  </data>
+  <data name="toggle_settings" xml:space="preserve">
+    <value>Näytä / piilota asetukset</value>
+  </data>
+  <data name="toggle_beatmap_listing" xml:space="preserve">
+    <value>Näytä / piilota rytmikarttojen listaus</value>
+  </data>
+  <data name="increase_volume" xml:space="preserve">
+    <value>Nosta äänenvoimakkuutta</value>
+  </data>
+  <data name="decrease_volume" xml:space="preserve">
+    <value>Laske äänenvoimakkuutta</value>
+  </data>
+  <data name="toggle_mute" xml:space="preserve">
+    <value>Ääni päälle / pois</value>
+  </data>
+  <data name="skip_cutscene" xml:space="preserve">
+    <value>Ohita välikohtaus</value>
+  </data>
+  <data name="quick_retry" xml:space="preserve">
+    <value>Yritä uudelleen (pidä painettuna)</value>
+  </data>
+  <data name="take_screenshot" xml:space="preserve">
+    <value>Ota kuvakaappaus</value>
+  </data>
+  <data name="toggle_gameplay_mouse_buttons" xml:space="preserve">
+    <value>Ota käyttöön / poista käytöstä hiirinäppäimet pelissä</value>
+  </data>
+  <data name="back" xml:space="preserve">
+    <value>Takaisin</value>
+  </data>
+  <data name="increase_scroll_speed" xml:space="preserve">
+    <value>Nopeuta vieritystä</value>
+  </data>
+  <data name="decrease_scroll_speed" xml:space="preserve">
+    <value>Hidasta vieritystä</value>
+  </data>
+  <data name="select" xml:space="preserve">
+    <value>Valitse</value>
+  </data>
+  <data name="quick_exit" xml:space="preserve">
+    <value>Poistu (pidä painettuna)</value>
+  </data>
+  <data name="music_next" xml:space="preserve">
+    <value>Seuraava kappale</value>
+  </data>
+  <data name="music_prev" xml:space="preserve">
+    <value>Edellinen kappale</value>
+  </data>
+  <data name="music_play" xml:space="preserve">
+    <value>Toista / keskeytä</value>
+  </data>
+  <data name="toggle_now_playing" xml:space="preserve">
+    <value>Näytä / piilota soivan kappaleen hallinta</value>
+  </data>
+  <data name="select_previous" xml:space="preserve">
+    <value>Valitse edellinen</value>
+  </data>
+  <data name="select_next" xml:space="preserve">
+    <value>Valitse seuraava</value>
+  </data>
+  <data name="select_previous_group" xml:space="preserve">
+    <value>Valitse edellinen ryhmä</value>
+  </data>
+  <data name="select_next_group" xml:space="preserve">
+    <value>Valitse seuraava ryhmä</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>Koti</value>
+  </data>
+  <data name="toggle_notifications" xml:space="preserve">
+    <value>Näytä / piilota ilmoitukset</value>
+  </data>
+  <data name="toggle_profile" xml:space="preserve">
+    <value>Näytä / piilota profiili</value>
+  </data>
+  <data name="pause_gameplay" xml:space="preserve">
+    <value>Tauota / jatka pelaamista</value>
+  </data>
+  <data name="editor_setup_mode" xml:space="preserve">
+    <value>Asetustila</value>
+  </data>
+  <data name="editor_compose_mode" xml:space="preserve">
+    <value>Sävellystila</value>
+  </data>
+  <data name="editor_design_mode" xml:space="preserve">
+    <value>Design-tila</value>
+  </data>
+  <data name="editor_timing_mode" xml:space="preserve">
+    <value>Ajoitustila</value>
+  </data>
+  <data name="editor_tap_for_bpm" xml:space="preserve">
+    <value>Etsi BPM naputtamalla rytmiä</value>
+  </data>
+  <data name="editor_clone_selection" xml:space="preserve">
+    <value>Luo kopio valinnasta</value>
+  </data>
+  <data name="editor_cycle_grid_display_mode" xml:space="preserve">
+    <value>Vaihda ruudukon näyttötila</value>
+  </data>
+  <data name="editor_test_gameplay" xml:space="preserve">
+    <value>Testaa pelattavuutta</value>
+  </data>
+  <data name="hold_for_hud" xml:space="preserve">
+    <value>Näytä heijastusnäyttö pitämällä pohjassa</value>
+  </data>
+  <data name="random_skin" xml:space="preserve">
+    <value>Satunnainen ulkoasu</value>
+  </data>
+  <data name="toggle_pause_replay" xml:space="preserve">
+    <value>Keskeytä / jatka uusintaa</value>
+  </data>
+  <data name="toggle_in_game_interface" xml:space="preserve">
+    <value>Näytä / piilota pelin käyttöliittymä</value>
+  </data>
+  <data name="toggle_in_game_leaderboard" xml:space="preserve">
+    <value>Näytä / piilota tulostaulu pelissä</value>
+  </data>
+  <data name="toggle_mod_selection" xml:space="preserve">
+    <value>Näytä / piilota muunnelmavalikko</value>
+  </data>
+  <data name="deselect_all_mods" xml:space="preserve">
+    <value>Poista kaikkien muunnelmien valinnat</value>
+  </data>
+  <data name="select_next_random" xml:space="preserve">
+    <value>Satunnainen</value>
+  </data>
+  <data name="select_previous_random" xml:space="preserve">
+    <value>Kelaa taaksepäin</value>
+  </data>
+  <data name="toggle_beatmap_options" xml:space="preserve">
+    <value>Rytmikartan asetukset</value>
+  </data>
+  <data name="editor_verify_mode" xml:space="preserve">
+    <value>Tarkistustila</value>
+  </data>
+  <data name="editor_nudge_left" xml:space="preserve">
+    <value>Siirrä valinta vasemmalle</value>
+  </data>
+  <data name="editor_nudge_right" xml:space="preserve">
+    <value>Siirrä valinta oikealle</value>
+  </data>
+  <data name="editor_flip_horizontally" xml:space="preserve">
+    <value>Käännä valinta vaakasuunnassa</value>
+  </data>
+  <data name="editor_flip_vertically" xml:space="preserve">
+    <value>Käännä valinta pystysuunnassa</value>
+  </data>
+  <data name="editor_increase_distance_spacing" xml:space="preserve">
+    <value>Suurenna etäisyyttä</value>
+  </data>
+  <data name="editor_decrease_distance_spacing" xml:space="preserve">
+    <value>Pienennä etäisyyttä</value>
+  </data>
+  <data name="editor_cycle_previous_beat_snap_divisor" xml:space="preserve">
+    <value>Edellinen iskupohjaisen naksautuksen jakaja</value>
+  </data>
+  <data name="editor_cycle_next_snap_divisor" xml:space="preserve">
+    <value>Seuraava iskupohjaisen naksautuksen jakaja</value>
+  </data>
+  <data name="toggle_skin_editor" xml:space="preserve">
+    <value>Avaa ulkoasumuokkain</value>
+  </data>
+  <data name="toggle_fps_counter" xml:space="preserve">
+    <value>Näytä / piilota FPS-laskuri</value>
+  </data>
+  <data name="previous_volume_meter" xml:space="preserve">
+    <value>Edellinen äänenvoimakkuusmittari</value>
+  </data>
+  <data name="next_volume_meter" xml:space="preserve">
+    <value>Seuraava äänenvoimakkuusmittari</value>
+  </data>
+  <data name="seek_replay_forward" xml:space="preserve">
+    <value>Kelaa toistoa eteenpäin</value>
+  </data>
+  <data name="seek_replay_backward" xml:space="preserve">
+    <value>Kelaa toistoa taaksepäin</value>
+  </data>
+  <data name="step_replay_forward" xml:space="preserve">
+    <value>Liiku uusinnassa yksi ruutu eteenpäin</value>
+  </data>
+  <data name="step_replay_backward" xml:space="preserve">
+    <value>Liiku uusinnassa yksi ruutu taaksepäin</value>
+  </data>
+  <data name="toggle_chat_focus" xml:space="preserve">
+    <value>Tarkenna / epätarkenna chatti</value>
+  </data>
+  <data name="toggle_replay_settings" xml:space="preserve">
+    <value>Näytä / piilota uusinnan asetukset</value>
+  </data>
+  <data name="save_replay" xml:space="preserve">
+    <value>Tallenna uusinta</value>
+  </data>
+  <data name="export_replay" xml:space="preserve">
+    <value>Vie uusinta</value>
+  </data>
+  <data name="increase_offset" xml:space="preserve">
+    <value>Suurenna vastapainoa</value>
+  </data>
+  <data name="decrease_offset" xml:space="preserve">
+    <value>Pienennä vastapainoa</value>
+  </data>
+  <data name="editor_toggle_rotate_control" xml:space="preserve">
+    <value>Näytä / piilota pyörityksen säädin</value>
+  </data>
+</root>

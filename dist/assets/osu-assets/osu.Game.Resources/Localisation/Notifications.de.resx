@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header_title" xml:space="preserve">
+    <value>Benachrichtigungen</value>
+  </data>
+  <data name="header_description" xml:space="preserve">
+    <value>warten auf dich</value>
+  </data>
+  <data name="running_tasks" xml:space="preserve">
+    <value>Laufende Vorgänge</value>
+  </data>
+  <data name="clear_all" xml:space="preserve">
+    <value>Alle löschen</value>
+  </data>
+  <data name="battery_low" xml:space="preserve">
+    <value>Dein Akkustand ist niedrig! Lade dein Gerät auf, um Unterbrechungen während des Spiels zu vermeiden.</value>
+  </data>
+  <data name="game_volume_too_low" xml:space="preserve">
+    <value>Deine Spiellautstärke ist zu niedrig, um etwas zu hören! Klicke hier, um sie wiederherzustellen.</value>
+  </data>
+  <data name="no_autoplay_mod" xml:space="preserve">
+    <value>Der aktuelle Spielmodus verfügt über keine Autoplay-Mod!</value>
+  </data>
+  <data name="audio_playback_issue" xml:space="preserve">
+    <value>osu! scheint nicht in der Lage zu sein, Audio korrekt abzuspielen.
+
+Versuche bitte, dein Audiogerät auf eine funktionierende Einstellung zu ändern.</value>
+  </data>
+  <data name="score_overlay_disabled" xml:space="preserve">
+    <value>Das Punkte-Overlay ist derzeit deaktiviert. Du kannst dies durch Drücken von {0} umschalten.</value>
+  </data>
+  <data name="unsupported_or_dangerous_url_protocol" xml:space="preserve">
+    <value>Die URL {0} hat ein nicht unterstütztes oder anfälliges Protokoll und wird nicht geöffnet.</value>
+  </data>
+  <data name="subsequent_messages_logged" xml:space="preserve">
+    <value>Nachfolgende Nachrichten werden protokolliert. Klicke hier, um die Log-Dateien anzuzeigen.</value>
+  </data>
+  <data name="tablet_support_disabled_due_to_error" xml:space="preserve">
+    <value>Tablet-Unterstützung wird aufgrund eines Fehlers deaktiviert: "{0}"</value>
+  </data>
+  <data name="encountered_tablet_warning" xml:space="preserve">
+    <value>Tablet-Fehler aufgetreten. Dein Tablet funktioniert möglicherweise nicht richtig. Klicke hier für eine Liste aller unterstützten Tablets.</value>
+  </data>
+  <data name="unsupported_link_type" xml:space="preserve">
+    <value>Dieser Link wird nicht unterstützt!</value>
+  </data>
+  <data name="private_message_received" xml:space="preserve">
+    <value>Du hast eine private Nachricht von {0} erhalten. Klicke, um sie zu lesen!</value>
+  </data>
+  <data name="your_name_was_mentioned" xml:space="preserve">
+    <value>Dein Name wurde im Chat von {0} erwähnt. Klicke hier, um herauszufinden, warum!</value>
+  </data>
+  <data name="invited_you_to_the_multiplayer" xml:space="preserve">
+    <value>{0} hat dich zum Multiplayer-Spiel "{1}" eingeladen! Klicke, um beizutreten.</value>
+  </data>
+  <data name="missing_beatmap_for_replay" xml:space="preserve">
+    <value>Dir fehlt die Beatmap zu diesem Replay.</value>
+  </data>
+  <data name="downloading_beatmap_for_replay" xml:space="preserve">
+    <value>Lade fehlende Beatmap für dieses Replay herunter...</value>
+  </data>
+  <data name="mismatching_beatmap_for_replay" xml:space="preserve">
+    <value>Deine lokale Kopie der Beatmap passt nicht zu diesem Replay. Eventuell musst du die Beatmap aktualisieren oder erneut herunterladen.</value>
+  </data>
+  <data name="game_version_after_update" xml:space="preserve">
+    <value>Du verwendest jetzt osu! {0}.
+Klicke hier, um zu sehen, was es Neues gibt!</value>
+  </data>
+  <data name="update_ready_to_install" xml:space="preserve">
+    <value>Update bereit. Zum Neustart klicken!</value>
+  </data>
+  <data name="downloading_update" xml:space="preserve">
+    <value>Update wird heruntergeladen...</value>
+  </data>
+  <data name="installing_update" xml:space="preserve">
+    <value>Update wird installiert...</value>
+  </data>
+</root>

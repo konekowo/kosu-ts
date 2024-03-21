@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header.small" xml:space="preserve">
+    <value>Concurează în mai multe moduri decât doar făcând clic pe cercuri.</value>
+  </data>
+  <data name="header.large" xml:space="preserve">
+    <value>Concursuri comunitare</value>
+  </data>
+  <data name="index.nav_title" xml:space="preserve">
+    <value>listă</value>
+  </data>
+  <data name="judge.hide_judged" xml:space="preserve">
+    <value>ascunde intrările evaluate</value>
+  </data>
+  <data name="judge.nav_title" xml:space="preserve">
+    <value>evaluator</value>
+  </data>
+  <data name="judge.no_current_vote" xml:space="preserve">
+    <value>nu ai votat încă.</value>
+  </data>
+  <data name="judge.update" xml:space="preserve">
+    <value>actualizează</value>
+  </data>
+  <data name="judge.validation.missing_score" xml:space="preserve">
+    <value>scor lipsă</value>
+  </data>
+  <data name="judge.validation.contest_vote_judged" xml:space="preserve">
+    <value>nu poți vota în concursuri evaluate</value>
+  </data>
+  <data name="judge.voted" xml:space="preserve">
+    <value>Ați depus deja un vot pentru această intrare.</value>
+  </data>
+  <data name="judge_results._" xml:space="preserve">
+    <value>Rezultate evaluare</value>
+  </data>
+  <data name="judge_results.creator" xml:space="preserve">
+    <value>creator</value>
+  </data>
+  <data name="judge_results.score" xml:space="preserve">
+    <value>Scor</value>
+  </data>
+  <data name="judge_results.total_score" xml:space="preserve">
+    <value>scor total</value>
+  </data>
+  <data name="voting.judge_link" xml:space="preserve">
+    <value>Sunteți un evaluator al acestui concurs. Evaluați intrările aici!</value>
+  </data>
+  <data name="voting.judged_notice" xml:space="preserve">
+    <value>Acest concurs folosește sistemul prin evaluări. Evaluatorii procesează intrările momentan.</value>
+  </data>
+  <data name="voting.login_required" xml:space="preserve">
+    <value>Te rugăm să te autentifici pentru a vota.</value>
+  </data>
+  <data name="voting.over" xml:space="preserve">
+    <value>Votarea pentru acest concurs s-a încheiat</value>
+  </data>
+  <data name="voting.show_voted_only" xml:space="preserve">
+    <value>Afișare voturi</value>
+  </data>
+  <data name="voting.best_of.none_played" xml:space="preserve">
+    <value>Nu pare să fi jucat niciun beatmap care se califică pentru acest concurs!</value>
+  </data>
+  <data name="voting.button.add" xml:space="preserve">
+    <value>Votează</value>
+  </data>
+  <data name="voting.button.remove" xml:space="preserve">
+    <value>Retrage votul</value>
+  </data>
+  <data name="voting.button.used_up" xml:space="preserve">
+    <value>Ți-ai folosit toate voturile</value>
+  </data>
+  <data name="voting.progress._" xml:space="preserve">
+    <value>{0} / {1} voturi folosite</value>
+  </data>
+  <data name="voting.requirement.playlist_beatmapsets.incomplete_play" xml:space="preserve">
+    <value>Trebuie să joci toate beatmap-urile din acest playlist înainte de a vota</value>
+  </data>
+  <data name="entry._" xml:space="preserve">
+    <value>intrare</value>
+  </data>
+  <data name="entry.login_required" xml:space="preserve">
+    <value>Te rugăm să te conectezi pentru a intra în concurs.</value>
+  </data>
+  <data name="entry.silenced_or_restricted" xml:space="preserve">
+    <value>Nu poți participa la concursuri în timp ce ești restricționat sau mut.</value>
+  </data>
+  <data name="entry.preparation" xml:space="preserve">
+    <value>Încă pregătim acest concurs. Te rugăm să aștepți cu răbdare!</value>
+  </data>
+  <data name="entry.drop_here" xml:space="preserve">
+    <value>Trage intrarea ta aici</value>
+  </data>
+  <data name="entry.download" xml:space="preserve">
+    <value>Descarcă .osz</value>
+  </data>
+  <data name="entry.wrong_type.art" xml:space="preserve">
+    <value>Numai fișierele de tip .jpg și .png sunt acceptate pentru acest concurs.</value>
+  </data>
+  <data name="entry.wrong_type.beatmap" xml:space="preserve">
+    <value>Numai fișierele de tip .osu sunt acceptate pentru acest concurs.</value>
+  </data>
+  <data name="entry.wrong_type.music" xml:space="preserve">
+    <value>Numai fișierele de tip .mp3 sunt acceptate pentru acest concurs.</value>
+  </data>
+  <data name="entry.wrong_dimensions" xml:space="preserve">
+    <value>Intrările pentru acest concurs trebuie să fie {0}{1}</value>
+  </data>
+  <data name="entry.too_big" xml:space="preserve">
+    <value>Întrările pentru acest concurs pot fi numai până la {0}.</value>
+  </data>
+  <data name="beatmaps.download" xml:space="preserve">
+    <value>Descarcă intrarea</value>
+  </data>
+  <data name="vote.list" xml:space="preserve">
+    <value>voturi</value>
+  </data>
+  <data name="vote.count" xml:space="preserve">
+    <value>un vot|{0} voturi|{0} de voturi</value>
+  </data>
+  <data name="vote.points" xml:space="preserve">
+    <value>un punct|{0} puncte|{0} de puncte</value>
+  </data>
+  <data name="dates.ended" xml:space="preserve">
+    <value>S-a terminat pe {0}</value>
+  </data>
+  <data name="dates.ended_no_date" xml:space="preserve">
+    <value>Încheiat</value>
+  </data>
+  <data name="dates.starts._" xml:space="preserve">
+    <value>Începe pe {0}</value>
+  </data>
+  <data name="dates.starts.soon" xml:space="preserve">
+    <value>în curând™</value>
+  </data>
+  <data name="states.entry" xml:space="preserve">
+    <value>Înscriere Deschisă</value>
+  </data>
+  <data name="states.voting" xml:space="preserve">
+    <value>Votarea a început</value>
+  </data>
+  <data name="states.results" xml:space="preserve">
+    <value>Rezultate postate</value>
+  </data>
+</root>

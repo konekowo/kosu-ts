@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="header_title" xml:space="preserve">
+    <value>thông báo</value>
+  </data>
+  <data name="header_description" xml:space="preserve">
+    <value>đang chờ bạn</value>
+  </data>
+  <data name="running_tasks" xml:space="preserve">
+    <value>Các tác vụ đang chạy</value>
+  </data>
+  <data name="clear_all" xml:space="preserve">
+    <value>Xóa tất cả</value>
+  </data>
+  <data name="battery_low" xml:space="preserve">
+    <value>Mức pin của bạn thấp! Sạc thiết bị để tránh sự gián đoạn khi chơi.</value>
+  </data>
+  <data name="game_volume_too_low" xml:space="preserve">
+    <value>Âm lượng của bạn quá thấp! Bấm vào đây để khôi phục lại.</value>
+  </data>
+  <data name="no_autoplay_mod" xml:space="preserve">
+    <value>Ruleset hiện tại không có mod tự động!</value>
+  </data>
+  <data name="audio_playback_issue" xml:space="preserve">
+    <value>osu! không thể phát âm thanh.
+
+Vui lòng đổi thiết bị âm thanh của bạn.</value>
+  </data>
+  <data name="score_overlay_disabled" xml:space="preserve">
+    <value>Giao diện chơi hiện tại đang tắt. Bạn có thể bật lại bằng cách bấm {0}.</value>
+  </data>
+  <data name="unsupported_or_dangerous_url_protocol" xml:space="preserve">
+    <value>Đường dẫn {0} có giao thức không được hỗ trợ hoặc nguy hiểm và sẽ không được mở.</value>
+  </data>
+  <data name="subsequent_messages_logged" xml:space="preserve">
+    <value>Một số bản ghi đã được lưu lại. Nhấn để xem chúng.</value>
+  </data>
+  <data name="tablet_support_disabled_due_to_error" xml:space="preserve">
+    <value>Vô hiệu hoá hỗ trợ bảng vẽ do lỗi: "{0}"</value>
+  </data>
+  <data name="encountered_tablet_warning" xml:space="preserve">
+    <value>Đã gặp phải cảnh báo bảng vẽ, bảng vẽ của bạn sẽ có thể không hoạt động chính xác. Bấm vào đây để hiển thị danh sách các bảng vẽ được hỗ trợ.</value>
+  </data>
+  <data name="unsupported_link_type" xml:space="preserve">
+    <value>Kiểu đường dẫn này chưa được hỗ trợ!</value>
+  </data>
+  <data name="private_message_received" xml:space="preserve">
+    <value>Bạn đã nhận được tin nhắn riêng từ '{0}'. Bấm vào đây để đọc!</value>
+  </data>
+  <data name="your_name_was_mentioned" xml:space="preserve">
+    <value>Tên của bạn đã được nhắc tới bởi '{0}'. Bấm vào đây để biết tại sao!</value>
+  </data>
+  <data name="invited_you_to_the_multiplayer" xml:space="preserve">
+    <value>{0} đã mời bạn tham gia trận đấu nhiều người chơi "{1}"! Nhấn vào đây để tham gia.</value>
+  </data>
+  <data name="missing_beatmap_for_replay" xml:space="preserve">
+    <value>Bạn không có beatmap cho replay này.</value>
+  </data>
+  <data name="downloading_beatmap_for_replay" xml:space="preserve">
+    <value>Đang tải xuống beatmap bị thiếu cho replay này...</value>
+  </data>
+  <data name="mismatching_beatmap_for_replay" xml:space="preserve">
+    <value>Bản sao beatmap cục bộ của bạn cho replay này có vẻ khác với mong đợi. Bạn có thể cần phải cập nhật hoặc tải lại nó.</value>
+  </data>
+  <data name="game_version_after_update" xml:space="preserve">
+    <value>Bạn đang chạy phiên bản osu! {0}.
+Bấm vào đây để xem có gì mới!</value>
+  </data>
+  <data name="update_ready_to_install" xml:space="preserve">
+    <value>Bản cập nhật đã sẵn sàng để cài đặt. Bấm vào đây để khởi động lại!</value>
+  </data>
+  <data name="downloading_update" xml:space="preserve">
+    <value>Đang tải xuống bản cập nhật...</value>
+  </data>
+  <data name="installing_update" xml:space="preserve">
+    <value>Đang cài đặt bản cập nhật...</value>
+  </data>
+</root>

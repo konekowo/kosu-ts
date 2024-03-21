@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="index.description" xml:space="preserve">
+    <value>Попередньо заархівовані колекції мап, які базуються на спільних тематиках.</value>
+  </data>
+  <data name="index.empty" xml:space="preserve">
+    <value>Незабаром!</value>
+  </data>
+  <data name="index.nav_title" xml:space="preserve">
+    <value>список</value>
+  </data>
+  <data name="index.title" xml:space="preserve">
+    <value>Збірки Мап</value>
+  </data>
+  <data name="index.blurb.important" xml:space="preserve">
+    <value>ПРОЧИТАЙТЕ ЦЕ ПЕРЕД ЗАВАНТАЖЕННЯМ</value>
+  </data>
+  <data name="index.blurb.install_instruction" xml:space="preserve">
+    <value>Встановлення: Як тільки збірка завантажиться, розархівуйте її вміст в директорію osu! Songs і osu! зробить усе інше.</value>
+  </data>
+  <data name="index.blurb.note._" xml:space="preserve">
+    <value>Також зауважте, що ми наполегливо радимо вам {0}, оскільки старі мапи сильно поступаються якістю новим.</value>
+  </data>
+  <data name="index.blurb.note.scary" xml:space="preserve">
+    <value>завантажувати збірки, починаючи зі свіжих</value>
+  </data>
+  <data name="show.download" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="show.item.cleared" xml:space="preserve">
+    <value>завершено</value>
+  </data>
+  <data name="show.item.not_cleared" xml:space="preserve">
+    <value>не завершено</value>
+  </data>
+  <data name="show.no_diff_reduction._" xml:space="preserve">
+    <value>{0} не можуть бути використані для завершення цього набору.</value>
+  </data>
+  <data name="show.no_diff_reduction.link" xml:space="preserve">
+    <value>Моди пониження складності</value>
+  </data>
+  <data name="mode.artist" xml:space="preserve">
+    <value>Виконавці/Альбоми</value>
+  </data>
+  <data name="mode.chart" xml:space="preserve">
+    <value>Чарти</value>
+  </data>
+  <data name="mode.featured" xml:space="preserve">
+    <value>Обраний Виконавець</value>
+  </data>
+  <data name="mode.loved" xml:space="preserve">
+    <value>Проєкт Улюблені</value>
+  </data>
+  <data name="mode.standard" xml:space="preserve">
+    <value>Стандартні</value>
+  </data>
+  <data name="mode.theme" xml:space="preserve">
+    <value>Тематичні</value>
+  </data>
+  <data name="mode.tournament" xml:space="preserve">
+    <value>Турнір</value>
+  </data>
+  <data name="require_login._" xml:space="preserve">
+    <value>Ви повинні {0} для завантаження цього набору</value>
+  </data>
+  <data name="require_login.link_text" xml:space="preserve">
+    <value>увійти</value>
+  </data>
+</root>
