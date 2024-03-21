@@ -10,7 +10,7 @@ export class InteractScreen extends Screen {
     private readonly text: PIXI.Text;
 
     private readonly introTrack: Blob;
-    private readonly clickSound: Blob;
+    private clickSound: Blob;
 
     private readonly clickArea: PIXI.Graphics = new PIXI.Graphics();
 
@@ -18,6 +18,7 @@ export class InteractScreen extends Screen {
         super();
         this.introTrack = introTrack;
         this.clickSound = clickSound;
+
         this.text = new PIXI.Text({
             text: "Click anywhere to play!",
             style: {

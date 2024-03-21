@@ -17,6 +17,13 @@ export class IntroScreen extends Screen {
     private triangles = new PIXI.Container();
     private ruleSetContainer = new PIXI.Container();
     private flash = new PIXI.Graphics();
+
+    private logoContainerContainer = new PIXI.Container();
+
+    private logoContainer = new PIXI.Container();
+
+    private grayLogo = PIXI.Sprite.from("intro_triangles_osuLogo_gray");
+
     private flashed = false;
 
     private welcomeText: PIXI.Text = new PIXI.Text({
@@ -153,7 +160,25 @@ export class IntroScreen extends Screen {
         }, 1850);
 
         setTimeout(() => {
+
+            //TODO: make the logo have a animation just like osu lazer
+
             this.ruleSetContainer.visible = false;
+            this.grayLogo.anchor.set(0.5, 0.5);
+            this.logoContainer.addChild(this.grayLogo);
+            this.logoContainer.scale.set(1.2);
+
+            this.logoContainerContainer.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
+            this.logoContainerContainer.pivot.set(0.5, 0.5);
+            this.logoContainerContainer.addChild(this.logoContainer);
+            this.addChild(this.logoContainerContainer);
+
+            this.logoContainerContainer.scale.set(1.2);
+            ease.add(this.logoContainerContainer, {scale: 1.2 - 0.8 * 0.25}, {duration: 920, ease: "easeInQuad"});
+
+            setTimeout(() => {
+                ease.add(this.logoContainer, {scale: 1.2 - 0.8}, {duration: 920 * 0.3, ease: "easeInQuint"})
+            }, 920 * 0.7);
         }, 2080);
 
         setTimeout(() => {
@@ -164,6 +189,7 @@ export class IntroScreen extends Screen {
             this.flash.height = this.getScreenHeight();
             this.addChild(this.flash);
             this.flashed = true;
+            this.logoContainerContainer.visible = false;
             ease.add(this.flash, {alpha: 0}, {duration: 1000, ease: "easeOutQuad"})
             Main.switchScreen(new MainMenu());
         }, 3000);
@@ -198,6 +224,9 @@ export class IntroScreen extends Screen {
             this.flash.position.set(0, 0);
             this.flash.width = this.getScreenWidth();
             this.flash.height = this.getScreenHeight();
+        }
+        if (!this.logoContainerContainer.destroyed){
+            this.logoContainerContainer.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
         }
     }
 }
