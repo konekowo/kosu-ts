@@ -10,11 +10,15 @@ const app = new Application();
 
 window.onload = async (): Promise<void> => {
     new Settings();
+    // @ts-ignore
+    let renderer: "webgl" | "webgpu" = Settings.getDropDownSetting("Renderer").getValue().value;
     app.init({
         backgroundColor: "black",
         width: gameWidth,
         height: gameHeight,
-        antialias: true
+        antialias: true,
+        preference: renderer,
+        //resolution: window.devicePixelRatio
     }).then(() => {
         new Main(app);
     });

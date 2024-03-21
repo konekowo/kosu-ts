@@ -1,4 +1,4 @@
-import {Setting, SettingData} from "../Setting";
+import {Setting} from "../Setting";
 
 export abstract class RangeSetting extends Setting {
     public abstract readonly minValue: number;

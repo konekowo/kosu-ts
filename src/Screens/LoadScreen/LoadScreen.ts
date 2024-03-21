@@ -9,10 +9,10 @@ export class LoadScreen extends Screen{
     private loadAnim: LoadAnim | undefined;
 
     public start() {
-        this.loadAnim = new LoadAnim("white", "grey");
+        this.loadAnim = new LoadAnim("rgba(255,255,255,0.7)", "black");
         let uiScale = Settings.getRangeSetting("UI scaling").getValue();
-        this.loadAnim.scale.set(0.7 * uiScale, 0.7 * uiScale);
-        this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.getWidth(), this.getScreenHeight() - this.loadAnim.getHeight());
+        this.loadAnim.scale.set(0.8 * uiScale, 0.8 * uiScale);
+        this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.getWidth() - 15, this.getScreenHeight() - this.loadAnim.getHeight() - 15);
         this.addChild(this.loadAnim);
     }
 
@@ -33,7 +33,7 @@ export class LoadScreen extends Screen{
 
     public onResize() {
         if (this.loadAnim?.position != null) {
-            this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.getWidth(), this.getScreenHeight() - this.loadAnim.getHeight());
+            this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.getWidth() - 20, this.getScreenHeight() - this.loadAnim.getHeight() - 20);
         }
     }
 }

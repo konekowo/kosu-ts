@@ -21,9 +21,9 @@ export class LoadAnim extends PIXI.Container {
         this.bg.fill(bgColor);
         this.arcContainer = new PIXI.Container();
         this.arc = new PIXI.Graphics();
-        this.arc.arc(0, 0, 30, Math.PI + .26, 2.92 * Math.PI);
+        this.arc.arc(0, 0, 27, Math.PI + .26, 2.92 * Math.PI);
         this.arc.stroke({
-            width: 10,
+            width: 8,
             color: arcColor,
             cap: "round"
         });

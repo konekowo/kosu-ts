@@ -20,6 +20,15 @@ export class Main {
         this.doResize();
         window.addEventListener("resize", this.doResize);
         Main.switchScreen(new LoadScreen());
+
+        navigator.mediaSession.setActionHandler('play', function() { /* Code excerpted. */ });
+        navigator.mediaSession.setActionHandler('pause', function() { /* Code excerpted. */ });
+        navigator.mediaSession.setActionHandler('stop', function() { /* Code excerpted. */ });
+        navigator.mediaSession.setActionHandler('seekbackward', function() { /* Code excerpted. */ });
+        navigator.mediaSession.setActionHandler('seekforward', function() { /* Code excerpted. */ });
+        navigator.mediaSession.setActionHandler('previoustrack', function() { /* Code excerpted. */ });
+        navigator.mediaSession.setActionHandler('nexttrack', function() { /* Code excerpted. */ });
+
         setTimeout(async() => {
             let xhr = new XMLHttpRequest();
             xhr.open("GET","assets/osu-assets/osu.Game.Resources/Tracks/triangles.osz", true);
@@ -28,12 +37,23 @@ export class Main {
             xhr.onload = async () => {
                 // Add font files to the bundle
                 PIXI.Assets.addBundle('fonts', [
-                    { alias: 'TorusRegular', src: 'assets/fonts/TorusRegular.otf' }
+                    { alias: 'TorusRegular', src: 'assets/fonts/TorusRegular.otf' },
+                    { alias: 'TorusLight', src: 'assets/fonts/TorusLight.otf' },
+                    { alias: 'TorusThin', src: 'assets/fonts/TorusThin.otf' }
                 ]);
+                PIXI.Assets.addBundle('textures', [
+                    { alias: 'icon_ruleset_std', src: 'assets/icons/ruleset-standard.png' },
+                    { alias: 'icon_ruleset_mania', src: 'assets/icons/ruleset-mania.png' },
+                    { alias: 'icon_ruleset_taiko', src: 'assets/icons/ruleset-taiko.png' },
+                    { alias: 'icon_ruleset_ctb', src: 'assets/icons/ruleset-ctb.png' }
+                ]);
+
 
                 // Load the font bundle
                 PIXI.Assets.loadBundle('fonts').then(() => {
-                    Main.switchScreen(new InteractScreen(xhr.response));
+                    PIXI.Assets.loadBundle('textures').then(() => {
+                        Main.switchScreen(new InteractScreen(xhr.response));
+                    })
                 });
 
             }

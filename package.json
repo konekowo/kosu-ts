@@ -25,7 +25,10 @@
     "author": "jkanchelov",
     "license": "MIT",
     "dependencies": {
+        "@kionell/osu-pp-calculator": "github:konekowo/osu-pp-calculator-browser",
+        "@tweenjs/tween.js": "^23.1.1",
         "core-js": "^3.34.0",
+        "osu-parsers": "^4.1.6",
         "pixi-ease": "^3.0.7",
         "pixi.js": "^8.0.2",
         "unzipit": "^1.4.3"
