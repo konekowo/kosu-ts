@@ -67,9 +67,10 @@ export class Main {
             });
         }
         Main.app.stage.addChild(screen);
-        screen.start();
         this.allScreens.push(screen);
         this.currentScreen = screen;
+        screen.start();
+        screen.onResize();
         Main.app.ticker.add(screen.draw, screen);
     }
 

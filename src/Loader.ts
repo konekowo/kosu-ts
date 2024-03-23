@@ -18,6 +18,8 @@ export class Loader {
         this.loadList.push({id: "icon_ruleset_taiko", url: "assets/icons/ruleset-taiko.png", pixiBundleName: "textures"});
         this.loadList.push({id: "icon_ruleset_ctb", url: "assets/icons/ruleset-ctb.png", pixiBundleName: "textures"});
         this.loadList.push({id: "intro_triangles_osuLogo_gray", url: "assets/intro/logo-gray.png", pixiBundleName: "textures"});
+        this.loadList.push({id: "mainMenu.logoOutline", url: "assets/osu-assets/osu.Game.Resources/Textures/Menu/logo.png", pixiBundleName: "textures"});
+        this.loadList.push({id: "mainMenu.logoMask", url: "assets/menu/logo-mask.png", pixiBundleName: "textures"});
     }
 
     public static Get(id: string): Blob {
