@@ -37,7 +37,10 @@ module.exports = (env: { mode: "development" | "production" }) => {
         },
 
         plugins: [
-            new HtmlWebpackPlugin(),
+            new HtmlWebpackPlugin({
+                title: "kosu!",
+                favicon: "assets/favicon.png"
+            }),
             new CopyPlugin({
                 patterns: [
                     {
