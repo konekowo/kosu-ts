@@ -52,11 +52,15 @@ export class IntroScreen extends Screen {
                         let audioUrl = URL.createObjectURL(audioBlob);
                         Main.currentPlayingAudio = new Audio(audioUrl);
                         Main.currentPlayingAudio.play().then(() => {
+                            Main.audioStartTime = Date.now();
                             this.afterAudioPlay();
                         });
 
 
                     });
+                }
+                if (name.endsWith(".osu")){
+                    // TODO: parse
                 }
             }
         }, 500);

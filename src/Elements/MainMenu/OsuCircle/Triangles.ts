@@ -1,9 +1,12 @@
 import * as PIXI from "pixi.js";
+import {Main} from "../../../main";
 export class Triangles extends PIXI.Graphics{
 
     private bgGradient: PIXI.FillGradient;
     private triangles: Triangle[] = [];
     private triangleGenInterval: NodeJS.Timeout;
+    private pulseAnimation: EaseOutCubic;
+
     public constructor() {
         super();
 
@@ -35,6 +38,12 @@ export class Triangles extends PIXI.Graphics{
             }
 
         }, 800);
+
+        function bpmToMs(bpm: number) {
+            return 60000/bpm;
+        }
+
+        this.pulseAnimation = new EaseOutCubic(375, Main.audioStartTime);
     }
 
     public destroy(options?: PIXI.DestroyOptions) {
@@ -42,12 +51,13 @@ export class Triangles extends PIXI.Graphics{
     }
 
     public draw(ticker: PIXI.Ticker) {
+        this.pulseAnimation.update();
         if (!this.destroyed){
             this.clear();
             this.rect(0, 0, 1024, 1024);
             this.fill(this.bgGradient);
             this.triangles.forEach((triangle, index) => {
-                triangle.y -= (2 * ticker.deltaTime) * triangle.velocity;
+                triangle.y -= (ticker.deltaTime * triangle.velocity) * this.pulseAnimation.getValue() * 4;
                 this.moveTo(triangle.x, triangle.y);
                 this.lineTo(triangle.x -250, triangle.y + 400);
                 this.lineTo(triangle.x + 250, triangle.y + 400);
@@ -55,6 +65,12 @@ export class Triangles extends PIXI.Graphics{
                 let alpha = 1;
                 if (triangle.y + 50 < 300) {
                     alpha = (triangle.y + 50)/300;
+                }
+                if (alpha < 0){
+                    alpha = 0;
+                }
+                if (alpha > 1){
+                    alpha = 1;
                 }
                 this.stroke({color: new PIXI.Color("rgba(182, 52, 111, "+alpha+")"), width: 4});
                 if (triangle.y + 400 < 0){
@@ -69,4 +85,42 @@ export interface Triangle {
     x: number;
     y: number;
     velocity: number;
+}
+
+export class EaseOutCubic {
+
+    private startTime: number;
+    private duration: number;
+    private elapsedMS: number = 0;
+    public constructor(durationMS: number, startTime?: number) {
+        if (!startTime) {
+            this.startTime = Date.now();
+        }
+        else {
+            this.startTime = startTime;
+        }
+
+        this.duration = durationMS;
+    }
+
+    public update() {
+        this.elapsedMS = Date.now() - this.startTime;
+        if (this.elapsedMS > this.duration) {
+            this.reset();
+            this.update();
+        }
+    }
+
+    public getValue() {
+        return this.func(this.elapsedMS/this.duration);
+    }
+
+    private reset() {
+        this.startTime = Date.now();
+        this.elapsedMS = 0;
+    }
+
+    public func(x: number): number {
+        return 1 - Math.pow(1 - x, 3);
+    }
 }
