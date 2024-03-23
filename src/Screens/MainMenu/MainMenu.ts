@@ -27,5 +27,6 @@ export class MainMenu extends Screen {
     public onResize() {
         this.osuCircle.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
         this.bg.onResize();
+        this.osuCircle.onResize();
     }
 }
