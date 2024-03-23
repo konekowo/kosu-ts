@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
 import {Triangles} from "./Triangles";
+import {ease} from "pixi-ease";
 
 export class OsuCircle extends PIXI.Container {
 
@@ -28,6 +29,14 @@ export class OsuCircle extends PIXI.Container {
         this.beatContainer.addChild(this.outline);
         this.hoverContainer.addChild(this.beatContainer);
         this.addChild(this.hoverContainer);
+        this.hoverContainer.eventMode = "dynamic";
+
+        this.hoverContainer.addEventListener("mouseenter", () => {
+           ease.add(this.hoverContainer, {scale: 1.1}, {duration: 500, ease: "easeOutElastic"})
+        });
+        this.hoverContainer.addEventListener("mouseleave", () => {
+            ease.add(this.hoverContainer, {scale: 1}, {duration: 500, ease: "easeOutElastic"})
+        });
 
     }
 
