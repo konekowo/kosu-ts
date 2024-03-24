@@ -1,11 +1,15 @@
 import * as PIXI from "pixi.js";
 import {Main} from "../../../main";
-export class Triangles extends PIXI.Graphics{
+import {AudioPlayer} from "../../../Audio/AudioPlayer";
+export class Triangles extends PIXI.Container{
 
     private bgGradient: PIXI.FillGradient;
     private triangles: Triangle[] = [];
     private triangleGenInterval: NodeJS.Timeout;
-    private pulseAnimation: EaseOutCubic;
+    private graphics: PIXI.Graphics = new PIXI.Graphics();
+    private pulseAnimation: EaseOutSine;
+    private pulseAnimationFlash: EaseOutSine;
+    private flash: PIXI.Sprite;
 
     public constructor() {
         super();
@@ -39,11 +43,16 @@ export class Triangles extends PIXI.Graphics{
 
         }, 800);
 
-        function bpmToMs(bpm: number) {
-            return 60000/bpm;
-        }
+        this.addChild(this.graphics);
 
-        this.pulseAnimation = new EaseOutCubic(375, Main.audioStartTime);
+        this.flash = PIXI.Sprite.from("mainMenu.logoMask");
+        //this.flash.anchor.set(0.5, 0.5);
+        this.flash.alpha = 0;
+
+        this.addChild(this.flash);
+
+        this.pulseAnimation = new EaseOutSine(375, true, AudioPlayer.playingAudios[AudioPlayer.playingAudios.length - 1].startTime);
+        this.pulseAnimationFlash = new EaseOutSine(375, true, AudioPlayer.playingAudios[AudioPlayer.playingAudios.length - 1].startTime);
     }
 
     public destroy(options?: PIXI.DestroyOptions) {
@@ -52,16 +61,18 @@ export class Triangles extends PIXI.Graphics{
 
     public draw(ticker: PIXI.Ticker) {
         this.pulseAnimation.update();
+        this.pulseAnimationFlash.update();
         if (!this.destroyed){
-            this.clear();
-            this.rect(0, 0, 1024, 1024);
-            this.fill(this.bgGradient);
+            this.graphics.clear();
+            this.graphics.rect(0, 0, 1024, 1024);
+            this.graphics.fill(this.bgGradient);
+            this.flash.alpha = this.pulseAnimationFlash.getValue()/7;
             this.triangles.forEach((triangle, index) => {
-                triangle.y -= (ticker.deltaTime * triangle.velocity) * this.pulseAnimation.getValue() * 4;
-                this.moveTo(triangle.x, triangle.y);
-                this.lineTo(triangle.x -250, triangle.y + 400);
-                this.lineTo(triangle.x + 250, triangle.y + 400);
-                this.lineTo(triangle.x, triangle.y);
+                triangle.y -= (ticker.deltaTime * triangle.velocity) * this.pulseAnimation.getValue() * 8;
+                this.graphics.moveTo(triangle.x, triangle.y);
+                this.graphics.lineTo(triangle.x -250, triangle.y + 400);
+                this.graphics.lineTo(triangle.x + 250, triangle.y + 400);
+                this.graphics.lineTo(triangle.x, triangle.y);
                 let alpha = 1;
                 if (triangle.y + 50 < 300) {
                     alpha = (triangle.y + 50)/300;
@@ -72,7 +83,7 @@ export class Triangles extends PIXI.Graphics{
                 if (alpha > 1){
                     alpha = 1;
                 }
-                this.stroke({color: new PIXI.Color("rgba(182, 52, 111, "+alpha+")"), width: 4});
+                this.graphics.stroke({color: new PIXI.Color("rgba(182, 52, 111, "+alpha+")"), width: 4});
                 if (triangle.y + 400 < 0){
                     this.triangles.splice(index, 1);
                 }
@@ -87,20 +98,22 @@ export interface Triangle {
     velocity: number;
 }
 
-export class EaseOutCubic {
+export class EaseOutSine {
 
     private startTime: number;
     private duration: number;
     private elapsedMS: number = 0;
-    public constructor(durationMS: number, startTime?: number) {
+    private reverse = false;
+    private doReverse;
+    public constructor(durationMS: number, doReverse:boolean, startTime?: number) {
         if (!startTime) {
             this.startTime = Date.now();
         }
         else {
             this.startTime = startTime;
         }
-
-        this.duration = durationMS;
+        this.doReverse = doReverse;
+        this.duration = this.doReverse? durationMS/2 : durationMS;
     }
 
     public update() {
@@ -112,15 +125,24 @@ export class EaseOutCubic {
     }
 
     public getValue() {
-        return this.func(this.elapsedMS/this.duration);
+        if (!this.reverse){
+            return this.func(this.elapsedMS/this.duration);
+        }
+        else {
+            return this.func(1 - (this.elapsedMS/this.duration));
+        }
+
     }
 
     private reset() {
         this.startTime = Date.now();
         this.elapsedMS = 0;
+        if (this.doReverse){
+            this.reverse = !this.reverse;
+        }
     }
 
     public func(x: number): number {
-        return 1 - Math.pow(1 - x, 3);
+        return Math.sin((x * Math.PI) / 2);
     }
 }

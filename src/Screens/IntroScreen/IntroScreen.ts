@@ -8,6 +8,7 @@ import {GlitchingTriangles} from "./GlitchingTriangles";
 import {ease} from "pixi-ease";
 import {set} from "husky";
 import {MainMenu} from "../MainMenu/MainMenu";
+import {AudioPlayer} from "../../Audio/AudioPlayer";
 
 export class IntroScreen extends Screen {
 
@@ -49,14 +50,9 @@ export class IntroScreen extends Screen {
             for (const [name, entry] of Object.entries(entries)) {
                 if (name == "audio.mp3"){
                     entry.blob().then((audioBlob) => {
-                        let audioUrl = URL.createObjectURL(audioBlob);
-                        Main.currentPlayingAudio = new Audio(audioUrl);
-                        Main.currentPlayingAudio.play().then(() => {
-                            Main.audioStartTime = Date.now();
-                            this.afterAudioPlay();
+                        AudioPlayer.play(audioBlob).then(() => {
+                           this.afterAudioPlay();
                         });
-
-
                     });
                 }
                 if (name.endsWith(".osu")){

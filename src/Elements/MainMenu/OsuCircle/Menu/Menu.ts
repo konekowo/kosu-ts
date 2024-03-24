@@ -1,8 +1,10 @@
 import * as PIXI from "pixi.js";
-import {ease} from "pixi-ease";
+import {ease, Easing} from "pixi-ease";
 export class Menu extends PIXI.Container {
 
     private menuBG = new PIXI.Graphics();
+    private isOpened = false;
+    private openAnim: Easing | undefined;
 
     public constructor() {
         super();
@@ -14,15 +16,24 @@ export class Menu extends PIXI.Container {
     }
 
     public Open() {
-        ease.add(this.menuBG, {scaleY: 1, alpha: 1}, {duration: 400, ease: "easeOutQuint"});
+        this.isOpened = true;
+        this.openAnim = ease.add(this.menuBG, {scaleY: 1, alpha: 1}, {duration: 400, ease: "easeOutQuint"});
     }
 
     public Close() {
+        this.isOpened = false;
+        if (this.openAnim){
+            this.openAnim.remove();
+        }
         ease.add(this.menuBG, {scaleY: 0, alpha: 0}, {duration: 300, ease: "easeInSine"});
     }
 
+    public isOpen() {
+        return this.isOpened;
+    }
+
     public onResize() {
-        this.position.set(-window.innerWidth/2, 0);
-        this.menuBG.width = window.innerWidth;
+        this.position.set(-window.innerWidth, 0);
+        this.menuBG.width = window.innerWidth * 2;
     }
 }
