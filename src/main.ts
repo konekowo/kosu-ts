@@ -10,8 +10,6 @@ export class Main {
     public static app: Application;
     private static currentScreen: Screen | null;
     private static allScreens: Screen[] = [];
-    public static currentPlayingAudio: HTMLAudioElement;
-    public static audioStartTime: number = 0;
 
     public static mousePos = {x: 0, y: 0};
     public constructor(app: Application) {

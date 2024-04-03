@@ -1,6 +1,8 @@
 export class AudioPlayer {
     public static playingAudios: Audio[] = [];
     private static audioChangeListeners: ((newAudio: Audio) => void)[] = [];
+    private static musicQueue: MusicData[] = [];
+    private static autoPlay: boolean = true;
 
     public static play(audio: Blob) {
         if (this.playingAudios.length > 0){
@@ -36,6 +38,22 @@ export class AudioPlayer {
         });
     }
 
+    public static addToQueue(audio: Blob) {
+        let audioURL = URL.createObjectURL(audio);
+        this.musicQueue.push({audio: new Audio(audioURL), startTime: 0, beatmapID: 0});
+    }
+
+    public static playFromQueue() {
+        
+    }
+
+    public static setAutoPlay(value: boolean){
+        this.autoPlay = value;
+    }
+    public static isAutoPlayOn(){
+        return this.autoPlay;
+    }
+
     public static onAudioChange(listener: (newAudio: Audio) => void){
         this.audioChangeListeners.push(listener);
     }
@@ -57,4 +75,7 @@ export class AudioPlayer {
 interface Audio {
     audio: HTMLAudioElement;
     startTime: number;
+}
+interface MusicData extends Audio{
+    beatmapID: number
 }
