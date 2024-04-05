@@ -68,7 +68,7 @@ export class Triangles extends PIXI.Container{
             this.graphics.fill(this.bgGradient);
             this.flash.alpha = this.pulseAnimationFlash.getValue()/7;
             this.triangles.forEach((triangle, index) => {
-                triangle.y -= (ticker.deltaTime * triangle.velocity) * this.pulseAnimation.getValue() * 8;
+                triangle.y -= (ticker.deltaTime * triangle.velocity) * 4;
                 this.graphics.moveTo(triangle.x, triangle.y);
                 this.graphics.lineTo(triangle.x -250, triangle.y + 400);
                 this.graphics.lineTo(triangle.x + 250, triangle.y + 400);

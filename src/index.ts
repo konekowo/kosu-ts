@@ -18,7 +18,8 @@ window.onload = async (): Promise<void> => {
         height: gameHeight,
         antialias: true,
         preference: renderer,
-        //resolution: window.devicePixelRatio
+        resolution: window.devicePixelRatio,
+        autoDensity: true
     }).then(() => {
         new Main(app);
     });
