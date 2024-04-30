@@ -1,8 +1,8 @@
 export class Visualizer {
-    private currentAudio: HTMLAudioElement = new HTMLAudioElement();
-    private audioContext: AudioContext = new AudioContext();
-    private analyser: AnalyserNode;
-    private frequencyData: Uint8Array = new Uint8Array();
+    protected currentAudio: HTMLAudioElement = new HTMLAudioElement();
+    protected audioContext: AudioContext = new AudioContext();
+    protected analyser: AnalyserNode;
+    protected frequencyData: Uint8Array = new Uint8Array();
 
     public constructor(audio: HTMLAudioElement) {
         this.analyser = this.audioContext.createAnalyser();
@@ -16,5 +16,9 @@ export class Visualizer {
         source.connect(this.analyser);
         this.analyser.connect(this.audioContext.destination);
         this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount);
+    }
+
+    public draw() {
+        this.analyser.getByteFrequencyData(this.frequencyData);
     }
 }
