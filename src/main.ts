@@ -10,8 +10,10 @@ export class Main {
     public static app: Application;
     private static currentScreen: Screen | null;
     private static allScreens: Screen[] = [];
-
+    private static clickArea: PIXI.Graphics = new PIXI.Graphics();
     public static mousePos = {x: 0, y: 0};
+    public static pointerLockExitTime: number;
+    private static doPointerLock: boolean = false;
     public constructor(app: Application) {
         Main.app = app;
         // @ts-ignore
@@ -20,12 +22,11 @@ export class Main {
         window.addEventListener("resize", this.doResize);
 
         Main.app.stage.eventMode = "static";
-
         Main.app.stage.addEventListener("mousemove", (e) => {
             Main.mousePos.x = e.clientX;
             Main.mousePos.y = e.clientY;
         });
-
+        document.addEventListener("pointerlockchange", this.pointerLockChanged, false);
         Main.switchScreen(new LoadScreen());
 
         navigator.mediaSession.setActionHandler('play', function() {});
@@ -46,9 +47,51 @@ export class Main {
         Main.app.renderer.resize(window.innerWidth, window.innerHeight);
         Main.app.stage.scale.x = 1;
         Main.app.stage.scale.y = 1;
+        if (!Main.clickArea.destroyed){
+            Main.clickArea.width = window.innerWidth;
+            Main.clickArea.height = window.innerHeight;
+            Main.clickArea.position.set(0, 0);
+        }
         Main.allScreens.forEach((screen) => {
             screen.onResize();
         })
+    }
+
+    private pointerLockChanged(): void {
+        if (!document.pointerLockElement && Main.doPointerLock) {
+            Main.pointerLockExitTime = Date.now();
+            Main.clickArea = new PIXI.Graphics();
+            Main.clickArea.rect(0, 0, 1, 1);
+            Main.clickArea.fill("rgba(0,0,0,0.1)");
+            Main.clickArea.width = window.innerWidth;
+            Main.clickArea.height = window.innerHeight;
+            Main.clickArea.position.set(0, 0);
+            Main.app.stage.addChild(Main.clickArea);
+            Main.clickArea.eventMode = "static";
+            Main.clickArea.cursor = "pointer";
+            Main.clickArea.zIndex = 9999999;
+            Main.clickArea.onclick = () => {
+                if (Date.now() - Main.pointerLockExitTime < 1500){
+                    return;
+                }
+                Main.clickArea.removeFromParent();
+                Main.clickArea.destroy();
+                Main.pointerLock();
+            }
+        }
+    }
+
+    public static pointerLock() {
+        this.doPointerLock = true;
+        // @ts-ignore
+        Main.app.canvas.requestPointerLock({
+            unadjustedMovement: true,
+        });
+    }
+    public static exitPointerLock() {
+        this.doPointerLock = false;
+        // @ts-ignore
+        Main.app.canvas.exitPointerLock();
     }
 
     public static switchScreen(screen: Screen){
