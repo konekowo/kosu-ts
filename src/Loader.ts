@@ -1,5 +1,4 @@
 import * as PIXI from "pixi.js";
-import {PxfObject} from "node:tls";
 
 export class Loader {
     private static loadList: LoaderObject[] = [];
