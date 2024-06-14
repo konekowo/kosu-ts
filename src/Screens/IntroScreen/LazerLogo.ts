@@ -75,7 +75,7 @@ export class LazerLogo extends PIXI.Container {
                     this.textureBackground.width/2, // x, y,
                 ],
                 aUV: [0, 0, 1, 0, 1, 1, 0, 1],
-                aColor: [0.6, 0.6, 0.6, 1, 0.6, 0.6, 0.6, 1, 0.6, 0.6, 0.6, 1, 0.6, 0.6, 0.6, 1]
+                aColor: [0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 1]
             },
             indexBuffer: [0, 1, 2, 0, 2, 3],
         });
