@@ -185,6 +185,7 @@ export class IntroScreen extends Screen {
             this.flash.position.set(0, 0);
             this.flash.width = this.getScreenWidth();
             this.flash.height = this.getScreenHeight();
+            this.flash.blendMode = "add";
             this.addChild(this.flash);
             this.flashed = true;
             this.logoContainerContainer.visible = false;

@@ -32,6 +32,7 @@ export class OsuCircle extends PIXI.Container {
         let flash = PIXI.Sprite.from("mainMenu.logoMask");
         flash.anchor.set(0.5, 0.5);
         flash.scale = scale;
+        flash.blendMode = "add";
         flash.alpha = 0;
 
         this.outline.scale.set(scale);
