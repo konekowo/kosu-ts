@@ -9,6 +9,7 @@ import {ease} from "pixi-ease";
 import {set} from "husky";
 import {MainMenu} from "../MainMenu/MainMenu";
 import {AudioPlayer} from "../../Audio/AudioPlayer";
+import {LazerLogo} from "./LazerLogo";
 
 export class IntroScreen extends Screen {
 
@@ -23,7 +24,7 @@ export class IntroScreen extends Screen {
 
     private logoContainer = new PIXI.Container();
 
-    private grayLogo = PIXI.Sprite.from("intro_triangles_osuLogo_gray");
+    private lazerLogo = new LazerLogo();
 
     private flashed = false;
 
@@ -160,12 +161,9 @@ export class IntroScreen extends Screen {
         }, 1850);
 
         setTimeout(() => {
-
-            //TODO: make the logo have a animation just like osu lazer
-
             this.ruleSetContainer.visible = false;
-            this.grayLogo.anchor.set(0.5, 0.5);
-            this.logoContainer.addChild(this.grayLogo);
+            this.lazerLogo.start();
+            this.logoContainer.addChild(this.lazerLogo);
             this.logoContainer.scale.set(1.2);
 
             this.logoContainerContainer.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);

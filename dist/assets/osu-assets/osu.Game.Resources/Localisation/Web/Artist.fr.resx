@@ -115,6 +115,12 @@
   <data name="tracks.index._" xml:space="preserve">
     <value>recherche de titres</value>
   </data>
+  <data name="tracks.index.exclusive_only.all" xml:space="preserve">
+    <value>Tout</value>
+  </data>
+  <data name="tracks.index.exclusive_only.exclusive_only" xml:space="preserve">
+    <value>osu! original</value>
+  </data>
   <data name="tracks.index.form.advanced" xml:space="preserve">
     <value>Recherche Avancée</value>
   </data>
@@ -125,13 +131,16 @@
     <value>Artiste</value>
   </data>
   <data name="tracks.index.form.bpm_gte" xml:space="preserve">
-    <value>BPM Minimum</value>
+    <value>BPM min.</value>
   </data>
   <data name="tracks.index.form.bpm_lte" xml:space="preserve">
-    <value>BPM Maximum</value>
+    <value>BPM max.</value>
   </data>
   <data name="tracks.index.form.empty" xml:space="preserve">
     <value>Aucune musique correspondant aux critères de recherche n'a été trouvée.</value>
+  </data>
+  <data name="tracks.index.form.exclusive_only" xml:space="preserve">
+    <value>Type</value>
   </data>
   <data name="tracks.index.form.genre" xml:space="preserve">
     <value>Genre</value>
@@ -140,9 +149,9 @@
     <value>Tous</value>
   </data>
   <data name="tracks.index.form.length_gte" xml:space="preserve">
-    <value>Durée minimale</value>
+    <value>Durée min.</value>
   </data>
   <data name="tracks.index.form.length_lte" xml:space="preserve">
-    <value>Durée maximale</value>
+    <value>Durée max.</value>
   </data>
 </root>

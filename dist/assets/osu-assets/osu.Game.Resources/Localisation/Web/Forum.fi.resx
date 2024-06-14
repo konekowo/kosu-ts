@@ -362,13 +362,13 @@
     <value>Tallenna</value>
   </data>
   <data name="topic_watches.index.title_compact" xml:space="preserve">
-    <value>seuratut foorumiaiheet</value>
+    <value>foorumiaiheiden seurantalista</value>
   </data>
   <data name="topic_watches.index.box.total" xml:space="preserve">
     <value>Seurattuja aiheita</value>
   </data>
   <data name="topic_watches.index.box.unread" xml:space="preserve">
-    <value>Aiheita joissa uusia vastauksia</value>
+    <value>Aiheita, joissa on uusia vastauksia</value>
   </data>
   <data name="topic_watches.index.info.total" xml:space="preserve">
     <value>{0} aihetta seurattavana.</value>
@@ -596,7 +596,7 @@
     <value>Tärkeys tällä hetkellä: +{0}</value>
   </data>
   <data name="topics.show.feature_vote.do" xml:space="preserve">
-    <value>Ehdota tätä</value>
+    <value>Ehdota tätä pyyntöä</value>
   </data>
   <data name="topics.show.feature_vote.info._" xml:space="preserve">
     <value>Tämä on {0}. {1} voivat äänestää ominaisuuspyyntöjä.</value>
@@ -605,7 +605,7 @@
     <value>ominaisuuspyyntö</value>
   </data>
   <data name="topics.show.feature_vote.info.supporters" xml:space="preserve">
-    <value>tukijat</value>
+    <value>Tukijat</value>
   </data>
   <data name="topics.show.feature_vote.user.count" xml:space="preserve">
     <value>{0} ei ääniä |{1}{0} ääni|[2,*]{0} ääntä</value>
@@ -662,6 +662,6 @@
     <value>Ilmoitus on päällä. Klikkaa poistaaksesi käytöstä</value>
   </data>
   <data name="topics.watch.tooltip_mail_enable" xml:space="preserve">
-    <value>Ilmoitus on pois käytöstä. Klikkaa laittaaksesi päälle</value>
+    <value>Ilmoitus on poissa käytöstä. Klikkaa laittaaksesi päälle</value>
   </data>
 </root>

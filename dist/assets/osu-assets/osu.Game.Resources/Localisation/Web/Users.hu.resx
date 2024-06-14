@@ -62,7 +62,7 @@
     <value>[törölt felhasználó]</value>
   </data>
   <data name="beatmapset_activities.title" xml:space="preserve">
-    <value>{0} modolási történelme</value>
+    <value>{0} Modolási Előzményei</value>
   </data>
   <data name="beatmapset_activities.title_compact" xml:space="preserve">
     <value>Modolás</value>
@@ -180,6 +180,9 @@
   </data>
   <data name="filtering.by_game_mode" xml:space="preserve">
     <value>Felhasználók játékmód szerint</value>
+  </data>
+  <data name="force_reactivation.reason.inactive" xml:space="preserve">
+    <value>A fiókod hosszú ideje nem volt használva.</value>
   </data>
   <data name="force_reactivation.reason.inactive_different_country" xml:space="preserve">
     <value>A fiókod hosszú ideje nem volt használva.</value>

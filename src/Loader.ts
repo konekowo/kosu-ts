@@ -16,11 +16,16 @@ export class Loader {
         this.loadList.push({id: "icon_ruleset_mania", url: "assets/icons/ruleset-mania.png", pixiBundleName: "textures"});
         this.loadList.push({id: "icon_ruleset_taiko", url: "assets/icons/ruleset-taiko.png", pixiBundleName: "textures"});
         this.loadList.push({id: "icon_ruleset_ctb", url: "assets/icons/ruleset-ctb.png", pixiBundleName: "textures"});
-        this.loadList.push({id: "intro_triangles_osuLogo_gray", url: "assets/intro/logo-gray.png", pixiBundleName: "textures"});
+        this.loadList.push({id: "intro_triangles_osuLogo_anim_highlight",
+            url: "assets/osu-assets/osu.Game.Resources/Textures/Intro/Triangles/logo-highlight.png", pixiBundleName: "textures"});
+        this.loadList.push({id: "intro_triangles_osuLogo_anim_background",
+            url: "assets/osu-assets/osu.Game.Resources/Textures/Intro/Triangles/logo-background.png", pixiBundleName: "textures"});
         this.loadList.push({id: "mainMenu.logoOutline", url: "assets/osu-assets/osu.Game.Resources/Textures/Menu/logo.png", pixiBundleName: "textures"});
         this.loadList.push({id: "mainMenu.logoMask", url: "assets/menu/logo-mask.png", pixiBundleName: "textures"});
         this.loadList.push({id: "mainMenu.osuLogo.select", url: "assets/osu-assets/osu.Game.Resources/Samples/Menu/osu-logo-select.wav"});
         this.loadList.push({id: "mainMenu.osuLogo.backToLogo", url: "assets/osu-assets/osu.Game.Resources/Samples/Menu/back-to-logo.wav"});
+        this.loadList.push({id: "webgl:shaders/logoAnimation.frag", url: "assets/shaders/webgl/logoAnimation.frag", isText: true});
+        this.loadList.push({id: "webgl:shaders/logoAnimation.vert", url: "assets/shaders/webgl/logoAnimation.vert", isText: true});
     }
 
     public static Get(id: string): Blob {
@@ -32,6 +37,19 @@ export class Loader {
         });
         if (!result){
             throw new Error("Asset not found!");
+        }
+        return result;
+    }
+
+    public static GetString(id: string): string {
+        let result;
+        this.loadedList.forEach((loadedObj) => {
+            if (loadedObj.id == id){
+                result = loadedObj.dataString;
+            }
+        });
+        if (!result){
+            throw new Error("Asset not found or is not a string!");
         }
         return result;
     }
@@ -94,8 +112,17 @@ export class Loader {
                 fetch(loadObj.url)
                     .then(response => response.blob())
                     .then((response) => {
-                        incrementLoadAssetNumber();
-                       this.loadedList.push({id: loadObj.id, data: response});
+                        if (!loadObj.isText){
+                            incrementLoadAssetNumber();
+                            this.loadedList.push({id: loadObj.id, data: response});
+                        }
+                        else {
+                            response.text().then((text) => {
+                                incrementLoadAssetNumber();
+                                this.loadedList.push({id: loadObj.id, data: response, dataString: text});
+                            });
+                        }
+
                     })
                     .catch((error) => {
                         incrementLoadAssetNumber(true);
@@ -130,9 +157,11 @@ interface LoaderObject {
     id: string;
     url: string;
     pixiBundleName?: string;
+    isText?: boolean;
 }
 
 interface LoadedObject {
     id: string;
     data: Blob;
+    dataString?: string;
 }

@@ -148,6 +148,9 @@
   <data name="creator" xml:space="preserve">
     <value>Tác giả</value>
   </data>
+  <data name="source" xml:space="preserve">
+    <value>Nguồn</value>
+  </data>
   <data name="difficulty_name" xml:space="preserve">
     <value>Tên độ khó</value>
   </data>

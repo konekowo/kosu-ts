@@ -68,10 +68,10 @@
     <value>Personalización de mods</value>
   </data>
   <data name="personal_presets" xml:space="preserve">
-    <value>Ajustes personales</value>
+    <value>Preselecciones personales</value>
   </data>
   <data name="add_preset" xml:space="preserve">
-    <value>Crear ajuste</value>
+    <value>Crear preselección</value>
   </data>
   <data name="use_current_mods" xml:space="preserve">
     <value>Usar mods actuales</value>
@@ -91,7 +91,7 @@
   <data name="unranked" xml:space="preserve">
     <value>No clasificado</value>
   </data>
-  <data name="ranked_explanation" xml:space="preserve">
-    <value>No se concederán puntos de rendimiento debido a los mods activos.</value>
+  <data name="unranked_explanation" xml:space="preserve">
+    <value>No se otorgarán puntos de rendimiento debido a los mods activos.</value>
   </data>
 </root>

@@ -181,6 +181,9 @@
   <data name="filtering.by_game_mode" xml:space="preserve">
     <value>Jäsenet pelimuodon mukaan</value>
   </data>
+  <data name="force_reactivation.reason.inactive" xml:space="preserve">
+    <value>Käyttäjätiliäsi ei ole käytetty pitkään aikaan.</value>
+  </data>
   <data name="force_reactivation.reason.inactive_different_country" xml:space="preserve">
     <value>Käyttäjätiliäsi ei ole käytetty pitkään aikaan.</value>
   </data>
@@ -314,7 +317,7 @@
     <value>Tilisi on rajoitettu!</value>
   </data>
   <data name="restricted_banner.message" xml:space="preserve">
-    <value>Kun olet rajoitetussa tilassa, et näe muita pelaajia ja tuloksesi ovat näkyvissä vain sinulle. Tämä on yleensä automatisoitu prosessi ja poistuu useimmiten 24 tunnin sisällä. Jos haluat tehdä valituksen &lt;a href="mailto{0}@ppy.sh"&gt;ota yhteyttä tukeen&lt;/a&gt;.</value>
+    <value>Rajoitettuna et voi olla vuorovaikutuksessa muiden pelaajien kanssa ja tuloksesi näkyvät vain itsellesi. Tämä johtuu yleensä automaattisesta prosessista ja poistuu useimmiten 24 tunnin aikana. {0}</value>
   </data>
   <data name="restricted_banner.message_link" xml:space="preserve">
     <value>Katso tämä sivu saadaksesi lisätietoja.</value>
@@ -335,7 +338,7 @@
     <value>osu!n tukija</value>
   </data>
   <data name="show.joined_at" xml:space="preserve">
-    <value>Liittyi {0}</value>
+    <value>Liittyi: {0}</value>
   </data>
   <data name="show.lastvisit" xml:space="preserve">
     <value>Nähty viimeksi {0}</value>
@@ -353,7 +356,7 @@
     <value>tunnettiin aiemmin nimellä</value>
   </data>
   <data name="show.plays_with" xml:space="preserve">
-    <value>Pelityylinä {0}</value>
+    <value>Pelityyli: {0}</value>
   </data>
   <data name="show.comments_count._" xml:space="preserve">
     <value>Julkaissut {0}</value>
@@ -422,7 +425,7 @@
     <value>Saavutukset</value>
   </data>
   <data name="show.extra.beatmaps.by_artist" xml:space="preserve">
-    <value>esittäjältä {0}</value>
+    <value>artisti: {0}</value>
   </data>
   <data name="show.extra.beatmaps.title" xml:space="preserve">
     <value>Rytmikartat</value>
@@ -455,16 +458,16 @@
     <value>Viimeaikaiset keskustelut</value>
   </data>
   <data name="show.extra.discussions.show_more" xml:space="preserve">
-    <value>nää lisää keskusteluja</value>
+    <value>katso lisää keskusteluja</value>
   </data>
   <data name="show.extra.events.title" xml:space="preserve">
     <value>Tapahtumat</value>
   </data>
   <data name="show.extra.events.title_longer" xml:space="preserve">
-    <value>Viimeisimmät tapahtumat</value>
+    <value>Viimeaikaiset tapahtumat</value>
   </data>
   <data name="show.extra.events.show_more" xml:space="preserve">
-    <value>nää lisää tapahtumia</value>
+    <value>katso lisää tapahtumia</value>
   </data>
   <data name="show.extra.historical.title" xml:space="preserve">
     <value>Historialliset</value>
@@ -485,7 +488,7 @@
     <value>tarkkuus: {0}</value>
   </data>
   <data name="show.extra.historical.recent_plays.title" xml:space="preserve">
-    <value>Viimeisimmät pelaukset (24t)</value>
+    <value>Viimeaikaiset pelaukset (24t)</value>
   </data>
   <data name="show.extra.historical.replays_watched_counts.title" xml:space="preserve">
     <value>Uusintojen katsomishistoria</value>
@@ -566,10 +569,10 @@
     <value>Julkaisut</value>
   </data>
   <data name="show.extra.posts.title_longer" xml:space="preserve">
-    <value>Viimeisimmät julkaisut</value>
+    <value>Viimeaikaiset julkaisut</value>
   </data>
   <data name="show.extra.posts.show_more" xml:space="preserve">
-    <value>Katso lisää julkaisuja</value>
+    <value>katso lisää julkaisuja</value>
   </data>
   <data name="show.extra.recent_activity.title" xml:space="preserve">
     <value>Viimeisimmät</value>
@@ -581,7 +584,7 @@
     <value>Lataa uusinta</value>
   </data>
   <data name="show.extra.top_ranks.not_ranked" xml:space="preserve">
-    <value>Vain hyväksytyt beatmapit antavat pp{0}ä.</value>
+    <value>Vain rankatut rytmikartat myöntävät pp{0}ä</value>
   </data>
   <data name="show.extra.top_ranks.pp_weight" xml:space="preserve">
     <value>painotettu {0}</value>
@@ -593,7 +596,7 @@
     <value>Suoritukset</value>
   </data>
   <data name="show.extra.top_ranks.best.title" xml:space="preserve">
-    <value>Parhaat Suoritukset</value>
+    <value>Paras suorituskyky</value>
   </data>
   <data name="show.extra.top_ranks.first.title" xml:space="preserve">
     <value>Kärkisijat</value>
@@ -623,7 +626,7 @@
     <value>Äänet</value>
   </data>
   <data name="show.extra.votes.title_longer" xml:space="preserve">
-    <value>Viimeisimmät Äänet</value>
+    <value>Viimeaikaiset äänet</value>
   </data>
   <data name="show.extra.votes.vote_count" xml:space="preserve">
     <value>{0} ääni|{0} ääntä</value>
@@ -638,7 +641,7 @@
     <value>&lt;strong&gt;{0}&lt;/strong&gt; pystyy puhumaan seuraavan kerran {1}.</value>
   </data>
   <data name="show.extra.account_standing.recent_infringements.title" xml:space="preserve">
-    <value>Viimeisimmät rikkomukset</value>
+    <value>Viimeaikaiset rikkomukset</value>
   </data>
   <data name="show.extra.account_standing.recent_infringements.date" xml:space="preserve">
     <value>päivä</value>
@@ -683,22 +686,22 @@
     <value>Verkkosivu</value>
   </data>
   <data name="show.not_found.reason_1" xml:space="preserve">
-    <value>Käyttäjänimi saattaa olla vaihtunut.</value>
+    <value>Hän on saattanut vaihtaa käyttäjänimensä.</value>
   </data>
   <data name="show.not_found.reason_2" xml:space="preserve">
-    <value>Käyttäjä voi olla tilapaisesti poissa käytöstä tietoturvasyistä tai väärinkäytön seurauksena.</value>
+    <value>Käyttäjätunnus voi olla tilapäisesti poissa käytöstä turvallisuussyistä tai väärinkäytön seurauksena.</value>
   </data>
   <data name="show.not_found.reason_3" xml:space="preserve">
     <value>Teit mahdollisesti kirjoitusvirheen!</value>
   </data>
   <data name="show.not_found.reason_header" xml:space="preserve">
-    <value>Tähän on lukuisia mahdollisia syitä:</value>
+    <value>Tähän on muutama mahdollinen syy:</value>
   </data>
   <data name="show.not_found.title" xml:space="preserve">
     <value>Käyttäjää ei löytynyt! ;_;</value>
   </data>
   <data name="show.page.button" xml:space="preserve">
-    <value>Muokkaa profiilisivua</value>
+    <value>muokkaa profiilisivua</value>
   </data>
   <data name="show.page.description" xml:space="preserve">
     <value>&lt;strong&gt;minä!&lt;/strong&gt; on henkilökohtainen alue profiilisivullasi, jota voit muokata.</value>

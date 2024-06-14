@@ -86,7 +86,7 @@
     <value>创建新难度</value>
   </data>
   <data name="change_difficulty" xml:space="preserve">
-    <value>更改难度</value>
+    <value>切换难度</value>
   </data>
   <data name="delete_difficulty" xml:space="preserve">
     <value>删除难度</value>
