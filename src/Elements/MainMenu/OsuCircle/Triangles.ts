@@ -43,6 +43,8 @@ export class Triangles extends PIXI.Container{
 
         }, 800);
 
+        this.graphics.rect(0, 0, 1024, 1024);
+        this.graphics.fill(this.bgGradient);
         this.addChild(this.graphics);
 
         this.flash = PIXI.Sprite.from("mainMenu.logoMask");

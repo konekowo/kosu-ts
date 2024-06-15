@@ -43,6 +43,12 @@ export class IntroScreen extends Screen {
         this.introTrackUrl = URL.createObjectURL(introTrack);
     }
     public start() {
+        this.flash.rect(0, 0, 1, 1);
+        this.flash.fill("white");
+        this.flash.position.set(0, 0);
+        this.flash.width = this.getScreenWidth();
+        this.flash.height = this.getScreenHeight();
+        this.flash.blendMode = "add";
         this.welcomeText.anchor.set(0.5, 0.5);
         this.welcomeText.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
         // timeout to not give the player a jump scare
@@ -180,12 +186,6 @@ export class IntroScreen extends Screen {
         }, 2080);
 
         setTimeout(() => {
-            this.flash.rect(0, 0, 1, 1);
-            this.flash.fill("white");
-            this.flash.position.set(0, 0);
-            this.flash.width = this.getScreenWidth();
-            this.flash.height = this.getScreenHeight();
-            this.flash.blendMode = "add";
             this.addChild(this.flash);
             this.flashed = true;
             this.logoContainerContainer.visible = false;

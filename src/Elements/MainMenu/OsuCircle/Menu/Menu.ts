@@ -13,6 +13,7 @@ export class Menu extends PIXI.Container {
         this.menuBG.scale.set(1, 0);
         this.menuBG.alpha = 0;
         this.addChild(this.menuBG);
+
     }
 
     public Open() {

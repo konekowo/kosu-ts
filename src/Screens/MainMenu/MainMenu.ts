@@ -5,7 +5,7 @@ import {OsuCircle} from "../../Elements/MainMenu/OsuCircle/OsuCircle";
 
 export class MainMenu extends Screen {
     private bg = new RandomBackground();
-    private osuCircle: OsuCircle = new OsuCircle();
+    private osuCircle = new OsuCircle();
     public start() {
         this.bg.start();
         this.addChild(this.bg);
