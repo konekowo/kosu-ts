@@ -6,5 +6,6 @@ uniform float progress;
 
 void main() {
     vec4 color = texture2D(uTexture, vUV, -0.9);
-    gl_FragColor = color.r < progress ? vec4(vColor.rgb * color.a, vColor.a * color.a) : vec4(0.0);
+    float a = vColor.a * color.a;
+    gl_FragColor = (color.r < progress && a > 0.97) ? vec4(vColor.rgb * a, a) : vec4(0.0);
 }
