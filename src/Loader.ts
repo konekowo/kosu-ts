@@ -4,6 +4,7 @@ export class Loader {
     private static loadList: LoaderObject[] = [];
     private static loadedList: LoadedObject[] = [];
     public static readonly defaultBackgroundsNum = 8;
+    public static seasonalBackgroundsNum: number = 0;
 
     private static addToLoadList() {
         // intro and interaction screen
@@ -55,100 +56,120 @@ export class Loader {
     }
 
     private static addBackgrounds() {
-        for (let i = 1; i < this.defaultBackgroundsNum + 1; i++) {
-            this.loadList.push({id: "default_bg"+i, url: "assets/osu-assets/osu.Game.Resources/Textures/Menu/menu-background-"+i+".jpg", pixiBundleName: "textures"});
-        }
+        return new Promise<void>(resolve => {
+            for (let i = 1; i < this.defaultBackgroundsNum + 1; i++) {
+                this.loadList.push({id: "default_bg"+i, url: "assets/osu-assets/osu.Game.Resources/Textures/Menu/menu-background-"+i+".jpg", pixiBundleName: "textures"});
+            }
+            fetch("https://corsproxy.io/?"+ encodeURIComponent("https://osu.ppy.sh/api/v2/seasonal-backgrounds"))
+                .then(res => res.json()).then(res => {
+                res.backgrounds.forEach((background: any, index: number) => {
+                    this.loadList.push({id: "seasonal_bg"+(index+1), url: "https://corsproxy.io/?"+ encodeURIComponent(background.url),
+                        pixiBundleName: "textures", loadParser: "loadTextures"});
+                    this.seasonalBackgroundsNum = index+1;
+                });
+                resolve();
+            }).catch(error => {
+                console.warn("Could not fetch seasonal backgrounds.", error);
+                resolve();
+            });
+        });
     }
 
     public static Load() {
         this.addToLoadList();
-        this.addBackgrounds();
         return new Promise<void>((resolve) => {
-            let nonPixi: LoaderObject[] = [];
-            let pixi: LoaderObject[] = [];
-            let pixiwithBundles: LoaderObject[][] = [];
+            this.addBackgrounds().then(() => {
+                let nonPixi: LoaderObject[] = [];
+                let pixi: LoaderObject[] = [];
+                let pixiwithBundles: LoaderObject[][] = [];
 
-            let loadedAssets: number = 0;
-            let erroredAssets: number = 0;
+                let loadedAssets: number = 0;
+                let erroredAssets: number = 0;
 
-            this.loadList.forEach((loadObj) => {
-               if (loadObj.pixiBundleName){
-                   pixi.push(loadObj);
-               }
-               else {
-                   nonPixi.push(loadObj);
-               }
-            });
-
-            pixi.forEach((loadObj) => {
-                let added = false;
-                pixiwithBundles.forEach((loadObjs) => {
-                    if (loadObjs.length > 0){
-                        if (loadObjs[0].pixiBundleName == loadObj.pixiBundleName){
-                            loadObjs.push(loadObj);
-                            added = true;
-                        }
+                this.loadList.forEach((loadObj) => {
+                    if (loadObj.pixiBundleName){
+                        pixi.push(loadObj);
+                    }
+                    else {
+                        nonPixi.push(loadObj);
                     }
                 });
-                if (!added){
-                    pixiwithBundles.push([loadObj]);
-                }
-            });
 
-            const incrementLoadAssetNumber = (errored?: boolean) => {
-                if (errored){
-                    erroredAssets++;
-                }
-                else {
-                    loadedAssets++;
-                }
-
-                if (erroredAssets + loadedAssets >= this.loadList.length){
-                    resolve();
-                }
-            }
-
-            nonPixi.forEach((loadObj) => {
-                fetch(loadObj.url)
-                    .then(response => response.blob())
-                    .then((response) => {
-                        if (!loadObj.isText){
-                            incrementLoadAssetNumber();
-                            this.loadedList.push({id: loadObj.id, data: response});
+                pixi.forEach((loadObj) => {
+                    let added = false;
+                    pixiwithBundles.forEach((loadObjs) => {
+                        if (loadObjs.length > 0){
+                            if (loadObjs[0].pixiBundleName == loadObj.pixiBundleName){
+                                loadObjs.push(loadObj);
+                                added = true;
+                            }
                         }
-                        else {
-                            response.text().then((text) => {
-                                incrementLoadAssetNumber();
-                                this.loadedList.push({id: loadObj.id, data: response, dataString: text});
-                            });
-                        }
-
-                    })
-                    .catch((error) => {
-                        incrementLoadAssetNumber(true);
-                        console.warn("Asset '"+loadObj.id+"' failed to load: "+error);
                     });
-            });
-
-            pixiwithBundles.forEach((bundle) => {
-                if (bundle.length > 0){
-                    if (!bundle[0].pixiBundleName){
-                        throw new Error("wtf????");
+                    if (!added){
+                        pixiwithBundles.push([loadObj]);
                     }
-                    let assets: PIXI.UnresolvedAsset[] = [];
-                    bundle.forEach((loadObj) => {
-                        assets.push({alias: loadObj.id, src: loadObj.url});
-                    });
-                    PIXI.Assets.addBundle(bundle[0].pixiBundleName, assets);
-                    PIXI.Assets.loadBundle(bundle[0].pixiBundleName).then(() => {
-                        bundle.forEach(() => {
-                           incrementLoadAssetNumber();
-                        });
-                    });
+                });
+
+                const incrementLoadAssetNumber = (errored?: boolean) => {
+                    if (errored){
+                        erroredAssets++;
+                    }
+                    else {
+                        loadedAssets++;
+                    }
+
+                    if (erroredAssets + loadedAssets >= this.loadList.length){
+                        resolve();
+                    }
                 }
 
-            })
+                nonPixi.forEach((loadObj) => {
+                    fetch(loadObj.url)
+                        .then(response => response.blob())
+                        .then((response) => {
+                            if (!loadObj.isText){
+                                incrementLoadAssetNumber();
+                                this.loadedList.push({id: loadObj.id, data: response});
+                            }
+                            else {
+                                response.text().then((text) => {
+                                    incrementLoadAssetNumber();
+                                    this.loadedList.push({id: loadObj.id, data: response, dataString: text});
+                                });
+                            }
 
+                        })
+                        .catch((error) => {
+                            incrementLoadAssetNumber(true);
+                            console.warn("Asset '"+loadObj.id+"' failed to load: "+error);
+                        });
+                });
+
+                pixiwithBundles.forEach((bundle) => {
+                    if (bundle.length > 0){
+                        if (!bundle[0].pixiBundleName){
+                            throw new Error("wtf????");
+                        }
+                        let assets: PIXI.UnresolvedAsset[] = [];
+                        bundle.forEach((loadObj) => {
+                            if (loadObj.loadParser){
+                                assets.push({alias: loadObj.id, src: loadObj.url, loadParser: loadObj.loadParser});
+                            }
+                            else {
+                                assets.push({alias: loadObj.id, src: loadObj.url});
+                            }
+
+                        });
+                        PIXI.Assets.addBundle(bundle[0].pixiBundleName, assets);
+                        PIXI.Assets.loadBundle(bundle[0].pixiBundleName).then(() => {
+                            bundle.forEach(() => {
+                                incrementLoadAssetNumber();
+                            });
+                        });
+                    }
+
+                })
+            });
         });
     }
 }
@@ -158,6 +179,7 @@ interface LoaderObject {
     url: string;
     pixiBundleName?: string;
     isText?: boolean;
+    loadParser?: PIXI.LoadParserName;
 }
 
 interface LoadedObject {

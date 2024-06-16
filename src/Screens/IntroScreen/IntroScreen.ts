@@ -10,6 +10,7 @@ import {set} from "husky";
 import {MainMenu} from "../MainMenu/MainMenu";
 import {AudioPlayer} from "../../Audio/AudioPlayer";
 import {LazerLogo} from "./LazerLogo";
+import {Menu} from "../../Elements/MainMenu/OsuCircle/Menu/Menu";
 
 export class IntroScreen extends Screen {
 
@@ -28,6 +29,8 @@ export class IntroScreen extends Screen {
 
     private flashed = false;
 
+    private mainMenu: MainMenu | undefined;
+
     private welcomeText: PIXI.Text = new PIXI.Text({
         text: "",
         style: {
@@ -43,6 +46,13 @@ export class IntroScreen extends Screen {
         this.introTrackUrl = URL.createObjectURL(introTrack);
     }
     public start() {
+        this.logoContainer.addChild(this.lazerLogo);
+        this.logoContainer.scale.set(1.2);
+
+        this.logoContainerContainer.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
+        this.logoContainerContainer.pivot.set(0.5, 0.5);
+        this.logoContainerContainer.addChild(this.logoContainer);
+
         this.flash.rect(0, 0, 1, 1);
         this.flash.fill("white");
         this.flash.position.set(0, 0);
@@ -51,6 +61,7 @@ export class IntroScreen extends Screen {
         this.flash.blendMode = "add";
         this.welcomeText.anchor.set(0.5, 0.5);
         this.welcomeText.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
+
         // timeout to not give the player a jump scare
         setTimeout(async () => {
             const {entries} = await unzip(this.introTrackUrl);
@@ -59,6 +70,7 @@ export class IntroScreen extends Screen {
                     entry.blob().then((audioBlob) => {
                         AudioPlayer.play(audioBlob).then(() => {
                            this.afterAudioPlay();
+                           this.mainMenu = new MainMenu();
                         });
                     });
                 }
@@ -107,6 +119,19 @@ export class IntroScreen extends Screen {
         let ctb = PIXI.Sprite.from('icon_ruleset_ctb');
         let mania = PIXI.Sprite.from('icon_ruleset_mania');
 
+        standard.anchor.set(0.5,0.5);
+        standard.scale.set(0.4);
+        this.ruleSetContainer.addChild(standard);
+        taiko.anchor.set(0.5,0.5);
+        taiko.scale.set(0.4);
+        this.ruleSetContainer.addChild(taiko);
+        ctb.anchor.set(0.5,0.5);
+        ctb.scale.set(0.4);
+        this.ruleSetContainer.addChild(ctb);
+        mania.anchor.set(0.5,0.5);
+        mania.scale.set(0.4);
+        this.ruleSetContainer.addChild(mania);
+
         setTimeout(() => {
             this.doTextSpacingAnim = false;
             this.onResize();
@@ -116,18 +141,6 @@ export class IntroScreen extends Screen {
             this.ruleSetContainer.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
 
             this.addChild(this.ruleSetContainer);
-            standard.anchor.set(0.5,0.5);
-            standard.scale.set(0.4);
-            this.ruleSetContainer.addChild(standard);
-            taiko.anchor.set(0.5,0.5);
-            taiko.scale.set(0.4);
-            this.ruleSetContainer.addChild(taiko);
-            ctb.anchor.set(0.5,0.5);
-            ctb.scale.set(0.4);
-            this.ruleSetContainer.addChild(ctb);
-            mania.anchor.set(0.5,0.5);
-            mania.scale.set(0.4);
-            this.ruleSetContainer.addChild(mania);
 
             let spacing = 100;
             standard.position.set(-((spacing * 2) + 175), 0);
@@ -169,12 +182,7 @@ export class IntroScreen extends Screen {
         setTimeout(() => {
             this.ruleSetContainer.visible = false;
             this.lazerLogo.start();
-            this.logoContainer.addChild(this.lazerLogo);
-            this.logoContainer.scale.set(1.2);
 
-            this.logoContainerContainer.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
-            this.logoContainerContainer.pivot.set(0.5, 0.5);
-            this.logoContainerContainer.addChild(this.logoContainer);
             this.addChild(this.logoContainerContainer);
 
             this.logoContainerContainer.scale.set(1.2);
@@ -189,8 +197,11 @@ export class IntroScreen extends Screen {
             this.addChild(this.flash);
             this.flashed = true;
             this.logoContainerContainer.visible = false;
-            ease.add(this.flash, {alpha: 0}, {duration: 1000, ease: "easeOutQuad"})
-            Main.switchScreen(new MainMenu());
+            ease.add(this.flash, {alpha: 0}, {duration: 1000, ease: "easeOutQuad"});
+            if (this.mainMenu == null){
+                this.mainMenu = new MainMenu();
+            }
+            Main.switchScreen(this.mainMenu);
         }, 3000);
 
     }

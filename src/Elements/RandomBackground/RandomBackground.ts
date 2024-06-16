@@ -8,17 +8,19 @@ export class RandomBackground extends Screen{
 
     private bgContainer = new PIXI.Container;
 
-    private readonly parallaxMultiplier = 40;
+    private readonly parallaxMultiplier = 60;
 
     public start() {
         function random(min: number, max: number){
             return Math.round(Math.random() * (max - min) + min);
         }
-        let randomNum = random(1, Loader.defaultBackgroundsNum);
+        let useSeasonalBackgrounds = Loader.seasonalBackgroundsNum > 0;
+        let randomNum = random(1, useSeasonalBackgrounds? Loader.seasonalBackgroundsNum: Loader.defaultBackgroundsNum);
         this.bgContainer.pivot.set(0.5, 0.5);
-        this.bgContainer.position.set(Main.mousePos.x/60, Main.mousePos.y/60);
+        this.bgContainer.position.set((Main.mousePos.x - (this.getScreenWidth()/2))/this.parallaxMultiplier,
+            (Main.mousePos.y - (this.getScreenHeight()/2))/this.parallaxMultiplier);
         this.addChild(this.bgContainer);
-        this.setBG(PIXI.Sprite.from("default_bg"+randomNum));
+        this.setBG(PIXI.Sprite.from((useSeasonalBackgrounds? "seasonal_bg" : "default_bg")+randomNum));
     }
 
     public setBG(sprite: PIXI.Sprite) {
@@ -49,7 +51,8 @@ export class RandomBackground extends Screen{
     }
 
     public draw(deltaTime: PIXI.Ticker) {
-        this.bgContainer.position.set(Main.mousePos.x/this.parallaxMultiplier, Main.mousePos.y/this.parallaxMultiplier);
+        this.bgContainer.position.set((Main.mousePos.x - (this.getScreenWidth()/2))/this.parallaxMultiplier,
+            (Main.mousePos.y - (this.getScreenHeight()/2))/this.parallaxMultiplier);
     }
 
     public onClose(): Promise<Screen> {
