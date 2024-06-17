@@ -53,9 +53,9 @@ export class Triangles extends PIXI.Container{
         this.flash.blendMode = "add";
 
         this.addChild(this.flash);
-
-        this.pulseAnimation = new EaseOutSine(375, true, AudioPlayer.playingAudios[AudioPlayer.playingAudios.length - 1].startTime);
-        this.pulseAnimationFlash = new EaseOutSine(375, true, AudioPlayer.playingAudios[AudioPlayer.playingAudios.length - 1].startTime);
+        let playingAudio = AudioPlayer.playingAudios[AudioPlayer.playingAudios.length - 1];
+        this.pulseAnimation = new EaseOutSine(375, true, playingAudio.startTime);
+        this.pulseAnimationFlash = new EaseOutSine(375, true, playingAudio.startTime);
     }
 
     public destroy(options?: PIXI.DestroyOptions) {
