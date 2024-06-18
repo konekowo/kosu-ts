@@ -5,7 +5,7 @@ export class EditorData {
     /**
      * Time in milliseconds of <a href="https://osu.ppy.sh/wiki/en/Client/Beatmap_editor/Compose#song-timeline">bookmarks</a>
      */
-    public Bookmarks: number[] | undefined;
+    public Bookmarks: number[] = [];
     /**
      * <a href="https://osu.ppy.sh/wiki/en/Client/Beatmap_editor/Distance_snap">Distance snap</a> multiplier
      */
