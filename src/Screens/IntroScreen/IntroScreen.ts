@@ -11,6 +11,8 @@ import {MainMenu} from "../MainMenu/MainMenu";
 import {AudioPlayer} from "../../Audio/AudioPlayer";
 import {LazerLogo} from "./LazerLogo";
 import {Menu} from "../../Elements/MainMenu/OsuCircle/Menu/Menu";
+import {BeatmapData} from "../../Util/Beatmap/Data/BeatmapData";
+import {BeatmapParser} from "../../Util/Beatmap/Parser/BeatmapParser";
 
 export class IntroScreen extends Screen {
 
@@ -75,7 +77,11 @@ export class IntroScreen extends Screen {
                     });
                 }
                 if (name.endsWith(".osu")){
-                    // TODO: parse
+                    entry.text().then((osuFile) => {
+                        let beatmapData = BeatmapParser.parse(osuFile);
+                        console.log(beatmapData);
+                    })
+
                 }
             }
         }, 500);

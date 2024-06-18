@@ -1,6 +1,8 @@
+import {BeatmapData} from "../Data/BeatmapData";
+
 export class BeatmapParser {
-    public constructor() {
-
+    public static parse(osuFileContent: string): BeatmapData {
+        // TODO: parse .osu! file
+        return new BeatmapData();
     }
-
 }
