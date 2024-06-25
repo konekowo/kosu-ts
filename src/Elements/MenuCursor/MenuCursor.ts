@@ -132,7 +132,6 @@ export class MenuCursor extends PIXI.Container {
         if (this.dragRotationState != DragRotationState.NotDragging && this.visible){
             let distance = Math.sqrt((((Math.abs(this.posMouseDown.x - Main.mousePos.x))^2) +
                 ((Math.abs(this.posMouseDown.y - Main.mousePos.y))^2)));
-            console.log(distance);
             if (this.dragRotationState == DragRotationState.DragStarted && distance > 8){
                 this.dragRotationState = DragRotationState.Rotating;
 
