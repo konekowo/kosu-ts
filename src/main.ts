@@ -28,7 +28,6 @@ export class Main {
         });
         document.addEventListener("pointerlockchange", this.pointerLockChanged, false);
         Main.switchScreen(new LoadScreen());
-
         navigator.mediaSession.setActionHandler('play', function() {});
         navigator.mediaSession.setActionHandler('pause', function() {});
         navigator.mediaSession.setActionHandler('stop', function() {});
@@ -59,6 +58,7 @@ export class Main {
 
     private pointerLockChanged(): void {
         if (!document.pointerLockElement && Main.doPointerLock) {
+            PIXI.EventSystem.isPointerLocked = false;
             Main.pointerLockExitTime = Date.now();
             Main.clickArea = new PIXI.Graphics();
             Main.clickArea.rect(0, 0, 1, 1);
@@ -83,6 +83,7 @@ export class Main {
 
     public static pointerLock() {
         this.doPointerLock = true;
+        PIXI.EventSystem.isPointerLocked = true;
         // @ts-ignore
         Main.app.canvas.requestPointerLock({
             unadjustedMovement: true,

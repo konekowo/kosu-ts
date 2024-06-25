@@ -19,8 +19,7 @@
         "prebuild": "npm run clean",
         "build": "npm run webpack -- --env mode=production",
         "start": "http-server dist -o",
-        "lint": "eslint . --ext .ts,.tsx",
-        "prepare": "husky install"
+        "lint": "eslint . --ext .ts,.tsx"
     },
     "author": "jkanchelov",
     "license": "MIT",
@@ -28,7 +27,7 @@
         "@tweenjs/tween.js": "^23.1.1",
         "core-js": "^3.34.0",
         "pixi-ease": "^3.0.7",
-        "pixi.js": "^8.0.2",
+        "pixi.js": "github:konekowo/pixijs",
         "unzipit": "^1.4.3"
     },
     "devDependencies": {

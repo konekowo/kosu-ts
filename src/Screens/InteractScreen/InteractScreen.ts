@@ -52,7 +52,7 @@ export class InteractScreen extends Screen {
             this.clickArea.eventMode = "none";
             AudioPlayer.playSoundEffect(this.clickSound);
             Main.switchScreen(new IntroScreen(this.introTrack));
-            //Main.switchScreen(new LogoAnimation());
+            Main.pointerLock();
         }
 
         this.clickArea.onclick = () => {
