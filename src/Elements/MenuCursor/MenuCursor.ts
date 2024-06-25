@@ -27,18 +27,26 @@ export class MenuCursor extends PIXI.Container {
 
     private cursorTapSample = Loader.Get("menu.cursor.sample.tap");
 
-    public constructor() {
+    private mouseButtonClicked: number = -9999;
+
+    public constructor(visible: boolean) {
         super();
         this.updateMouse();
         this.mouseContainer.scale.set(0.07);
         this.mouseCursorAdditive.alpha = 0;
         this.mouseCursorAdditive.blendMode = "add";
+        this.mouseCursorAdditive.tint = "0xFF66AA"
         this.mouseContainer.addChild(this.mouseCursor);
         this.mouseContainer.addChild(this.mouseCursorAdditive);
         this.animContainer.addChild(this.mouseContainer);
         this.animRotationContainer.addChild(this.animContainer);
         this.mouseHideContainer.addChild(this.animRotationContainer);
         this.addChild(this.mouseHideContainer);
+        if (!visible){
+            this.mouseHideContainer.scale.set(0.6);
+            this.mouseHideContainer.alpha = 0;
+            this.animRotationContainer.angle = 0;
+        }
         this.zIndex = 999999;
         this.eventMode = "none";
         Main.app.stage.addChild(this);
@@ -46,7 +54,8 @@ export class MenuCursor extends PIXI.Container {
     }
 
     public addEventListeners() {
-        Main.app.stage.addEventListener("mousedown", () => {
+        Main.app.stage.addEventListener("mousedown", (e) => {
+            this.mouseButtonClicked = e.button;
             if (this.visible) {
                 this.posMouseDown = {x: Main.mousePos.x, y: Main.mousePos.y};
                 this.mouseIsDown = true;
@@ -66,8 +75,8 @@ export class MenuCursor extends PIXI.Container {
                 AudioPlayer.playSoundEffect(this.cursorTapSample);
             }
         });
-        Main.app.stage.addEventListener("mouseup", () => {
-            if (this.visible) {
+        Main.app.stage.addEventListener("mouseup", (e) => {
+            if (this.visible && e.button == this.mouseButtonClicked) {
                 this.mouseIsDown = false;
                 if (this.mouseDownScaleAnim && this.mouseDownAdditiveAnim) {
                     this.mouseDownAdditiveAnim.remove();
@@ -85,7 +94,7 @@ export class MenuCursor extends PIXI.Container {
                     if (this.dragRotationState == DragRotationState.Rotating) {
                         this.mouseRotationAnim = ease.add(this.animRotationContainer, {angle: 0}, {
                             ease: "easeOutElastic",
-                            duration: 2000 * (0.5 + Math.abs(this.animRotationContainer.angle / 960))
+                            duration: 800 * (0.5 + Math.abs(this.animRotationContainer.angle / 960))
                         });
                     }
                     this.dragRotationState = DragRotationState.NotDragging;
@@ -132,9 +141,8 @@ export class MenuCursor extends PIXI.Container {
         if (this.dragRotationState != DragRotationState.NotDragging && this.visible){
             let distance = Math.sqrt((((Math.abs(this.posMouseDown.x - Main.mousePos.x))^2) +
                 ((Math.abs(this.posMouseDown.y - Main.mousePos.y))^2)));
-            if (this.dragRotationState == DragRotationState.DragStarted && distance > 8){
+            if (this.dragRotationState == DragRotationState.DragStarted && distance > 12){
                 this.dragRotationState = DragRotationState.Rotating;
-
             }
 
             if (this.dragRotationState == DragRotationState.Rotating && distance > 0){

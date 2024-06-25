@@ -208,6 +208,7 @@ export class IntroScreen extends Screen {
                 this.mainMenu = new MainMenu();
             }
             Main.switchScreen(this.mainMenu);
+            Main.cursor.PopIn();
         }, 3000);
 
     }

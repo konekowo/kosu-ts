@@ -53,7 +53,6 @@ export class InteractScreen extends Screen {
             AudioPlayer.playSoundEffect(this.clickSound);
             Main.switchScreen(new IntroScreen(this.introTrack));
             Main.pointerLock();
-            Main.cursor.PopIn();
         }
 
         this.clickArea.onclick = () => {

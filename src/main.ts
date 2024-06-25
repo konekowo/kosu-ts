@@ -43,8 +43,7 @@ export class Main {
         navigator.mediaSession.setActionHandler('nexttrack', function() {});
 
         Loader.Load().then(() => {
-            Main.cursor = new MenuCursor();
-            Main.cursor.PopOut();
+            Main.cursor = new MenuCursor(false);
             let dialogOk = Loader.Get("sample_dialog_ok");
             let introTrack = Loader.Get("introTrianglesTrack");
             Main.switchScreen(new InteractScreen(introTrack, dialogOk));
