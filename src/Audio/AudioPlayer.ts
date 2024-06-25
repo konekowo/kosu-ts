@@ -44,7 +44,7 @@ export class AudioPlayer {
     }
 
     public static playFromQueue() {
-        
+
     }
 
     public static setAutoPlay(value: boolean){
@@ -63,12 +63,27 @@ export class AudioPlayer {
     }
 
 
-    public static playSoundEffect(audio: Blob) {
+    public static playSoundEffect(audio: Blob, pitch?: number) {
         let audioURL = URL.createObjectURL(audio);
-        let effect = new Audio(audioURL);
-        effect.play();
-        effect.onended = () => {
-            URL.revokeObjectURL(audioURL);
+        let ctx = new AudioContext();
+        if (pitch){
+            fetch (audioURL).then(res => res.arrayBuffer()).then(buf => ctx.decodeAudioData(buf))
+                .then(sample => {
+                    URL.revokeObjectURL(audioURL);
+                    const source = ctx.createBufferSource();
+                    source.buffer = sample;
+                    source.playbackRate.value = pitch;
+                    source.connect(ctx.destination);
+                    source.start(0);
+                });
+
+        }
+        else {
+            let effect = new Audio(audioURL);
+            effect.play();
+            effect.onended = () => {
+                URL.revokeObjectURL(audioURL);
+            }
         }
     }
 }

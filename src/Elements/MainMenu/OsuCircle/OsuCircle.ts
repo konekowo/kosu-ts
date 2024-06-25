@@ -117,7 +117,7 @@ export class OsuCircle extends PIXI.Container {
         });
 
         window.addEventListener("keyup", (e) => {
-           if (e.key == "Escape"){
+           if (e.key == "Escape" || e.key == "`"){
                if (this.menu.isOpen()){
                    menuOpenAnim0.remove();
                    menuOpenAnim1.remove();

@@ -4,6 +4,7 @@ import { LoadScreen } from "./Screens/LoadScreen/LoadScreen";
 import * as PIXI from "pixi.js";
 import {InteractScreen} from "./Screens/InteractScreen/InteractScreen";
 import {Loader} from "./Loader";
+import {MenuCursor} from "./Elements/MenuCursor/MenuCursor";
 
 
 export class Main {
@@ -14,17 +15,22 @@ export class Main {
     public static mousePos = {x: 0, y: 0};
     public static pointerLockExitTime: number;
     private static doPointerLock: boolean = false;
+    public static cursor: MenuCursor;
+
     public constructor(app: Application) {
         Main.app = app;
         // @ts-ignore
         document.body.appendChild(Main.app.canvas);
         this.doResize();
         window.addEventListener("resize", this.doResize);
-
         Main.app.stage.eventMode = "static";
+
         Main.app.stage.addEventListener("mousemove", (e) => {
             Main.mousePos.x = e.clientX;
             Main.mousePos.y = e.clientY;
+            if (Main.cursor){
+                Main.cursor.updateMouse();
+            }
         });
         document.addEventListener("pointerlockchange", this.pointerLockChanged, false);
         Main.switchScreen(new LoadScreen());
@@ -37,6 +43,8 @@ export class Main {
         navigator.mediaSession.setActionHandler('nexttrack', function() {});
 
         Loader.Load().then(() => {
+            Main.cursor = new MenuCursor();
+            Main.cursor.PopOut();
             let dialogOk = Loader.Get("sample_dialog_ok");
             let introTrack = Loader.Get("introTrianglesTrack");
             Main.switchScreen(new InteractScreen(introTrack, dialogOk));
@@ -69,6 +77,7 @@ export class Main {
             Main.app.stage.addChild(Main.clickArea);
             Main.clickArea.eventMode = "static";
             Main.clickArea.cursor = "pointer";
+            Main.cursor.PopOut();
             Main.clickArea.zIndex = 9999999;
             Main.clickArea.onclick = () => {
                 if (Date.now() - Main.pointerLockExitTime < 1500){
@@ -77,13 +86,16 @@ export class Main {
                 Main.clickArea.removeFromParent();
                 Main.clickArea.destroy();
                 Main.pointerLock();
+                Main.cursor.PopIn();
             }
+        }
+        else {
+            PIXI.EventSystem.isPointerLocked = true;
         }
     }
 
     public static pointerLock() {
         this.doPointerLock = true;
-        PIXI.EventSystem.isPointerLocked = true;
         // @ts-ignore
         Main.app.canvas.requestPointerLock({
             unadjustedMovement: true,
