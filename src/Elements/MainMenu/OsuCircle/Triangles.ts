@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import {Main} from "../../../main";
-import {AudioPlayer} from "../../../Audio/AudioPlayer";
+import {AudioEngine} from "../../../Audio/AudioEngine";
 export class Triangles extends PIXI.Container{
 
     private bgGradient: PIXI.FillGradient;
@@ -53,9 +53,14 @@ export class Triangles extends PIXI.Container{
         this.flash.blendMode = "add";
 
         this.addChild(this.flash);
-        let playingAudio = AudioPlayer.playingAudios[AudioPlayer.playingAudios.length - 1];
-        this.pulseAnimation = new EaseOutSine(375, true, playingAudio.startTime);
-        this.pulseAnimationFlash = new EaseOutSine(375, true, playingAudio.startTime);
+        this.pulseAnimation = new EaseOutSine(0, true, 0);
+        this.pulseAnimationFlash = new EaseOutSine(0, true, 0);
+        let playingAudio = Main.AudioEngine.GetCurrentPlayingMusic();
+        if (playingAudio != null) {
+            this.pulseAnimation = new EaseOutSine(375, true, playingAudio.timeStarted);
+            this.pulseAnimationFlash = new EaseOutSine(375, true, playingAudio.timeStarted);
+        }
+
     }
 
     public destroy(options?: PIXI.DestroyOptions) {

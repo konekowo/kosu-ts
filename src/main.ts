@@ -5,6 +5,7 @@ import * as PIXI from "pixi.js";
 import {InteractScreen} from "./Screens/InteractScreen/InteractScreen";
 import {Loader} from "./Loader";
 import {MenuCursor} from "./Elements/MenuCursor/MenuCursor";
+import {AudioEngine} from "./Audio/AudioEngine";
 
 
 export class Main {
@@ -16,6 +17,7 @@ export class Main {
     public static pointerLockExitTime: number;
     private static doPointerLock: boolean = false;
     public static cursor: MenuCursor;
+    public static AudioEngine: AudioEngine = new AudioEngine();
 
     public constructor(app: Application) {
         Main.app = app;

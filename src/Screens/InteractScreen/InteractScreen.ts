@@ -4,7 +4,6 @@ import {Ticker} from "pixi.js";
 import {Main} from "../../main";
 import {IntroScreen} from "../IntroScreen/IntroScreen";
 import {ease} from 'pixi-ease';
-import {AudioPlayer} from "../../Audio/AudioPlayer";
 import {LogoAnimation} from "../ShaderTest/LogoAnimation";
 
 export class InteractScreen extends Screen {
@@ -50,7 +49,7 @@ export class InteractScreen extends Screen {
 
         const clicked = () => {
             this.clickArea.eventMode = "none";
-            AudioPlayer.playSoundEffect(this.clickSound);
+            Main.AudioEngine.PlayEffect(this.clickSound);
             Main.switchScreen(new IntroScreen(this.introTrack));
             Main.pointerLock();
         }

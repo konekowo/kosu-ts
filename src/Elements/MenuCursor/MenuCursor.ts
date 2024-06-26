@@ -1,7 +1,6 @@
 import * as PIXI from "pixi.js";
 import {Main} from "../../main";
 import {Ease, ease, Easing} from "pixi-ease";
-import {AudioPlayer} from "../../Audio/AudioPlayer";
 import {Loader} from "../../Loader";
 
 export class MenuCursor extends PIXI.Container {
@@ -72,7 +71,7 @@ export class MenuCursor extends PIXI.Container {
                     ease: "easeOutQuint",
                     duration: 800
                 });
-                AudioPlayer.playSoundEffect(this.cursorTapSample);
+                Main.AudioEngine.PlayEffect(this.cursorTapSample);
             }
         });
         Main.app.stage.addEventListener("mouseup", (e) => {
@@ -99,7 +98,7 @@ export class MenuCursor extends PIXI.Container {
                     }
                     this.dragRotationState = DragRotationState.NotDragging;
                 }
-                AudioPlayer.playSoundEffect(this.cursorTapSample, 0.8);
+                Main.AudioEngine.PlayEffect(this.cursorTapSample, 0.8);
             }
         });
     }

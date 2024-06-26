@@ -8,11 +8,11 @@ import {GlitchingTriangles} from "./GlitchingTriangles";
 import {ease} from "pixi-ease";
 import {set} from "husky";
 import {MainMenu} from "../MainMenu/MainMenu";
-import {AudioPlayer} from "../../Audio/AudioPlayer";
 import {LazerLogo} from "./LazerLogo";
 import {Menu} from "../../Elements/MainMenu/OsuCircle/Menu/Menu";
 import {BeatmapData} from "../../Util/Beatmap/Data/BeatmapData";
 import {BeatmapParser} from "../../Util/Beatmap/Parser/BeatmapParser";
+import {AudioEngine} from "../../Audio/AudioEngine";
 
 export class IntroScreen extends Screen {
 
@@ -63,16 +63,14 @@ export class IntroScreen extends Screen {
         this.flash.blendMode = "add";
         this.welcomeText.anchor.set(0.5, 0.5);
         this.welcomeText.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
-
-        // timeout to not give the player a jump scare
         setTimeout(async () => {
             const {entries} = await unzip(this.introTrackUrl);
             for (const [name, entry] of Object.entries(entries)) {
                 if (name == "audio.mp3"){
                     entry.blob().then((audioBlob) => {
-                        AudioPlayer.play(audioBlob).then(() => {
-                           this.afterAudioPlay();
-                           this.mainMenu = new MainMenu();
+                        Main.AudioEngine.PlayMusicImmediately(audioBlob, new BeatmapData(), () => {
+                            this.afterAudioPlay();
+                            this.mainMenu = new MainMenu();
                         });
                     });
                 }
@@ -84,7 +82,7 @@ export class IntroScreen extends Screen {
 
                 }
             }
-        }, 500);
+        }, 0);
     }
 
     public afterAudioPlay() {

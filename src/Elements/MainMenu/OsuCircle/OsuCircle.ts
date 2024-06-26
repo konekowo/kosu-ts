@@ -4,7 +4,6 @@ import {Ease, ease, Easing} from "pixi-ease";
 import {Main} from "../../../main";
 import {Loader} from "../../../Loader";
 import {Menu} from "./Menu/Menu";
-import {AudioPlayer} from "../../../Audio/AudioPlayer";
 
 export class OsuCircle extends PIXI.Container {
 
@@ -107,7 +106,7 @@ export class OsuCircle extends PIXI.Container {
             flash.alpha = 0.4;
             ease.add(flash, {alpha: 0}, {duration:1500, ease: "easeOutExpo"});
             if (!this.menu.isOpen()){
-                AudioPlayer.playSoundEffect(selectSample);
+                Main.AudioEngine.PlayEffect(selectSample);
 
                 menuOpenAnim0 = ease.add(this.moveContainer, {position: {x: -250, y: 0}}, {duration: 200, ease: "easeInSine"}).once("complete", () => {
                     this.menu.Open();
@@ -121,7 +120,7 @@ export class OsuCircle extends PIXI.Container {
                if (this.menu.isOpen()){
                    menuOpenAnim0.remove();
                    menuOpenAnim1.remove();
-                   AudioPlayer.playSoundEffect(backToLogoSample);
+                   Main.AudioEngine.PlayEffect(backToLogoSample);
                    this.menu.Close();
                    menuCloseAnim0 = ease.add(this.moveContainer, {position: {x: 0, y: 0}}, {duration: 800, ease: "easeOutExpo"});
                    menuCloseAnim1 = ease.add(this.moveContainer, {scale: 1}, {duration: 800, ease: "easeOutExpo"});
