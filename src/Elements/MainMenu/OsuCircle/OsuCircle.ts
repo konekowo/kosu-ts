@@ -19,6 +19,7 @@ export class OsuCircle extends PIXI.Container {
     private readonly menu: Menu = new Menu();
     private isBeingHovered = false;
     private readonly defaultVisualizerAlpha = 0.5;
+    private timeElapsedSinceLastBeat = 0;
 
     public constructor() {
         super();
@@ -138,8 +139,6 @@ export class OsuCircle extends PIXI.Container {
                }
            }
         });
-
-        setInterval(() => {this.onNewBeat()}, 375)
     }
 
     private onNewBeat() {
@@ -182,6 +181,11 @@ export class OsuCircle extends PIXI.Container {
         }
         else {
             this.parallaxContainer.position.set(0,0);
+        }
+        this.timeElapsedSinceLastBeat += ticker.deltaMS;
+        if (this.timeElapsedSinceLastBeat >= 375){
+            this.onNewBeat();
+            this.timeElapsedSinceLastBeat = 0;
         }
     }
 
