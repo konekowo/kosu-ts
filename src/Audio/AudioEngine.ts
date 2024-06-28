@@ -21,7 +21,7 @@ export class AudioEngine {
                 this._play(this._musicQueue[0]);
                 this._changeCallbacks.forEach((cb) => cb());
             }
-            if (this._musicQueue[0].fadingOut){
+            if (this._musicQueue[0].fadingOut && this._musicQueue[1]){
                 if (this._musicQueue[1]){
                     this._play(this._musicQueue[1]);
                     this._changeCallbacks.forEach((cb) => cb());
@@ -92,6 +92,7 @@ export class AudioEngine {
                 });
             });
             audio.Play();
+            this._playingAudios.audios.push(audio);
             if (audio.playingCallback){
                 audio.playingCallback();
             }
@@ -125,6 +126,7 @@ export class AudioEngine {
                     return;
                 }
             });
+            this.Update();
         });
     }
 
