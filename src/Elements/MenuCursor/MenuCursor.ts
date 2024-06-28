@@ -16,6 +16,7 @@ export class MenuCursor extends PIXI.Container {
     private mouseUpAdditiveAnim: Easing | undefined;
     private mouseRotationAnim: Easing | undefined;
     private dragRotationState: DragRotationState = DragRotationState.NotDragging;
+    private lastDragRotationState: DragRotationState = DragRotationState.NotDragging;
     private mouseHideContainer = new PIXI.Container();
 
     private hideScaleAnim: Easing | undefined;
@@ -141,8 +142,11 @@ export class MenuCursor extends PIXI.Container {
         if (this.dragRotationState != DragRotationState.NotDragging && this.visible){
             let distance = Math.sqrt((((Math.abs(this.posMouseDown.x - Main.mousePos.x))^2) +
                 ((Math.abs(this.posMouseDown.y - Main.mousePos.y))^2)));
-            if (this.dragRotationState == DragRotationState.DragStarted && distance > 12){
+            if (this.dragRotationState == DragRotationState.DragStarted && distance > 15){
                 this.dragRotationState = DragRotationState.Rotating;
+                if (this.lastDragRotationState != this.dragRotationState) {
+                    this.posMouseDown = {x: Main.mousePos.x, y: Main.mousePos.y};
+                }
             }
 
             if (this.dragRotationState == DragRotationState.Rotating && distance > 0){
@@ -161,6 +165,7 @@ export class MenuCursor extends PIXI.Container {
                 this.mouseRotationAnim = ease.add(this.animRotationContainer, {angle: degrees}, {duration: 120, ease: "easeOutQuint"});
             }
         }
+        this.lastDragRotationState = this.dragRotationState;
 
     }
 

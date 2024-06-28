@@ -20,6 +20,7 @@ export class OsuCircle extends PIXI.Container {
     private isBeingHovered = false;
     private readonly defaultVisualizerAlpha = 0.5;
     private timeElapsedSinceLastBeat = 0;
+    private visualizerAnimationDummy = new PIXI.Container();
 
     public constructor() {
         super();
@@ -158,12 +159,12 @@ export class OsuCircle extends PIXI.Container {
             () => {
                 ease.add(this.triangles.flash, {alpha: 0}, {duration: beatLength})
             });
-        let dummy = new PIXI.Container();
-        let visualizerEase = ease.add(dummy, {alpha: this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust},
-            {duration: 60, ease: "linear"}).on("each", () => {this.visualizer.alphaMultiplier = dummy.alpha});
+
+        let visualizerEase = ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust},
+            {duration: 60, ease: "linear"}).on("each", () => {this.visualizer.alphaMultiplier = this.visualizerAnimationDummy.alpha});
         visualizerEase.once("complete", () => {
-           ease.add(dummy, {alpha: this.defaultVisualizerAlpha}, {duration: beatLength, ease: "linear"}).on("each", () => {
-               this.visualizer.alphaMultiplier = dummy.alpha
+           ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha}, {duration: beatLength, ease: "linear"}).on("each", () => {
+               this.visualizer.alphaMultiplier = this.visualizerAnimationDummy.alpha;
            });
         });
     }
