@@ -22,7 +22,6 @@ export class Audio {
         if (!this.source){
             throw new Error("Source not created yet!");
         }
-        this.source.connect(node);
         this.nodes.push(node);
     }
 
@@ -36,7 +35,7 @@ export class Audio {
         }
     }
 
-    public ConnectToContext(audioContext: AudioContext) {
+    public ConnectToContext(audioContext: AudioContext, howToConnectFunction?: (nodes: AudioNode[], source: AudioBufferSourceNode) => void) {
         if (!this.source){
             throw new Error("Source not created yet!");
         }
@@ -45,12 +44,17 @@ export class Audio {
         }
         this._connectedToContext = true;
         if (this.nodes.length > 0){
-            this.nodes.forEach((node, index) => {
-                this.source!.connect(node);
-                if (!(node instanceof AnalyserNode)) {
-                    node.connect(audioContext.destination);
-                }
-            });
+            if (howToConnectFunction){
+                howToConnectFunction(this.nodes, this.source);
+            }
+            else {
+                this.nodes.forEach((node, index) => {
+                    this.source!.connect(node);
+                    if (!(node instanceof AnalyserNode)) {
+                        node.connect(audioContext.destination);
+                    }
+                });
+            }
         }
         else {
             this.source.connect(audioContext.destination);

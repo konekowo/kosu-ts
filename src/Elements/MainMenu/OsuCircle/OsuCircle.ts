@@ -18,6 +18,7 @@ export class OsuCircle extends PIXI.Container {
     private readonly parallaxContainer: PIXI.Container = new PIXI.Container();
     private readonly menu: Menu = new Menu();
     private isBeingHovered = false;
+    private readonly defaultVisualizerAlpha = 0.5;
 
     public constructor() {
         super();
@@ -30,6 +31,7 @@ export class OsuCircle extends PIXI.Container {
         let scale = 0.6;
         this.visualizer.position.set(-LogoVisualizer.size/3.35, -LogoVisualizer.size/3.35);
         this.visualizer.scale.set(scale);
+        this.visualizer.alphaMultiplier = this.defaultVisualizerAlpha;
         this.beatContainer.addChild(this.visualizer);
 
         let mask = PIXI.Sprite.from("mainMenu.logoMask");
@@ -137,8 +139,36 @@ export class OsuCircle extends PIXI.Container {
            }
         });
 
-
+        setInterval(() => {this.onNewBeat()}, 375)
     }
+
+    private onNewBeat() {
+        let beatLength = 375;
+        let maxAmplitude = 0;
+        this.visualizer.audioData.forEach((num) => {
+            if (maxAmplitude < num) {
+                maxAmplitude = num;
+            }
+        });
+        let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
+        ease.add(this.beatContainer, {scale: 1 - 0.02 * amplitudeAdjust}, {ease: "linear", duration: 60}).once("complete",
+            () => {
+            ease.add(this.beatContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2});
+        });
+        ease.add(this.triangles.flash, {alpha: 0.2*amplitudeAdjust}, {duration: 60, ease:"linear"}).once("complete",
+            () => {
+                ease.add(this.triangles.flash, {alpha: 0}, {duration: beatLength})
+            });
+        let dummy = new PIXI.Container();
+        let visualizerEase = ease.add(dummy, {alpha: this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust},
+            {duration: 60, ease: "linear"}).on("each", () => {this.visualizer.alphaMultiplier = dummy.alpha});
+        visualizerEase.once("complete", () => {
+           ease.add(dummy, {alpha: this.defaultVisualizerAlpha}, {duration: beatLength, ease: "linear"}).on("each", () => {
+               this.visualizer.alphaMultiplier = dummy.alpha
+           });
+        });
+    }
+
 
     public onResize() {
         this.menu.onResize();

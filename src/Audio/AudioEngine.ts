@@ -65,10 +65,32 @@ export class AudioEngine {
             let gain = this.audioContext.createGain();
             gain.gain.value = 0;
             let analyzer = this.audioContext.createAnalyser();
-            analyzer.fftSize = 256;
+            analyzer.fftSize = 1024;
+            let lowpassFilter = this.audioContext.createBiquadFilter();
+            lowpassFilter.type = 'lowpass';
+            lowpassFilter.frequency.value = 75; // Set cutoff frequency to 200 Hz
+            lowpassFilter.Q.value = 1;
             audio.AddAudioNode(analyzer);
             audio.AddAudioNode(gain);
-            audio.ConnectToContext(this.audioContext);
+            audio.AddAudioNode(lowpassFilter);
+            audio.ConnectToContext(this.audioContext, (nodes, source) => {
+                let analyzerNode: AnalyserNode;
+                nodes.forEach((node) => {
+                    if (node instanceof GainNode) {
+                        source.connect(node);
+                        node.connect(this.audioContext.destination);
+                    }
+                    if (node instanceof AnalyserNode) {
+                        analyzerNode = node;
+                    }
+                });
+                nodes.forEach((node) => {
+                   if (node instanceof BiquadFilterNode) {
+                       source.connect(node);
+                       node.connect(analyzerNode);
+                   }
+                });
+            });
             audio.Play();
             if (audio.playingCallback){
                 audio.playingCallback();

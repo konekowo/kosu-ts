@@ -7,9 +7,7 @@ export class Triangles extends PIXI.Container{
     private triangles: Triangle[] = [];
     private triangleGenInterval: NodeJS.Timeout;
     private graphics: PIXI.Graphics = new PIXI.Graphics();
-    private pulseAnimation: EaseOutSine;
-    private pulseAnimationFlash: EaseOutSine;
-    private flash: PIXI.Sprite;
+    public flash: PIXI.Sprite;
 
     public constructor() {
         super();
@@ -53,14 +51,6 @@ export class Triangles extends PIXI.Container{
         this.flash.blendMode = "add";
 
         this.addChild(this.flash);
-        this.pulseAnimation = new EaseOutSine(0, true, 0);
-        this.pulseAnimationFlash = new EaseOutSine(0, true, 0);
-        let playingAudio = Main.AudioEngine.GetCurrentPlayingMusic();
-        if (playingAudio != null) {
-            this.pulseAnimation = new EaseOutSine(375, true, playingAudio.timeStarted);
-            this.pulseAnimationFlash = new EaseOutSine(375, true, playingAudio.timeStarted);
-        }
-
     }
 
     public destroy(options?: PIXI.DestroyOptions) {
@@ -68,10 +58,7 @@ export class Triangles extends PIXI.Container{
     }
 
     public draw(ticker: PIXI.Ticker) {
-        this.pulseAnimation.update();
-        this.pulseAnimationFlash.update();
         if (!this.destroyed){
-            this.flash.alpha = this.pulseAnimationFlash.getValue()/7;
             if (document.hasFocus()){
                 this.graphics.clear();
                 this.graphics.rect(0, 0, 1024, 1024);
