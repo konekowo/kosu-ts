@@ -68,7 +68,7 @@
     <value>Lihat di sini untuk informasi lebih lanjut.</value>
   </data>
   <data name="availability.rule_violation" xml:space="preserve">
-    <value>Sebagian aset yang terkandung dalam berkas beatmap ini telah dihapus karena dinilai tidak sesuai dengan kaidah penggunaan konten yang berlaku di osu!.</value>
+    <value>Sebagian aset yang terkandung dalam beatmap ini telah dihapus setelah dinilai tidak layak untuk digunakan di osu!.</value>
   </data>
   <data name="cover.deleted" xml:space="preserve">
     <value>Beatmap yang telah dihapus</value>
@@ -98,19 +98,31 @@
     <value>unduh tanpa video</value>
   </data>
   <data name="panel.download.direct" xml:space="preserve">
-    <value>buka melalui osu!direct</value>
+    <value>buka di osu!direct</value>
+  </data>
+  <data name="nominate.bng_limited_too_many_rulesets" xml:space="preserve">
+    <value>Nominator masa percobaan tidak dapat menominasikan lebih dari satu ruleset.</value>
+  </data>
+  <data name="nominate.full_nomination_required" xml:space="preserve">
+    <value>Kamu harus menjadi nominator penuh untuk memberikan nominasi terakhir pada suatu ruleset.</value>
   </data>
   <data name="nominate.hybrid_requires_modes" xml:space="preserve">
     <value>Pada beatmap hybrid, kamu harus memilih setidaknya satu mode permainan untuk dinominasikan.</value>
   </data>
   <data name="nominate.incorrect_mode" xml:space="preserve">
-    <value>Kamu tidak memiliki hak untuk memberikan nominasi pada mode permainan: {0}</value>
+    <value>Kamu tidak memiliki izin untuk memberikan nominasi pada mode permainan: {0}</value>
   </data>
-  <data name="nominate.full_bn_required" xml:space="preserve">
-    <value>Kamu harus berstatus sebagai nominator penuh (full nominator) untuk menominasikan beatmap ini.</value>
+  <data name="nominate.invalid_limited_nomination" xml:space="preserve">
+    <value>Beatmap ini memiliki nominasi yang tidak valid dan tidak dapat dikualifikasikan dalam kondisi saat ini.</value>
+  </data>
+  <data name="nominate.invalid_ruleset" xml:space="preserve">
+    <value>Nominasi ini memiliki ruleset yang tidak valid.</value>
   </data>
   <data name="nominate.too_many" xml:space="preserve">
     <value>Persyaratan nominasi telah terpenuhi.</value>
+  </data>
+  <data name="nominate.too_many_non_main_ruleset" xml:space="preserve">
+    <value>Persyaratan nominasi untuk ruleset yang bukan merupakan ruleset utama telah terpenuhi.</value>
   </data>
   <data name="nominate.dialog.confirmation" xml:space="preserve">
     <value>Apakah kamu yakin untuk menominasikan beatmap ini?</value>
@@ -120,6 +132,9 @@
   </data>
   <data name="nominate.dialog.hybrid_warning" xml:space="preserve">
     <value>catatan: kamu hanya dapat memberikan satu nominasi, sehingga pastikan kamu memberikan nominasi pada mode permainan yang memang kamu kehendaki</value>
+  </data>
+  <data name="nominate.dialog.current_main_ruleset" xml:space="preserve">
+    <value>Ruleset utama saat ini: {0}</value>
   </data>
   <data name="nominate.dialog.which_modes" xml:space="preserve">
     <value>Mode permainan mana yang ingin dinominasikan?</value>
@@ -287,7 +302,7 @@
     <value>Peringkat Negara</value>
   </data>
   <data name="show.scoreboard.error" xml:space="preserve">
-    <value>Gagal memuat peringkat</value>
+    <value>Peringkat gagal dimuat</value>
   </data>
   <data name="show.scoreboard.friend" xml:space="preserve">
     <value>Peringkat Teman</value>
@@ -338,7 +353,7 @@
     <value>Tidak seorang pun dari negara Anda yang memiliki skor di map ini!</value>
   </data>
   <data name="show.scoreboard.no_scores.friend" xml:space="preserve">
-    <value>Kamu tidak memiliki teman yang telah menorehkan skor pada map ini!</value>
+    <value>Belum ada seorang pun dari daftar temanmu yang telah mencetak skor pada map ini!</value>
   </data>
   <data name="show.scoreboard.no_scores.global" xml:space="preserve">
     <value>Belum ada skor yang tercatat. Mungkin kamu tertarik untuk mencetak skormu sendiri?</value>

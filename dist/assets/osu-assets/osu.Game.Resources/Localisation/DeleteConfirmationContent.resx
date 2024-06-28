@@ -70,7 +70,7 @@
   <data name="collections" xml:space="preserve">
     <value>Are you sure you want to delete all collections? This cannot be undone!</value>
   </data>
-  <data name="collections" xml:space="preserve">
+  <data name="scores" xml:space="preserve">
     <value>Are you sure you want to delete all scores? This cannot be undone!</value>
   </data>
   <data name="mod_presets" xml:space="preserve">

@@ -68,7 +68,7 @@
     <value>Keluar</value>
   </data>
   <data name="failed_header" xml:space="preserve">
-    <value>gagal</value>
+    <value>permainan gagal</value>
   </data>
   <data name="paused_header" xml:space="preserve">
     <value>permainan dijeda</value>

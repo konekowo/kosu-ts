@@ -106,9 +106,6 @@
   <data name="nominate.incorrect_mode" xml:space="preserve">
     <value>您沒有權限為 {0} 模式提名</value>
   </data>
-  <data name="nominate.full_bn_required" xml:space="preserve">
-    <value>您必須是正式的提名者才能執行此合格提名。</value>
-  </data>
   <data name="nominate.too_many" xml:space="preserve">
     <value>提名需求已達成。</value>
   </data>
@@ -120,6 +117,9 @@
   </data>
   <data name="nominate.dialog.hybrid_warning" xml:space="preserve">
     <value>注意: 您只能提名一次，所以請確保您的提名包含所有您想提名的模式。</value>
+  </data>
+  <data name="nominate.dialog.current_main_ruleset" xml:space="preserve">
+    <value>目前遊戲模式為: {0}</value>
   </data>
   <data name="nominate.dialog.which_modes" xml:space="preserve">
     <value>您想為哪個模式提名？</value>
