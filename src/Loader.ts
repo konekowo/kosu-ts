@@ -9,7 +9,7 @@ export class Loader {
     private static addToLoadList() {
         // intro and interaction screen
         this.loadList.push({id: "introTrianglesTrack", url: "assets/osu-assets/osu.Game.Resources/Tracks/triangles.osz"});
-        this.loadList.push({id: "sample_dialog_ok", url: "assets/osu-assets/osu.Game.Resources/Samples/UI/dialog-ok-select.wav"});
+        this.loadList.push({id: "sample_dialog_ok", url: "assets/osu-assets/osu.Game.Resources/Samples/UI/dialog-ok-select.wav", isAudio: true});
         this.loadList.push({id: "TorusRegular", url: "assets/fonts/TorusRegular.otf", pixiBundleName: "fonts"});
         this.loadList.push({id: "TorusLight", url: "assets/fonts/TorusLight.otf", pixiBundleName: "fonts"});
         this.loadList.push({id: "TorusThin", url: "assets/fonts/TorusThin.otf", pixiBundleName: "fonts"});
@@ -23,14 +23,14 @@ export class Loader {
             url: "assets/osu-assets/osu.Game.Resources/Textures/Intro/Triangles/logo-background.png", pixiBundleName: "textures"});
         this.loadList.push({id: "mainMenu.logoOutline", url: "assets/osu-assets/osu.Game.Resources/Textures/Menu/logo.png", pixiBundleName: "textures"});
         this.loadList.push({id: "mainMenu.logoMask", url: "assets/menu/logo-mask.png", pixiBundleName: "textures"});
-        this.loadList.push({id: "mainMenu.osuLogo.select", url: "assets/osu-assets/osu.Game.Resources/Samples/Menu/osu-logo-select.wav"});
-        this.loadList.push({id: "mainMenu.osuLogo.backToLogo", url: "assets/osu-assets/osu.Game.Resources/Samples/Menu/back-to-logo.wav"});
+        this.loadList.push({id: "mainMenu.osuLogo.select", url: "assets/osu-assets/osu.Game.Resources/Samples/Menu/osu-logo-select.wav", isAudio: true});
+        this.loadList.push({id: "mainMenu.osuLogo.backToLogo", url: "assets/osu-assets/osu.Game.Resources/Samples/Menu/back-to-logo.wav", isAudio: true});
         this.loadList.push({id: "webgl:shaders/logoAnimation.frag", url: "assets/shaders/webgl/logoAnimation.frag", isText: true});
         this.loadList.push({id: "webgl:shaders/logoAnimation.vert", url: "assets/shaders/webgl/logoAnimation.vert", isText: true});
         this.loadList.push({id: "menu.cursor", url: "assets/osu-assets/osu.Game.Resources/Textures/Cursor/menu-cursor.png", pixiBundleName: "textures"});
         this.loadList.push({id: "menu.cursor.additive", url: "assets/osu-assets/osu.Game.Resources/Textures/Cursor/menu-cursor-additive.png",
             pixiBundleName: "textures"});
-        this.loadList.push({id: "menu.cursor.sample.tap", url: "assets/osu-assets/osu.Game.Resources/Samples/UI/cursor-tap.wav"});
+        this.loadList.push({id: "menu.cursor.sample.tap", url: "assets/osu-assets/osu.Game.Resources/Samples/UI/cursor-tap.wav", isAudio: true});
     }
 
     public static Get(id: string): Blob {
@@ -59,6 +59,19 @@ export class Loader {
         return result;
     }
 
+    public static GetAudio(id: string): AudioBuffer {
+        let result;
+        this.loadedList.forEach((loadedObj) => {
+            if (loadedObj.id == id){
+                result = loadedObj.dataAudio;
+            }
+        });
+        if (!result){
+            throw new Error("Asset not found or was not marked as audio during loading!");
+        }
+        return result;
+    }
+
     private static addBackgrounds() {
         return new Promise<void>(resolve => {
             for (let i = 1; i < this.defaultBackgroundsNum + 1; i++) {
@@ -79,7 +92,7 @@ export class Loader {
         });
     }
 
-    public static Load() {
+    public static Load(audioContext: AudioContext) {
         this.addToLoadList();
         return new Promise<void>((resolve) => {
             this.addBackgrounds().then(() => {
@@ -131,14 +144,21 @@ export class Loader {
                     fetch(loadObj.url)
                         .then(response => response.blob())
                         .then((response) => {
-                            if (!loadObj.isText){
+                            if (!loadObj.isText && !loadObj.isAudio){
                                 incrementLoadAssetNumber();
                                 this.loadedList.push({id: loadObj.id, data: response});
                             }
-                            else {
+                            else if (loadObj.isText) {
                                 response.text().then((text) => {
                                     incrementLoadAssetNumber();
                                     this.loadedList.push({id: loadObj.id, data: response, dataString: text});
+                                });
+                            }
+                            else if (loadObj.isAudio){
+                                response.arrayBuffer().then(arrBuff => audioContext.decodeAudioData(arrBuff))
+                                    .then((audioBuff) => {
+                                        incrementLoadAssetNumber();
+                                        this.loadedList.push({id: loadObj.id, data: response, dataAudio: audioBuff});
                                 });
                             }
 
@@ -183,6 +203,7 @@ interface LoaderObject {
     url: string;
     pixiBundleName?: string;
     isText?: boolean;
+    isAudio?: boolean;
     loadParser?: PIXI.LoadParserName;
 }
 
@@ -190,4 +211,5 @@ interface LoadedObject {
     id: string;
     data: Blob;
     dataString?: string;
+    dataAudio?: AudioBuffer;
 }

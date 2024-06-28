@@ -4,13 +4,14 @@ import {BeatmapData} from "../Util/Beatmap/Data/BeatmapData";
 import {arrayBuffer} from "node:stream/consumers";
 
 export class AudioEngine {
-    private readonly _audioContext: AudioContext;
+    public readonly audioContext: AudioContext;
     private readonly _playingAudios: PlayingAudios;
     private _musicQueue: MapAudio[] = [];
     private _audioIdTicker: number = 0;
+    private _changeCallbacks: (() => void)[] = [];
 
     public constructor() {
-        this._audioContext = new AudioContext();
+        this.audioContext = new AudioContext();
         this._playingAudios = new PlayingAudios();
     }
 
@@ -18,13 +19,23 @@ export class AudioEngine {
         if (this._musicQueue[0]){
             if (!this._musicQueue[0].fadingOut && this._musicQueue[0].timeStarted == 0){
                 this._play(this._musicQueue[0]);
+                this._changeCallbacks.forEach((cb) => cb());
             }
             if (this._musicQueue[0].fadingOut){
                 if (this._musicQueue[1]){
                     this._play(this._musicQueue[1]);
+                    this._changeCallbacks.forEach((cb) => cb());
                 }
             }
         }
+    }
+
+    public addMusicChangeEventListener(cb: () => void) {
+        this._changeCallbacks.push(cb);
+    }
+
+    public removeMusicChangeEventListener(cb: () => void) {
+        this._changeCallbacks = this._changeCallbacks.filter(callback => callback != cb);
     }
 
     public GetCurrentPlayingMusic() {
@@ -32,84 +43,82 @@ export class AudioEngine {
     }
 
     private _play(audio: Audio | MapAudio, pitch?: number) {
-        audio.audioBlob.arrayBuffer().then((arrayBuffer => {
-            this._audioContext.decodeAudioData(arrayBuffer).then(audioBuff => {
-                audio.audioBufferSource = this._audioContext.createBufferSource();
-                audio.audioBufferSource.buffer = audioBuff;
-                // check if audio is type of MapAudio
+        audio.Create(this.audioContext);
+        // check if audio is type of MapAudio
+        if ("beatmap" in audio && audio.beatmap){
+            this._playingAudios.audios.forEach((audio) => {
                 if ("beatmap" in audio && audio.beatmap){
-                    this._playingAudios.audios.forEach((audio) => {
-                        if ("beatmap" in audio && audio.beatmap){
-                            clearTimeout(audio.fadeOutTimeout);
-                            audio.fadingOut = true;
-                            audio.gainNode!.gain.linearRampToValueAtTime(0, this._audioContext.currentTime + 0.4);
-                            setTimeout(() => {
-                                audio.audioBufferSource!.stop(0);
-                            }, 400);
-                        }
-                    });
-                    let gainNode = this._audioContext.createGain();
-                    gainNode.gain.value = 0;
-                    gainNode.connect(this._audioContext.destination);
-                    audio.audioBufferSource.connect(gainNode);
-                    audio.audioBufferSource.start(0);
-                    if (audio.playingCallback) {audio.playingCallback();}
-                    audio.gainNode = gainNode;
-                    audio.timeStarted = Date.now();
-                    audio.isPlaying = true;
-                    this._playingAudios.audios.push(audio);
-                    gainNode.gain.linearRampToValueAtTime(1, this._audioContext.currentTime + 0.4);
-                    const doFadeOut = () => {
-                        audio.fadingOut = true;
-                        gainNode.gain.linearRampToValueAtTime(0, this._audioContext.currentTime + 0.4);
-                        this.Update();
+                    clearTimeout(audio.fadeOutTimeout);
+                    audio.fadingOut = true;
+                    let gainNodes = audio.GetNode(GainNode);
+                    if (gainNodes == null) {
+                        throw new Error("Gain Node doesn't exist on Audio Object!");
                     }
-                    audio.fadeOutTimeout = setTimeout(doFadeOut, (audioBuff.duration - 0.4)*1000);
-                }
-                else {
-                    audio.audioBufferSource.connect(this._audioContext.destination);
-                    if (pitch){
-                        audio.audioBufferSource.playbackRate.value = pitch;
-                    }
-                    audio.audioBufferSource.start(0);
-                    audio.isPlaying = true;
-                    audio.timeStarted = Date.now();
-                    this._playingAudios.audios.push(audio);
-                }
-
-
-                audio.audioBufferSource.onended = () => {
-                    audio.isPlaying = false;
-                    if ("beatmap" in audio && audio.beatmap){
-                        if (this._musicQueue[0] == audio){
-                            this._musicQueue.splice(0, 1);
-                        }
-                    }
-                    this._playingAudios.audios.forEach((audioInArr, index) => {
-                        if (audioInArr === audio){
-                            this._playingAudios.audios.splice(index, 1);
-                            return;
-                        }
-                    });
+                    let gain = gainNodes[0];
+                    gain.gain.linearRampToValueAtTime(0, this.audioContext.currentTime + 0.4)
+                    setTimeout(() => {
+                        audio.Stop();
+                    }, 400);
                 }
             });
-        }));
+
+            let gain = this.audioContext.createGain();
+            gain.gain.value = 0;
+            let analyzer = this.audioContext.createAnalyser();
+            analyzer.fftSize = 256;
+            audio.AddAudioNode(analyzer);
+            audio.AddAudioNode(gain);
+            audio.ConnectToContext(this.audioContext);
+            audio.Play();
+            if (audio.playingCallback){
+                audio.playingCallback();
+            }
+            gain.gain.linearRampToValueAtTime(1, this.audioContext.currentTime + 0.4);
+            audio.fadeOutTimeout = setTimeout(() => {
+                gain.gain.linearRampToValueAtTime(0, this.audioContext.currentTime + 0.4);
+            }, (audio.audio.duration - 0.4)*1000);
+        }
+        else {
+            audio.ConnectToContext(this.audioContext);
+            if (pitch){
+                if (audio.source){
+                    audio.source.playbackRate.value = pitch;
+                }
+            }
+            audio.Play();
+            this._playingAudios.audios.push(audio);
+        }
+
+
+        audio.RegisterEndCallBack(() => {
+            audio.isPlaying = false;
+            if ("beatmap" in audio && audio.beatmap){
+                if (this._musicQueue[0] == audio){
+                    this._musicQueue.splice(0, 1);
+                }
+            }
+            this._playingAudios.audios.forEach((audioInArr, index) => {
+                if (audioInArr === audio){
+                    this._playingAudios.audios.splice(index, 1);
+                    return;
+                }
+            });
+        });
     }
 
-    public PlayEffect(audioBlob: Blob, pitch?: number) {
-        this._play({audioBlob: audioBlob, timeStarted: 0, id: this._audioIdTicker, isPlaying: false}, pitch);
+    public PlayEffect(audio: AudioBuffer, pitch?: number) {
+        let audioObj = new Audio();
+        audioObj.audio = audio;
+        audioObj.id = this._audioIdTicker;
+        this._play(audioObj, pitch);
         this._audioIdTicker++;
     }
 
-    public AddToMusicQueue(mapAudio: Blob, beatMapData: BeatmapData, musicPlayingCallback?: () => void) {
-        let mapAudioObj: MapAudio = {
-            audioBlob: mapAudio,
-            fadingOut: false,
-            timeStarted: 0,
-            beatmap: beatMapData,
-            id: this._audioIdTicker,
-            isPlaying: false
-        };
+    public AddToMusicQueue(mapAudio: AudioBuffer, beatMapData: BeatmapData, musicPlayingCallback?: () => void) {
+        let mapAudioObj = new MapAudio();
+        mapAudioObj.audio = mapAudio;
+        mapAudioObj.beatmap = beatMapData;
+        mapAudioObj.id = this._audioIdTicker;
         if (musicPlayingCallback){
             mapAudioObj.playingCallback = musicPlayingCallback;
         }
@@ -119,7 +128,7 @@ export class AudioEngine {
         return mapAudioObj.id;
     }
 
-    public PlayMusicImmediately(mapAudio: Blob, beatMapData: BeatmapData, musicPlayingCallback?: () => void) {
+    public PlayMusicImmediately(mapAudio: AudioBuffer, beatMapData: BeatmapData, musicPlayingCallback?: () => void) {
         // clear queue
         this._musicQueue = [];
         this.AddToMusicQueue(mapAudio, beatMapData, musicPlayingCallback);

@@ -13,6 +13,7 @@ import {Menu} from "../../Elements/MainMenu/OsuCircle/Menu/Menu";
 import {BeatmapData} from "../../Util/Beatmap/Data/BeatmapData";
 import {BeatmapParser} from "../../Util/Beatmap/Parser/BeatmapParser";
 import {AudioEngine} from "../../Audio/AudioEngine";
+import {arrayBuffer} from "node:stream/consumers";
 
 export class IntroScreen extends Screen {
 
@@ -67,12 +68,13 @@ export class IntroScreen extends Screen {
             const {entries} = await unzip(this.introTrackUrl);
             for (const [name, entry] of Object.entries(entries)) {
                 if (name == "audio.mp3"){
-                    entry.blob().then((audioBlob) => {
-                        Main.AudioEngine.PlayMusicImmediately(audioBlob, new BeatmapData(), () => {
-                            this.afterAudioPlay();
-                            this.mainMenu = new MainMenu();
+                    entry.arrayBuffer().then(arrBuff => Main.AudioEngine.audioContext.decodeAudioData(arrBuff))
+                        .then((audioBuff) => {
+                            Main.AudioEngine.PlayMusicImmediately(audioBuff, new BeatmapData(), () => {
+                                this.afterAudioPlay();
+                                this.mainMenu = new MainMenu();
+                            });
                         });
-                    });
                 }
                 if (name.endsWith(".osu")){
                     entry.text().then((osuFile) => {
@@ -199,6 +201,7 @@ export class IntroScreen extends Screen {
 
         setTimeout(() => {
             this.addChild(this.flash);
+            this.flash.eventMode = "none";
             this.flashed = true;
             this.logoContainerContainer.visible = false;
             ease.add(this.flash, {alpha: 0}, {duration: 1000, ease: "easeOutQuad"});

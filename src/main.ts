@@ -44,9 +44,9 @@ export class Main {
         navigator.mediaSession.setActionHandler('previoustrack', function() {});
         navigator.mediaSession.setActionHandler('nexttrack', function() {});
 
-        Loader.Load().then(() => {
+        Loader.Load(Main.AudioEngine.audioContext).then(() => {
             Main.cursor = new MenuCursor(false);
-            let dialogOk = Loader.Get("sample_dialog_ok");
+            let dialogOk = Loader.GetAudio("sample_dialog_ok");
             let introTrack = Loader.Get("introTrianglesTrack");
             Main.switchScreen(new InteractScreen(introTrack, dialogOk));
         });

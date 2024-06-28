@@ -2,6 +2,7 @@ import * as PIXI from "pixi.js";
 import {Main} from "../../main";
 import {Ease, ease, Easing} from "pixi-ease";
 import {Loader} from "../../Loader";
+import {MathUtil} from "../../Util/MathUtil";
 
 export class MenuCursor extends PIXI.Container {
     private mouseCursor = PIXI.Sprite.from("menu.cursor");
@@ -24,7 +25,7 @@ export class MenuCursor extends PIXI.Container {
 
     private mouseIsDown = false;
 
-    private cursorTapSample = Loader.Get("menu.cursor.sample.tap");
+    private cursorTapSample = Loader.GetAudio("menu.cursor.sample.tap");
 
     private mouseButtonClicked: number = -9999;
 
@@ -150,7 +151,7 @@ export class MenuCursor extends PIXI.Container {
                 }
                 let offsetX = Main.mousePos.x - this.posMouseDown.x;
                 let offsetY = Main.mousePos.y - this.posMouseDown.y;
-                let degrees = MenuCursor.RadiansToDegrees(Math.atan2(-offsetX, offsetY)) + 24.3;
+                let degrees = MathUtil.RadiansToDegrees(Math.atan2(-offsetX, offsetY)) + 24.3;
 
                 let diff = (degrees - this.animRotationContainer.angle) % 360;
                 if (diff < -180) {diff += 360;}
@@ -163,9 +164,7 @@ export class MenuCursor extends PIXI.Container {
 
     }
 
-    private static RadiansToDegrees(radians: number) {
-        return radians * 180 / Math.PI;
-    }
+
 
 }
 enum DragRotationState {

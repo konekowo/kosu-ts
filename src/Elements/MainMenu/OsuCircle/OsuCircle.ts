@@ -4,10 +4,13 @@ import {Ease, ease, Easing} from "pixi-ease";
 import {Main} from "../../../main";
 import {Loader} from "../../../Loader";
 import {Menu} from "./Menu/Menu";
+import {MenuLogoVisualizer} from "../../AudioVisualizers/impl/MenuLogoVisualizer";
+import {LogoVisualizer} from "../../AudioVisualizers/LogoVisualizer";
 
 export class OsuCircle extends PIXI.Container {
 
     private readonly outline: PIXI.Sprite;
+    private readonly visualizer: MenuLogoVisualizer = new MenuLogoVisualizer();
     private readonly triangles: Triangles = new Triangles();
     private readonly beatContainer: PIXI.Container = new PIXI.Container();
     private readonly hoverContainer: PIXI.Container = new PIXI.Container();
@@ -18,10 +21,16 @@ export class OsuCircle extends PIXI.Container {
 
     public constructor() {
         super();
+        this.visualizer.start();
+
+
         this.outline = PIXI.Sprite.from("mainMenu.logoOutline");
         this.outline.anchor.set(0.5, 0.5);
         //approximation of size in actual osu!lazer
         let scale = 0.6;
+        this.visualizer.position.set(-LogoVisualizer.size/3.35, -LogoVisualizer.size/3.35);
+        this.visualizer.scale.set(scale);
+        this.beatContainer.addChild(this.visualizer);
 
         let mask = PIXI.Sprite.from("mainMenu.logoMask");
         mask.anchor.set(0.5, 0.5);
@@ -51,8 +60,8 @@ export class OsuCircle extends PIXI.Container {
         this.hoverContainer.hitArea = new PIXI.Circle(0, 0, 500*scale);
 
 
-        let selectSample = Loader.Get("mainMenu.osuLogo.select");
-        let backToLogoSample = Loader.Get("mainMenu.osuLogo.backToLogo");
+        let selectSample = Loader.GetAudio("mainMenu.osuLogo.select");
+        let backToLogoSample = Loader.GetAudio("mainMenu.osuLogo.backToLogo");
         const mouseEnter = () => {
             this.isBeingHovered = true;
             ease.add(this.hoverContainer, {scale: 1.1}, {duration: 500, ease: "easeOutElastic"});
@@ -136,6 +145,7 @@ export class OsuCircle extends PIXI.Container {
     }
 
     public draw(ticker: PIXI.Ticker) {
+        this.visualizer.draw(ticker);
         this.triangles.draw(ticker);
         if (this.menu.isOpen()){
             this.parallaxContainer.position.set(Main.mousePos.x/120, Main.mousePos.y/120);

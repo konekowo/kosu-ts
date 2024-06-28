@@ -11,11 +11,11 @@ export class InteractScreen extends Screen {
     private readonly text: PIXI.Text;
 
     private readonly introTrack: Blob;
-    private clickSound: Blob;
+    private clickSound: AudioBuffer;
 
     private readonly clickArea: PIXI.Graphics = new PIXI.Graphics();
 
-    public constructor(introTrack: Blob, clickSound: Blob) {
+    public constructor(introTrack: Blob, clickSound: AudioBuffer) {
         super();
         this.introTrack = introTrack;
         this.clickSound = clickSound;
