@@ -40,8 +40,7 @@ export class LogoVisualizer extends PIXI.Container {
     protected amplitudes!: Uint8Array
 
     protected temporalAmplitudes: Uint8Array = new Uint8Array(256);
-    protected frequencyAmplitudes: Uint8Array = new Uint8Array(256);
-    public audioData: Uint8Array = new Uint8Array(256);
+    public frequencyAmplitudes: Uint8Array = new Uint8Array(256);
 
     protected graphics: PIXI.Graphics = new PIXI.Graphics();
 
@@ -58,8 +57,8 @@ export class LogoVisualizer extends PIXI.Container {
     }
 
     private updateAmplitudes() {
-        let half = this.amplitudes.length/2;
-        this.amplitudes.slice(100, half+100);
+        //let half = this.amplitudes.length/2;
+        //this.amplitudes.slice(100, half+100);
         for (let i = 3; i < this.amplitudes.length; i++) {
             this.temporalAmplitudes[i] = this.amplitudes[i];
         }
@@ -79,7 +78,7 @@ export class LogoVisualizer extends PIXI.Container {
             throw new Error("Couldn't find any AnalyzerNode on Audio Object!");
         }
         this.analyzer = analyzerNodes[0];
-        this.bufferLength = 256;
+        this.bufferLength = this.analyzer.frequencyBinCount;
         this.bars_per_visualiser = this.bufferLength;
         this.amplitudes = new Uint8Array(this.bufferLength);
 
@@ -96,11 +95,10 @@ export class LogoVisualizer extends PIXI.Container {
                 this.frequencyAmplitudes[i] = 0;
             }
         }
-        this.audioData = new Uint8Array(this.frequencyAmplitudes);
 
         for (let j = 0; j < this.visualiser_rounds; j++){
             for (let i = 0; i < this.bars_per_visualiser; i++){
-                if (this.audioData[i] < this.amplitude_dead_zone){
+                if (this.frequencyAmplitudes[i] < this.amplitude_dead_zone){
                     continue;
                 }
 
@@ -112,7 +110,7 @@ export class LogoVisualizer extends PIXI.Container {
 
                 let barSize = {
                     x: LogoVisualizer.size * Math.sqrt(2 * (1 - Math.cos(MathUtil.DegreesToRadians(360 / this.bars_per_visualiser)))) / 2,
-                    y: this.bar_length * this.audioData[i]
+                    y: this.bar_length * this.frequencyAmplitudes[i]
                 };
                 // The distance between the bottom side of the bar and the top side.
                 let amplitudeOffset = {x: rotationCos * barSize.y, y: rotationSin * barSize.y};

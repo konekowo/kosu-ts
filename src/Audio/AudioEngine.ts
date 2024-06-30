@@ -65,7 +65,7 @@ export class AudioEngine {
             let gain = this.audioContext.createGain();
             gain.gain.value = 0;
             let analyzer = this.audioContext.createAnalyser();
-            analyzer.fftSize = 1024;
+            analyzer.fftSize = 512;
             let lowpassFilter = this.audioContext.createBiquadFilter();
             lowpassFilter.type = 'lowpass';
             lowpassFilter.frequency.value = 75; // Set cutoff frequency to 200 Hz
@@ -88,6 +88,7 @@ export class AudioEngine {
                    if (node instanceof BiquadFilterNode) {
                        source.connect(node);
                        node.connect(analyzerNode);
+                       //node.connect(this.audioContext.destination);
                    }
                 });
             });

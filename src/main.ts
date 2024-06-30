@@ -43,7 +43,6 @@ export class Main {
         navigator.mediaSession.setActionHandler('seekforward', function() {});
         navigator.mediaSession.setActionHandler('previoustrack', function() {});
         navigator.mediaSession.setActionHandler('nexttrack', function() {});
-
         Loader.Load(Main.AudioEngine.audioContext).then(() => {
             Main.cursor = new MenuCursor(false);
             let dialogOk = Loader.GetAudio("sample_dialog_ok");
@@ -96,11 +95,18 @@ export class Main {
     }
 
     public static pointerLock() {
-        this.doPointerLock = true;
-        // @ts-ignore
-        Main.app.canvas.requestPointerLock({
-            unadjustedMovement: true,
-        });
+        try {
+            this.doPointerLock = true;
+            // @ts-ignore
+            Main.app.canvas.requestPointerLock({
+                unadjustedMovement: true,
+            });
+        }
+        catch (e) {
+            console.warn("Failed to lock cursor, error:", e);
+            this.doPointerLock = false;
+        }
+
     }
     public static exitPointerLock() {
         this.doPointerLock = false;

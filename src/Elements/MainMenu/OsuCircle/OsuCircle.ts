@@ -145,7 +145,7 @@ export class OsuCircle extends PIXI.Container {
     private onNewBeat() {
         let beatLength = 375;
         let maxAmplitude = 0;
-        this.visualizer.audioData.forEach((num) => {
+        this.visualizer.frequencyAmplitudes.forEach((num) => {
             if (maxAmplitude < num) {
                 maxAmplitude = num;
             }
