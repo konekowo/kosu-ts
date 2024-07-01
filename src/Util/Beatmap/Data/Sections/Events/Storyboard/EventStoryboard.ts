@@ -39,5 +39,27 @@ export class EventStoryboard extends Event {
      *      null the instance (it finds SB/J, an invalid variable).
      */
     public filepath!: string;
-    
+    /**
+     * (x) and (y) are the x-/y-coordinates of where the object should be, by default respectively.
+     * The interpretation of this depends on the value of (origin);
+     * for instance, to place a 640x480 image as your background,
+     * the values could be:
+     *  - origin = TopLeft, x = 0, y = 0
+     *  - origin = Centre, x = 320, y = 240
+     *  - origin = BottomRight, x = 640, y = 480
+     *  - and so on.
+     */
+    public x!: number;
+    /**
+     * (x) and (y) are the x-/y-coordinates of where the object should be, by default respectively.
+     * The interpretation of this depends on the value of (origin);
+     * for instance, to place a 640x480 image as your background,
+     * the values could be:
+     *  - origin = TopLeft, x = 0, y = 0
+     *  - origin = Centre, x = 320, y = 240
+     *  - origin = BottomRight, x = 640, y = 480
+     *  - and so on.
+     */
+    public y!: number;
+
 }

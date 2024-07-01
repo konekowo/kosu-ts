@@ -1,5 +1,4 @@
-import {StoryboardCompoundCommand} from "./StoryboardCompoundCommand";
-
 export class StoryboardCommand {
-    public CompoundCommands: StoryboardCompoundCommand[] = [];
+    public CompoundCommands: StoryboardCommand[] = [];
+    //TODO: impl storyboard commands
 }
