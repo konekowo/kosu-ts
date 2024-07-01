@@ -3,7 +3,7 @@ import {Event} from "../Event";
 import {Layer} from "./Layer";
 import {Origin} from "./Origin";
 
-export class EventStoryboard extends Event {
+export abstract class EventStoryboard extends Event {
     public startTime = -1;
     /**
      * Each <a href="https://osu.ppy.sh/wiki/en/Storyboard/Scripting/Objects">object declaration</a>

@@ -3,6 +3,8 @@ import {EditorData} from "./Sections/Editor/EditorData";
 import {Metadata} from "./Sections/Metadata/Metadata";
 import {DifficultyData} from "./Sections/Difficulty/DifficultyData";
 import {EventsData} from "./Sections/Events/EventsData";
+import {TimingPoint} from "./Sections/TimingPoints/TimingPoint";
+import {TimingPointsData} from "./Sections/TimingPoints/TimingPointsData";
 
 /**
  * <a href="https://osu.ppy.sh/wiki/en/Client/File_formats/osu_%28file_format%29">.osu (file format)</a>
@@ -28,4 +30,10 @@ export class BeatmapData {
      * Beatmap and storyboard graphic events
      */
     public Events: EventsData = new EventsData();
+    /**
+     * Timing and control points
+     */
+    public TimingPoints: TimingPointsData = new TimingPointsData();
+    
+
 }
