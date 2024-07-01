@@ -36,13 +36,6 @@ export class Main {
         });
         document.addEventListener("pointerlockchange", this.pointerLockChanged, false);
         Main.switchScreen(new LoadScreen());
-        navigator.mediaSession.setActionHandler('play', function() {});
-        navigator.mediaSession.setActionHandler('pause', function() {});
-        navigator.mediaSession.setActionHandler('stop', function() {});
-        navigator.mediaSession.setActionHandler('seekbackward', function() {});
-        navigator.mediaSession.setActionHandler('seekforward', function() {});
-        navigator.mediaSession.setActionHandler('previoustrack', function() {});
-        navigator.mediaSession.setActionHandler('nexttrack', function() {});
         Loader.Load(Main.AudioEngine.audioContext).then(() => {
             Main.cursor = new MenuCursor(false);
             let dialogOk = Loader.GetAudio("sample_dialog_ok");

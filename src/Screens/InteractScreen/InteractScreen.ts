@@ -4,7 +4,6 @@ import {Ticker} from "pixi.js";
 import {Main} from "../../main";
 import {IntroScreen} from "../IntroScreen/IntroScreen";
 import {ease} from 'pixi-ease';
-import {LogoAnimation} from "../ShaderTest/LogoAnimation";
 
 export class InteractScreen extends Screen {
 
