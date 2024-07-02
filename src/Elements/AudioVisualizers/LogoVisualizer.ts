@@ -13,7 +13,7 @@ export class LogoVisualizer extends PIXI.Container {
     private readonly index_change = 5;
 
     // The maximum length of each bar in the visualiser. Will be reduced when kiai is not activated.
-    private readonly bar_length = 5;
+    private readonly bar_length = 600;
 
     // The number of bars in one rotation of the visualiser.
     private bars_per_visualiser = 200;
@@ -35,12 +35,9 @@ export class LogoVisualizer extends PIXI.Container {
 
 
     protected audio!: MapAudio;
-    protected analyzerL!: AnalyserNode;
-    protected analyzerR!: AnalyserNode;
+    protected analyzer!: AnalyserNode;
     protected bufferLength!: number;
-    protected amplitudesL!: Uint8Array;
-    protected amplitudesR!: Uint8Array;
-    protected amplitudes: Float32Array = new Float32Array(256);
+    protected amplitudes!: Float32Array;
 
     protected temporalAmplitudes: Float32Array = new Float32Array(256);
     public frequencyAmplitudes: Float32Array = new Float32Array(256);
@@ -48,6 +45,7 @@ export class LogoVisualizer extends PIXI.Container {
     protected graphics: PIXI.Graphics = new PIXI.Graphics();
 
     private indexOffset = 0;
+    private firstDraw = true;
 
     public start() {
         Main.AudioEngine.addMusicChangeEventListener(() => this.initVisualizer());
@@ -61,7 +59,6 @@ export class LogoVisualizer extends PIXI.Container {
 
     private updateAmplitudes() {
         this.updateFrequencyData();
-        console.log(this.amplitudes);
         for (let i = 0; i < this.amplitudes.length; i++) {
             this.temporalAmplitudes[i] = this.amplitudes[i];
         }
@@ -81,30 +78,36 @@ export class LogoVisualizer extends PIXI.Container {
         if (analyzerNodes == null) {
             throw new Error("Couldn't find any AnalyzerNode on Audio Object!");
         }
-        this.analyzerL = analyzerNodes[0];
-        this.analyzerR = analyzerNodes[1];
-        this.bufferLength = this.analyzerL.frequencyBinCount;
-        this.amplitudesL = new Uint8Array(this.bufferLength);
-        this.amplitudesR = new Uint8Array(this.bufferLength);
+        this.analyzer = analyzerNodes[0];
+        this.bufferLength = this.analyzer.frequencyBinCount;
         this.amplitudes = new Float32Array(this.bufferLength);
 
     }
 
     private updateFrequencyData() {
         for (let i = 0; i < this.amplitudes.length; i++) {
-            // average both channels
-            let multFactor = (this.amplitudes.length - i)/this.amplitudes.length;
-            if (i > 5) {
-                multFactor = ((this.amplitudes.length - i))/(this.amplitudes.length*3);
+            this.amplitudes[i] += 140;
+            this.amplitudes[i] /= 340;
+            if (i < 3) {
+                this.amplitudes[i] *= (12 * this.amplitudes[i]);
             }
-            this.amplitudes[i] = ((this.amplitudesL[i] + this.amplitudesR[i]) / 2) * (this.amplitudes.length - i)/this.amplitudes.length;
+            else if (i < 6) {
+                this.amplitudes[i] *= (9 * this.amplitudes[i]);
+            }
+            else if (i < 100) {
+                this.amplitudes[i] *= (6 * this.amplitudes[i]);
+            }
         }
     }
 
     public draw(ticker: PIXI.Ticker) {
+        if (this.firstDraw) {
+            for (let i = 0; i < this.frequencyAmplitudes.length; i++) {
+                this.frequencyAmplitudes[i] = 0;
+            }
+        }
         this.graphics.clear();
-        this.analyzerL.getByteFrequencyData(this.amplitudesL);
-        this.analyzerR.getByteFrequencyData(this.amplitudesR);
+        this.analyzer.getFloatFrequencyData(this.amplitudes);
         let decayFactor = ticker.deltaMS * this.decay_per_millisecond;
         for (let i = 0; i < this.bars_per_visualiser; i++) {
             //3% of extra bar length to make it a little faster when bar is almost at it's minimum
@@ -139,6 +142,6 @@ export class LogoVisualizer extends PIXI.Container {
             }
         }
 
-
+        this.firstDraw = false;
     }
 }

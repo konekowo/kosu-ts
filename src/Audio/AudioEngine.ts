@@ -61,29 +61,17 @@ export class AudioEngine {
                     }, 400);
                 }
             });
-
             let gain = this.audioContext.createGain();
             gain.gain.value = 0;
-            let analyzerL = this.audioContext.createAnalyser();
-            analyzerL.fftSize = 512;
-            let analyzerR = this.audioContext.createAnalyser();
-            analyzerR.fftSize = 512;
-            let stereoPannerL = this.audioContext.createStereoPanner();
-            stereoPannerL.pan.value = -1;
-            let stereoPannerR = this.audioContext.createStereoPanner();
-            stereoPannerR.pan.value = 1;
+            let analyzer = this.audioContext.createAnalyser();
+            analyzer.fftSize = 512;
+            analyzer.smoothingTimeConstant = 0;
             audio.AddAudioNode(gain);
-            audio.AddAudioNode(analyzerL);
-            audio.AddAudioNode(analyzerR);
-            audio.AddAudioNode(stereoPannerL);
-            audio.AddAudioNode(stereoPannerR);
+            audio.AddAudioNode(analyzer);
             audio.ConnectToContext(this.audioContext, (nodes, source) => {
                 source.connect(gain);
                 gain.connect(this.audioContext.destination);
-                source.connect(stereoPannerL);
-                source.connect(stereoPannerR);
-                stereoPannerL.connect(analyzerL);
-                stereoPannerR.connect(analyzerR);
+                source.connect(analyzer);
             });
             audio.Play();
             this._playingAudios.audios.push(audio);
