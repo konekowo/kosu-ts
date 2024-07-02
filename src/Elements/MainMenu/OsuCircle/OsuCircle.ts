@@ -150,7 +150,7 @@ export class OsuCircle extends PIXI.Container {
                 maxAmplitude = num;
             }
         });
-        let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
+        let amplitudeAdjust = Math.min(1, 0.4 + (maxAmplitude/255));
         ease.add(this.beatContainer, {scale: 1 - 0.02 * amplitudeAdjust}, {ease: "linear", duration: 60}).once("complete",
             () => {
             ease.add(this.beatContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2});

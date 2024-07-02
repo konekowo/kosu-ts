@@ -64,33 +64,26 @@ export class AudioEngine {
 
             let gain = this.audioContext.createGain();
             gain.gain.value = 0;
-            let analyzer = this.audioContext.createAnalyser();
-            analyzer.fftSize = 512;
-            let lowpassFilter = this.audioContext.createBiquadFilter();
-            lowpassFilter.type = 'lowpass';
-            lowpassFilter.frequency.value = 75; // Set cutoff frequency to 200 Hz
-            lowpassFilter.Q.value = 1;
-            audio.AddAudioNode(analyzer);
+            let analyzerL = this.audioContext.createAnalyser();
+            analyzerL.fftSize = 512;
+            let analyzerR = this.audioContext.createAnalyser();
+            analyzerR.fftSize = 512;
+            let stereoPannerL = this.audioContext.createStereoPanner();
+            stereoPannerL.pan.value = -1;
+            let stereoPannerR = this.audioContext.createStereoPanner();
+            stereoPannerR.pan.value = 1;
             audio.AddAudioNode(gain);
-            audio.AddAudioNode(lowpassFilter);
+            audio.AddAudioNode(analyzerL);
+            audio.AddAudioNode(analyzerR);
+            audio.AddAudioNode(stereoPannerL);
+            audio.AddAudioNode(stereoPannerR);
             audio.ConnectToContext(this.audioContext, (nodes, source) => {
-                let analyzerNode: AnalyserNode;
-                nodes.forEach((node) => {
-                    if (node instanceof GainNode) {
-                        source.connect(node);
-                        node.connect(this.audioContext.destination);
-                    }
-                    if (node instanceof AnalyserNode) {
-                        analyzerNode = node;
-                    }
-                });
-                nodes.forEach((node) => {
-                   if (node instanceof BiquadFilterNode) {
-                       source.connect(node);
-                       node.connect(analyzerNode);
-                       //node.connect(this.audioContext.destination);
-                   }
-                });
+                source.connect(gain);
+                gain.connect(this.audioContext.destination);
+                source.connect(stereoPannerL);
+                source.connect(stereoPannerR);
+                stereoPannerL.connect(analyzerL);
+                stereoPannerR.connect(analyzerR);
             });
             audio.Play();
             this._playingAudios.audios.push(audio);

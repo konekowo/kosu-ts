@@ -35,12 +35,15 @@ export class LogoVisualizer extends PIXI.Container {
 
 
     protected audio!: MapAudio;
-    protected analyzer!: AnalyserNode;
+    protected analyzerL!: AnalyserNode;
+    protected analyzerR!: AnalyserNode;
     protected bufferLength!: number;
-    protected amplitudes!: Uint8Array
+    protected amplitudesL!: Uint8Array;
+    protected amplitudesR!: Uint8Array;
+    protected amplitudes: Float32Array = new Float32Array(256);
 
-    protected temporalAmplitudes: Uint8Array = new Uint8Array(256);
-    public frequencyAmplitudes: Uint8Array = new Uint8Array(256);
+    protected temporalAmplitudes: Float32Array = new Float32Array(256);
+    public frequencyAmplitudes: Float32Array = new Float32Array(256);
 
     protected graphics: PIXI.Graphics = new PIXI.Graphics();
 
@@ -57,11 +60,12 @@ export class LogoVisualizer extends PIXI.Container {
     }
 
     private updateAmplitudes() {
-        //let half = this.amplitudes.length/2;
-        //this.amplitudes.slice(100, half+100);
-        for (let i = 3; i < this.amplitudes.length; i++) {
+        this.updateFrequencyData();
+        console.log(this.amplitudes);
+        for (let i = 0; i < this.amplitudes.length; i++) {
             this.temporalAmplitudes[i] = this.amplitudes[i];
         }
+
         for (let i = 0; i < this.bars_per_visualiser; i++) {
             let targetAmplitude = (this.temporalAmplitudes[(i + this.indexOffset) % this.bars_per_visualiser]) * 0.5;
             if (targetAmplitude > this.frequencyAmplitudes[i]) {
@@ -77,16 +81,30 @@ export class LogoVisualizer extends PIXI.Container {
         if (analyzerNodes == null) {
             throw new Error("Couldn't find any AnalyzerNode on Audio Object!");
         }
-        this.analyzer = analyzerNodes[0];
-        this.bufferLength = this.analyzer.frequencyBinCount;
-        this.bars_per_visualiser = this.bufferLength;
-        this.amplitudes = new Uint8Array(this.bufferLength);
+        this.analyzerL = analyzerNodes[0];
+        this.analyzerR = analyzerNodes[1];
+        this.bufferLength = this.analyzerL.frequencyBinCount;
+        this.amplitudesL = new Uint8Array(this.bufferLength);
+        this.amplitudesR = new Uint8Array(this.bufferLength);
+        this.amplitudes = new Float32Array(this.bufferLength);
 
+    }
+
+    private updateFrequencyData() {
+        for (let i = 0; i < this.amplitudes.length; i++) {
+            // average both channels
+            let multFactor = (this.amplitudes.length - i)/this.amplitudes.length;
+            if (i > 5) {
+                multFactor = ((this.amplitudes.length - i))/(this.amplitudes.length*3);
+            }
+            this.amplitudes[i] = ((this.amplitudesL[i] + this.amplitudesR[i]) / 2) * (this.amplitudes.length - i)/this.amplitudes.length;
+        }
     }
 
     public draw(ticker: PIXI.Ticker) {
         this.graphics.clear();
-        this.analyzer.getByteFrequencyData(this.amplitudes);
+        this.analyzerL.getByteFrequencyData(this.amplitudesL);
+        this.analyzerR.getByteFrequencyData(this.amplitudesR);
         let decayFactor = ticker.deltaMS * this.decay_per_millisecond;
         for (let i = 0; i < this.bars_per_visualiser; i++) {
             //3% of extra bar length to make it a little faster when bar is almost at it's minimum
@@ -117,7 +135,7 @@ export class LogoVisualizer extends PIXI.Container {
 
                 this.graphics.moveTo(barPosition.x, barPosition.y);
                 this.graphics.lineTo(barPosition.x + amplitudeOffset.x, barPosition.y + amplitudeOffset.y);
-                this.graphics.stroke({color: "rgba(255, 255, 255, "+0.2 * this.alphaMultiplier+")", width: 10});
+                this.graphics.stroke({color: "rgba(255, 255, 255, "+0.2 * this.alphaMultiplier+")", width: 14});
             }
         }
 
