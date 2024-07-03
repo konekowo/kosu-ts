@@ -16,6 +16,7 @@ export class OsuCircle extends PIXI.Container {
     private readonly visualizer: MenuLogoVisualizer = new MenuLogoVisualizer();
     private readonly triangles: Triangles = new Triangles();
     private readonly beatContainer: PIXI.Container = new PIXI.Container();
+    private readonly amplitudeContainer: PIXI.Container = new PIXI.Container();
     private readonly hoverContainer: PIXI.Container = new PIXI.Container();
     private readonly moveContainer: PIXI.Container = new PIXI.Container();
     private readonly parallaxContainer: PIXI.Container = new PIXI.Container();
@@ -59,7 +60,8 @@ export class OsuCircle extends PIXI.Container {
         this.beatContainer.addChild(mask);
         this.beatContainer.addChild(flash);
         this.beatContainer.addChild(this.outline);
-        this.hoverContainer.addChild(this.beatContainer);
+        this.amplitudeContainer.addChild(this.beatContainer)
+        this.hoverContainer.addChild(this.amplitudeContainer);
         this.moveContainer.addChild(this.hoverContainer);
         this.parallaxContainer.addChild(this.moveContainer);
         this.addChild(this.parallaxContainer)
@@ -155,9 +157,9 @@ export class OsuCircle extends PIXI.Container {
         let maxAmplitude = audio? audio.GetMaximumAudioLevel() : 0;
         console.log(maxAmplitude);
         let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
-        ease.add(this.beatContainer, {scale: 1 - 0.02 * amplitudeAdjust}, {ease: "linear", duration: 60}).once("complete",
+        ease.add(this.amplitudeContainer, {scale: 1 - 0.02 * amplitudeAdjust}, {ease: "linear", duration: 60}).once("complete",
             () => {
-            ease.add(this.beatContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2});
+            ease.add(this.amplitudeContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2});
         });
 
         if (timingPoint.effects == Effect.KiaiTime) {
@@ -204,7 +206,11 @@ export class OsuCircle extends PIXI.Container {
         let timingPoint = audio ? audio.beatmap.TimingPoints.GetCurrentUninheritedTimingPoint(Date.now() - audio.timeStarted) : new UnInheritedTimingPoint();
         if (!audio) {timingPoint.beatLength = 1000; timingPoint.effects = Effect.None;}
         if (audio) {
-            this.triangles.Velocity = MathUtil.Damp(this.triangles.Velocity, 0.5 * (timingPoint.effects == Effect.KiaiTime ? 4 : 2), 0.995, ticker.deltaMS);
+            let maxAmplitude = audio.GetMaximumAudioLevel();
+            this.amplitudeContainer.scale.set(MathUtil.Damp(this.amplitudeContainer.scale.x,
+                1 - Math.max(0, maxAmplitude - 0.4) * 0.04, 0.9, ticker.deltaMS))
+            this.triangles.Velocity = MathUtil.Damp(this.triangles.Velocity,
+                0.5 * (timingPoint.effects == Effect.KiaiTime ? 4 : 2), 0.995, ticker.deltaMS);
         }
         else {
             this.triangles.Velocity = MathUtil.Damp(this.triangles.Velocity, 0.5, 0.9, ticker.deltaMS);
