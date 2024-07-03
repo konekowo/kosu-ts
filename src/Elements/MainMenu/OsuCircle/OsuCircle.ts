@@ -1,11 +1,13 @@
 import * as PIXI from "pixi.js";
 import {Triangles} from "./Triangles";
-import {Ease, ease, Easing} from "pixi-ease";
+import {ease, Easing} from "pixi-ease";
 import {Main} from "../../../main";
 import {Loader} from "../../../Loader";
 import {Menu} from "./Menu/Menu";
 import {MenuLogoVisualizer} from "../../AudioVisualizers/impl/MenuLogoVisualizer";
 import {LogoVisualizer} from "../../AudioVisualizers/LogoVisualizer";
+import {Effect} from "../../../Util/Beatmap/Data/Sections/TimingPoints/Effect";
+import {UnInheritedTimingPoint} from "../../../Util/Beatmap/Data/Sections/TimingPoints/UnInheritedTimingPoint";
 
 export class OsuCircle extends PIXI.Container {
 
@@ -143,7 +145,12 @@ export class OsuCircle extends PIXI.Container {
     }
 
     private onNewBeat() {
-        let beatLength = 375;
+        let audio = Main.AudioEngine.GetCurrentPlayingMusic();
+        let timingPointUninherited = audio ? audio.beatmap.TimingPoints.GetCurrentUninheritedTimingPoint(Date.now() - audio.timeStarted) : new UnInheritedTimingPoint();
+        if (!audio) {timingPointUninherited.beatLength = 1000;}
+        let beatLength = timingPointUninherited.beatLength;
+        let timingPoint = audio ? audio.beatmap.TimingPoints.GetCurrentTimingPoints(Date.now() - audio.timeStarted)[0] : new UnInheritedTimingPoint();
+        if (!audio) {timingPoint.effects = Effect.None}
         let maxAmplitude = 0;
         this.visualizer.frequencyAmplitudes.forEach((num) => {
             if (maxAmplitude < num) {
@@ -155,18 +162,27 @@ export class OsuCircle extends PIXI.Container {
             () => {
             ease.add(this.beatContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2});
         });
-        ease.add(this.triangles.flash, {alpha: 0.2*amplitudeAdjust}, {duration: 60, ease:"linear"}).once("complete",
-            () => {
-                ease.add(this.triangles.flash, {alpha: 0}, {duration: beatLength})
-            });
 
-        let visualizerEase = ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust},
-            {duration: 60, ease: "linear"}).on("each", () => {this.visualizer.alphaMultiplier = this.visualizerAnimationDummy.alpha});
-        visualizerEase.once("complete", () => {
-           ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha}, {duration: beatLength, ease: "linear"}).on("each", () => {
-               this.visualizer.alphaMultiplier = this.visualizerAnimationDummy.alpha;
-           });
-        });
+
+
+        if (timingPoint.effects == Effect.KiaiTime) {
+            ease.add(this.triangles.flash, {alpha: 0.2*amplitudeAdjust}, {duration: 60, ease:"linear"}).once("complete",
+                () => {
+                    ease.add(this.triangles.flash, {alpha: 0}, {duration: beatLength})
+                });
+            let visualizerEase = ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust},
+                {duration: 60, ease: "linear"}).on("each", () => {
+                this.visualizer.alphaMultiplier = this.visualizerAnimationDummy.alpha
+            });
+            visualizerEase.once("complete", () => {
+                ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha}, {
+                    duration: beatLength,
+                    ease: "linear"
+                }).on("each", () => {
+                    this.visualizer.alphaMultiplier = this.visualizerAnimationDummy.alpha;
+                });
+            });
+        }
     }
 
 
@@ -184,7 +200,10 @@ export class OsuCircle extends PIXI.Container {
             this.parallaxContainer.position.set(0,0);
         }
         this.timeElapsedSinceLastBeat += ticker.deltaMS;
-        if (this.timeElapsedSinceLastBeat >= 375){
+        let audio = Main.AudioEngine.GetCurrentPlayingMusic();
+        let timingPoint = audio ? audio.beatmap.TimingPoints.GetCurrentUninheritedTimingPoint(Date.now() - audio.timeStarted) : new UnInheritedTimingPoint();
+        if (!audio) {timingPoint.beatLength = 1000}
+        if (this.timeElapsedSinceLastBeat >= timingPoint.beatLength){
             this.onNewBeat();
             this.timeElapsedSinceLastBeat = 0;
         }

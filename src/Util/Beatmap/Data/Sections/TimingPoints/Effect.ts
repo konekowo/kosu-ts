@@ -1,4 +1,5 @@
 export enum Effect {
-    KiaiTime= 0,
+    KiaiTime = 1,
+    None = 0,
     FirstBarLineOmittedInOsuTaikoAndOsuMania = 3
 }

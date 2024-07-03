@@ -8,5 +8,5 @@ export class UnInheritedTimingPoint extends TimingPoint {
     /**
      * Amount of beats in a measure.
      */
-    public measure!: number;
+    public meter!: number;
 }

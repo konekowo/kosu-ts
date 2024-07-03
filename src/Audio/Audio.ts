@@ -104,7 +104,7 @@ export class Audio {
             throw new Error("Source not created yet!");
         }
         this.source.onended = () => {
-            if (!this.isPaused && !this.isPlaying) {
+            if (!this.isPaused) {
                 callback();
             }
         }

@@ -32,6 +32,7 @@ export class Loader {
         this.loadList.push({id: "menu.cursor.additive", url: "assets/osu-assets/osu.Game.Resources/Textures/Cursor/menu-cursor-additive.png",
             pixiBundleName: "textures"});
         this.loadList.push({id: "menu.cursor.sample.tap", url: "assets/osu-assets/osu.Game.Resources/Samples/UI/cursor-tap.wav", isAudio: true});
+        this.loadList.push({id: "menu.kiaiFountains.star", url: "assets/osu-assets/osu.Game.Resources/Textures/Menu/fountain-star.png", pixiBundleName: "textures"});
     }
 
     public static Get(id: string): Blob {

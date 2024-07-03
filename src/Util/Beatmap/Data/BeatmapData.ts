@@ -5,6 +5,7 @@ import {DifficultyData} from "./Sections/Difficulty/DifficultyData";
 import {EventsData} from "./Sections/Events/EventsData";
 import {TimingPoint} from "./Sections/TimingPoints/TimingPoint";
 import {TimingPointsData} from "./Sections/TimingPoints/TimingPointsData";
+import {ColorsData} from "./Sections/Colors/ColorsData";
 
 /**
  * <a href="https://osu.ppy.sh/wiki/en/Client/File_formats/osu_%28file_format%29">.osu (file format)</a>
@@ -34,6 +35,11 @@ export class BeatmapData {
      * Timing and control points
      */
     public TimingPoints: TimingPointsData = new TimingPointsData();
-    
+    /**
+     * Combo and skin colours
+     */
+    public Colors: ColorsData = new ColorsData();
+
+    //TODO: add hitobject data
 
 }

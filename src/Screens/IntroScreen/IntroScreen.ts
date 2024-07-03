@@ -67,21 +67,26 @@ export class IntroScreen extends Screen {
         setTimeout(async () => {
             const {entries} = await unzip(this.introTrackUrl);
             for (const [name, entry] of Object.entries(entries)) {
-                if (name == "audio.mp3"){
-                    entry.arrayBuffer().then(arrBuff => Main.AudioEngine.audioContext.decodeAudioData(arrBuff))
-                        .then((audioBuff) => {
-                            Main.AudioEngine.PlayMusicImmediately(audioBuff, new BeatmapData(), () => {
-                                this.afterAudioPlay();
-                                this.mainMenu = new MainMenu();
-                            });
-                        });
-                }
                 if (name.endsWith(".osu")){
                     entry.text().then((osuFile) => {
-                        let beatmapData = BeatmapParser.parse(osuFile);
+                        let beatmapData = BeatmapParser.Parse(osuFile);
                         console.log(beatmapData);
-                    })
+                        for (const [name, entry] of Object.entries(entries)) {
+                            if (name == beatmapData.General.AudioFileName) {
+                                entry.arrayBuffer().then(arrBuff => Main.AudioEngine.audioContext.decodeAudioData(arrBuff))
+                                    .then((audioBuff) => {
+                                        Main.AudioEngine.PlayMusicImmediately(audioBuff, beatmapData, () => {
+                                            this.afterAudioPlay();
+                                            this.mainMenu = new MainMenu();
+                                        });
+                                    });
+                            }
+                        }
 
+                    });
+
+
+                    break;
                 }
             }
         }, 0);

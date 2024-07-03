@@ -1,9 +1,8 @@
 import {Main} from "../../main";
 import {MapAudio} from "../../Audio/Audio";
 import * as PIXI from "pixi.js";
-import {data} from "browserslist";
 import {MathUtil} from "../../Util/MathUtil";
-import {UniformData} from "pixi.js";
+import {Effect} from "../../Util/Beatmap/Data/Sections/TimingPoints/Effect";
 
 export class LogoVisualizer extends PIXI.Container {
 
@@ -62,9 +61,10 @@ export class LogoVisualizer extends PIXI.Container {
         for (let i = 0; i < this.amplitudes.length; i++) {
             this.temporalAmplitudes[i] = this.amplitudes[i];
         }
-
+        let timingPoint = this.audio.beatmap.TimingPoints.GetCurrentTimingPoints(Date.now() - this.audio.timeStarted)[0];
         for (let i = 0; i < this.bars_per_visualiser; i++) {
-            let targetAmplitude = (this.temporalAmplitudes[(i + this.indexOffset) % this.bars_per_visualiser]) * 0.5;
+            let targetAmplitude = (this.temporalAmplitudes[(i + this.indexOffset) % this.bars_per_visualiser]) *
+                (timingPoint.effects == Effect.KiaiTime ? 1 : 0.5);
             if (targetAmplitude > this.frequencyAmplitudes[i]) {
                 this.frequencyAmplitudes[i] = targetAmplitude;
             }
@@ -97,6 +97,7 @@ export class LogoVisualizer extends PIXI.Container {
             else if (i < 100) {
                 this.amplitudes[i] *= (6 * this.amplitudes[i]);
             }
+            this.amplitudes[i] /= 2;
         }
     }
 
