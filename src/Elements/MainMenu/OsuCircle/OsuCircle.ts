@@ -123,7 +123,7 @@ export class OsuCircle extends PIXI.Container {
             if (!this.menu.isOpen()){
                 Main.AudioEngine.PlayEffect(selectSample);
 
-                menuOpenAnim0 = ease.add(this.moveContainer, {position: {x: -250, y: 0}}, {duration: 200, ease: "easeInSine"}).once("complete", () => {
+                menuOpenAnim0 = ease.add(this.moveContainer, {position: {x: -300, y: 0}}, {duration: 200, ease: "easeInSine"}).once("complete", () => {
                     this.menu.Open();
                 });
                 menuOpenAnim1 = ease.add(this.moveContainer, {scale: 0.5}, {duration: 200, ease: "easeInSine"});
