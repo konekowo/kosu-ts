@@ -11,4 +11,11 @@ export class MathUtil {
     public static clamp01(value: number) {
         return MathUtil.clamp(0, 1, value);
     }
+    public static Damp(start: number, final: number, base: number, exponent: number) {
+        return MathUtil.Lerp(start, final, 1 - Math.pow(base, exponent));
+    }
+    public static Lerp(start: number, final: number, ammount: number) {
+        return start + (final - start) * ammount;
+    }
+
 }

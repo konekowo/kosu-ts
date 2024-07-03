@@ -8,6 +8,7 @@ import {MenuLogoVisualizer} from "../../AudioVisualizers/impl/MenuLogoVisualizer
 import {LogoVisualizer} from "../../AudioVisualizers/LogoVisualizer";
 import {Effect} from "../../../Util/Beatmap/Data/Sections/TimingPoints/Effect";
 import {UnInheritedTimingPoint} from "../../../Util/Beatmap/Data/Sections/TimingPoints/UnInheritedTimingPoint";
+import {MathUtil} from "../../../Util/MathUtil";
 
 export class OsuCircle extends PIXI.Container {
 
@@ -159,8 +160,6 @@ export class OsuCircle extends PIXI.Container {
             ease.add(this.beatContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2});
         });
 
-
-
         if (timingPoint.effects == Effect.KiaiTime) {
             ease.add(this.triangles.flash, {alpha: 0.2*amplitudeAdjust}, {duration: 60, ease:"linear"}).once("complete",
                 () => {
@@ -179,6 +178,10 @@ export class OsuCircle extends PIXI.Container {
                 });
             });
         }
+        setTimeout(() => {
+            this.triangles.Velocity += amplitudeAdjust * (timingPoint.effects == Effect.KiaiTime ? 6 : 3);
+        }, 60)
+
     }
 
 
@@ -188,6 +191,7 @@ export class OsuCircle extends PIXI.Container {
 
     public draw(ticker: PIXI.Ticker) {
         this.visualizer.draw(ticker);
+
         this.triangles.draw(ticker);
         if (this.menu.isOpen()){
             this.parallaxContainer.position.set(Main.mousePos.x/120, Main.mousePos.y/120);
@@ -198,7 +202,13 @@ export class OsuCircle extends PIXI.Container {
         this.timeElapsedSinceLastBeat += ticker.deltaMS;
         let audio = Main.AudioEngine.GetCurrentPlayingMusic();
         let timingPoint = audio ? audio.beatmap.TimingPoints.GetCurrentUninheritedTimingPoint(Date.now() - audio.timeStarted) : new UnInheritedTimingPoint();
-        if (!audio) {timingPoint.beatLength = 1000}
+        if (!audio) {timingPoint.beatLength = 1000; timingPoint.effects = Effect.None;}
+        if (audio) {
+            this.triangles.Velocity = MathUtil.Damp(this.triangles.Velocity, 0.5 * (timingPoint.effects == Effect.KiaiTime ? 4 : 2), 0.995, ticker.deltaMS);
+        }
+        else {
+            this.triangles.Velocity = MathUtil.Damp(this.triangles.Velocity, 0.5, 0.9, ticker.deltaMS);
+        }
         if (this.timeElapsedSinceLastBeat >= timingPoint.beatLength){
             this.onNewBeat();
             this.timeElapsedSinceLastBeat = 0;

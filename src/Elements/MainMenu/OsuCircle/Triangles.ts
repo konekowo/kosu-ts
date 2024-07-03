@@ -9,6 +9,9 @@ export class Triangles extends PIXI.Container{
     private graphics: PIXI.Graphics = new PIXI.Graphics();
     public flash: PIXI.Sprite;
 
+    public Velocity: number = 1;
+    private timeSinceLastSpawn = 0;
+
     public constructor() {
         super();
 
@@ -19,27 +22,17 @@ export class Triangles extends PIXI.Container{
             const ratio = index / colorStops.length;
             this.bgGradient.addColorStop(ratio, number);
         });
-        function random(min: number, max: number){
-            return Math.random() * (max - min) + min;
-        }
 
-        function randVelocity() {
-            let u1 = 1 - random(0, 1);
-            let u2 = 1 - random(0, 1);
-            let randStdNormal = (Math.sqrt(-2.0 * Math.log(u1)) * Math.sin(2.0 * Math.PI * u2));
-            return Math.max(0.5 + 0.16 * randStdNormal, 0.1);
-        }
 
         for (let i = 0; i < 15; i++) {
-            this.triangles.push({x: random(0, 1024), y: random(0, 1024), velocity: randVelocity()});
+            this.triangles.push({x: this.random(0, 1024), y: this.random(0, 1024), velocity: this.randVelocity()});
         }
+        this.timeSinceLastSpawn = Date.now();
 
         this.triangleGenInterval = setInterval(() => {
-            if (document.hasFocus()){
-                this.triangles.push({x: random(0, 1024), y: 1024 - 50, velocity: randVelocity()});
-            }
 
-        }, 800);
+
+        }, 800/this.Velocity);
 
         this.graphics.rect(0, 0, 1024, 1024);
         this.graphics.fill(this.bgGradient);
@@ -53,6 +46,17 @@ export class Triangles extends PIXI.Container{
         this.addChild(this.flash);
     }
 
+    private random(min: number, max: number){
+        return Math.random() * (max - min) + min;
+    }
+
+    private randVelocity() {
+        let u1 = 1 - this.random(0, 1);
+        let u2 = 1 - this.random(0, 1);
+        let randStdNormal = (Math.sqrt(-2.0 * Math.log(u1)) * Math.sin(2.0 * Math.PI * u2));
+        return Math.max(0.5 + 0.16 * randStdNormal, 0.1);
+    }
+
     public destroy(options?: PIXI.DestroyOptions) {
         super.destroy(options);
     }
@@ -60,11 +64,15 @@ export class Triangles extends PIXI.Container{
     public draw(ticker: PIXI.Ticker) {
         if (!this.destroyed){
             if (document.hasFocus()){
+                if (Date.now() - this.timeSinceLastSpawn > 800/this.Velocity){
+                    this.triangles.push({x: this.random(0, 1024), y: 1024 - 50, velocity: this.randVelocity()});
+                    this.timeSinceLastSpawn = Date.now();
+                }
                 this.graphics.clear();
                 this.graphics.rect(0, 0, 1024, 1024);
                 this.graphics.fill(this.bgGradient);
                 this.triangles.forEach((triangle, index) => {
-                    triangle.y -= (ticker.deltaTime * triangle.velocity) * 4;
+                    triangle.y -= (ticker.deltaTime * this.Velocity * triangle.velocity) * 4;
                     this.graphics.moveTo(triangle.x, triangle.y);
                     this.graphics.lineTo(triangle.x - 250, triangle.y + 400);
                     this.graphics.lineTo(triangle.x + 250, triangle.y + 400);
