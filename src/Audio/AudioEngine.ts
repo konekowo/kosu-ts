@@ -2,6 +2,7 @@ import {PlayingAudios} from "./PlayingAudios";
 import {Audio, MapAudio} from "./Audio";
 import {BeatmapData} from "../Util/Beatmap/Data/BeatmapData";
 import {arrayBuffer} from "node:stream/consumers";
+import {Main} from "../main";
 
 export class AudioEngine {
     public readonly audioContext: AudioContext;
@@ -13,9 +14,10 @@ export class AudioEngine {
     public constructor() {
         this.audioContext = new AudioContext();
         this._playingAudios = new PlayingAudios();
+        Main.app.ticker.add(() => {this.update();});
     }
 
-    public Update() {
+    public UpdateMusicQueue() {
         if (this._musicQueue[0]){
             if (!this._musicQueue[0].fadingOut && this._musicQueue[0].timeStarted == 0){
                 this._play(this._musicQueue[0]);
@@ -66,12 +68,24 @@ export class AudioEngine {
             let analyzer = this.audioContext.createAnalyser();
             analyzer.fftSize = 512;
             analyzer.smoothingTimeConstant = 0;
+            let splitter = this.audioContext.createChannelSplitter(2);
+            let analyzerL = this.audioContext.createAnalyser();
+            analyzerL.smoothingTimeConstant = 0;
+            analyzerL.fftSize = 32;
+            let analyzerR = this.audioContext.createAnalyser();
+            analyzerR.smoothingTimeConstant = 0;
+            analyzerR.fftSize = 32;
             audio.AddAudioNode(gain);
             audio.AddAudioNode(analyzer);
+            audio.AddAudioNode(analyzerL);
+            audio.AddAudioNode(analyzerR);
             audio.ConnectToContext(this.audioContext, (nodes, source) => {
                 source.connect(gain);
                 gain.connect(this.audioContext.destination);
                 source.connect(analyzer);
+                source.connect(splitter);
+                splitter.connect(analyzerL, 0);
+                splitter.connect(analyzerR, 1);
             });
             audio.Play();
             this._playingAudios.audios.push(audio);
@@ -108,7 +122,7 @@ export class AudioEngine {
                     return;
                 }
             });
-            this.Update();
+            this.UpdateMusicQueue();
         });
     }
 
@@ -130,7 +144,7 @@ export class AudioEngine {
         }
         this._musicQueue.push(mapAudioObj);
         this._audioIdTicker++;
-        this.Update();
+        this.UpdateMusicQueue();
         return mapAudioObj.id;
     }
 
@@ -138,6 +152,28 @@ export class AudioEngine {
         // clear queue
         this._musicQueue = [];
         this.AddToMusicQueue(mapAudio, beatMapData, musicPlayingCallback);
+    }
+
+    public update() {
+        let currentPlaying = this.GetCurrentPlayingMusic();
+        if (currentPlaying) {
+            let analyzerL = currentPlaying.GetNode(AnalyserNode)![1];
+            let analyzerR = currentPlaying.GetNode(AnalyserNode)![2];
+            analyzerL.getFloatFrequencyData(currentPlaying.tempArrayL);
+            analyzerR.getFloatFrequencyData(currentPlaying.tempArrayR);
+            let addedL = 0;
+            currentPlaying.tempArrayL.forEach((num) => {
+                addedL += num;
+            });
+            let avgL = addedL/=currentPlaying.tempArrayL.length;
+            let addedR = 0;
+            currentPlaying.tempArrayR.forEach((num) => {
+                addedR += num;
+            });
+            let avgR = addedR/=currentPlaying.tempArrayL.length;
+            currentPlaying.LeftChannel = (avgL + 140)/140;
+            currentPlaying.RightChannel = (avgR + 140)/140;
+        }
     }
 
 }

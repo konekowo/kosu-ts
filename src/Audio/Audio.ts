@@ -1,6 +1,7 @@
 import {BeatmapData} from "../Util/Beatmap/Data/BeatmapData";
 import {node} from "webpack";
 import {OsuCircle} from "../Elements/MainMenu/OsuCircle/OsuCircle";
+import {Main} from "../main";
 
 export class Audio {
     public audio!: AudioBuffer;
@@ -12,6 +13,21 @@ export class Audio {
     public pausedTime: number = 0;
     public nodes: AudioNode[] = [];
     private _connectedToContext = false;
+
+    public tempArrayL = new Float32Array(16);
+    public tempArrayR = new Float32Array(16);
+
+    public LeftChannel: number = 0;
+    public RightChannel: number = 0;
+
+
+    public GetMaximumAudioLevel() {
+        return Math.max(this.LeftChannel, this.RightChannel);
+    }
+
+    public GetAverageAudioLevel() {
+        return (this.LeftChannel + this.RightChannel)/2;
+    }
 
     public Create(audioContext: AudioContext) {
         this.source = audioContext.createBufferSource();

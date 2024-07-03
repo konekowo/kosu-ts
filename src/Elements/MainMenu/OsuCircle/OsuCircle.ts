@@ -151,12 +151,8 @@ export class OsuCircle extends PIXI.Container {
         let beatLength = timingPointUninherited.beatLength;
         let timingPoint = audio ? audio.beatmap.TimingPoints.GetCurrentTimingPoints(Date.now() - audio.timeStarted)[0] : new UnInheritedTimingPoint();
         if (!audio) {timingPoint.effects = Effect.None}
-        let maxAmplitude = 0;
-        this.visualizer.frequencyAmplitudes.forEach((num) => {
-            if (maxAmplitude < num) {
-                maxAmplitude = num;
-            }
-        });
+        let maxAmplitude = audio? audio.GetMaximumAudioLevel() : 0;
+        console.log(maxAmplitude);
         let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
         ease.add(this.beatContainer, {scale: 1 - 0.02 * amplitudeAdjust}, {ease: "linear", duration: 60}).once("complete",
             () => {

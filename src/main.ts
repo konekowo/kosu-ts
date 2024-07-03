@@ -17,7 +17,7 @@ export class Main {
     public static pointerLockExitTime: number;
     private static doPointerLock: boolean = false;
     public static cursor: MenuCursor;
-    public static AudioEngine: AudioEngine = new AudioEngine();
+    public static AudioEngine: AudioEngine;
 
     public constructor(app: Application) {
         Main.app = app;
@@ -26,7 +26,7 @@ export class Main {
         this.doResize();
         window.addEventListener("resize", this.doResize);
         Main.app.stage.eventMode = "static";
-
+        Main.AudioEngine = new AudioEngine();
         Main.app.stage.addEventListener("mousemove", (e) => {
             Main.mousePos.x = e.clientX;
             Main.mousePos.y = e.clientY;

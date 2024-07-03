@@ -36,7 +36,7 @@ export class LogoVisualizer extends PIXI.Container {
     protected audio!: MapAudio;
     protected analyzer!: AnalyserNode;
     protected bufferLength!: number;
-    protected amplitudes!: Float32Array;
+    public amplitudes!: Float32Array;
 
     protected temporalAmplitudes: Float32Array = new Float32Array(256);
     public frequencyAmplitudes: Float32Array = new Float32Array(256);
