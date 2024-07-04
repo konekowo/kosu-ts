@@ -29,6 +29,11 @@ export class IntroScreen extends Screen {
 
     private mainMenu: MainMenu | undefined;
 
+    private standard = PIXI.Sprite.from('icon_ruleset_std');
+    private taiko = PIXI.Sprite.from('icon_ruleset_taiko');
+    private ctb = PIXI.Sprite.from('icon_ruleset_ctb');
+    private mania = PIXI.Sprite.from('icon_ruleset_mania');
+
     private welcomeText: PIXI.Text = new PIXI.Text({
         text: "",
         style: {
@@ -123,25 +128,20 @@ export class IntroScreen extends Screen {
             this.onResize();
         },900);
 
-        let standard = PIXI.Sprite.from('icon_ruleset_std');
-        let taiko = PIXI.Sprite.from('icon_ruleset_taiko');
-        let ctb = PIXI.Sprite.from('icon_ruleset_ctb');
-        let mania = PIXI.Sprite.from('icon_ruleset_mania');
 
-        standard.anchor.set(0.5,0.5);
-        standard.scale.set(0.4);
-        this.ruleSetContainer.addChild(standard);
-        taiko.anchor.set(0.5,0.5);
-        taiko.scale.set(0.4);
-        this.ruleSetContainer.addChild(taiko);
-        ctb.anchor.set(0.5,0.5);
-        ctb.scale.set(0.4);
-        this.ruleSetContainer.addChild(ctb);
-        mania.anchor.set(0.5,0.5);
-        mania.scale.set(0.4);
-        this.ruleSetContainer.addChild(mania);
-        this.ruleSetContainerContainer.addChild(this.ruleSetContainer);
-        this.ruleSetContainer.scale.set(Screen.getScaleBasedOffScreenSize());
+
+        this.standard.anchor.set(0.5,0.5);
+        this.standard.scale.set(0.4 * Screen.getScaleBasedOffScreenSize());
+        this.ruleSetContainer.addChild(this.standard);
+        this.taiko.anchor.set(0.5,0.5);
+        this.taiko.scale.set(0.4 * Screen.getScaleBasedOffScreenSize());
+        this.ruleSetContainer.addChild(this.taiko);
+        this.ctb.anchor.set(0.5,0.5);
+        this.ctb.scale.set(0.4 * Screen.getScaleBasedOffScreenSize());
+        this.ruleSetContainer.addChild(this.ctb);
+        this.mania.anchor.set(0.5,0.5);
+        this.mania.scale.set(0.4 * Screen.getScaleBasedOffScreenSize());
+        this.ruleSetContainer.addChild(this.mania);
 
         setTimeout(() => {
             this.doTextSpacingAnim = false;
@@ -154,38 +154,38 @@ export class IntroScreen extends Screen {
             this.addChild(this.ruleSetContainer);
 
             let spacing = 100;
-            standard.position.set(-((spacing * 2) + 175), 0);
-            taiko.position.set(-((spacing) + 25), 0);
-            ctb.position.set(((spacing) + 25), 0);
-            mania.position.set(((spacing * 2) + 175), 0);
+            this.standard.position.set(-((spacing * 2) + 175)*Screen.getScaleBasedOffScreenSize(), 0);
+            this.taiko.position.set(-((spacing) + 25)*Screen.getScaleBasedOffScreenSize(), 0);
+            this.ctb.position.set(((spacing) + 25)*Screen.getScaleBasedOffScreenSize(), 0);
+            this.mania.position.set(((spacing * 2) + 175)*Screen.getScaleBasedOffScreenSize(), 0);
 
             ease.add(this.ruleSetContainer, {scale: 0.8}, {duration: 1000, ease: "linear"});
         }, 1450);
 
         setTimeout(() => {
             let spacing = 15;
-            standard.position.set(-((spacing * 2) + 210), 0);
-            taiko.position.set(-((spacing) + 60), 0);
-            ctb.position.set(((spacing) + 60), 0);
-            mania.position.set(((spacing * 2) + 210), 0);
+            this.standard.position.set(-((spacing * 2) + 210)*Screen.getScaleBasedOffScreenSize(), 0);
+            this.taiko.position.set(-((spacing) + 60)*Screen.getScaleBasedOffScreenSize(), 0);
+            this.ctb.position.set(((spacing) + 60)*Screen.getScaleBasedOffScreenSize(), 0);
+            this.mania.position.set(((spacing * 2) + 210)*Screen.getScaleBasedOffScreenSize(), 0);
 
-            standard.scale.set(1);
-            taiko.scale.set(1);
-            ctb.scale.set(1);
-            mania.scale.set(1);
+            this.standard.scale.set(Screen.getScaleBasedOffScreenSize());
+            this.taiko.scale.set(Screen.getScaleBasedOffScreenSize());
+            this.ctb.scale.set(Screen.getScaleBasedOffScreenSize());
+            this.mania.scale.set(Screen.getScaleBasedOffScreenSize());
         }, 1650);
 
         setTimeout(() => {
             let spacing = 60;
-            standard.position.set(-((spacing * 2) + 230), 0);
-            taiko.position.set(-((spacing) + 60), 0);
-            ctb.position.set(((spacing) + 60), 0);
-            mania.position.set(((spacing * 2) + 230), 0);
+            this.standard.position.set(-((spacing * 2) + 230)*Screen.getScaleBasedOffScreenSize(), 0);
+            this.taiko.position.set(-((spacing) + 60)*Screen.getScaleBasedOffScreenSize(), 0);
+            this.ctb.position.set(((spacing) + 60)*Screen.getScaleBasedOffScreenSize(), 0);
+            this.mania.position.set(((spacing * 2) + 230)*Screen.getScaleBasedOffScreenSize(), 0);
 
-            standard.scale.set(2);
-            taiko.scale.set(2);
-            ctb.scale.set(2);
-            mania.scale.set(2);
+            this.standard.scale.set(2 * Screen.getScaleBasedOffScreenSize());
+            this.taiko.scale.set(2 * Screen.getScaleBasedOffScreenSize());
+            this.ctb.scale.set(2 * Screen.getScaleBasedOffScreenSize());
+            this.mania.scale.set(2 * Screen.getScaleBasedOffScreenSize());
 
             ease.add(this.ruleSetContainer, {scale: 1.3}, {duration: 1000, ease: "linear"});
         }, 1850);
@@ -255,11 +255,20 @@ export class IntroScreen extends Screen {
         if (!this.lazerLogo.destroyed) {
             this.lazerLogo.scale.set(Screen.getScaleBasedOffScreenSize());
         }
-        if (!this.ruleSetContainerContainer.destroyed) {
-            this.ruleSetContainerContainer.scale.set(Screen.getScaleBasedOffScreenSize());
-        }
         if (!this.welcomeText.destroyed){
             this.welcomeText.scale.set(Screen.getScaleBasedOffScreenSize());
+        }
+        if (!this.standard.destroyed) {
+            this.standard.scale.set(0.4 * Screen.getScaleBasedOffScreenSize());
+        }
+        if (!this.mania.destroyed) {
+            this.mania.scale.set(0.4 * Screen.getScaleBasedOffScreenSize());
+        }
+        if (!this.ctb.destroyed) {
+            this.ctb.scale.set(0.4 * Screen.getScaleBasedOffScreenSize());
+        }
+        if (!this.taiko.destroyed) {
+            this.taiko.scale.set(0.4 * Screen.getScaleBasedOffScreenSize());
         }
     }
 }
