@@ -3,17 +3,11 @@ import {Ticker} from "pixi.js";
 import {unzip} from 'unzipit';
 import {Main} from "../../main";
 import * as PIXI from "pixi.js";
-import * as TWEEN from '@tweenjs/tween.js'
 import {GlitchingTriangles} from "./GlitchingTriangles";
 import {ease} from "pixi-ease";
-import {set} from "husky";
 import {MainMenu} from "../MainMenu/MainMenu";
 import {LazerLogo} from "./LazerLogo";
-import {Menu} from "../../Elements/MainMenu/OsuCircle/Menu/Menu";
-import {BeatmapData} from "../../Util/Beatmap/Data/BeatmapData";
 import {BeatmapParser} from "../../Util/Beatmap/Parser/BeatmapParser";
-import {AudioEngine} from "../../Audio/AudioEngine";
-import {arrayBuffer} from "node:stream/consumers";
 
 export class IntroScreen extends Screen {
 
@@ -22,6 +16,7 @@ export class IntroScreen extends Screen {
     private doTextSpacingAnim = false;
     private triangles = new PIXI.Container();
     private ruleSetContainer = new PIXI.Container();
+    private ruleSetContainerContainer = new PIXI.Container();
     private flash = new PIXI.Graphics();
 
     private logoContainerContainer = new PIXI.Container();
@@ -49,6 +44,7 @@ export class IntroScreen extends Screen {
         this.introTrackUrl = URL.createObjectURL(introTrack);
     }
     public start() {
+        this.lazerLogo.scale.set(Screen.getScaleBasedOffScreenSize());
         this.logoContainer.addChild(this.lazerLogo);
         this.logoContainer.scale.set(1.2);
 
@@ -93,6 +89,7 @@ export class IntroScreen extends Screen {
     }
 
     public afterAudioPlay() {
+        this.welcomeText.scale.set(Screen.getScaleBasedOffScreenSize());
         this.addChild(this.welcomeText);
         setTimeout(()=> {
             this.welcomeText.text = "wel";
@@ -109,6 +106,7 @@ export class IntroScreen extends Screen {
         let glitchingInterval: NodeJS.Timeout;
 
         this.triangles.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
+        this.triangles.scale.set(Screen.getScaleBasedOffScreenSize());
         this.addChild(this.triangles);
         setTimeout(()=> {
             this.welcomeText.text = "welcome to kosu!";
@@ -142,6 +140,8 @@ export class IntroScreen extends Screen {
         mania.anchor.set(0.5,0.5);
         mania.scale.set(0.4);
         this.ruleSetContainer.addChild(mania);
+        this.ruleSetContainerContainer.addChild(this.ruleSetContainer);
+        this.ruleSetContainer.scale.set(Screen.getScaleBasedOffScreenSize());
 
         setTimeout(() => {
             this.doTextSpacingAnim = false;
@@ -239,6 +239,7 @@ export class IntroScreen extends Screen {
         }
         if (!this.triangles.destroyed){
             this.triangles.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
+            this.triangles.scale.set(Screen.getScaleBasedOffScreenSize());
         }
         if (!this.ruleSetContainer.destroyed){
             this.ruleSetContainer.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
@@ -250,6 +251,15 @@ export class IntroScreen extends Screen {
         }
         if (!this.logoContainerContainer.destroyed){
             this.logoContainerContainer.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
+        }
+        if (!this.lazerLogo.destroyed) {
+            this.lazerLogo.scale.set(Screen.getScaleBasedOffScreenSize());
+        }
+        if (!this.ruleSetContainerContainer.destroyed) {
+            this.ruleSetContainerContainer.scale.set(Screen.getScaleBasedOffScreenSize());
+        }
+        if (!this.welcomeText.destroyed){
+            this.welcomeText.scale.set(Screen.getScaleBasedOffScreenSize());
         }
     }
 }

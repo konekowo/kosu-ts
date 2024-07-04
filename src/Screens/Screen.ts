@@ -26,4 +26,9 @@ export abstract class Screen extends PIXI.Container{
     protected getScreenHeight(): number {
         return window.innerHeight;
     }
+
+    public static getScaleBasedOffScreenSize() {
+        // this was made with 1080p screens in mind.
+        return (((window.innerWidth/1920) + (window.innerHeight/1080))/2)
+    }
 }

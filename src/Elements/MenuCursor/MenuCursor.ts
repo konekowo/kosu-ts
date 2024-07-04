@@ -3,6 +3,7 @@ import {Main} from "../../main";
 import {Ease, ease, Easing} from "pixi-ease";
 import {Loader} from "../../Loader";
 import {MathUtil} from "../../Util/MathUtil";
+import {Screen} from "../../Screens/Screen";
 
 export class MenuCursor extends PIXI.Container {
     private mouseCursor = PIXI.Sprite.from("menu.cursor");
@@ -33,7 +34,7 @@ export class MenuCursor extends PIXI.Container {
     public constructor(visible: boolean) {
         super();
         this.updateMouse();
-        this.mouseContainer.scale.set(0.07);
+        this.mouseContainer.scale.set(0.07 * Screen.getScaleBasedOffScreenSize());
         this.mouseCursorAdditive.alpha = 0;
         this.mouseCursorAdditive.blendMode = "add";
         this.mouseCursorAdditive.tint = "0xFF66AA"
@@ -138,6 +139,7 @@ export class MenuCursor extends PIXI.Container {
     }
 
     public updateMouse() {
+        this.mouseContainer.scale.set(0.07 * Screen.getScaleBasedOffScreenSize());
         this.position.set(Main.mousePos.x, Main.mousePos.y);
         if (this.dragRotationState != DragRotationState.NotDragging && this.visible){
             let distance = Math.sqrt((((Math.abs(this.posMouseDown.x - Main.mousePos.x))^2) +

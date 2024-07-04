@@ -15,16 +15,25 @@ export class OsuCircle extends PIXI.Container {
     private readonly outline: PIXI.Sprite;
     private readonly visualizer: MenuLogoVisualizer = new MenuLogoVisualizer();
     private readonly triangles: Triangles = new Triangles();
-    private readonly beatContainer: PIXI.Container = new PIXI.Container();
-    private readonly amplitudeContainer: PIXI.Container = new PIXI.Container();
-    private readonly hoverContainer: PIXI.Container = new PIXI.Container();
-    private readonly moveContainer: PIXI.Container = new PIXI.Container();
-    private readonly parallaxContainer: PIXI.Container = new PIXI.Container();
+    private readonly flash;
+    private readonly logoContainer = new PIXI.Container;
+    private readonly logoBounceContainer = new PIXI.Container();
+    private readonly logoBeatContainer = new PIXI.Container();
+    private readonly logoAmplitudeContainer = new PIXI.Container();
+    private readonly logoHoverContainer = new PIXI.Container();
+    private readonly rippleContainer = new PIXI.Container();
+    private readonly ripple;
     private readonly menu: Menu = new Menu();
-    private isBeingHovered = false;
     private readonly defaultVisualizerAlpha = 0.5;
     private timeElapsedSinceLastBeat = 0;
     private visualizerAnimationDummy = new PIXI.Container();
+
+    private selectSample = Loader.GetAudio("mainMenu.osuLogo.select");
+    private backToLogoSample = Loader.GetAudio("mainMenu.osuLogo.backToLogo");
+
+    private isMouseDown = false;
+    private mouseDownPosition = {x: 0, y: 0};
+
 
     public constructor() {
         super();
@@ -38,113 +47,80 @@ export class OsuCircle extends PIXI.Container {
         this.visualizer.position.set(-LogoVisualizer.size/3.35, -LogoVisualizer.size/3.35);
         this.visualizer.scale.set(scale);
         this.visualizer.alphaMultiplier = this.defaultVisualizerAlpha;
-        this.beatContainer.addChild(this.visualizer);
 
         let mask = PIXI.Sprite.from("mainMenu.logoMask");
         mask.anchor.set(0.5, 0.5);
         mask.scale = scale;
 
 
-        let flash = PIXI.Sprite.from("mainMenu.logoMask");
-        flash.anchor.set(0.5, 0.5);
-        flash.scale = scale;
-        flash.blendMode = "add";
-        flash.alpha = 0;
+        this.flash = PIXI.Sprite.from("mainMenu.logoMask");
+        this.flash.anchor.set(0.5, 0.5);
+        this.flash.scale = scale;
+        this.flash.blendMode = "add";
+        this.flash.alpha = 0;
 
         this.outline.scale.set(scale);
         this.triangles.scale.set(scale);
         this.triangles.position.set(-(this.outline.width/2), -(this.outline.height/2));
         this.triangles.mask = mask;
-        this.parallaxContainer.addChild(this.menu);
-        this.beatContainer.addChild(this.triangles);
-        this.beatContainer.addChild(mask);
-        this.beatContainer.addChild(flash);
-        this.beatContainer.addChild(this.outline);
-        this.amplitudeContainer.addChild(this.beatContainer)
-        this.hoverContainer.addChild(this.amplitudeContainer);
-        this.moveContainer.addChild(this.hoverContainer);
-        this.parallaxContainer.addChild(this.moveContainer);
-        this.addChild(this.parallaxContainer)
-        this.hoverContainer.eventMode = "dynamic";
-        this.hoverContainer.hitArea = new PIXI.Circle(0, 0, 500*scale);
+
+        this.ripple = PIXI.Sprite.from("mainMenu.logoMask");
+        this.ripple.anchor.set(0.5, 0.5);
+        this.ripple.scale = scale;
+        this.ripple.alpha = 0;
+        this.ripple.blendMode = "add";
+
+        this.rippleContainer.addChild(this.ripple);
+
+        this.logoContainer.addChild(this.visualizer);
+        this.logoContainer.addChild(this.triangles);
+        this.logoContainer.addChild(mask);
+        this.logoContainer.addChild(this.flash);
+        this.logoContainer.addChild(this.outline);
+
+        this.logoBeatContainer.addChild(this.logoContainer);
+        this.logoAmplitudeContainer.addChild(this.logoBeatContainer);
+        this.logoBounceContainer.addChild(this.rippleContainer);
+        this.logoBounceContainer.addChild(this.logoAmplitudeContainer);
+        this.logoHoverContainer.addChild(this.logoBounceContainer);
+        this.addChild(this.logoHoverContainer)
+        this.eventMode = "static";
+        this.hitArea = new PIXI.Circle(0, 0, 480*scale);
+
+        // register event listeners
+        Main.app.stage.addEventListener("mouseup", (e) => {this._onmouseup(e);});
+
+    }
 
 
-        let selectSample = Loader.GetAudio("mainMenu.osuLogo.select");
-        let backToLogoSample = Loader.GetAudio("mainMenu.osuLogo.backToLogo");
-        const mouseEnter = () => {
-            this.isBeingHovered = true;
-            ease.add(this.hoverContainer, {scale: 1.1}, {duration: 500, ease: "easeOutElastic"});
-        }
+    public onmouseenter = (e: PIXI.FederatedMouseEvent) => {
+        ease.removeEase(this.logoHoverContainer);
+        ease.add(this.logoHoverContainer, {scale: 1.1}, {duration: 500, ease: "easeOutElastic"});
+    }
 
-        if (this.hoverContainer.hitArea.contains(Main.mousePos.x, Main.mousePos.y)){
-            mouseEnter();
-        }
+    public onmouseleave = (e: PIXI.FederatedMouseEvent) => {
+        ease.removeEase(this.logoHoverContainer);
+        ease.add(this.logoHoverContainer, {scale: 1}, {duration: 500, ease: "easeOutElastic"});
+    }
 
-        this.hoverContainer.addEventListener("mouseenter", () => {
-            mouseEnter();
-        });
-        this.hoverContainer.addEventListener("mouseleave", () => {
-            this.isBeingHovered = false;
-            ease.add(this.hoverContainer, {scale: 1}, {duration: 500, ease: "easeOutElastic"})
-        });
-        let mouseDownEase: Easing;
-        this.hoverContainer.addEventListener("mousedown", () => {
-            mouseDownEase = ease.add(this.hoverContainer, {scale: 0.9}, {duration: 1000, ease: "easeOutSine"});
-        });
+    public onmousedown = (e: PIXI.FederatedMouseEvent) => {
+        ease.removeEase(this.logoBounceContainer);
+        this.isMouseDown = true;
+        ease.add(this.logoBounceContainer, {scale: 0.9}, {duration: 1000, ease: "easeOutSine"});
+        this.mouseDownPosition = {x: Main.mousePos.x, y: Main.mousePos.y};
+    }
 
-        const mouseUp = () => {
-            if (mouseDownEase){
-                mouseDownEase.remove();
-            }
-            ease.add(this.hoverContainer, {scale: this.isBeingHovered? 1.1 : 1}, {duration: 500, ease: "easeOutElastic"});
-        }
-        this.hoverContainer.addEventListener("mouseup", () => {
-            mouseUp();
-        });
+    public onclick = (e: PIXI.FederatedMouseEvent) => {
+        ease.removeEase(this.flash);
+        this.flash.alpha = 0.4;
+        ease.add(this.flash, {alpha: 0}, {duration:1500, ease: "easeOutExpo"});
+    }
 
-
-        let menuOpenAnim0: Easing;
-        let menuOpenAnim1: Easing;
-        let menuCloseAnim0: Easing;
-        let menuCloseAnim1: Easing;
-
-        this.hoverContainer.addEventListener("click", () => {
-            if (!this.menu.isOpen()){
-                this.isBeingHovered = false;
-            }
-            mouseUp();
-            if (!this.menu.isOpen()){
-                if (menuCloseAnim0){
-                    menuCloseAnim0.remove();
-                }
-                if (menuCloseAnim1){
-                    menuCloseAnim1.remove()
-                }
-            }
-            flash.alpha = 0.4;
-            ease.add(flash, {alpha: 0}, {duration:1500, ease: "easeOutExpo"});
-            if (!this.menu.isOpen()){
-                Main.AudioEngine.PlayEffect(selectSample);
-
-                menuOpenAnim0 = ease.add(this.moveContainer, {position: {x: -300, y: 0}}, {duration: 200, ease: "easeInSine"}).once("complete", () => {
-                    this.menu.Open();
-                });
-                menuOpenAnim1 = ease.add(this.moveContainer, {scale: 0.5}, {duration: 200, ease: "easeInSine"});
-            }
-        });
-
-        window.addEventListener("keyup", (e) => {
-           if (e.key == "Escape" || e.key == "`"){
-               if (this.menu.isOpen()){
-                   menuOpenAnim0.remove();
-                   menuOpenAnim1.remove();
-                   Main.AudioEngine.PlayEffect(backToLogoSample);
-                   this.menu.Close();
-                   menuCloseAnim0 = ease.add(this.moveContainer, {position: {x: 0, y: 0}}, {duration: 800, ease: "easeOutExpo"});
-                   menuCloseAnim1 = ease.add(this.moveContainer, {scale: 1}, {duration: 800, ease: "easeOutExpo"});
-               }
-           }
-        });
+    public _onmouseup = (e: PIXI.FederatedMouseEvent) => {
+        ease.removeEase(this.logoBounceContainer);
+        this.isMouseDown = false;
+        ease.add(this.logoBounceContainer, {scale: 1}, {duration: 500, ease: "easeOutElastic"});
+        ease.add(this.logoBounceContainer, {x: 0, y: 0}, {duration: 800, ease: "easeOutElastic"});
     }
 
     private onNewBeat() {
@@ -155,18 +131,28 @@ export class OsuCircle extends PIXI.Container {
         let timingPoint = audio ? audio.beatmap.TimingPoints.GetCurrentTimingPoints(Date.now() - audio.timeStarted)[0] : new UnInheritedTimingPoint();
         if (!audio) {timingPoint.effects = Effect.None}
         let maxAmplitude = audio? audio.GetMaximumAudioLevel() : 0;
-        console.log(maxAmplitude);
         let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
-        ease.add(this.amplitudeContainer, {scale: 1 - 0.02 * amplitudeAdjust}, {ease: "linear", duration: 60}).once("complete",
+        ease.removeEase(this.logoBeatContainer);
+        ease.add(this.logoBeatContainer, {scale: 1 - 0.02 * amplitudeAdjust}, {ease: "linear", duration: 60}).once("complete",
             () => {
-            ease.add(this.amplitudeContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2});
+            ease.add(this.logoBeatContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2});
         });
+        ease.removeEase(this.ripple);
+        ease.removeEase(this.rippleContainer);
+        this.rippleContainer.scale = 1.02;
+        ease.add(this.rippleContainer, {scale: 1.02 * (1 + 0.04 * amplitudeAdjust)}, {duration: beatLength * 2, ease: "easeOutQuint"});
+        this.ripple.alpha = 0.15 * amplitudeAdjust;
+        ease.add(this.ripple, {alpha: 0}, {duration: beatLength, ease: "easeOutQuint"});
+
+
 
         if (timingPoint.effects == Effect.KiaiTime) {
+            ease.removeEase(this.triangles.flash);
             ease.add(this.triangles.flash, {alpha: 0.2*amplitudeAdjust}, {duration: 60, ease:"linear"}).once("complete",
                 () => {
                     ease.add(this.triangles.flash, {alpha: 0}, {duration: beatLength})
                 });
+            ease.removeEase(this.visualizerAnimationDummy);
             let visualizerEase = ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust},
                 {duration: 60, ease: "linear"}).on("each", () => {
                 this.visualizer.alphaMultiplier = this.visualizerAnimationDummy.alpha
@@ -193,13 +179,19 @@ export class OsuCircle extends PIXI.Container {
 
     public draw(ticker: PIXI.Ticker) {
         this.visualizer.draw(ticker);
-
         this.triangles.draw(ticker);
-        if (this.menu.isOpen()){
-            this.parallaxContainer.position.set(Main.mousePos.x/120, Main.mousePos.y/120);
+        console.log(this.logoHoverContainer);
+        if (isNaN(this.logoBounceContainer.x) || isNaN(this.logoBounceContainer.y)) {
+            this.logoBounceContainer.x = 0;
+            this.logoBounceContainer.y = 0;
         }
-        else {
-            this.parallaxContainer.position.set(0,0);
+        if (isNaN(this.logoBounceContainer.scale.x) || isNaN(this.logoBounceContainer.scale.y)) {
+            this.logoBounceContainer.scale.x = 1;
+            this.logoBounceContainer.scale.y = 1;
+        }
+        if (isNaN(this.logoBeatContainer.scale.x) || isNaN(this.logoBeatContainer.scale.y)) {
+            this.logoBeatContainer.scale.x = 1;
+            this.logoBeatContainer.scale.y = 1;
         }
         this.timeElapsedSinceLastBeat += ticker.deltaMS;
         let audio = Main.AudioEngine.GetCurrentPlayingMusic();
@@ -207,18 +199,31 @@ export class OsuCircle extends PIXI.Container {
         if (!audio) {timingPoint.beatLength = 1000; timingPoint.effects = Effect.None;}
         if (audio) {
             let maxAmplitude = audio.GetMaximumAudioLevel();
-            this.amplitudeContainer.scale.set(MathUtil.Damp(this.amplitudeContainer.scale.x,
+            this.logoAmplitudeContainer.scale.set(MathUtil.Damp(this.logoAmplitudeContainer.scale.x,
                 1 - Math.max(0, maxAmplitude - 0.4) * 0.04, 0.9, ticker.deltaMS))
             this.triangles.Velocity = MathUtil.Damp(this.triangles.Velocity,
                 0.5 * (timingPoint.effects == Effect.KiaiTime ? 4 : 2), 0.995, ticker.deltaMS);
         }
         else {
+            this.logoAmplitudeContainer.scale = 1;
             this.triangles.Velocity = MathUtil.Damp(this.triangles.Velocity, 0.5, 0.9, ticker.deltaMS);
         }
         if (this.timeElapsedSinceLastBeat >= timingPoint.beatLength){
             this.onNewBeat();
             this.timeElapsedSinceLastBeat = 0;
         }
+
+        if (this.isMouseDown) {
+            let change = {x: Main.mousePos.x - this.mouseDownPosition.x, y: Main.mousePos.y - this.mouseDownPosition.y};
+            let length = Math.sqrt(change.x * change.x + change.y * change.y);
+            // Diminish the drag distance as we go further to simulate "rubber band" feeling.
+            change.x *= length <= 0 ? 0 : Math.pow(length, 0.6) / length;
+            change.y *= length <= 0 ? 0 : Math.pow(length, 0.6) / length;
+            this.logoBounceContainer.x = change.x;
+            this.logoBounceContainer.y = change.y;
+        }
+
+
     }
 
 }

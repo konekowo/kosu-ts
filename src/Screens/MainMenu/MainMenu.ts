@@ -9,6 +9,7 @@ export class MainMenu extends Screen {
     public start() {
         this.bg.start();
         this.addChild(this.bg);
+        this.osuCircle.scale = Screen.getScaleBasedOffScreenSize();
         this.addChild(this.osuCircle);
     }
     public draw(deltaTime: PIXI.Ticker) {
@@ -28,5 +29,6 @@ export class MainMenu extends Screen {
         this.osuCircle.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
         this.bg.onResize();
         this.osuCircle.onResize();
+        this.osuCircle.scale = Screen.getScaleBasedOffScreenSize();
     }
 }
