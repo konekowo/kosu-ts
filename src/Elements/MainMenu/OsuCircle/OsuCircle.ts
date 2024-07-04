@@ -180,7 +180,6 @@ export class OsuCircle extends PIXI.Container {
     public draw(ticker: PIXI.Ticker) {
         this.visualizer.draw(ticker);
         this.triangles.draw(ticker);
-        console.log(this.logoHoverContainer);
         if (isNaN(this.logoBounceContainer.x) || isNaN(this.logoBounceContainer.y)) {
             this.logoBounceContainer.x = 0;
             this.logoBounceContainer.y = 0;
