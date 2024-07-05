@@ -9,8 +9,7 @@ export class LoadScreen extends Screen{
     private loadAnim = new LoadAnim("rgba(255,255,255,0.7)", "black");
 
     public start() {
-        let uiScale = Settings.getRangeSetting("UI scaling").getValue();
-        this.loadAnim.scale.set(0.8 * uiScale * Screen.getScaleBasedOffScreenSize());
+        this.loadAnim.scale.set(0.8 * Screen.getScaleBasedOffScreenSize());
         this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.getWidth() - 15, this.getScreenHeight() - this.loadAnim.getHeight() - 15);
         this.addChild(this.loadAnim);
     }
@@ -31,8 +30,7 @@ export class LoadScreen extends Screen{
     }
 
     public onResize() {
-        let uiScale = Settings.getRangeSetting("UI scaling").getValue();
         this.loadAnim.position.set(this.getScreenWidth() - this.loadAnim.getWidth() - 20, this.getScreenHeight() - this.loadAnim.getHeight() - 20);
-        this.loadAnim.scale.set(0.8 * uiScale * Screen.getScaleBasedOffScreenSize());
+        this.loadAnim.scale.set(0.8 * Screen.getScaleBasedOffScreenSize());
     }
 }

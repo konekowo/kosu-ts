@@ -1,4 +1,5 @@
 import * as PIXI from "pixi.js";
+import {Settings} from "../Settings/Settings";
 export abstract class Screen extends PIXI.Container{
 
     public constructor() {
@@ -29,6 +30,7 @@ export abstract class Screen extends PIXI.Container{
 
     public static getScaleBasedOffScreenSize() {
         // this was made with 1080p screens in mind.
-        return (((window.innerWidth/1920) + (window.innerHeight/1080))/2)
+        let uiScale = Settings.getRangeSetting("UI scaling").getValue();
+        return ((((window.innerWidth/1920) + (window.innerHeight/1080))/2)) * uiScale
     }
 }
