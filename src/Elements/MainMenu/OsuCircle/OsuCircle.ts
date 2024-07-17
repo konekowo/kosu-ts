@@ -77,6 +77,8 @@ export class OsuCircle extends PIXI.Container {
         this.logoContainer.addChild(mask);
         this.logoContainer.addChild(this.flash);
         this.logoContainer.addChild(this.outline);
+        this.logoContainer.hitArea = new PIXI.Circle(0, 0, 480*scale);
+        this.logoContainer.eventMode = "static";
 
         this.logoBeatContainer.addChild(this.logoContainer);
         this.logoAmplitudeContainer.addChild(this.logoBeatContainer);
@@ -84,8 +86,6 @@ export class OsuCircle extends PIXI.Container {
         this.logoBounceContainer.addChild(this.logoAmplitudeContainer);
         this.logoHoverContainer.addChild(this.logoBounceContainer);
         this.addChild(this.logoHoverContainer)
-        this.eventMode = "static";
-        this.hitArea = new PIXI.Circle(0, 0, 480*scale);
 
         // register event listeners
         Main.app.stage.addEventListener("mouseup", (e) => {this._onmouseup(e);});
