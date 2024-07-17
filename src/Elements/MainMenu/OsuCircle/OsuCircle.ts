@@ -180,18 +180,6 @@ export class OsuCircle extends PIXI.Container {
     public draw(ticker: PIXI.Ticker) {
         this.visualizer.draw(ticker);
         this.triangles.draw(ticker);
-        if (isNaN(this.logoBounceContainer.x) || isNaN(this.logoBounceContainer.y)) {
-            this.logoBounceContainer.x = 0;
-            this.logoBounceContainer.y = 0;
-        }
-        if (isNaN(this.logoBounceContainer.scale.x) || isNaN(this.logoBounceContainer.scale.y)) {
-            this.logoBounceContainer.scale.x = 1;
-            this.logoBounceContainer.scale.y = 1;
-        }
-        if (isNaN(this.logoBeatContainer.scale.x) || isNaN(this.logoBeatContainer.scale.y)) {
-            this.logoBeatContainer.scale.x = 1;
-            this.logoBeatContainer.scale.y = 1;
-        }
         this.timeElapsedSinceLastBeat += ticker.deltaMS;
         let audio = Main.AudioEngine.GetCurrentPlayingMusic();
         let timingPoint = audio ? audio.beatmap.TimingPoints.GetCurrentUninheritedTimingPoint(Date.now() - audio.timeStarted) : new UnInheritedTimingPoint();
@@ -223,6 +211,23 @@ export class OsuCircle extends PIXI.Container {
         }
 
 
+
+
+
+
+
+        if (isNaN(this.logoBounceContainer.x) || isNaN(this.logoBounceContainer.y)) {
+            this.logoBounceContainer.x = 0;
+            this.logoBounceContainer.y = 0;
+        }
+        if (isNaN(this.logoBounceContainer.scale.x) || isNaN(this.logoBounceContainer.scale.y)) {
+            this.logoBounceContainer.scale.x = 1;
+            this.logoBounceContainer.scale.y = 1;
+        }
+        if (isNaN(this.logoBeatContainer.scale.x) || isNaN(this.logoBeatContainer.scale.y)) {
+            this.logoBeatContainer.scale.x = 1;
+            this.logoBeatContainer.scale.y = 1;
+        }
     }
 
 }
