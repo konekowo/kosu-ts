@@ -1,5 +1,5 @@
 import "./style.css";
-import { Application } from "pixi.js";
+import {Application} from "pixi.js";
 import { Main } from "./main";
 import {Settings} from "./Settings/Settings";
 
