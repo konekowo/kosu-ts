@@ -8,6 +8,7 @@ import {ease} from "pixi-ease";
 import {MainMenu} from "../MainMenu/MainMenu";
 import {LazerLogo} from "./LazerLogo";
 import {BeatmapParser} from "../../Util/Beatmap/Parser/BeatmapParser";
+import {AudioEngine} from "../../Audio/AudioEngine";
 
 export class IntroScreen extends Screen {
 

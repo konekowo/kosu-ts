@@ -3,6 +3,7 @@ import {MapAudio} from "../../Audio/Audio";
 import * as PIXI from "pixi.js";
 import {MathUtil} from "../../Util/MathUtil";
 import {Effect} from "../../Util/Beatmap/Data/Sections/TimingPoints/Effect";
+import {UnInheritedTimingPoint} from "../../Util/Beatmap/Data/Sections/TimingPoints/UnInheritedTimingPoint";
 
 export class LogoVisualizer extends PIXI.Container {
 
@@ -33,7 +34,7 @@ export class LogoVisualizer extends PIXI.Container {
 
 
 
-    protected audio!: MapAudio;
+    protected audio!: MapAudio | null;
     protected analyzer!: AnalyserNode;
     protected bufferLength!: number;
     public amplitudes!: Float32Array;
@@ -61,7 +62,9 @@ export class LogoVisualizer extends PIXI.Container {
         for (let i = 0; i < this.amplitudes.length; i++) {
             this.temporalAmplitudes[i] = this.amplitudes[i];
         }
-        let timingPoint = this.audio.beatmap.TimingPoints.GetCurrentTimingPoints(Date.now() - this.audio.timeStarted)[0];
+        let timingPoint = this.audio ? this.audio.beatmap.TimingPoints.GetCurrentTimingPoints(Date.now() - this.audio.timeStarted)[0] :
+            new UnInheritedTimingPoint();
+        if (!this.audio) {timingPoint.time = 0; if (timingPoint instanceof UnInheritedTimingPoint) {timingPoint.beatLength = 1000;}}
         for (let i = 0; i < this.bars_per_visualiser; i++) {
             let targetAmplitude = (this.temporalAmplitudes[(i + this.indexOffset) % this.bars_per_visualiser]) *
                 (timingPoint.effects == Effect.KiaiTime ? 1 : 0.5);
@@ -74,13 +77,22 @@ export class LogoVisualizer extends PIXI.Container {
 
     private initVisualizer() {
         this.audio = Main.AudioEngine.GetCurrentPlayingMusic();
-        const analyzerNodes = this.audio.GetNode(AnalyserNode);
-        if (analyzerNodes == null) {
-            throw new Error("Couldn't find any AnalyzerNode on Audio Object!");
+        if (this.audio) {
+            const analyzerNodes = this.audio.GetNode(AnalyserNode);
+            if (analyzerNodes == null) {
+                throw new Error("Couldn't find any AnalyzerNode on Audio Object!");
+            }
+            this.analyzer = analyzerNodes[0];
+            this.bufferLength = this.analyzer.frequencyBinCount;
+            this.amplitudes = new Float32Array(this.bufferLength);
         }
-        this.analyzer = analyzerNodes[0];
-        this.bufferLength = this.analyzer.frequencyBinCount;
-        this.amplitudes = new Float32Array(this.bufferLength);
+        else {
+            this.analyzer = new AnalyserNode(Main.AudioEngine.audioContext);
+            this.analyzer.fftSize = 512;
+            this.bufferLength = this.analyzer.frequencyBinCount;
+            this.amplitudes = new Float32Array(this.bufferLength);
+        }
+
 
     }
 

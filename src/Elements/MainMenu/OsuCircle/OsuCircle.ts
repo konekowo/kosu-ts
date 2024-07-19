@@ -95,32 +95,57 @@ export class OsuCircle extends PIXI.Container {
 
     public onmouseenter = (e: PIXI.FederatedMouseEvent) => {
         ease.removeEase(this.logoHoverContainer);
-        ease.add(this.logoHoverContainer, {scale: 1.1}, {duration: 500, ease: "easeOutElastic"});
+        ease.add(this.logoHoverContainer, {scale: 1.1}, {duration: 500, ease: "easeOutElastic"}).on("each", () => {
+            if (isNaN(this.logoHoverContainer.scale.x) || isNaN(this.logoHoverContainer.scale.y)) {
+                this.logoHoverContainer.scale.set(1);
+            }
+        });
     }
 
     public onmouseleave = (e: PIXI.FederatedMouseEvent) => {
         ease.removeEase(this.logoHoverContainer);
-        ease.add(this.logoHoverContainer, {scale: 1}, {duration: 500, ease: "easeOutElastic"});
+        ease.add(this.logoHoverContainer, {scale: 1}, {duration: 500, ease: "easeOutElastic"}).on("each", () => {
+            if (isNaN(this.logoHoverContainer.scale.x) || isNaN(this.logoHoverContainer.scale.y)) {
+                this.logoHoverContainer.scale.set(1);
+            }
+        });
     }
 
     public onmousedown = (e: PIXI.FederatedMouseEvent) => {
         ease.removeEase(this.logoBounceContainer);
         this.isMouseDown = true;
-        ease.add(this.logoBounceContainer, {scale: 0.9}, {duration: 1000, ease: "easeOutSine"});
+        ease.add(this.logoBounceContainer, {scale: 0.9}, {duration: 1000, ease: "easeOutSine"}).on("each", () => {
+            if (isNaN(this.logoBounceContainer.scale.x) || isNaN(this.logoBounceContainer.scale.y)) {
+                this.logoBounceContainer.scale.set(1);
+            }
+        });
         this.mouseDownPosition = {x: Main.mousePos.x, y: Main.mousePos.y};
     }
 
     public onclick = (e: PIXI.FederatedMouseEvent) => {
         ease.removeEase(this.flash);
         this.flash.alpha = 0.4;
-        ease.add(this.flash, {alpha: 0}, {duration:1500, ease: "easeOutExpo"});
+        ease.add(this.flash, {alpha: 0}, {duration:1500, ease: "easeOutExpo"}).on("each", () => {
+            if (isNaN(this.flash.alpha)) {
+                this.flash.alpha = 1;
+            }
+        });
     }
 
     public _onmouseup = (e: PIXI.FederatedMouseEvent) => {
         ease.removeEase(this.logoBounceContainer);
         this.isMouseDown = false;
-        ease.add(this.logoBounceContainer, {scale: 1}, {duration: 500, ease: "easeOutElastic"});
-        ease.add(this.logoBounceContainer, {x: 0, y: 0}, {duration: 800, ease: "easeOutElastic"});
+        ease.add(this.logoBounceContainer, {scale: 1}, {duration: 500, ease: "easeOutElastic"}).on("each", () => {
+            if (isNaN(this.logoBounceContainer.scale.x) || isNaN(this.logoBounceContainer.scale.y)) {
+                this.logoBounceContainer.scale.set(1);
+            }
+        });
+        ease.add(this.logoBounceContainer, {x: 0, y: 0}, {duration: 800, ease: "easeOutElastic"}).on("each", () => {
+            if (isNaN(this.logoBounceContainer.x) || isNaN(this.logoBounceContainer.y)) {
+                this.logoBounceContainer.x = 0;
+                this.logoBounceContainer.y = 0;
+            }
+        });
     }
 
     private onNewBeat() {
@@ -133,14 +158,27 @@ export class OsuCircle extends PIXI.Container {
         let maxAmplitude = audio? audio.GetMaximumAudioLevel() : 0;
         let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
         ease.removeEase(this.logoBeatContainer);
-        ease.add(this.logoBeatContainer, {scale: 1 - 0.02 * amplitudeAdjust}, {ease: "linear", duration: 60}).once("complete",
+        ease.add(this.logoBeatContainer, {scale: 1 - 0.02 * amplitudeAdjust}, {ease: "linear", duration: 60}).on("each", () => {
+            if (isNaN(this.logoBeatContainer.scale.x) || isNaN(this.logoBeatContainer.scale.y)) {
+                this.logoBeatContainer.scale.set(1);
+            }
+        }).once("complete",
             () => {
-            ease.add(this.logoBeatContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2});
+            ease.add(this.logoBeatContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2}).on("each", () => {
+                if (isNaN(this.logoBeatContainer.scale.x) || isNaN(this.logoBeatContainer.scale.y)) {
+                    this.logoBeatContainer.scale.set(1);
+                }
+            });
         });
         ease.removeEase(this.ripple);
         ease.removeEase(this.rippleContainer);
         this.rippleContainer.scale = 1.02;
-        ease.add(this.rippleContainer, {scale: 1.02 * (1 + 0.04 * amplitudeAdjust)}, {duration: beatLength * 2, ease: "easeOutQuint"});
+        ease.add(this.rippleContainer, {scale: 1.02 * (1 + 0.04 * amplitudeAdjust)}, {duration: beatLength * 2, ease: "easeOutQuint"})
+            .on("each", () => {
+            if (isNaN(this.rippleContainer.scale.x) || isNaN(this.rippleContainer.scale.y)) {
+                this.rippleContainer.scale.set(1);
+            }
+        });
         this.ripple.alpha = 0.15 * amplitudeAdjust;
         ease.add(this.ripple, {alpha: 0}, {duration: beatLength, ease: "easeOutQuint"});
 
@@ -211,23 +249,6 @@ export class OsuCircle extends PIXI.Container {
         }
 
 
-
-
-
-
-
-        if (isNaN(this.logoBounceContainer.x) || isNaN(this.logoBounceContainer.y)) {
-            this.logoBounceContainer.x = 0;
-            this.logoBounceContainer.y = 0;
-        }
-        if (isNaN(this.logoBounceContainer.scale.x) || isNaN(this.logoBounceContainer.scale.y)) {
-            this.logoBounceContainer.scale.x = 1;
-            this.logoBounceContainer.scale.y = 1;
-        }
-        if (isNaN(this.logoBeatContainer.scale.x) || isNaN(this.logoBeatContainer.scale.y)) {
-            this.logoBeatContainer.scale.x = 1;
-            this.logoBeatContainer.scale.y = 1;
-        }
     }
 
 }

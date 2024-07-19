@@ -40,7 +40,7 @@ export class AudioEngine {
         this._changeCallbacks = this._changeCallbacks.filter(callback => callback != cb);
     }
 
-    public GetCurrentPlayingMusic() {
+    public GetCurrentPlayingMusic() : MapAudio | null {
         return this._musicQueue[0];
     }
 
