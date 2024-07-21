@@ -10,8 +10,6 @@ import {LogoVisualizer} from "../../AudioVisualizers/LogoVisualizer";
 import {Effect} from "../../../Util/Beatmap/Data/Sections/TimingPoints/Effect";
 import {UnInheritedTimingPoint} from "../../../Util/Beatmap/Data/Sections/TimingPoints/UnInheritedTimingPoint";
 import {MathUtil} from "../../../Util/MathUtil";
-import {ease} from "pixi-ease";
-
 
 export class OsuCircle extends PIXI.Container {
 
@@ -30,7 +28,6 @@ export class OsuCircle extends PIXI.Container {
     private readonly defaultVisualizerAlpha = 0.5;
     private readonly early_activation = 60;
     private timeElapsedSinceLastBeat = 0;
-    private visualizerAnimationDummy = new PIXI.Container();
 
     private selectSample = Loader.GetAudio("mainMenu.osuLogo.select");
     private backToLogoSample = Loader.GetAudio("mainMenu.osuLogo.backToLogo");
@@ -48,7 +45,7 @@ export class OsuCircle extends PIXI.Container {
         this.outline.anchor.set(0.5, 0.5);
         //approximation of size in actual osu!lazer
         let scale = 0.6;
-        this.visualizer.position.set(-LogoVisualizer.size/3.35, -LogoVisualizer.size/3.35);
+        this.visualizer.position.set(-LogoVisualizer.size / 3.35, -LogoVisualizer.size / 3.35);
         this.visualizer.scale.set(scale);
         this.visualizer.alpha = this.defaultVisualizerAlpha;
 
@@ -65,7 +62,7 @@ export class OsuCircle extends PIXI.Container {
 
         this.outline.scale.set(scale);
         this.triangles.scale.set(scale);
-        this.triangles.position.set(-(this.outline.width/2), -(this.outline.height/2));
+        this.triangles.position.set(-(this.outline.width / 2), -(this.outline.height / 2));
         this.triangles.mask = mask;
 
         this.ripple = PIXI.Sprite.from("mainMenu.logoMask");
@@ -80,7 +77,7 @@ export class OsuCircle extends PIXI.Container {
         this.logoContainer.addChild(mask);
         this.logoContainer.addChild(this.flash);
         this.logoContainer.addChild(this.outline);
-        this.logoContainer.hitArea = new PIXI.Circle(0, 0, 480*scale);
+        this.logoContainer.hitArea = new PIXI.Circle(0, 0, 480 * scale);
         this.logoContainer.eventMode = "static";
 
         this.logoBeatContainer.addChild(this.logoContainer);
@@ -91,7 +88,9 @@ export class OsuCircle extends PIXI.Container {
         this.addChild(this.logoHoverContainer)
 
         // register event listeners
-        Main.app.stage.addEventListener("mouseup", (e) => {this._onmouseup(e);});
+        Main.app.stage.addEventListener("mouseup", (e) => {
+            this._onmouseup(e);
+        });
 
     }
 
@@ -122,38 +121,6 @@ export class OsuCircle extends PIXI.Container {
             .TransformTo({x: 0, y: 0}, 800, TWEEN.Easing.Elastic.Out);
     }
 
-    private onNewBeat() {
-        let audio = Main.AudioEngine.GetCurrentPlayingMusic();
-        let timingPointUninherited = audio ? audio.beatmap.TimingPoints.GetCurrentUninheritedTimingPoint(Date.now() - audio.timeStarted) : new UnInheritedTimingPoint();
-        if (!audio) {timingPointUninherited.beatLength = 1000;}
-        let beatLength = timingPointUninherited.beatLength;
-        let timingPoint = audio ? audio.beatmap.TimingPoints.GetCurrentTimingPoints(Date.now() - audio.timeStarted)[0] : new UnInheritedTimingPoint();
-        if (!audio) {timingPoint.effects = Effect.None}
-        let maxAmplitude = audio? audio.GetMaximumAudioLevel() : 0;
-        let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
-        Ease.getEase(this.logoBeatContainer).ScaleTo(1 - 0.02 * amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
-            .ScaleTo(1, beatLength*2, TWEEN.Easing.Quintic.Out);
-        this.rippleContainer.scale = 1.02;
-        Ease.getEase(this.rippleContainer).ClearEasings().ScaleTo(1.02 * (1 + 0.04 * amplitudeAdjust), beatLength * 2, TWEEN.Easing.Quintic.Out);
-        this.ripple.alpha = 0.15 * amplitudeAdjust;
-        Ease.getEase(this.ripple).ClearEasings().FadeOut(beatLength, TWEEN.Easing.Quintic.Out);
-
-
-        if (timingPoint.effects == Effect.KiaiTime) {
-            Ease.getEase(this.triangles.flash).ClearEasings()
-                .FadeTo(0.2*amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
-                .FadeTo(0, beatLength, TWEEN.Easing.Linear.None);
-            Ease.getEase(this.visualizer).ClearEasings()
-                .FadeTo(this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
-                .FadeTo(this.defaultVisualizerAlpha, beatLength, TWEEN.Easing.Linear.None);
-        }
-        setTimeout(() => {
-            this.triangles.Velocity += amplitudeAdjust * (timingPoint.effects == Effect.KiaiTime ? 6 : 3);
-        }, 60)
-
-    }
-
-
     public onResize() {
         this.menu.onResize();
     }
@@ -164,19 +131,21 @@ export class OsuCircle extends PIXI.Container {
         this.timeElapsedSinceLastBeat += ticker.deltaMS;
         let audio = Main.AudioEngine.GetCurrentPlayingMusic();
         let timingPoint = audio ? audio.beatmap.TimingPoints.GetCurrentUninheritedTimingPoint(Date.now() - audio.timeStarted) : new UnInheritedTimingPoint();
-        if (!audio) {timingPoint.beatLength = 1000; timingPoint.effects = Effect.None;}
+        if (!audio) {
+            timingPoint.beatLength = 1000;
+            timingPoint.effects = Effect.None;
+        }
         if (audio) {
             let maxAmplitude = audio.GetMaximumAudioLevel();
             this.logoAmplitudeContainer.scale.set(MathUtil.Damp(this.logoAmplitudeContainer.scale.x,
                 1 - Math.max(0, maxAmplitude - 0.4) * 0.04, 0.9, ticker.deltaMS))
             this.triangles.Velocity = MathUtil.Damp(this.triangles.Velocity,
                 0.5 * (timingPoint.effects == Effect.KiaiTime ? 4 : 2), 0.995, ticker.deltaMS);
-        }
-        else {
+        } else {
             this.logoAmplitudeContainer.scale = 1;
             this.triangles.Velocity = MathUtil.Damp(this.triangles.Velocity, 0.5, 0.9, ticker.deltaMS);
         }
-        if (this.timeElapsedSinceLastBeat >= timingPoint.beatLength){
+        if (this.timeElapsedSinceLastBeat >= timingPoint.beatLength) {
             this.onNewBeat();
             this.timeElapsedSinceLastBeat = 0;
         }
@@ -191,6 +160,41 @@ export class OsuCircle extends PIXI.Container {
             this.logoBounceContainer.y = change.y;
         }
 
+
+    }
+
+    private onNewBeat() {
+        let audio = Main.AudioEngine.GetCurrentPlayingMusic();
+        let timingPointUninherited = audio ? audio.beatmap.TimingPoints.GetCurrentUninheritedTimingPoint(Date.now() - audio.timeStarted) : new UnInheritedTimingPoint();
+        if (!audio) {
+            timingPointUninherited.beatLength = 1000;
+        }
+        let beatLength = timingPointUninherited.beatLength;
+        let timingPoint = audio ? audio.beatmap.TimingPoints.GetCurrentTimingPoints(Date.now() - audio.timeStarted)[0] : new UnInheritedTimingPoint();
+        if (!audio) {
+            timingPoint.effects = Effect.None
+        }
+        let maxAmplitude = audio ? audio.GetMaximumAudioLevel() : 0;
+        let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
+        Ease.getEase(this.logoBeatContainer).ScaleTo(1 - 0.02 * amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
+            .ScaleTo(1, beatLength * 2, TWEEN.Easing.Quintic.Out);
+        this.rippleContainer.scale = 1.02;
+        Ease.getEase(this.rippleContainer).ClearEasings().ScaleTo(1.02 * (1 + 0.04 * amplitudeAdjust), beatLength * 2, TWEEN.Easing.Quintic.Out);
+        this.ripple.alpha = 0.15 * amplitudeAdjust;
+        Ease.getEase(this.ripple).ClearEasings().FadeOut(beatLength, TWEEN.Easing.Quintic.Out);
+
+
+        if (timingPoint.effects == Effect.KiaiTime) {
+            Ease.getEase(this.triangles.flash).ClearEasings()
+                .FadeTo(0.2 * amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
+                .FadeTo(0, beatLength, TWEEN.Easing.Linear.None);
+            Ease.getEase(this.visualizer).ClearEasings()
+                .FadeTo(this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
+                .FadeTo(this.defaultVisualizerAlpha, beatLength, TWEEN.Easing.Linear.None);
+        }
+        setTimeout(() => {
+            this.triangles.Velocity += amplitudeAdjust * (timingPoint.effects == Effect.KiaiTime ? 6 : 3);
+        }, 60)
 
     }
 

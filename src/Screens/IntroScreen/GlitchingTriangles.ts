@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
-import {ease} from "pixi-ease";
+import {Ease} from "../../Util/TweenWrapper/Ease";
+import * as TWEEN from "@tweenjs/tween.js";
 
 export class GlitchingTriangles extends PIXI.Container{
     public constructor(bounds: GlitchingTrianglesBounds) {
@@ -27,8 +28,7 @@ export class GlitchingTriangles extends PIXI.Container{
 
         triangle.position.set(randX, randY);
 
-
-        ease.add(triangle, {alpha: 0}, {duration: 200, ease: "linear"})
+        Ease.getEase(triangle, true).FadeOut(200, TWEEN.Easing.Linear.None);
         setTimeout(() => {
             this.destroy();
         }, 200);

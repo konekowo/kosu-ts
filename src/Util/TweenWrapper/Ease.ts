@@ -8,17 +8,24 @@ export class Ease {
     private readonly obj: PIXI.Container;
     private delay: TWEEN.Tween<any> | null = null;
 
-    public static getEase(obj: PIXI.Container) {
+    public static getEase(obj: PIXI.Container, dontStore?: boolean) {
+        if (dontStore == null) {
+            dontStore = false;
+        }
         let checkIfEaseExists = Ease.previousEases.filter((ease) => {return ease.obj == obj;});
         if (checkIfEaseExists.length > 0){
             return checkIfEaseExists[0];
         }
-        return new Ease(obj);
+        return new Ease(obj, dontStore);
     }
 
-    private constructor(obj: PIXI.Container) {
+
+
+    private constructor(obj: PIXI.Container, dontStore: boolean) {
         this.obj = obj;
-        Ease.previousEases.push(this);
+        if (dontStore) {
+            Ease.previousEases.push(this);
+        }
     }
 
     public createTween<T extends Record<string, any>>(value: T, newValue: T, isPrimitive: boolean, property: keyof PIXI.Container, duration: number, easing: (ammount: number) => number) {
