@@ -1,7 +1,8 @@
 import * as PIXI from "pixi.js";
 import {Loader} from "../../Loader";
 import {Screen} from "../../Screens/Screen";
-import {ease} from "pixi-ease";
+import {Ease} from "../../Util/TweenWrapper/Ease";
+import * as TWEEN from "@tweenjs/tween.js";
 import {Main} from "../../main";
 
 export class RandomBackground extends Screen {
@@ -28,8 +29,7 @@ export class RandomBackground extends Screen {
             let previous = this.bgContainer.children[0];
             sprite.zIndex = -1;
             this.bgContainer.addChild(sprite);
-            let transition = ease.add(previous, {alpha: 0}, {duration: 800, ease: "linear"});
-            transition.once("complete", () => {
+            Ease.getEase(previous, true).FadeOut(800, TWEEN.Easing.Linear.None).Then(() => {
                 sprite.zIndex = 0;
                 previous.destroy();
             });

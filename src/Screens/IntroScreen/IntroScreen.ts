@@ -16,7 +16,6 @@ export class IntroScreen extends Screen {
     private doTextSpacingAnim = false;
     private triangles = new PIXI.Container();
     private ruleSetContainer = new PIXI.Container();
-    private ruleSetContainerContainer = new PIXI.Container();
     private flash = new PIXI.Graphics();
 
     private logoContainerContainer = new PIXI.Container();

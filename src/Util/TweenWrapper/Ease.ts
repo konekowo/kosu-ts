@@ -39,7 +39,6 @@ export class Ease {
             } else {
                 // @ts-ignore
                 this.obj[property] = (tweenValue.value * (newValue.value - value.value)) + value.value;
-                //console.log(this.obj[property]);
             }
         });
 
@@ -59,16 +58,12 @@ export class Ease {
             this.delay = null;
         }
         this.easings.push({tween: tween});
-        const ondone = () => {
-            this.easings = this.easings.filter((tweenInArray) => {
-                return tweenInArray.tween != tween
-            })
-        }
+
         tween.onStop(() => {
-            ondone()
+            this.onDone(tween);
         });
         tween.onComplete(() => {
-            ondone()
+            this.onDone(tween);
         });
         return this;
     }
@@ -76,6 +71,12 @@ export class Ease {
     public TransformTo(newPosition: PIXI.PointData, duration: number, easing: (ammount: number) => number) {
         this.createTween(this.obj.position, newPosition, false, "position", duration, easing);
         return this;
+    }
+
+    private onDone(tween: TWEEN.Tween<any>) {
+        this.easings = this.easings.filter((tweenInArray) => {
+            return tweenInArray.tween != tween
+        })
     }
 
     public ScaleTo(newScale: PIXI.PointData | number, duration: number, easing: (ammount: number) => number) {
@@ -111,12 +112,16 @@ export class Ease {
         return this;
     }
 
-    public Then() {
+    public Then(cb?: () => void) {
         let largestDuration = this.easings.sort((a, b) => {
             return a.tween.getDuration() - b.tween.getDuration()
         });
         if (largestDuration.length > 0) {
             this.delay = largestDuration[0].tween;
+            if (cb != undefined) {
+                largestDuration[0].tween.onComplete(() => {this.onDone(largestDuration[0].tween); cb();});
+                largestDuration[0].tween.onStop(() => {this.onDone(largestDuration[0].tween); cb();});
+            }
         }
         return this;
     }
