@@ -1,10 +1,8 @@
-import { Screen } from "../Screen";
-import { LoadAnim } from "../../Elements/LoadAnim/LoadAnim";
+import {Screen} from "../Screen";
+import {LoadAnim} from "../../Elements/LoadAnim/LoadAnim";
 import * as PIXI from "pixi.js";
-import { set } from "husky";
-import {Settings} from "../../Settings/Settings";
 
-export class LoadScreen extends Screen{
+export class LoadScreen extends Screen {
 
     private loadAnim = new LoadAnim("rgba(255,255,255,0.7)", "black");
 
@@ -20,7 +18,7 @@ export class LoadScreen extends Screen{
 
     public onClose(): Promise<Screen> {
         return new Promise((resolve) => {
-            if (this.loadAnim != null){
+            if (this.loadAnim != null) {
                 this.loadAnim.destroy();
             }
             setTimeout(() => {

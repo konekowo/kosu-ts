@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import {Main} from "../../main";
-import {Ease, ease, Easing} from "pixi-ease";
+import {ease, Easing} from "pixi-ease";
 import {Loader} from "../../Loader";
 import {MathUtil} from "../../Util/MathUtil";
 import {Screen} from "../../Screens/Screen";
@@ -23,7 +23,7 @@ export class MenuCursor extends PIXI.Container {
     private hideScaleAnim: Easing | undefined;
     private hideAlphaAnim: Easing | undefined;
 
-    private posMouseDown: {x: number, y: number} = {x: 0, y: 0};
+    private posMouseDown: { x: number, y: number } = {x: 0, y: 0};
 
     private mouseIsDown = false;
 
@@ -44,7 +44,7 @@ export class MenuCursor extends PIXI.Container {
         this.animRotationContainer.addChild(this.animContainer);
         this.mouseHideContainer.addChild(this.animRotationContainer);
         this.addChild(this.mouseHideContainer);
-        if (!visible){
+        if (!visible) {
             this.mouseHideContainer.scale.set(0.6);
             this.mouseHideContainer.alpha = 0;
             this.animRotationContainer.angle = 0;
@@ -107,33 +107,39 @@ export class MenuCursor extends PIXI.Container {
     }
 
     public PopIn() {
-        if (this.mouseRotationAnim){
+        if (this.mouseRotationAnim) {
             this.mouseRotationAnim.remove();
         }
-        if (this.hideAlphaAnim && this.hideScaleAnim){
+        if (this.hideAlphaAnim && this.hideScaleAnim) {
             this.hideAlphaAnim.remove();
             this.hideScaleAnim.remove();
         }
         this.visible = true;
         this.hideAlphaAnim = ease.add(this.mouseHideContainer, {alpha: 1}, {duration: 250, ease: "easeOutQuint"});
         this.hideScaleAnim = ease.add(this.mouseHideContainer, {scale: 1}, {duration: 400, ease: "easeOutQuint"});
-        this.mouseRotationAnim = ease.add(this.animRotationContainer, {angle: 0}, {duration: 400, ease: "easeOutQuint"});
+        this.mouseRotationAnim = ease.add(this.animRotationContainer, {angle: 0}, {
+            duration: 400,
+            ease: "easeOutQuint"
+        });
         this.dragRotationState = DragRotationState.NotDragging
     }
 
     public PopOut() {
-        if (this.mouseRotationAnim){
+        if (this.mouseRotationAnim) {
             this.mouseRotationAnim.remove();
         }
-        if (this.hideAlphaAnim && this.hideScaleAnim){
+        if (this.hideAlphaAnim && this.hideScaleAnim) {
             this.hideAlphaAnim.remove();
             this.hideScaleAnim.remove();
         }
         this.hideAlphaAnim = ease.add(this.mouseHideContainer, {alpha: 0}, {duration: 250, ease: "easeOutQuint"});
         this.hideScaleAnim = ease.add(this.mouseHideContainer, {scale: 0.6}, {duration: 250, ease: "easeOutQuint"});
-        this.mouseRotationAnim = ease.add(this.animRotationContainer, {angle: 0}, {duration: 400, ease: "easeOutQuint"});
+        this.mouseRotationAnim = ease.add(this.animRotationContainer, {angle: 0}, {
+            duration: 400,
+            ease: "easeOutQuint"
+        });
         this.hideAlphaAnim.once("complete", () => {
-           this.visible = false;
+            this.visible = false;
         });
         this.dragRotationState = DragRotationState.NotDragging;
     }
@@ -141,18 +147,18 @@ export class MenuCursor extends PIXI.Container {
     public updateMouse() {
         this.mouseContainer.scale.set(0.07 * Screen.getScaleBasedOffScreenSize());
         this.position.set(Main.mousePos.x, Main.mousePos.y);
-        if (this.dragRotationState != DragRotationState.NotDragging && this.visible){
-            let distance = Math.sqrt((((Math.abs(this.posMouseDown.x - Main.mousePos.x))^2) +
-                ((Math.abs(this.posMouseDown.y - Main.mousePos.y))^2)));
-            if (this.dragRotationState == DragRotationState.DragStarted && distance > 15){
+        if (this.dragRotationState != DragRotationState.NotDragging && this.visible) {
+            let distance = Math.sqrt((((Math.abs(this.posMouseDown.x - Main.mousePos.x)) ^ 2) +
+                ((Math.abs(this.posMouseDown.y - Main.mousePos.y)) ^ 2)));
+            if (this.dragRotationState == DragRotationState.DragStarted && distance > 15) {
                 this.dragRotationState = DragRotationState.Rotating;
                 if (this.lastDragRotationState != this.dragRotationState) {
                     this.posMouseDown = {x: Main.mousePos.x, y: Main.mousePos.y};
                 }
             }
 
-            if (this.dragRotationState == DragRotationState.Rotating && distance > 0){
-                if (this.mouseRotationAnim){
+            if (this.dragRotationState == DragRotationState.Rotating && distance > 0) {
+                if (this.mouseRotationAnim) {
                     this.mouseRotationAnim.remove();
                 }
                 let offsetX = Main.mousePos.x - this.posMouseDown.x;
@@ -160,11 +166,18 @@ export class MenuCursor extends PIXI.Container {
                 let degrees = MathUtil.RadiansToDegrees(Math.atan2(-offsetX, offsetY)) + 24.3;
 
                 let diff = (degrees - this.animRotationContainer.angle) % 360;
-                if (diff < -180) {diff += 360;}
-                if (diff > 180) {diff -= 360;}
+                if (diff < -180) {
+                    diff += 360;
+                }
+                if (diff > 180) {
+                    diff -= 360;
+                }
                 degrees = this.animRotationContainer.angle + diff;
 
-                this.mouseRotationAnim = ease.add(this.animRotationContainer, {angle: degrees}, {duration: 120, ease: "easeOutQuint"});
+                this.mouseRotationAnim = ease.add(this.animRotationContainer, {angle: degrees}, {
+                    duration: 120,
+                    ease: "easeOutQuint"
+                });
             }
         }
         this.lastDragRotationState = this.dragRotationState;
@@ -172,8 +185,8 @@ export class MenuCursor extends PIXI.Container {
     }
 
 
-
 }
+
 enum DragRotationState {
     NotDragging,
     DragStarted,

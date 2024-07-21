@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
 import {ease, Easing} from "pixi-ease";
+
 export class Menu extends PIXI.Container {
 
     private menuBG = new PIXI.Graphics();
@@ -23,7 +24,7 @@ export class Menu extends PIXI.Container {
 
     public Close() {
         this.isOpened = false;
-        if (this.openAnim){
+        if (this.openAnim) {
             this.openAnim.remove();
         }
         ease.add(this.menuBG, {scaleY: 0, alpha: 0}, {duration: 300, ease: "easeInSine"});

@@ -1,5 +1,4 @@
 import * as PIXI from "pixi.js";
-import {Loader} from "../../Loader";
 import {ease} from "pixi-ease";
 import {LogoAnimation} from "./LogoAnimation";
 

@@ -1,7 +1,4 @@
 import {BeatmapData} from "../Util/Beatmap/Data/BeatmapData";
-import {node} from "webpack";
-import {OsuCircle} from "../Elements/MainMenu/OsuCircle/OsuCircle";
-import {Main} from "../main";
 
 export class Audio {
     public audio!: AudioBuffer;
@@ -12,21 +9,18 @@ export class Audio {
     public isPaused: boolean = false;
     public pausedTime: number = 0;
     public nodes: AudioNode[] = [];
-    private _connectedToContext = false;
-
     public tempArrayL = new Float32Array(16);
     public tempArrayR = new Float32Array(16);
-
     public LeftChannel: number = 0;
     public RightChannel: number = 0;
-
+    private _connectedToContext = false;
 
     public GetMaximumAudioLevel() {
         return Math.max(this.LeftChannel, this.RightChannel);
     }
 
     public GetAverageAudioLevel() {
-        return (this.LeftChannel + this.RightChannel)/2;
+        return (this.LeftChannel + this.RightChannel) / 2;
     }
 
     public Create(audioContext: AudioContext) {
@@ -35,35 +29,33 @@ export class Audio {
     }
 
     public AddAudioNode(node: AudioNode) {
-        if (!this.source){
+        if (!this.source) {
             throw new Error("Source not created yet!");
         }
         this.nodes.push(node);
     }
 
-    public GetNode<T>(type: new (...args: any[]) => T): T[] | null{
+    public GetNode<T>(type: new (...args: any[]) => T): T[] | null {
         let nodes = this.nodes.filter(node => node instanceof type) as T[];
         if (nodes.length > 0) {
             return nodes;
-        }
-        else {
+        } else {
             return null;
         }
     }
 
     public ConnectToContext(audioContext: AudioContext, howToConnectFunction?: (nodes: AudioNode[], source: AudioBufferSourceNode) => void) {
-        if (!this.source){
+        if (!this.source) {
             throw new Error("Source not created yet!");
         }
-        if (this._connectedToContext){
+        if (this._connectedToContext) {
             return;
         }
         this._connectedToContext = true;
-        if (this.nodes.length > 0){
-            if (howToConnectFunction){
+        if (this.nodes.length > 0) {
+            if (howToConnectFunction) {
                 howToConnectFunction(this.nodes, this.source);
-            }
-            else {
+            } else {
                 this.nodes.forEach((node, index) => {
                     this.source!.connect(node);
                     if (!(node instanceof AnalyserNode)) {
@@ -71,17 +63,16 @@ export class Audio {
                     }
                 });
             }
-        }
-        else {
+        } else {
             this.source.connect(audioContext.destination);
         }
     }
 
     public Play() {
-        if (!this.source){
+        if (!this.source) {
             throw new Error("Source not created yet!");
         }
-        if (!this._connectedToContext){
+        if (!this._connectedToContext) {
             throw new Error("Not connected to audio context yet!");
         }
         this.source.start(0, this.pausedTime);
@@ -92,10 +83,10 @@ export class Audio {
     }
 
     public Pause() {
-        if (!this.source){
+        if (!this.source) {
             throw new Error("Source not created yet!");
         }
-        if (!this._connectedToContext){
+        if (!this._connectedToContext) {
             throw new Error("Not connected to audio context yet!");
         }
         this.pausedTime = Date.now() - this.timeStarted;
@@ -105,10 +96,10 @@ export class Audio {
     }
 
     public Stop() {
-        if (!this.source){
+        if (!this.source) {
             throw new Error("Source not created yet!");
         }
-        if (!this._connectedToContext){
+        if (!this._connectedToContext) {
             throw new Error("Not connected to audio context yet!");
         }
         this.source.stop(0);
@@ -116,7 +107,7 @@ export class Audio {
     }
 
     public RegisterEndCallBack(callback: () => void) {
-        if (!this.source){
+        if (!this.source) {
             throw new Error("Source not created yet!");
         }
         this.source.onended = () => {
@@ -127,6 +118,7 @@ export class Audio {
     }
 
 }
+
 export class MapAudio extends Audio {
     public beatmap!: BeatmapData;
     public fadingOut: boolean = false;

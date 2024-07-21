@@ -1,31 +1,30 @@
 import * as TWEEN from "@tweenjs/tween.js";
 import * as PIXI from "pixi.js";
-import {Main} from "../../main";
 
 export class Ease {
     private static previousEases: Ease[] = [];
-    private easings: {tween: TWEEN.Tween<any>}[] = [];
+    private easings: { tween: TWEEN.Tween<any> }[] = [];
     private readonly obj: PIXI.Container;
     private delay: TWEEN.Tween<any> | null = null;
-
-    public static getEase(obj: PIXI.Container, dontStore?: boolean) {
-        if (dontStore == null) {
-            dontStore = false;
-        }
-        let checkIfEaseExists = Ease.previousEases.filter((ease) => {return ease.obj == obj;});
-        if (checkIfEaseExists.length > 0){
-            return checkIfEaseExists[0];
-        }
-        return new Ease(obj, dontStore);
-    }
-
-
 
     private constructor(obj: PIXI.Container, dontStore: boolean) {
         this.obj = obj;
         if (!dontStore) {
             Ease.previousEases.push(this);
         }
+    }
+
+    public static getEase(obj: PIXI.Container, dontStore?: boolean) {
+        if (dontStore == null) {
+            dontStore = false;
+        }
+        let checkIfEaseExists = Ease.previousEases.filter((ease) => {
+            return ease.obj == obj;
+        });
+        if (checkIfEaseExists.length > 0) {
+            return checkIfEaseExists[0];
+        }
+        return new Ease(obj, dontStore);
     }
 
     public createTween<T extends Record<string, any>>(value: T, newValue: T, isPrimitive: boolean, property: keyof PIXI.Container, duration: number, easing: (ammount: number) => number) {
@@ -37,8 +36,7 @@ export class Ease {
             if (!isPrimitive) {
                 // @ts-ignore
                 this.obj[property] = value;
-            }
-            else {
+            } else {
                 // @ts-ignore
                 this.obj[property] = (tweenValue.value * (newValue.value - value.value)) + value.value;
                 //console.log(this.obj[property]);
@@ -56,17 +54,22 @@ export class Ease {
         if (this.delay == null) {
 
             tween.start();
-        }
-        else {
+        } else {
             this.delay.chain(tween);
             this.delay = null;
         }
         this.easings.push({tween: tween});
         const ondone = () => {
-            this.easings = this.easings.filter((tweenInArray) => {return tweenInArray.tween != tween})
+            this.easings = this.easings.filter((tweenInArray) => {
+                return tweenInArray.tween != tween
+            })
         }
-        tween.onStop(() => {ondone()});
-        tween.onComplete(() => {ondone()});
+        tween.onStop(() => {
+            ondone()
+        });
+        tween.onComplete(() => {
+            ondone()
+        });
         return this;
     }
 
@@ -77,7 +80,7 @@ export class Ease {
 
     public ScaleTo(newScale: PIXI.PointData | number, duration: number, easing: (ammount: number) => number) {
         let _newScale: PIXI.PointData = {x: 0, y: 0};
-        if (typeof newScale == "number"){
+        if (typeof newScale == "number") {
             _newScale.x = newScale;
             _newScale.y = newScale;
         }
@@ -102,15 +105,16 @@ export class Ease {
 
     public ClearEasings() {
         this.easings.forEach((tween) => {
-           tween.tween.stop();
+            tween.tween.stop();
         });
         this.easings = [];
         return this;
     }
 
     public Then() {
-        let largestDuration = this.easings.sort((a, b) =>
-        {return a.tween.getDuration() - b.tween.getDuration()});
+        let largestDuration = this.easings.sort((a, b) => {
+            return a.tween.getDuration() - b.tween.getDuration()
+        });
         if (largestDuration.length > 0) {
             this.delay = largestDuration[0].tween;
         }

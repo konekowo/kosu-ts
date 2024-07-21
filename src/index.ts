@@ -1,6 +1,6 @@
 import "./style.css";
 import {Application} from "pixi.js";
-import { Main } from "./main";
+import {Main} from "./main";
 import {Settings} from "./Settings/Settings";
 
 const gameWidth = window.innerWidth;

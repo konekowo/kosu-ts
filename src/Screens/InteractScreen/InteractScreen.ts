@@ -51,7 +51,7 @@ export class InteractScreen extends Screen {
         this.textContainer.alpha = 0;
         this.textContainerContainer.addChild(this.textContainer);
         this.textContainerContainer.scale = Screen.getScaleBasedOffScreenSize();
-        this.textContainerContainer.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
+        this.textContainerContainer.position.set(this.getScreenWidth() / 2, this.getScreenHeight() / 2);
         this.addChild(this.textContainerContainer);
 
         this.clickArea.rect(0, 0, 1, 1);
@@ -86,7 +86,7 @@ export class InteractScreen extends Screen {
             ease.add(this.textContainer, {alpha: 0, scale: 0.5}, {duration: 200, ease: "easeInOutQuad"});
             setTimeout(() => {
                 resolve(this);
-            },200);
+            }, 200);
         });
     }
 
@@ -95,7 +95,7 @@ export class InteractScreen extends Screen {
     }
 
     public onResize() {
-        this.textContainerContainer.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
+        this.textContainerContainer.position.set(this.getScreenWidth() / 2, this.getScreenHeight() / 2);
         this.clickArea.width = this.getScreenWidth();
         this.clickArea.height = this.getScreenHeight();
         this.clickArea.position.set(0, 0);

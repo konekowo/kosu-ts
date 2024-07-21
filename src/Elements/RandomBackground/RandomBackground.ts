@@ -4,7 +4,7 @@ import {Screen} from "../../Screens/Screen";
 import {ease} from "pixi-ease";
 import {Main} from "../../main";
 
-export class RandomBackground extends Screen{
+export class RandomBackground extends Screen {
 
     private bgContainer = new PIXI.Container;
 
@@ -12,20 +12,19 @@ export class RandomBackground extends Screen{
 
     public start() {
         this.bgContainer.pivot.set(0.5, 0.5);
-        this.bgContainer.position.set((Main.mousePos.x - (this.getScreenWidth()/2))/this.parallaxMultiplier,
-            (Main.mousePos.y - (this.getScreenHeight()/2))/this.parallaxMultiplier);
+        this.bgContainer.position.set((Main.mousePos.x - (this.getScreenWidth() / 2)) / this.parallaxMultiplier,
+            (Main.mousePos.y - (this.getScreenHeight() / 2)) / this.parallaxMultiplier);
         this.addChild(this.bgContainer);
         this.newRandomBG();
-        Main.AudioEngine.addMusicChangeEventListener(()=> {
-           this.newRandomBG();
+        Main.AudioEngine.addMusicChangeEventListener(() => {
+            this.newRandomBG();
         });
     }
 
     public setBG(sprite: PIXI.Sprite) {
-        if (this.bgContainer.children?.length == 0){
+        if (this.bgContainer.children?.length == 0) {
             this.bgContainer.addChild(sprite);
-        }
-        else {
+        } else {
             let previous = this.bgContainer.children[0];
             sprite.zIndex = -1;
             this.bgContainer.addChild(sprite);
@@ -41,17 +40,18 @@ export class RandomBackground extends Screen{
     }
 
     public newRandomBG() {
-        function random(min: number, max: number){
+        function random(min: number, max: number) {
             return Math.round(Math.random() * (max - min) + min);
         }
+
         let useSeasonalBackgrounds = Loader.seasonalBackgroundsNum > 0;
-        let randomNum = random(1, useSeasonalBackgrounds? Loader.seasonalBackgroundsNum: Loader.defaultBackgroundsNum);
-        this.setBG(PIXI.Sprite.from((useSeasonalBackgrounds? "seasonal_bg" : "default_bg")+randomNum));
+        let randomNum = random(1, useSeasonalBackgrounds ? Loader.seasonalBackgroundsNum : Loader.defaultBackgroundsNum);
+        this.setBG(PIXI.Sprite.from((useSeasonalBackgrounds ? "seasonal_bg" : "default_bg") + randomNum));
     }
 
     public draw(deltaTime: PIXI.Ticker) {
-        this.bgContainer.position.set((Main.mousePos.x - (this.getScreenWidth()/2))/this.parallaxMultiplier,
-            (Main.mousePos.y - (this.getScreenHeight()/2))/this.parallaxMultiplier);
+        this.bgContainer.position.set((Main.mousePos.x - (this.getScreenWidth() / 2)) / this.parallaxMultiplier,
+            (Main.mousePos.y - (this.getScreenHeight() / 2)) / this.parallaxMultiplier);
     }
 
     public onClose(): Promise<Screen> {
@@ -60,7 +60,7 @@ export class RandomBackground extends Screen{
 
     public onResize() {
         this.bgContainer.children.forEach((sprite) => {
-            if (sprite instanceof PIXI.Sprite){
+            if (sprite instanceof PIXI.Sprite) {
                 let texWidth = sprite.texture.width;
                 let texHeight = sprite.texture.height;
 
@@ -71,19 +71,17 @@ export class RandomBackground extends Screen{
                     scaleFactor = window.innerHeight / texHeight;
                 }
 
-                if (texHeight * scaleFactor < window.innerHeight){
+                if (texHeight * scaleFactor < window.innerHeight) {
                     scaleFactor = window.innerHeight / texHeight;
-                }
-                else if (texWidth * scaleFactor < window.innerWidth) {
+                } else if (texWidth * scaleFactor < window.innerWidth) {
 
                 }
 
                 sprite.scale.set(scaleFactor + 0.05);
-                sprite.position.set((this.getScreenWidth()/2) - (this.getScreenWidth()/(this.parallaxMultiplier*2)),
-                    this.getScreenHeight()/2  - (this.getScreenHeight()/(this.parallaxMultiplier*2)));
+                sprite.position.set((this.getScreenWidth() / 2) - (this.getScreenWidth() / (this.parallaxMultiplier * 2)),
+                    this.getScreenHeight() / 2 - (this.getScreenHeight() / (this.parallaxMultiplier * 2)));
             }
         });
-
 
 
     }

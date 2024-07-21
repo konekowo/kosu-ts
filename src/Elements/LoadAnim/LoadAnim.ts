@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-import { Ease, ease } from 'pixi-ease';
+import {ease} from 'pixi-ease';
 
 export class LoadAnim extends PIXI.Container {
     private readonly bg: PIXI.Graphics;
@@ -9,12 +9,13 @@ export class LoadAnim extends PIXI.Container {
     private readonly container: PIXI.Container;
     private readonly bgContainer: PIXI.Container;
     private bgRotation: number = 0;
+
     public constructor(bgColor: string, arcColor: string) {
         super();
         this.pivot.set(0.5, 0.5);
         this.container = new PIXI.Container();
         this.container.alpha = 0;
-        this.rotation = Math.PI*2.5;
+        this.rotation = Math.PI * 2.5;
         this.bgContainer = new PIXI.Container();
         this.bg = new PIXI.Graphics();
         this.bg.roundRect(-50, -50, 100, 100, 25);
@@ -55,7 +56,7 @@ export class LoadAnim extends PIXI.Container {
         return 100 * this.scale.y;
     }
 
-    public draw(deltaTime: PIXI.Ticker){
+    public draw(deltaTime: PIXI.Ticker) {
         this.arcContainer.angle += (3 * deltaTime.deltaTime);
     }
 

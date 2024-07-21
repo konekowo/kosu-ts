@@ -6,12 +6,14 @@ import {OsuCircle} from "../../Elements/MainMenu/OsuCircle/OsuCircle";
 export class MainMenu extends Screen {
     private bg = new RandomBackground();
     private osuCircle = new OsuCircle();
+
     public start() {
         this.bg.start();
         this.addChild(this.bg);
         this.osuCircle.scale = Screen.getScaleBasedOffScreenSize();
         this.addChild(this.osuCircle);
     }
+
     public draw(deltaTime: PIXI.Ticker) {
         this.bg.draw(deltaTime);
         this.osuCircle.draw(deltaTime);
@@ -26,7 +28,7 @@ export class MainMenu extends Screen {
     }
 
     public onResize() {
-        this.osuCircle.position.set(this.getScreenWidth()/2, this.getScreenHeight()/2);
+        this.osuCircle.position.set(this.getScreenWidth() / 2, this.getScreenHeight() / 2);
         this.bg.onResize();
         this.osuCircle.onResize();
         this.osuCircle.scale = Screen.getScaleBasedOffScreenSize();
