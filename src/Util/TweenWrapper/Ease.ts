@@ -50,11 +50,12 @@ export class Ease {
         else {
             this.delay.chain(tween);
         }
-
         this.easings.push({tween: tween});
-        tween.onStop(() => {
+        const ondone = () => {
             this.easings = this.easings.filter((tweenInArray) => {return tweenInArray.tween != tween})
-        });
+        }
+        tween.onStop(() => {ondone()});
+        tween.onComplete(() => {ondone()});
         return this;
     }
 
