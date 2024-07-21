@@ -97,28 +97,28 @@ export class OsuCircle extends PIXI.Container {
 
 
     public onmouseenter = (e: PIXI.FederatedMouseEvent) => {
-        new Ease(this.logoHoverContainer).ScaleTo(1.1, 500, TWEEN.Easing.Elastic.Out);
+        Ease.getEase(this.logoHoverContainer).ScaleTo(1.1, 500, TWEEN.Easing.Elastic.Out);
     }
 
     public onmouseleave = (e: PIXI.FederatedMouseEvent) => {
-        new Ease(this.logoHoverContainer).ScaleTo(1, 500, TWEEN.Easing.Elastic.Out);
+        Ease.getEase(this.logoHoverContainer).ScaleTo(1, 500, TWEEN.Easing.Elastic.Out);
     }
 
     public onmousedown = (e: PIXI.FederatedMouseEvent) => {
         this.isMouseDown = true;
-        new Ease(this.logoBounceContainer).ClearEasings().ScaleTo(0.9, 1000, TWEEN.Easing.Sinusoidal.Out);
+        Ease.getEase(this.logoBounceContainer).ClearEasings().ScaleTo(0.9, 1000, TWEEN.Easing.Sinusoidal.Out);
         this.mouseDownPosition = {x: Main.mousePos.x, y: Main.mousePos.y};
     }
 
     public onclick = (e: PIXI.FederatedMouseEvent) => {
         this.flash.alpha = 0.4;
-        new Ease(this.flash).ClearEasings()
+        Ease.getEase(this.flash).ClearEasings()
             .FadeOut(1500, TWEEN.Easing.Exponential.Out);
     }
 
     public _onmouseup = (e: PIXI.FederatedMouseEvent) => {
         this.isMouseDown = false;
-        new Ease(this.logoBounceContainer).ClearEasings().ScaleTo(1, 500, TWEEN.Easing.Elastic.Out)
+        Ease.getEase(this.logoBounceContainer).ClearEasings().ScaleTo(1, 500, TWEEN.Easing.Elastic.Out)
             .TransformTo({x: 0, y: 0}, 800, TWEEN.Easing.Elastic.Out);
     }
 
@@ -131,21 +131,18 @@ export class OsuCircle extends PIXI.Container {
         if (!audio) {timingPoint.effects = Effect.None}
         let maxAmplitude = audio? audio.GetMaximumAudioLevel() : 0;
         let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
-        new Ease(this.logoBeatContainer).ScaleTo(1 - 0.02 * amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
+        Ease.getEase(this.logoBeatContainer).ScaleTo(1 - 0.02 * amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
             .ScaleTo(1, beatLength*2, TWEEN.Easing.Quintic.Out);
         this.rippleContainer.scale = 1.02;
-        new Ease(this.rippleContainer).ClearEasings().ScaleTo(1.02 * (1 + 0.04 * amplitudeAdjust), beatLength * 2, TWEEN.Easing.Quintic.Out);
+        Ease.getEase(this.rippleContainer).ClearEasings().ScaleTo(1.02 * (1 + 0.04 * amplitudeAdjust), beatLength * 2, TWEEN.Easing.Quintic.Out);
         this.ripple.alpha = 0.15 * amplitudeAdjust;
-        new Ease(this.ripple).ClearEasings().FadeOut(beatLength, TWEEN.Easing.Quintic.Out);
+        //Ease.getEase(this.ripple).ClearEasings().FadeOut(beatLength, TWEEN.Easing.Quintic.Out);
 
 
-
-        if (timingPoint.effects == Effect.KiaiTime) {
-            ease.removeEase(this.triangles.flash);
-            ease.add(this.triangles.flash, {alpha: 0.2*amplitudeAdjust}, {duration: 60, ease:"linear"}).once("complete",
-                () => {
-                    ease.add(this.triangles.flash, {alpha: 0}, {duration: beatLength})
-                });
+        if (true) {
+            Ease.getEase(this.triangles.flash).ClearEasings()
+                .FadeTo(0.2*amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
+                .FadeTo(0, beatLength, TWEEN.Easing.Linear.None);
             ease.removeEase(this.visualizerAnimationDummy);
             let visualizerEase = ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust},
                 {duration: 60, ease: "linear"}).on("each", () => {

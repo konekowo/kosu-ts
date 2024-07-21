@@ -5,20 +5,25 @@ import {Main} from "../../main";
 export class Ease {
     private static previousEases: Ease[] = [];
     private easings: {tween: TWEEN.Tween<any>}[] = [];
-    private obj: PIXI.Container;
+    private readonly obj: PIXI.Container;
     private delay: TWEEN.Tween<any> | null = null;
 
-    public constructor(obj: PIXI.Container) {
-        this.obj = obj;
-        let checkIfEaseExists = Ease.previousEases.filter((ease) => {return ease.obj == this.obj;});
+    public static getEase(obj: PIXI.Container) {
+        let checkIfEaseExists = Ease.previousEases.filter((ease) => {return ease.obj == obj;});
         if (checkIfEaseExists.length > 0){
             return checkIfEaseExists[0];
         }
+        return new Ease(obj);
+    }
+
+    private constructor(obj: PIXI.Container) {
+        this.obj = obj;
         Ease.previousEases.push(this);
     }
 
     public createTween<T extends Record<string, any>>(value: T, newValue: T, isPrimitive: boolean, property: keyof PIXI.Container, duration: number, easing: (ammount: number) => number) {
         const tween = new TWEEN.Tween(value);
+        tween.dynamic(true);
         tween.to(newValue, duration);
         tween.easing(easing);
         tween.onUpdate(() => {
@@ -29,26 +34,25 @@ export class Ease {
             else {
                 // @ts-ignore
                 this.obj[property] = value.value;
+                //console.log(this.obj[property]);
             }
         });
+
         tween.onStart(() => {
-            if (!isPrimitive) {
-                // @ts-ignore
-                for (let key in this.obj[property]) {
-                    // @ts-ignore
-                    value[key] = this.obj[property][key];
-                }
-            }
-            else {
+            if (isPrimitive) {
                 // @ts-ignore
                 value.value = this.obj[property];
             }
         });
+
+
         if (this.delay == null) {
+
             tween.start();
         }
         else {
             this.delay.chain(tween);
+            this.delay = null;
         }
         this.easings.push({tween: tween});
         const ondone = () => {
@@ -105,10 +109,4 @@ export class Ease {
         }
         return this;
     }
-}
-
-enum EaseTypes {
-    Transform,
-    Scale,
-    Fade
 }
