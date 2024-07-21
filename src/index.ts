@@ -1,5 +1,5 @@
 import "./style.css";
-import {Application} from "pixi.js";
+import {Application, EventSystem} from "pixi.js";
 import {Main} from "./main";
 import {Settings} from "./Settings/Settings";
 
@@ -24,3 +24,7 @@ window.onload = async (): Promise<void> => {
         new Main(app);
     });
 };
+
+Object.defineProperty(window, "setSensitivity", {value: (sensitivity: number) => {
+        EventSystem.cursorSensitivity = sensitivity;
+}});
