@@ -22,9 +22,9 @@ export class Ease {
     }
 
     public createTween<T extends Record<string, any>>(value: T, newValue: T, isPrimitive: boolean, property: keyof PIXI.Container, duration: number, easing: (ammount: number) => number) {
-        const tween = new TWEEN.Tween(value);
-        tween.dynamic(true);
-        tween.to(newValue, duration);
+        const tweenValue = {value: 0}
+        const tween = new TWEEN.Tween(isPrimitive ? tweenValue : value);
+        tween.to(isPrimitive ? {value: 1} : newValue, duration);
         tween.easing(easing);
         tween.onUpdate(() => {
             if (!isPrimitive) {
@@ -33,7 +33,7 @@ export class Ease {
             }
             else {
                 // @ts-ignore
-                this.obj[property] = value.value;
+                this.obj[property] = (tweenValue.value * (newValue.value - value.value)) + value.value;
                 //console.log(this.obj[property]);
             }
         });

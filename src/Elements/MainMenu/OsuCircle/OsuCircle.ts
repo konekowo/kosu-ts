@@ -50,7 +50,7 @@ export class OsuCircle extends PIXI.Container {
         let scale = 0.6;
         this.visualizer.position.set(-LogoVisualizer.size/3.35, -LogoVisualizer.size/3.35);
         this.visualizer.scale.set(scale);
-        this.visualizer.alphaMultiplier = this.defaultVisualizerAlpha;
+        this.visualizer.alpha = this.defaultVisualizerAlpha;
 
         let mask = PIXI.Sprite.from("mainMenu.logoMask");
         mask.anchor.set(0.5, 0.5);
@@ -136,18 +136,16 @@ export class OsuCircle extends PIXI.Container {
         this.rippleContainer.scale = 1.02;
         Ease.getEase(this.rippleContainer).ClearEasings().ScaleTo(1.02 * (1 + 0.04 * amplitudeAdjust), beatLength * 2, TWEEN.Easing.Quintic.Out);
         this.ripple.alpha = 0.15 * amplitudeAdjust;
-        //Ease.getEase(this.ripple).ClearEasings().FadeOut(beatLength, TWEEN.Easing.Quintic.Out);
+        Ease.getEase(this.ripple).ClearEasings().FadeOut(beatLength, TWEEN.Easing.Quintic.Out);
 
 
-        if (true) {
+        if (timingPoint.effects == Effect.KiaiTime) {
             Ease.getEase(this.triangles.flash).ClearEasings()
                 .FadeTo(0.2*amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
                 .FadeTo(0, beatLength, TWEEN.Easing.Linear.None);
-            ease.removeEase(this.visualizerAnimationDummy);
-            let visualizerEase = ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust},
-                {duration: 60, ease: "linear"}).on("each", () => {
-                this.visualizer.alphaMultiplier = this.visualizerAnimationDummy.alpha
-            });
+            Ease.getEase(this.visualizer).ClearEasings()
+                .FadeTo(this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
+                .FadeTo(this.defaultVisualizerAlpha, beatLength, TWEEN.Easing.Linear.None);
         }
         setTimeout(() => {
             this.triangles.Velocity += amplitudeAdjust * (timingPoint.effects == Effect.KiaiTime ? 6 : 3);

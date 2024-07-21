@@ -30,8 +30,6 @@ export class LogoVisualizer extends PIXI.Container {
     // The minimum amplitude to show a bar.
     private readonly amplitude_dead_zone = 1 / this.bar_length;
 
-    public alphaMultiplier = 1;
-
 
 
     protected audio!: MapAudio | null;
@@ -151,10 +149,9 @@ export class LogoVisualizer extends PIXI.Container {
 
                 this.graphics.moveTo(barPosition.x, barPosition.y);
                 this.graphics.lineTo(barPosition.x + amplitudeOffset.x, barPosition.y + amplitudeOffset.y);
-                this.graphics.stroke({color: "rgba(255, 255, 255, "+0.2 * this.alphaMultiplier+")", width: 14});
+                this.graphics.stroke({color: "rgba(255, 255, 255, 0.2)", width: 14});
             }
         }
-
         this.firstDraw = false;
     }
 }
