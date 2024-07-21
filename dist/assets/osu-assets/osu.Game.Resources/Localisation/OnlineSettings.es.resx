@@ -100,7 +100,4 @@
   <data name="discord_presence_off" xml:space="preserve">
     <value>Desactivada</value>
   </data>
-  <data name="hide_country_flags" xml:space="preserve">
-    <value>Ocultar las banderas de los países</value>
-  </data>
 </root>

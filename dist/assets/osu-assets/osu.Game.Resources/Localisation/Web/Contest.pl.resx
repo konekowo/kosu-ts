@@ -68,7 +68,7 @@
     <value>lista</value>
   </data>
   <data name="judge.hide_judged" xml:space="preserve">
-    <value>ukryj ocenione zgłoszenia</value>
+    <value>schowaj ocenione wpisy</value>
   </data>
   <data name="judge.nav_title" xml:space="preserve">
     <value>oceniać</value>

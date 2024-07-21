@@ -59,12 +59,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="header_text" xml:space="preserve">
-    <value>تحذير</value>
+    <value>تأكيد حذف</value>
   </data>
   <data name="confirm" xml:space="preserve">
-    <value>نعم، واصل.</value>
+    <value>نعم. إفعلها.</value>
   </data>
   <data name="cancel" xml:space="preserve">
-    <value>لا! إلغاء</value>
+    <value>لا! إلغاء المهمة</value>
   </data>
 </root>

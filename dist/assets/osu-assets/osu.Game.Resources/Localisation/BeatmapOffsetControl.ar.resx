@@ -59,21 +59,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="beatmap_offset" xml:space="preserve">
-    <value>إزاحة الصوت لهذه الخريطة</value>
+    <value>إزاجة الخريطة</value>
   </data>
   <data name="previous_play" xml:space="preserve">
-    <value>القيم السابق:</value>
+    <value>التشغيل السابق:</value>
   </data>
   <data name="previous_play_too_short_to_use_for_calibration" xml:space="preserve">
-    <value>القيم السابق أقصر من اللازم للمعايرة</value>
+    <value>لعبك للخريطة السابقة قصير جدًا لاستخدامه للمعايرة</value>
   </data>
   <data name="calibrate_using_last_play" xml:space="preserve">
-    <value>المعايرة بآخر قيم</value>
+    <value>معايرة باستخدام إخر خريطة لعبتها</value>
   </data>
   <data name="hit_objects_appear_later" xml:space="preserve">
-    <value>(ستظهر الأجسام متأخرة)</value>
+    <value>(تظهر الأجسام لاحِقاََ)</value>
   </data>
   <data name="hit_objects_appear_earlier" xml:space="preserve">
-    <value>(ستظهر الأجسام مبكرة)</value>
+    <value>(تظهر الأجسام سابقاََ)</value>
   </data>
 </root>

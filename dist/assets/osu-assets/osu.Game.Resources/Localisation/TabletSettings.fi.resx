@@ -74,13 +74,13 @@
     <value>Säädä peli-ikkunan kuvasuhteen mukaan</value>
   </data>
   <data name="x_offset" xml:space="preserve">
-    <value>X-sijainti</value>
+    <value>X-siirtymä</value>
   </data>
   <data name="y_offset" xml:space="preserve">
-    <value>Y-sijainti</value>
+    <value>Y-siirtymä</value>
   </data>
   <data name="rotation" xml:space="preserve">
-    <value>Kulma</value>
+    <value>Kierto</value>
   </data>
   <data name="aspect_ratio" xml:space="preserve">
     <value>Kuvasuhde</value>

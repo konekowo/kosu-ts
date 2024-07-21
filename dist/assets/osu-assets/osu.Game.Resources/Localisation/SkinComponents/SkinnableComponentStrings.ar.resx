@@ -74,18 +74,18 @@
     <value>النص</value>
   </data>
   <data name="text_element_text_description" xml:space="preserve">
-    <value>النص الذي يراد عرضه.</value>
+    <value>النص الذي يتعين عرضه.</value>
   </data>
   <data name="corner_radius" xml:space="preserve">
     <value>تقوس الزاوية</value>
   </data>
   <data name="corner_radius_description" xml:space="preserve">
-    <value>مقدار انحناء الزوايا.</value>
+    <value>كم ينبغي أن تكون هذه الزوايا دائرية.</value>
   </data>
   <data name="show_label" xml:space="preserve">
-    <value>عرض المسمّى</value>
+    <value>عرض الملصق</value>
   </data>
   <data name="show_label_description" xml:space="preserve">
-    <value>ما إذا كان ينبغي إظهار مسمّى المكوّن.</value>
+    <value>ما إذا كان ينبغي إظهار ملصق المكون.</value>
   </data>
 </root>

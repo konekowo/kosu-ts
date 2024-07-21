@@ -59,10 +59,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="beatmap_setup" xml:space="preserve">
-    <value>إعداد الخريطة</value>
+    <value>إعداد Beatmap</value>
   </data>
   <data name="beatmap_setup_description" xml:space="preserve">
-    <value>تغيير إعدادات الخريطة العامة</value>
+    <value>تغيير الإعدادات العامة لخريطتك</value>
   </data>
   <data name="colours_header" xml:space="preserve">
     <value>الألوان</value>
@@ -77,82 +77,79 @@
     <value>تمكين العد التنازلي</value>
   </data>
   <data name="countdown_description" xml:space="preserve">
-    <value>في حالة تمكينه، سيُوضع عد تنازلي كـ"جاهز؟ 3، 2، 1، العب!" في بداية الخريطة بشرط وجود مجال كافٍ.</value>
+    <value>في حالة التشغيل, سيتم تضمين إشعار: "هل أنت مستعد؟ 3، 2، 1، العب!" وسيدرج العد التنازلي في بداية الخريطة.</value>
   </data>
   <data name="countdown_speed" xml:space="preserve">
     <value>سرعة العد التنازلي</value>
   </data>
   <data name="countdown_offset_description" xml:space="preserve">
-    <value>إذا بدا العد التنازلي خارج عن الوقت، استخدم هذا لتبكيره بنبضة أو اثنتين.</value>
+    <value>إذا كان العد التنازلي خارج عن الوقت, استخدم هذا لجعله يبدء نغمة او اثنتين اسرع.</value>
   </data>
   <data name="countdown_offset" xml:space="preserve">
-    <value>إزاحة العد التنازلي</value>
+    <value>توقيت العد التنازلي</value>
   </data>
   <data name="widescreen_support" xml:space="preserve">
     <value>دعم الشاشة الواسعة</value>
   </data>
   <data name="widescreen_support_description" xml:space="preserve">
-    <value>يسمح للقصص المصورة باستخدام مساحة الشاشة كاملة بدل حصرها في مساحة 4:3.</value>
+    <value>يسمح للوحات القصص باستخدام مساحة الشاشة كاملة, بدلاً من أن تكون محصورة في منطقة 4:3.</value>
   </data>
   <data name="epilepsy_warning" xml:space="preserve">
     <value>تحذير الصرع</value>
   </data>
   <data name="epilepsy_warning_description" xml:space="preserve">
-    <value>مستحسن إذا كانت القصة المصورة أو الفيديو يحتويان على مشاهد بألوان سريعة الوميض.</value>
+    <value>مستحسن إذا كانت لوحة القصة أو الفيديو يحتوي على مشاهد بألوان تتغير بسرعة.</value>
   </data>
   <data name="letterbox_during_breaks" xml:space="preserve">
-    <value>تأثير صندوق الرسائل خلال الاستراحات</value>
+    <value>مربع الرسائل أثناء الفواصل الزمنية</value>
   </data>
   <data name="letterbox_during_breaks_description" xml:space="preserve">
-    <value>يضيف تأثير صندوق الرسائل لإضفاء لمحة سينمائية خلال الاستراحات.</value>
+    <value>يضيف صندوق الأحرف الأفقية لإعطاء صورة سينمائية أثناء الفواصل الزمنية.</value>
   </data>
   <data name="samples_match_playback_rate" xml:space="preserve">
-    <value>تطبيق معدَّل التشغيل على العينات</value>
+    <value>معدل التشغيل يتزامن مع العينات</value>
   </data>
   <data name="samples_match_playback_rate_description" xml:space="preserve">
-    <value>في حالة تمكينه، ستسرَّع جميع العينات أو تبَطَّأ بمودات تغيير السرعة.</value>
+    <value>عند التشغيل, جميع العينات سوف تسرع أو تبطئ في حال تمكين مودات تغيير السرعة.</value>
   </data>
   <data name="circle_size_description" xml:space="preserve">
-    <value>حجم جميع الكائنات</value>
+    <value>حجم جميع الكائنات القابلة للنقر</value>
   </data>
   <data name="drain_rate_description" xml:space="preserve">
-    <value>معدل استنزاف شريط الحياة خلال اللعب</value>
+    <value>معدل الاستنزاف السلبي لشريط الطاقة طول فترة اللعب</value>
   </data>
   <data name="approach_rate_description" xml:space="preserve">
-    <value>سرعة ظهور الكائنات للّاعب</value>
+    <value>السرعة التي يتم بها عرض الكائنات على اللاعب</value>
   </data>
   <data name="overall_difficulty_description" xml:space="preserve">
-    <value>صرامة الدقة المطلوبة لنقْر الكائنات وصعوبة الكائنات الخاصة (مثل السْبِنَر)</value>
+    <value>قوة النوافذ القابلة للنقر وصعوبة الكائنات الخاصة (مثل السبنر)</value>
   </data>
   <data name="tick_rate" xml:space="preserve">
-    <value>معدَّل الدقَّات</value>
+    <value>معدل التكات</value>
   </data>
   <data name="tick_rate_description" xml:space="preserve">
-    <value>يحدد عدد الدقَّات داخل الكائنات الطويلة. معدل دقَّات 1 سيُوَلّد دقّة لكل نبضة موسيقية، ومعدّل 2 يولّد دقّتين لكل نبضة وهكذا.</value>
+    <value>يحدد عدد "الدقات" التي يتم إنشاؤها داخل الكائنات الطويلة. معدل دقة واحد سيولد علامات على كل نبضة موسيقية، 2 سيكون مرتين لكل نبضة موسيقية، إلخ.</value>
   </data>
   <data name="base_velocity" xml:space="preserve">
     <value>السرعة المبدئية</value>
   </data>
   <data name="base_velocity_description" xml:space="preserve">
-    <value>السرعة المبدئية للخريطة، وتؤثّر على أشياء مثل سرعة السلايدرات وسرعة الإنزال في بعض أنماط اللعبة.</value>
+    <value>السرعة المبدئية في الخريطة، تؤثر على أشياء مثل سرعة السلايدرات وسرعة التمرير في بعض مودات اللعب.</value>
   </data>
   <data name="metadata_header" xml:space="preserve">
     <value>البيانات التعريفية</value>
   </data>
   <data name="romanised_artist" xml:space="preserve">
-    <value>اسم الفنان بالأحرف الرومانية</value>
+    <value>فنان بحروف رومانية</value>
   </data>
   <data name="romanised_title" xml:space="preserve">
-    <value>العنوان بالأحرف الرومانية</value>
+    <value>عنوان بحروف رومانية</value>
   </data>
   <data name="creator" xml:space="preserve">
-    <value>المُنشِئ</value>
-  </data>
-  <data name="source" xml:space="preserve">
-    <value>المصدر</value>
+    <value>المنشئ</value>
   </data>
   <data name="difficulty_name" xml:space="preserve">
-    <value>اسم المستوى</value>
+    <value>اسم الصعوبة</value>
   </data>
   <data name="resources_header" xml:space="preserve">
     <value>الموارد</value>
@@ -161,27 +158,27 @@
     <value>المقطع الصوتي</value>
   </data>
   <data name="click_to_select_track" xml:space="preserve">
-    <value>اضغط لاختيار مقطع</value>
+    <value>اضغط لتحديد أغنية</value>
   </data>
   <data name="click_to_select_background" xml:space="preserve">
-    <value>اضغط لاختيار صورة خلفية</value>
+    <value>انقر لتحديد صورة الخلفية</value>
   </data>
   <data name="ruleset" xml:space="preserve">
-    <value>نمط اللعبة ({0})</value>
+    <value>مجموعة القواعد ({0})</value>
   </data>
   <data name="combo_colour_prefix" xml:space="preserve">
     <value>كومبو</value>
   </data>
   <data name="artist" xml:space="preserve">
-    <value>اسم الفنان</value>
+    <value>الفنان</value>
   </data>
   <data name="title" xml:space="preserve">
     <value>العنوان</value>
   </data>
   <data name="difficulty_header" xml:space="preserve">
-    <value>المستوى</value>
+    <value>مستوى الصعوبة</value>
   </data>
   <data name="drag_to_set_background" xml:space="preserve">
-    <value>اسحب صورة هنا لتعيينها كخلفية للخريطة!</value>
+    <value>اسحب صورة هنا لتعيين خلفية الخريطة!</value>
   </data>
 </root>

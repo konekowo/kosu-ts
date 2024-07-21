@@ -85,7 +85,4 @@
   <data name="exit" xml:space="preserve">
     <value>salir</value>
   </data>
-  <data name="daily_challenge" xml:space="preserve">
-    <value>reto diario</value>
-  </data>
 </root>

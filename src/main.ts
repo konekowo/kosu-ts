@@ -6,7 +6,7 @@ import {InteractScreen} from "./Screens/InteractScreen/InteractScreen";
 import {Loader} from "./Loader";
 import {MenuCursor} from "./Elements/MenuCursor/MenuCursor";
 import {AudioEngine} from "./Audio/AudioEngine";
-import * as TWEEN from "@tweenjs/tween.js";
+
 
 export class Main {
     public static app: Application;
@@ -25,9 +25,6 @@ export class Main {
         document.body.appendChild(Main.app.canvas);
         this.doResize();
         window.addEventListener("resize", this.doResize);
-        Main.app.ticker.add(() => {
-            TWEEN.update();
-        })
         Main.app.stage.eventMode = "static";
         Main.AudioEngine = new AudioEngine();
         Main.app.stage.addEventListener("mousemove", (e) => {

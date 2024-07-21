@@ -1,7 +1,6 @@
 import * as PIXI from "pixi.js";
 import {Triangles} from "./Triangles";
-import * as TWEEN from "@tweenjs/tween.js";
-import {Ease} from "../../../Util/TweenWrapper/Ease";
+import {ease, Easing} from "pixi-ease";
 import {Main} from "../../../main";
 import {Loader} from "../../../Loader";
 import {Menu} from "./Menu/Menu";
@@ -10,8 +9,6 @@ import {LogoVisualizer} from "../../AudioVisualizers/LogoVisualizer";
 import {Effect} from "../../../Util/Beatmap/Data/Sections/TimingPoints/Effect";
 import {UnInheritedTimingPoint} from "../../../Util/Beatmap/Data/Sections/TimingPoints/UnInheritedTimingPoint";
 import {MathUtil} from "../../../Util/MathUtil";
-import {ease} from "pixi-ease";
-
 
 export class OsuCircle extends PIXI.Container {
 
@@ -19,20 +16,15 @@ export class OsuCircle extends PIXI.Container {
     private readonly visualizer: MenuLogoVisualizer = new MenuLogoVisualizer();
     private readonly triangles: Triangles = new Triangles();
     private readonly flash;
-    private readonly flashEasing;
     private readonly logoContainer = new PIXI.Container;
     private readonly logoBounceContainer = new PIXI.Container();
-    private readonly logoBounceContainerEasing = new Ease(this.logoBounceContainer);
     private readonly logoBeatContainer = new PIXI.Container();
     private readonly logoAmplitudeContainer = new PIXI.Container();
     private readonly logoHoverContainer = new PIXI.Container();
     private readonly rippleContainer = new PIXI.Container();
     private readonly ripple;
-    private readonly rippleContainerEasing = new Ease(this.rippleContainer);
-    private readonly rippleEasing;
     private readonly menu: Menu = new Menu();
     private readonly defaultVisualizerAlpha = 0.5;
-    private readonly early_activation = 60;
     private timeElapsedSinceLastBeat = 0;
     private visualizerAnimationDummy = new PIXI.Container();
 
@@ -62,7 +54,6 @@ export class OsuCircle extends PIXI.Container {
 
 
         this.flash = PIXI.Sprite.from("mainMenu.logoMask");
-        this.flashEasing = new Ease(this.flash);
         this.flash.anchor.set(0.5, 0.5);
         this.flash.scale = scale;
         this.flash.blendMode = "add";
@@ -74,13 +65,13 @@ export class OsuCircle extends PIXI.Container {
         this.triangles.mask = mask;
 
         this.ripple = PIXI.Sprite.from("mainMenu.logoMask");
-        this.rippleEasing = new Ease(this.ripple);
         this.ripple.anchor.set(0.5, 0.5);
         this.ripple.scale = scale;
         this.ripple.alpha = 0;
         this.ripple.blendMode = "add";
 
         this.rippleContainer.addChild(this.ripple);
+
         this.logoContainer.addChild(this.visualizer);
         this.logoContainer.addChild(this.triangles);
         this.logoContainer.addChild(mask);
@@ -103,31 +94,58 @@ export class OsuCircle extends PIXI.Container {
 
 
     public onmouseenter = (e: PIXI.FederatedMouseEvent) => {
-        new Ease(this.logoHoverContainer).ScaleTo(1.1, 500, TWEEN.Easing.Elastic.Out);
+        ease.removeEase(this.logoHoverContainer);
+        ease.add(this.logoHoverContainer, {scale: 1.1}, {duration: 500, ease: "easeOutElastic"}).on("each", () => {
+            if (isNaN(this.logoHoverContainer.scale.x) || isNaN(this.logoHoverContainer.scale.y)) {
+                this.logoHoverContainer.scale.set(1);
+            }
+        });
     }
 
     public onmouseleave = (e: PIXI.FederatedMouseEvent) => {
-        new Ease(this.logoHoverContainer).ScaleTo(1, 500, TWEEN.Easing.Elastic.Out);
+        ease.removeEase(this.logoHoverContainer);
+        ease.add(this.logoHoverContainer, {scale: 1}, {duration: 500, ease: "easeOutElastic"}).on("each", () => {
+            if (isNaN(this.logoHoverContainer.scale.x) || isNaN(this.logoHoverContainer.scale.y)) {
+                this.logoHoverContainer.scale.set(1);
+            }
+        });
     }
 
     public onmousedown = (e: PIXI.FederatedMouseEvent) => {
+        ease.removeEase(this.logoBounceContainer);
         this.isMouseDown = true;
-        this.logoBounceContainerEasing.ClearEasings();
-        this.logoBounceContainerEasing.ScaleTo(0.9, 1000, TWEEN.Easing.Sinusoidal.Out);
+        ease.add(this.logoBounceContainer, {scale: 0.9}, {duration: 1000, ease: "easeOutSine"}).on("each", () => {
+            if (isNaN(this.logoBounceContainer.scale.x) || isNaN(this.logoBounceContainer.scale.y)) {
+                this.logoBounceContainer.scale.set(1);
+            }
+        });
         this.mouseDownPosition = {x: Main.mousePos.x, y: Main.mousePos.y};
     }
 
     public onclick = (e: PIXI.FederatedMouseEvent) => {
-        this.flashEasing.ClearEasings();
+        ease.removeEase(this.flash);
         this.flash.alpha = 0.4;
-        this.flashEasing.FadeOut(1500, TWEEN.Easing.Exponential.Out);
+        ease.add(this.flash, {alpha: 0}, {duration:1500, ease: "easeOutExpo"}).on("each", () => {
+            if (isNaN(this.flash.alpha)) {
+                this.flash.alpha = 1;
+            }
+        });
     }
 
     public _onmouseup = (e: PIXI.FederatedMouseEvent) => {
+        ease.removeEase(this.logoBounceContainer);
         this.isMouseDown = false;
-        this.logoBounceContainerEasing.ClearEasings();
-        this.logoBounceContainerEasing.ScaleTo(1, 500, TWEEN.Easing.Elastic.Out)
-            .TransformTo({x: 0, y: 0}, 800, TWEEN.Easing.Elastic.Out);
+        ease.add(this.logoBounceContainer, {scale: 1}, {duration: 500, ease: "easeOutElastic"}).on("each", () => {
+            if (isNaN(this.logoBounceContainer.scale.x) || isNaN(this.logoBounceContainer.scale.y)) {
+                this.logoBounceContainer.scale.set(1);
+            }
+        });
+        ease.add(this.logoBounceContainer, {x: 0, y: 0}, {duration: 800, ease: "easeOutElastic"}).on("each", () => {
+            if (isNaN(this.logoBounceContainer.x) || isNaN(this.logoBounceContainer.y)) {
+                this.logoBounceContainer.x = 0;
+                this.logoBounceContainer.y = 0;
+            }
+        });
     }
 
     private onNewBeat() {
@@ -139,14 +157,30 @@ export class OsuCircle extends PIXI.Container {
         if (!audio) {timingPoint.effects = Effect.None}
         let maxAmplitude = audio? audio.GetMaximumAudioLevel() : 0;
         let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
-        new Ease(this.logoBeatContainer).ScaleTo(1 - 0.02 * amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
-            .ScaleTo(1, beatLength*2, TWEEN.Easing.Quintic.Out);
-        this.rippleEasing.ClearEasings();
-        this.rippleContainerEasing.ClearEasings();
+        ease.removeEase(this.logoBeatContainer);
+        ease.add(this.logoBeatContainer, {scale: 1 - 0.02 * amplitudeAdjust}, {ease: "linear", duration: 60}).on("each", () => {
+            if (isNaN(this.logoBeatContainer.scale.x) || isNaN(this.logoBeatContainer.scale.y)) {
+                this.logoBeatContainer.scale.set(1);
+            }
+        }).once("complete",
+            () => {
+            ease.add(this.logoBeatContainer, {scale: 1}, {ease: "easeOutQuint", duration: beatLength*2}).on("each", () => {
+                if (isNaN(this.logoBeatContainer.scale.x) || isNaN(this.logoBeatContainer.scale.y)) {
+                    this.logoBeatContainer.scale.set(1);
+                }
+            });
+        });
+        ease.removeEase(this.ripple);
+        ease.removeEase(this.rippleContainer);
         this.rippleContainer.scale = 1.02;
-        this.rippleContainerEasing.ScaleTo(1.02 * (1 + 0.04 * amplitudeAdjust), beatLength * 2, TWEEN.Easing.Quintic.Out);
+        ease.add(this.rippleContainer, {scale: 1.02 * (1 + 0.04 * amplitudeAdjust)}, {duration: beatLength * 2, ease: "easeOutQuint"})
+            .on("each", () => {
+            if (isNaN(this.rippleContainer.scale.x) || isNaN(this.rippleContainer.scale.y)) {
+                this.rippleContainer.scale.set(1);
+            }
+        });
         this.ripple.alpha = 0.15 * amplitudeAdjust;
-        this.rippleEasing.FadeOut(beatLength, TWEEN.Easing.Quintic.Out);
+        ease.add(this.ripple, {alpha: 0}, {duration: beatLength, ease: "easeOutQuint"});
 
 
 
@@ -160,6 +194,14 @@ export class OsuCircle extends PIXI.Container {
             let visualizerEase = ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha * 1.8 * amplitudeAdjust},
                 {duration: 60, ease: "linear"}).on("each", () => {
                 this.visualizer.alphaMultiplier = this.visualizerAnimationDummy.alpha
+            });
+            visualizerEase.once("complete", () => {
+                ease.add(this.visualizerAnimationDummy, {alpha: this.defaultVisualizerAlpha}, {
+                    duration: beatLength,
+                    ease: "linear"
+                }).on("each", () => {
+                    this.visualizer.alphaMultiplier = this.visualizerAnimationDummy.alpha;
+                });
             });
         }
         setTimeout(() => {

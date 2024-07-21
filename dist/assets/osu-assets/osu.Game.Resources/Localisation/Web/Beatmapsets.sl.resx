@@ -401,7 +401,7 @@
     <value>Število igranj</value>
   </data>
   <data name="show.status.ranked" xml:space="preserve">
-    <value>Uvrščeno</value>
+    <value>Rankirano</value>
   </data>
   <data name="show.status.approved" xml:space="preserve">
     <value>Odobreno</value>

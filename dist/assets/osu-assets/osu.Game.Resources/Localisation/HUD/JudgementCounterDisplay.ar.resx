@@ -71,7 +71,7 @@
     <value>إظهار الحد الأقصى للحكم</value>
   </data>
   <data name="judgement_display_mode_simple" xml:space="preserve">
-    <value>مبسّط</value>
+    <value>بسيط</value>
   </data>
   <data name="judgement_display_mode_normal" xml:space="preserve">
     <value>عادي</value>

@@ -106,7 +106,4 @@
   <data name="search.operation_timeout_exception" xml:space="preserve">
     <value>Căutarea este mai ocupată decât de obicei, încearcă mai târziu.</value>
   </data>
-  <data name="user_report.recently_reported" xml:space="preserve">
-    <value>Ați raportat deja acest lucru recent.</value>
-  </data>
 </root>
