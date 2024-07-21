@@ -19,17 +19,13 @@ export class OsuCircle extends PIXI.Container {
     private readonly visualizer: MenuLogoVisualizer = new MenuLogoVisualizer();
     private readonly triangles: Triangles = new Triangles();
     private readonly flash;
-    private readonly flashEasing;
     private readonly logoContainer = new PIXI.Container;
     private readonly logoBounceContainer = new PIXI.Container();
-    private readonly logoBounceContainerEasing = new Ease(this.logoBounceContainer);
     private readonly logoBeatContainer = new PIXI.Container();
     private readonly logoAmplitudeContainer = new PIXI.Container();
     private readonly logoHoverContainer = new PIXI.Container();
     private readonly rippleContainer = new PIXI.Container();
     private readonly ripple;
-    private readonly rippleContainerEasing = new Ease(this.rippleContainer);
-    private readonly rippleEasing;
     private readonly menu: Menu = new Menu();
     private readonly defaultVisualizerAlpha = 0.5;
     private readonly early_activation = 60;
@@ -62,7 +58,6 @@ export class OsuCircle extends PIXI.Container {
 
 
         this.flash = PIXI.Sprite.from("mainMenu.logoMask");
-        this.flashEasing = new Ease(this.flash);
         this.flash.anchor.set(0.5, 0.5);
         this.flash.scale = scale;
         this.flash.blendMode = "add";
@@ -74,7 +69,6 @@ export class OsuCircle extends PIXI.Container {
         this.triangles.mask = mask;
 
         this.ripple = PIXI.Sprite.from("mainMenu.logoMask");
-        this.rippleEasing = new Ease(this.ripple);
         this.ripple.anchor.set(0.5, 0.5);
         this.ripple.scale = scale;
         this.ripple.alpha = 0;
@@ -112,21 +106,19 @@ export class OsuCircle extends PIXI.Container {
 
     public onmousedown = (e: PIXI.FederatedMouseEvent) => {
         this.isMouseDown = true;
-        this.logoBounceContainerEasing.ClearEasings();
-        this.logoBounceContainerEasing.ScaleTo(0.9, 1000, TWEEN.Easing.Sinusoidal.Out);
+        new Ease(this.logoBounceContainer).ClearEasings().ScaleTo(0.9, 1000, TWEEN.Easing.Sinusoidal.Out);
         this.mouseDownPosition = {x: Main.mousePos.x, y: Main.mousePos.y};
     }
 
     public onclick = (e: PIXI.FederatedMouseEvent) => {
-        this.flashEasing.ClearEasings();
         this.flash.alpha = 0.4;
-        this.flashEasing.FadeOut(1500, TWEEN.Easing.Exponential.Out);
+        new Ease(this.flash).ClearEasings()
+            .FadeOut(1500, TWEEN.Easing.Exponential.Out);
     }
 
     public _onmouseup = (e: PIXI.FederatedMouseEvent) => {
         this.isMouseDown = false;
-        this.logoBounceContainerEasing.ClearEasings();
-        this.logoBounceContainerEasing.ScaleTo(1, 500, TWEEN.Easing.Elastic.Out)
+        new Ease(this.logoBounceContainer).ClearEasings().ScaleTo(1, 500, TWEEN.Easing.Elastic.Out)
             .TransformTo({x: 0, y: 0}, 800, TWEEN.Easing.Elastic.Out);
     }
 
@@ -141,12 +133,10 @@ export class OsuCircle extends PIXI.Container {
         let amplitudeAdjust = Math.min(1, 0.4 + maxAmplitude);
         new Ease(this.logoBeatContainer).ScaleTo(1 - 0.02 * amplitudeAdjust, this.early_activation, TWEEN.Easing.Linear.None).Then()
             .ScaleTo(1, beatLength*2, TWEEN.Easing.Quintic.Out);
-        this.rippleEasing.ClearEasings();
-        this.rippleContainerEasing.ClearEasings();
         this.rippleContainer.scale = 1.02;
-        this.rippleContainerEasing.ScaleTo(1.02 * (1 + 0.04 * amplitudeAdjust), beatLength * 2, TWEEN.Easing.Quintic.Out);
+        new Ease(this.rippleContainer).ClearEasings().ScaleTo(1.02 * (1 + 0.04 * amplitudeAdjust), beatLength * 2, TWEEN.Easing.Quintic.Out);
         this.ripple.alpha = 0.15 * amplitudeAdjust;
-        this.rippleEasing.FadeOut(beatLength, TWEEN.Easing.Quintic.Out);
+        new Ease(this.ripple).ClearEasings().FadeOut(beatLength, TWEEN.Easing.Quintic.Out);
 
 
 

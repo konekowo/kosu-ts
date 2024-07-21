@@ -3,12 +3,18 @@ import * as PIXI from "pixi.js";
 import {Main} from "../../main";
 
 export class Ease {
+    private static previousEases: Ease[] = [];
     private easings: {tween: TWEEN.Tween<any>}[] = [];
     private obj: PIXI.Container;
     private delay: TWEEN.Tween<any> | null = null;
 
     public constructor(obj: PIXI.Container) {
         this.obj = obj;
+        let checkIfEaseExists = Ease.previousEases.filter((ease) => {return ease.obj == this.obj;});
+        if (checkIfEaseExists.length > 0){
+            return checkIfEaseExists[0];
+        }
+        Ease.previousEases.push(this);
     }
 
     public createTween<T extends Record<string, any>>(value: T, newValue: T, isPrimitive: boolean, property: keyof PIXI.Container, duration: number, easing: (ammount: number) => number) {
@@ -87,6 +93,7 @@ export class Ease {
            tween.tween.stop();
         });
         this.easings = [];
+        return this;
     }
 
     public Then() {
