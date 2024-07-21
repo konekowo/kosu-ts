@@ -23,7 +23,7 @@ export class Ease {
 
     private constructor(obj: PIXI.Container, dontStore: boolean) {
         this.obj = obj;
-        if (dontStore) {
+        if (!dontStore) {
             Ease.previousEases.push(this);
         }
     }
