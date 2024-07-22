@@ -68,6 +68,7 @@ export class InteractScreen extends Screen {
             this.clickArea.eventMode = "none";
             Main.AudioEngine.PlayEffect(this.clickSound);
             Main.switchScreen(new IntroScreen(this.introTrack));
+            document.body.style.cursor = "none";
             Main.pointerLock();
         }
 
