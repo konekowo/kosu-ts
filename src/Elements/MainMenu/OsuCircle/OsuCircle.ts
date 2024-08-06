@@ -80,6 +80,11 @@ export class OsuCircle extends PIXI.Container {
         this.logoContainer.hitArea = new PIXI.Circle(0, 0, 480 * scale);
         this.logoContainer.eventMode = "static";
 
+        this.logoContainer.onmouseenter = this._onmouseenter;
+        this.logoContainer.onmouseleave = this._onmouseleave;
+        this.logoContainer.onmousedown = this._onmousedown;
+        this.logoContainer.onclick = this._onclick;
+
         this.logoBeatContainer.addChild(this.logoContainer);
         this.logoAmplitudeContainer.addChild(this.logoBeatContainer);
         this.logoBounceContainer.addChild(this.rippleContainer);
@@ -95,21 +100,21 @@ export class OsuCircle extends PIXI.Container {
     }
 
 
-    public onmouseenter = (e: PIXI.FederatedMouseEvent) => {
+    public _onmouseenter = (e: PIXI.FederatedMouseEvent) => {
         Ease.getEase(this.logoHoverContainer).ScaleTo(1.1, 500, TWEEN.Easing.Elastic.Out);
     }
 
-    public onmouseleave = (e: PIXI.FederatedMouseEvent) => {
+    public _onmouseleave = (e: PIXI.FederatedMouseEvent) => {
         Ease.getEase(this.logoHoverContainer).ScaleTo(1, 500, TWEEN.Easing.Elastic.Out);
     }
 
-    public onmousedown = (e: PIXI.FederatedMouseEvent) => {
+    public _onmousedown = (e: PIXI.FederatedMouseEvent) => {
         this.isMouseDown = true;
         Ease.getEase(this.logoBounceContainer).ClearEasings().ScaleTo(0.9, 1000, TWEEN.Easing.Sinusoidal.Out);
         this.mouseDownPosition = {x: Main.mousePos.x, y: Main.mousePos.y};
     }
 
-    public onclick = (e: PIXI.FederatedMouseEvent) => {
+    public _onclick = (e: PIXI.FederatedMouseEvent) => {
         this.flash.alpha = 0.4;
         Ease.getEase(this.flash).ClearEasings()
             .FadeOut(1500, TWEEN.Easing.Exponential.Out);
